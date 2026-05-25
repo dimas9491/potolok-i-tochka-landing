@@ -1,0 +1,3394 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Потолок и Точка — натяжные потолки под ключ в Москве с честной сметой</title>
+<meta name="description" content="Натяжные потолки в Москве. Пришлите фото комнаты — подберём 3–5 вариантов потолка и покажем ориентир цены за 1 час. Финальная смета фиксируется в договоре до монтажа.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:ital,wght@0,400;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  /* Theme 3 — Architectural (по умолчанию) */
+  --bg: #FFFFFF;
+  --surface: #F4F3EE;
+  --surface-2: #E5E5DD;
+  --ink: #0A2540;
+  --ink-2: #4A5A6E;
+  --hairline: #D8DCD4;
+  --accent: #3D6B9C;
+  --accent-soft: #E8F0F8;
+  --hi: #E8FFAA;
+  --hi-strong: #C9F050;
+  --warn: #C8654A;
+  --shadow-color: 10, 37, 64;
+}
+
+body[data-theme="1"] {
+  /* Warm minimal */
+  --bg: #FAFAF7;
+  --surface: #F2E7D4;
+  --surface-2: #EBDEC5;
+  --ink: #0F0F12;
+  --ink-2: #5A5246;
+  --hairline: #DCCFB6;
+  --accent: #B8915C;
+  --accent-soft: #F7EEDB;
+  --hi: #D6F26E;
+  --hi-strong: #C2E04A;
+  --warn: #A8442F;
+  --shadow-color: 15, 15, 18;
+}
+
+body[data-theme="2"] {
+  /* Dark premium */
+  --bg: #1A1A1F;
+  --surface: #23232A;
+  --surface-2: #2A2A30;
+  --ink: #F5F5F0;
+  --ink-2: #A8A395;
+  --hairline: #353540;
+  --accent: #C4A572;
+  --accent-soft: #2E2A20;
+  --hi: #D6F26E;
+  --hi-strong: #C2E04A;
+  --warn: #E07854;
+  --shadow-color: 0, 0, 0;
+}
+
+* { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter Tight', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.55;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  overflow-x: hidden;
+  transition: background 600ms cubic-bezier(0.32,0.72,0,1), color 600ms cubic-bezier(0.32,0.72,0,1);
+}
+
+::selection { background: var(--hi); color: var(--ink); }
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  margin: 0;
+  color: var(--ink);
+}
+
+h1 { font-weight: 800; letter-spacing: -0.045em; }
+
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-feature-settings: 'tnum' on;
+  letter-spacing: 0;
+}
+
+.serif-italic {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Container */
+.wrap { max-width: 1340px; margin: 0 auto; padding: 0 32px; }
+.wrap-narrow { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+
+@media (max-width: 768px) {
+  .wrap, .wrap-narrow { padding: 0 18px; }
+  body { font-size: 16px; }
+}
+
+/* Eyebrow tag */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  padding: 7px 14px 7px 12px;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--ink-2);
+  font-weight: 500;
+}
+.eyebrow::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--accent);
+  border-radius: 999px;
+  display: inline-block;
+}
+
+/* Buttons */
+.btn-primary {
+  position: relative;
+  display: inline-flex;
+  padding: 5px;
+  background: linear-gradient(180deg, var(--surface) 0%, var(--accent-soft) 100%);
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.7),
+    0 1px 2px rgba(var(--shadow-color), 0.04),
+    0 18px 36px -18px rgba(var(--shadow-color), 0.25),
+    0 0 0 0 rgba(201,240,80,0);
+  transition:
+    transform 500ms cubic-bezier(0.32,0.72,0,1),
+    box-shadow 500ms cubic-bezier(0.32,0.72,0,1);
+  will-change: transform;
+}
+body[data-theme="2"] .btn-primary {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 1px 2px rgba(0,0,0,0.4),
+    0 18px 36px -12px rgba(0,0,0,0.6),
+    0 0 0 0 rgba(201,240,80,0);
+}
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.4);
+  mix-blend-mode: overlay;
+  opacity: 0.6;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.7),
+    0 1px 2px rgba(var(--shadow-color), 0.04),
+    0 30px 50px -16px rgba(var(--shadow-color), 0.35),
+    0 0 0 5px rgba(201,240,80,0.18);
+}
+.btn-primary:active { transform: translateY(0) scale(0.985); }
+
+.btn-primary-core {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 9px 13px 24px;
+  background: var(--hi);
+  color: var(--ink);
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 15.5px;
+  letter-spacing: -0.01em;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.55),
+    inset 0 -1px 0 rgba(0,0,0,0.08);
+  overflow: hidden;
+  isolation: isolate;
+  transition: background 400ms cubic-bezier(0.32,0.72,0,1);
+}
+.btn-primary:hover .btn-primary-core { background: var(--hi-strong); }
+
+.btn-primary-core::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(110deg, transparent 0%, rgba(255,255,255,0.5) 50%, transparent 100%);
+  transition: left 900ms cubic-bezier(0.32,0.72,0,1);
+  pointer-events: none;
+}
+.btn-primary:hover .btn-primary-core::before { left: 130%; }
+
+.btn-primary-text {
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.btn-primary-arrow {
+  position: relative;
+  width: 38px; height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink);
+  color: var(--hi);
+  border-radius: 999px;
+  flex-shrink: 0;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.14),
+    inset 0 -1px 0 rgba(0,0,0,0.4),
+    0 4px 10px -2px rgba(var(--shadow-color), 0.45);
+  transition:
+    background 400ms cubic-bezier(0.32,0.72,0,1),
+    box-shadow 400ms cubic-bezier(0.32,0.72,0,1);
+  overflow: hidden;
+  z-index: 1;
+}
+.btn-primary-arrow svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  z-index: 1;
+}
+.btn-primary-arrow::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 25%, rgba(255,255,255,0.18) 0%, transparent 55%);
+  pointer-events: none;
+}
+.btn-primary:hover .btn-primary-arrow svg {
+  transform: translate(2px, -2px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  background: var(--bg);
+  color: var(--ink);
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 400ms cubic-bezier(0.32,0.72,0,1);
+}
+.btn-secondary:hover { background: var(--surface); border-color: var(--ink-2); }
+.btn-secondary:active { transform: scale(0.98); }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 1px;
+  transition: opacity 200ms;
+}
+.btn-ghost:hover { opacity: 0.6; }
+
+/* NAV — Floating glass pill */
+.nav-shell {
+  position: fixed;
+  top: 18px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  width: calc(100% - 36px);
+  max-width: 1320px;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+.nav {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 8px 8px 22px;
+  background: rgba(var(--shadow-color), 0.04);
+  border: 1px solid var(--hairline);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 999px;
+  width: 100%;
+  max-width: 1100px;
+}
+body[data-theme="2"] .nav { background: rgba(255,255,255,0.04); }
+body[data-theme="3"] .nav { background: rgba(255,255,255,0.7); }
+body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.nav-logo-mark {
+  width: 28px; height: 28px;
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 13px;
+}
+.nav-logo-desc {
+  font-size: 11px;
+  color: var(--ink-2);
+  font-weight: 400;
+  letter-spacing: 0;
+  margin-left: 4px;
+  display: none;
+}
+@media (min-width: 1100px) { .nav-logo-desc { display: inline; } }
+
+.nav-menu {
+  display: flex;
+  gap: 2px;
+  margin-left: auto;
+}
+.nav-menu a {
+  padding: 8px 12px;
+  font-size: 14px;
+  color: var(--ink);
+  text-decoration: none;
+  border-radius: 999px;
+  transition: background 200ms;
+  font-weight: 500;
+}
+.nav-menu a:hover { background: var(--surface); }
+@media (max-width: 980px) { .nav-menu { display: none; } }
+
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-phone {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+.nav-phone:hover { background: var(--surface); }
+@media (max-width: 1180px) { .nav-phone { display: none; } }
+
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 8px 7px 16px;
+  background: var(--hi);
+  color: var(--ink);
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.5),
+    0 4px 14px -4px rgba(201,240,80,0.5);
+  transition: all 300ms cubic-bezier(0.32,0.72,0,1);
+}
+.nav-btn:hover {
+  transform: translateY(-1px);
+  background: var(--hi-strong);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.55),
+    0 6px 18px -4px rgba(201,240,80,0.65);
+}
+.nav-btn-arrow {
+  width: 26px; height: 26px;
+  background: var(--ink);
+  color: var(--hi);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.12);
+  transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.nav-btn:hover .nav-btn-arrow { transform: translate(2px, -1px); }
+
+.nav-burger {
+  display: none;
+  width: 40px; height: 40px;
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 999px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+}
+@media (max-width: 980px) { .nav-burger { display: inline-flex; } }
+
+/* Mobile menu overlay */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 200;
+  padding: 100px 24px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 400ms cubic-bezier(0.32,0.72,0,1);
+}
+.mobile-menu.open { opacity: 1; pointer-events: auto; }
+.mobile-menu a {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  text-decoration: none;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 600ms cubic-bezier(0.32,0.72,0,1);
+}
+.mobile-menu.open a { transform: translateY(0); opacity: 1; }
+.mobile-menu.open a:nth-child(1) { transition-delay: 100ms; }
+.mobile-menu.open a:nth-child(2) { transition-delay: 150ms; }
+.mobile-menu.open a:nth-child(3) { transition-delay: 200ms; }
+.mobile-menu.open a:nth-child(4) { transition-delay: 250ms; }
+.mobile-menu.open a:nth-child(5) { transition-delay: 300ms; }
+.mobile-menu.open a:nth-child(6) { transition-delay: 350ms; }
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+}
+.hero-blob.b1 {
+  width: 500px; height: 500px;
+  background: var(--accent);
+  top: -100px; right: -100px;
+  animation: float1 14s ease-in-out infinite;
+}
+.hero-blob.b2 {
+  width: 400px; height: 400px;
+  background: var(--hi);
+  bottom: -120px; left: -80px;
+  opacity: 0.4;
+  animation: float2 18s ease-in-out infinite;
+}
+
+@keyframes float1 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-40px, 30px); }
+}
+@keyframes float2 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(50px, -40px); }
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 700px) 1fr;
+  align-items: center;
+  width: 100%;
+  min-height: 100dvh;
+}
+
+.hero-content {
+  padding-top: 120px;
+  padding-bottom: 60px;
+  padding-right: 48px;
+  padding-left: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-text {
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-photo-wrap {
+  position: relative;
+  align-self: stretch;
+  height: 100%;
+  overflow: visible;
+}
+.hero-photo-wrap-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 8%, rgba(0,0,0,0.85) 16%, black 22%, black 100%),
+    linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 4%, black 10%, black 92%, rgba(0,0,0,0.7) 97%, transparent 100%);
+  mask-image:
+    linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 8%, rgba(0,0,0,0.85) 16%, black 22%, black 100%),
+    linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 4%, black 10%, black 92%, rgba(0,0,0,0.7) 97%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+.hero-photo-wrap-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  transition: transform 1600ms cubic-bezier(0.32,0.72,0,1);
+}
+.hero-photo-wrap:hover .hero-photo-wrap-img img { transform: scale(1.03); }
+
+@media (max-width: 1180px) {
+  .hero-inner { grid-template-columns: minmax(0, 560px) 1fr; }
+  .hero-content { padding-left: 40px; padding-right: 32px; }
+  .hero-text { max-width: 500px; }
+}
+
+@media (max-width: 980px) {
+  .hero { padding: 100px 0 40px; min-height: auto; }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: 32px;
+  }
+  .hero-content {
+    padding: 0 18px;
+    order: 2;
+  }
+  .hero-text { max-width: 100%; }
+  .hero-photo-wrap {
+    order: -1;
+    width: calc(100% - 36px);
+    margin: 0 18px;
+    aspect-ratio: 5/4;
+    max-height: 480px;
+    height: auto;
+    border-radius: 22px;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
+.hero-h1 {
+  font-size: clamp(40px, 5.6vw, 78px);
+  margin: 22px 0 22px;
+}
+.hero-h1 .accent-word {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+
+.hero-lead {
+  font-size: clamp(16px, 1.3vw, 19px);
+  color: var(--ink-2);
+  max-width: 540px;
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  background: var(--surface);
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--ink);
+  border: 1px solid var(--hairline);
+}
+.hero-badge::before {
+  content: '';
+  width: 5px; height: 5px;
+  background: var(--accent);
+  border-radius: 999px;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.hero-micro {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--ink-2);
+  max-width: 460px;
+}
+
+/* HERO media — real photo + floating chips */
+.hero-media {
+  position: relative;
+}
+
+.hero-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5/6;
+  border-radius: 28px;
+  overflow: visible;
+}
+.hero-photo-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 28px;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+.hero-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 1400ms cubic-bezier(0.32,0.72,0,1);
+}
+.hero-photo:hover .hero-photo-frame img { transform: scale(1.03); }
+
+/* Floating chips */
+.hero-chip {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px 9px 11px;
+  background: rgba(255,255,255,0.94);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0A2540;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  z-index: 3;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.9),
+    inset 0 0 0 1px rgba(255,255,255,0.4),
+    0 12px 32px -8px rgba(10,37,64,0.22),
+    0 2px 6px -1px rgba(10,37,64,0.1);
+  animation: chip-float 6s cubic-bezier(0.45,0.05,0.55,0.95) infinite;
+}
+.hero-chip-icon {
+  width: 22px; height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(31,74,255,0.08);
+  color: var(--accent);
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+body[data-theme="1"] .hero-chip-icon { background: rgba(184,145,92,0.12); }
+body[data-theme="3"] .hero-chip-icon { background: rgba(61,107,156,0.1); color: #2840E8; }
+
+/* Dotted leader lines + endpoint dots */
+.hero-chip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  height: 1.5px;
+  background-image: linear-gradient(to right, rgba(255,255,255,0.85) 50%, transparent 50%);
+  background-size: 5px 1.5px;
+  background-repeat: repeat-x;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.25));
+  pointer-events: none;
+}
+.hero-chip::before {
+  content: '';
+  position: absolute;
+  width: 9px; height: 9px;
+  border: 1.8px solid rgba(255,255,255,0.95);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.2);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+  pointer-events: none;
+}
+
+/* Chip individual positions — long leader lines into the photo */
+.hero-chip-1 {
+  top: 11%; left: 9%;
+  animation-delay: 0s;
+}
+.hero-chip-1::after { right: -100px; width: 92px; transform: translateY(-50%); }
+.hero-chip-1::before { right: -108px; top: calc(50% - 4.5px); }
+
+.hero-chip-2 {
+  top: 22%; right: 8%;
+  animation-delay: 1.2s;
+}
+.hero-chip-2::after { left: -110px; width: 100px; transform: translateY(-50%); }
+.hero-chip-2::before { left: -118px; top: calc(50% - 4.5px); }
+
+.hero-chip-3 {
+  top: 38%; left: 6%;
+  animation-delay: 2.4s;
+}
+.hero-chip-3::after { right: -90px; width: 82px; transform: translateY(-50%); }
+.hero-chip-3::before { right: -98px; top: calc(50% - 4.5px); }
+
+.hero-chip-4 {
+  top: 50%; right: 6%;
+  animation-delay: 3.6s;
+}
+.hero-chip-4::after { left: -88px; width: 80px; transform: translateY(-50%); }
+.hero-chip-4::before { left: -96px; top: calc(50% - 4.5px); }
+
+@keyframes chip-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Bottom badges */
+.hero-badge-float {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 18px 11px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  z-index: 4;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.5),
+    0 16px 36px -10px rgba(10,37,64,0.3),
+    0 4px 10px -4px rgba(10,37,64,0.15);
+  animation: chip-float 7s cubic-bezier(0.45,0.05,0.55,0.95) infinite;
+}
+.hero-badge-icon {
+  width: 22px; height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+.hero-badge-rating {
+  background: rgba(255,255,255,0.96);
+  color: #0A2540;
+  top: 16%; left: 8%;
+  animation-delay: 0s;
+}
+.hero-badge-rating b { font-weight: 700; }
+.hero-badge-rating .hero-badge-icon {
+  background: #F5A623;
+  color: #fff;
+}
+.hero-badge-amber {
+  background: #FFF1D0;
+  color: #5C4318;
+  bottom: 24%; right: 12%;
+  animation-delay: 0.6s;
+}
+.hero-badge-amber .hero-badge-icon {
+  background: #F5A623;
+  color: #fff;
+}
+.hero-badge-dark {
+  background: #0A2540;
+  color: #fff;
+  bottom: 8%; right: 8%;
+  animation-delay: 1.8s;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    0 16px 36px -10px rgba(10,37,64,0.45),
+    0 4px 10px -4px rgba(0,0,0,0.2);
+}
+.hero-badge-dark .hero-badge-icon {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+}
+
+@media (max-width: 980px) {
+  .hero { padding: 90px 0 40px; }
+  .hero-media { transform: none; max-width: 520px; margin: 0 auto; }
+}
+
+@media (max-width: 640px) {
+  .hero-photo { aspect-ratio: 4/3; padding: 6px; border-radius: 22px; }
+  .hero-photo-frame { border-radius: 16px; }
+  .hero-chip { font-size: 11px; padding: 6px 10px 6px 8px; gap: 6px; }
+  .hero-chip-icon { width: 18px; height: 18px; }
+  .hero-chip-icon svg { width: 11px; height: 11px; }
+  .hero-chip::after, .hero-chip::before { display: none; }
+  .hero-chip-1 { top: 6%; left: 4%; }
+  .hero-chip-2 { top: 6%; right: 4%; }
+  .hero-chip-3 { top: 26%; left: 4%; }
+  .hero-chip-4 { top: 26%; right: 4%; }
+  .hero-badge-float { font-size: 12px; padding: 8px 14px 8px 10px; gap: 7px; }
+  .hero-badge-icon { width: 18px; height: 18px; }
+  .hero-badge-icon svg { width: 11px; height: 11px; }
+  .hero-badge-amber { bottom: 14%; right: 6%; }
+  .hero-badge-dark { bottom: 4%; right: 4%; }
+}
+
+/* MARQUEE — running tickets */
+.marquee {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  padding: 14px 0;
+  background: var(--surface);
+}
+.marquee-track {
+  display: flex;
+  gap: 40px;
+  animation: scroll-x 38s linear infinite;
+  width: max-content;
+}
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.marquee-item::before {
+  content: '';
+  width: 5px; height: 5px;
+  background: var(--accent);
+  border-radius: 999px;
+}
+@keyframes scroll-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* SECTION */
+.section {
+  padding: 110px 0;
+  position: relative;
+}
+.section-head {
+  margin-bottom: 60px;
+  max-width: 880px;
+}
+.section-h2 {
+  font-size: clamp(34px, 4.6vw, 60px);
+  margin: 18px 0 18px;
+  line-height: 1.04;
+}
+.section-h2 .accent-word {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 400;
+}
+.section-lead {
+  font-size: clamp(15px, 1.2vw, 18px);
+  color: var(--ink-2);
+  max-width: 640px;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .section { padding: 70px 0; }
+  .section-head { margin-bottom: 36px; }
+}
+
+/* FACTS — quick differentiation 4 cards */
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+@media (max-width: 980px) { .facts-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .facts-grid { grid-template-columns: 1fr; } }
+
+.fact-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 24px;
+  padding: 6px;
+  transition: transform 400ms cubic-bezier(0.32,0.72,0,1);
+}
+.fact-card:hover { transform: translateY(-3px); }
+.fact-card-inner {
+  background: var(--bg);
+  border-radius: 19px;
+  padding: 24px 22px 26px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+}
+body[data-theme="2"] .fact-card-inner { box-shadow: inset 0 1px 0 rgba(255,255,255,0.05); }
+
+.fact-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-2);
+  letter-spacing: 0.16em;
+  margin-bottom: 18px;
+}
+.fact-title {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.fact-text {
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.45;
+  margin-top: auto;
+}
+.fact-card:nth-child(2) .fact-card-inner { background: var(--accent-soft); }
+.fact-card:nth-child(3) { transform: translateY(-8px); }
+.fact-card:nth-child(3):hover { transform: translateY(-12px); }
+.fact-card:nth-child(3) .fact-card-inner {
+  background: var(--ink);
+  color: var(--bg);
+}
+.fact-card:nth-child(3) .fact-num,
+.fact-card:nth-child(3) .fact-text { color: rgba(255,255,255,0.6); }
+@media (max-width: 980px) {
+  .fact-card:nth-child(3) { transform: none; }
+}
+
+.facts-micro {
+  margin-top: 28px;
+  font-size: 14px;
+  color: var(--ink-2);
+  max-width: 720px;
+}
+
+/* PAIN SPLIT — bad vs good */
+.pain-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  position: relative;
+}
+@media (max-width: 980px) { .pain-split { grid-template-columns: 1fr; gap: 18px; } }
+
+.pain-card {
+  position: relative;
+  border-radius: 28px;
+  padding: 7px;
+}
+.pain-card-inner {
+  border-radius: 22px;
+  padding: 36px 32px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.pain-card.bad {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  transform: rotate(-0.6deg);
+}
+.pain-card.bad .pain-card-inner {
+  background: var(--bg);
+  border: 1px solid var(--hairline);
+}
+.pain-card.good {
+  background: var(--ink);
+  color: var(--bg);
+  transform: rotate(0.6deg) translateY(-12px);
+}
+.pain-card.good .pain-card-inner {
+  background: var(--ink);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+@media (max-width: 980px) {
+  .pain-card.bad, .pain-card.good { transform: none; }
+}
+.pain-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  align-self: flex-start;
+  margin-bottom: 26px;
+}
+.pain-card.bad .pain-tag { background: var(--surface); color: var(--warn); border: 1px solid var(--hairline); }
+.pain-card.bad .pain-tag::before { content: '✕'; }
+.pain-card.good .pain-tag { background: var(--hi); color: var(--ink); }
+.pain-card.good .pain-tag::before { content: '✓'; }
+
+.pain-h3 {
+  font-size: clamp(22px, 2.4vw, 30px);
+  margin-bottom: 16px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+.pain-card.good .pain-h3 { color: var(--bg); }
+
+.pain-text {
+  font-size: 15px;
+  color: var(--ink-2);
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+.pain-card.good .pain-text { color: rgba(255,255,255,0.7); }
+
+.pain-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pain-bullets li {
+  display: flex;
+  gap: 12px;
+  font-size: 15px;
+  align-items: flex-start;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--surface);
+  line-height: 1.4;
+}
+.pain-card.bad .pain-bullets li {
+  background: var(--surface);
+  color: var(--ink);
+}
+.pain-card.bad .pain-bullets li::before {
+  content: '—';
+  color: var(--warn);
+  flex-shrink: 0;
+  font-weight: 700;
+}
+.pain-card.good .pain-bullets li {
+  background: rgba(255,255,255,0.05);
+  color: var(--bg);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.pain-card.good .pain-bullets li::before {
+  content: '→';
+  color: var(--hi);
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+.pain-quote {
+  margin-top: 30px;
+  padding: 32px;
+  background: var(--accent-soft);
+  border: 1px solid var(--hairline);
+  border-radius: 24px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: clamp(20px, 2.2vw, 28px);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-align: center;
+}
+.pain-quote span { color: var(--accent); }
+
+/* PHOTO CALC steps */
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  align-items: start;
+}
+@media (max-width: 980px) { .calc-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+.calc-features {
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 28px;
+  padding: 7px;
+}
+.calc-features-inner {
+  background: var(--ink);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 22px;
+  padding: 32px 30px;
+}
+.calc-features-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 22px;
+}
+.calc-features-title {
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  margin-bottom: 24px;
+  color: var(--bg);
+  line-height: 1.2;
+}
+.calc-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.calc-features ul li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 14px;
+  font-size: 15px;
+}
+.calc-features ul li::before {
+  content: '+';
+  width: 22px; height: 22px;
+  background: var(--hi);
+  color: var(--ink);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.step-row {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 18px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 20px;
+  transition: transform 400ms cubic-bezier(0.32,0.72,0,1), background 200ms;
+}
+.step-row:hover { transform: translateX(4px); background: var(--accent-soft); }
+.step-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.step-num small {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin-top: 4px;
+}
+.step-body h4 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  letter-spacing: -0.02em;
+}
+.step-body p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.45;
+}
+
+.calc-cta-row {
+  margin-top: 28px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.calc-micro {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--ink-2);
+}
+
+/* KITS — Asymmetric Bento */
+.kits-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(220px, auto);
+  gap: 16px;
+}
+@media (max-width: 980px) { .kits-grid { grid-template-columns: 1fr; } }
+
+.kit {
+  position: relative;
+  border-radius: 24px;
+  padding: 6px;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  transition: transform 400ms cubic-bezier(0.32,0.72,0,1);
+}
+.kit:hover { transform: translateY(-4px); }
+.kit-inner {
+  background: var(--bg);
+  border-radius: 19px;
+  padding: 26px 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.kit-tag {
+  display: inline-flex;
+  align-self: flex-start;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  background: var(--surface);
+  border-radius: 999px;
+  color: var(--ink-2);
+  margin-bottom: 16px;
+}
+.kit-h3 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+.kit-text {
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+.kit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.kit-list li {
+  font-size: 13px;
+  color: var(--ink-2);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.4;
+}
+.kit-list li::before {
+  content: '—';
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.kit-cta {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--ink);
+  font-weight: 500;
+  text-decoration: none;
+  align-self: flex-start;
+}
+.kit-cta::after {
+  content: '→';
+  transition: transform 300ms;
+}
+.kit-cta:hover::after { transform: translateX(4px); }
+
+.kit-1 { grid-column: span 7; grid-row: span 2; }
+.kit-1 .kit-inner { background: var(--ink); color: var(--bg); }
+.kit-1 .kit-h3, .kit-1 .kit-cta { color: var(--bg); }
+.kit-1 .kit-text, .kit-1 .kit-list li { color: rgba(255,255,255,0.7); }
+.kit-1 .kit-tag { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6); }
+.kit-1 .kit-list li::before { color: var(--hi); }
+
+.kit-2 { grid-column: span 5; }
+.kit-3 { grid-column: span 5; }
+.kit-3 .kit-inner { background: var(--accent-soft); }
+.kit-4 { grid-column: span 5; }
+.kit-5 { grid-column: span 4; }
+.kit-6 { grid-column: span 3; }
+.kit-6 .kit-inner { background: var(--hi); }
+.kit-6 .kit-text { color: var(--ink); }
+
+@media (max-width: 1100px) {
+  .kit-1 { grid-column: span 12; grid-row: span 1; }
+  .kit-2, .kit-3, .kit-4 { grid-column: span 6; }
+  .kit-5, .kit-6 { grid-column: span 6; }
+}
+@media (max-width: 760px) {
+  .kit-1, .kit-2, .kit-3, .kit-4, .kit-5, .kit-6 { grid-column: span 1; }
+}
+
+/* SOLUTIONS — bento with image placeholders */
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+@media (max-width: 980px) { .solutions-grid { grid-template-columns: 1fr; } }
+
+.solution {
+  position: relative;
+  border-radius: 24px;
+  padding: 6px;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  overflow: hidden;
+  transition: transform 400ms cubic-bezier(0.32,0.72,0,1);
+}
+.solution:hover { transform: translateY(-4px); }
+.solution-inner {
+  background: var(--bg);
+  border-radius: 19px;
+  padding: 22px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.solution-media {
+  background: var(--surface);
+  border: 1px dashed var(--hairline);
+  border-radius: 14px;
+  padding: 18px;
+  flex: 1;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.solution-media-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.solution-media-tag::before {
+  content: '';
+  width: 5px; height: 5px;
+  background: var(--accent);
+  border-radius: 999px;
+}
+.solution-media-text {
+  font-size: 13px;
+  color: var(--ink-2);
+  line-height: 1.4;
+}
+.solution-media-text strong { color: var(--ink); font-weight: 600; display: block; margin-bottom: 4px; }
+
+.solution-meta-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  align-self: flex-start;
+}
+.solution-h3 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+.solution-text {
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.45;
+}
+.solution-rooms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.solution-room {
+  padding: 4px 10px;
+  background: var(--surface);
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--ink);
+}
+.solution-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--ink);
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: auto;
+}
+.solution-cta::after { content: '→'; transition: transform 300ms; }
+.solution-cta:hover::after { transform: translateX(4px); }
+
+.sol-1 { grid-column: span 5; grid-row: span 2; }
+.sol-1 .solution-inner { background: var(--accent-soft); }
+.sol-1 .solution-media { min-height: 280px; }
+.sol-2 { grid-column: span 7; }
+.sol-3 { grid-column: span 4; }
+.sol-4 { grid-column: span 3; }
+.sol-5 { grid-column: span 4; }
+.sol-5 .solution-inner { background: var(--ink); color: var(--bg); }
+.sol-5 .solution-h3 { color: var(--bg); }
+.sol-5 .solution-text { color: rgba(255,255,255,0.65); }
+.sol-5 .solution-meta-tag { color: rgba(255,255,255,0.5); }
+.sol-5 .solution-cta { color: var(--bg); }
+.sol-5 .solution-media { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); }
+.sol-5 .solution-media-text { color: rgba(255,255,255,0.65); }
+.sol-5 .solution-media-text strong { color: var(--bg); }
+.sol-5 .solution-room { background: rgba(255,255,255,0.08); color: var(--bg); }
+.sol-6 { grid-column: span 8; }
+.sol-6 .solution-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: center; }
+
+@media (max-width: 1100px) {
+  .sol-1 { grid-column: span 12; grid-row: span 1; }
+  .sol-2, .sol-5 { grid-column: span 12; }
+  .sol-3, .sol-4 { grid-column: span 6; }
+  .sol-6 { grid-column: span 12; }
+}
+@media (max-width: 760px) {
+  .sol-1, .sol-2, .sol-3, .sol-4, .sol-5, .sol-6 { grid-column: span 1; }
+  .sol-6 .solution-inner { grid-template-columns: 1fr; }
+}
+
+/* CASES — Z-axis cascade */
+.cases-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.case-row {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 24px;
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 28px;
+  align-items: stretch;
+  transition: transform 500ms cubic-bezier(0.32,0.72,0,1);
+}
+.case-row:nth-child(odd) { transform: rotate(-0.4deg); }
+.case-row:nth-child(even) { transform: rotate(0.4deg); grid-template-columns: 1.1fr 0.9fr; }
+.case-row:nth-child(even) .case-media-wrap { order: 2; }
+.case-row:hover { transform: rotate(0) translateY(-3px); }
+
+@media (max-width: 880px) {
+  .case-row, .case-row:nth-child(odd), .case-row:nth-child(even) {
+    grid-template-columns: 1fr;
+    transform: none;
+  }
+  .case-row:nth-child(even) .case-media-wrap { order: initial; }
+}
+
+.case-media-wrap {
+  background: var(--bg);
+  border: 1px dashed var(--hairline);
+  border-radius: 18px;
+  padding: 24px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.case-media-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.case-media-tag::before {
+  content: '';
+  width: 5px; height: 5px;
+  background: var(--accent);
+  border-radius: 999px;
+}
+.case-media-desc strong { display: block; font-size: 15px; color: var(--ink); margin-bottom: 6px; font-weight: 600; }
+.case-media-desc p { margin: 0; font-size: 13px; color: var(--ink-2); line-height: 1.45; }
+
+.case-body {
+  background: var(--bg);
+  border-radius: 18px;
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+}
+.case-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.case-title {
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 12px;
+  line-height: 1.15;
+}
+.case-text {
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.case-params {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+.case-param {
+  padding: 12px 14px;
+  background: var(--surface);
+  border-radius: 12px;
+}
+.case-param-key {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin-bottom: 4px;
+  display: block;
+}
+.case-param-val {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.cases-after {
+  margin-top: 36px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.cases-after-micro {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--ink-2);
+}
+
+/* TRUST — 6 cards bento */
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(190px, auto);
+  gap: 16px;
+}
+@media (max-width: 980px) { .trust-grid { grid-template-columns: 1fr; } }
+
+.trust-card {
+  position: relative;
+  border-radius: 24px;
+  padding: 6px;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  transition: transform 400ms cubic-bezier(0.32,0.72,0,1);
+}
+.trust-card:hover { transform: translateY(-3px); }
+.trust-card-inner {
+  background: var(--bg);
+  border-radius: 19px;
+  padding: 24px 22px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.trust-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.trust-h4 {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.trust-text {
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.45;
+  margin-bottom: auto;
+}
+.trust-sig {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--hairline);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--ink);
+  font-weight: 500;
+}
+.trust-sig-dot {
+  width: 8px; height: 8px;
+  background: var(--accent);
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.trust-1 { grid-column: span 6; grid-row: span 2; }
+.trust-1 .trust-card-inner { background: var(--ink); color: var(--bg); }
+.trust-1 .trust-h4 { color: var(--bg); }
+.trust-1 .trust-text { color: rgba(255,255,255,0.7); }
+.trust-1 .trust-num { color: var(--hi); }
+.trust-1 .trust-sig {
+  border-top-color: rgba(255,255,255,0.1);
+  color: var(--bg);
+}
+.trust-portrait {
+  margin-top: 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px dashed rgba(255,255,255,0.18);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 200px;
+}
+.trust-portrait-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+.trust-portrait-text strong { display: block; font-size: 14px; color: var(--bg); margin-bottom: 4px; font-weight: 600; }
+.trust-portrait-text p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.45; margin: 0; }
+
+.trust-2 { grid-column: span 3; }
+.trust-3 { grid-column: span 3; }
+.trust-3 .trust-card-inner { background: var(--accent-soft); }
+.trust-4 { grid-column: span 4; }
+.trust-5 { grid-column: span 4; }
+.trust-6 { grid-column: span 4; }
+
+@media (max-width: 1100px) {
+  .trust-1 { grid-column: span 12; grid-row: span 1; }
+  .trust-2, .trust-3 { grid-column: span 6; }
+  .trust-4, .trust-5, .trust-6 { grid-column: span 4; }
+}
+@media (max-width: 760px) {
+  .trust-1, .trust-2, .trust-3, .trust-4, .trust-5, .trust-6 { grid-column: span 1; }
+}
+
+/* PROCESS timeline 7 steps */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+  position: relative;
+}
+.process-grid::before {
+  content: '';
+  position: absolute;
+  top: 26px;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: var(--hairline);
+  z-index: 0;
+}
+@media (max-width: 980px) {
+  .process-grid { grid-template-columns: 1fr; gap: 12px; }
+  .process-grid::before { display: none; }
+}
+.process-step {
+  position: relative;
+  z-index: 1;
+  padding: 18px;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 300ms cubic-bezier(0.32,0.72,0,1);
+}
+.process-step:hover { transform: translateY(-3px); background: var(--accent-soft); }
+.process-marker {
+  width: 36px; height: 36px;
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.process-step:nth-child(4) .process-marker { background: var(--accent); }
+.process-step:last-child .process-marker { background: var(--hi); color: var(--ink); }
+.process-step h5 {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+  line-height: 1.2;
+}
+.process-step p {
+  font-size: 12px;
+  color: var(--ink-2);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* FAQ */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 920px;
+}
+.faq-item {
+  background: var(--bg);
+  border: 1px solid var(--hairline);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: background 200ms;
+}
+.faq-item.open { background: var(--surface); }
+.faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  padding: 22px 24px;
+  background: transparent;
+  border: none;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+  line-height: 1.3;
+}
+.faq-q::after {
+  content: '';
+  width: 32px; height: 32px;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  flex-shrink: 0;
+  background-image: linear-gradient(currentColor, currentColor), linear-gradient(currentColor, currentColor);
+  background-size: 10px 1.5px, 1.5px 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 400ms cubic-bezier(0.32,0.72,0,1), background-size 300ms;
+}
+.faq-item.open .faq-q { color: var(--ink); }
+.faq-item.open .faq-q::after {
+  transform: rotate(45deg);
+  background-color: var(--ink);
+  background-image: linear-gradient(white, white), linear-gradient(white, white);
+  background-size: 10px 1.5px, 1.5px 10px;
+}
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 500ms cubic-bezier(0.32,0.72,0,1);
+}
+.faq-item.open .faq-a { max-height: 400px; }
+.faq-a-body {
+  padding: 0 24px 24px;
+  font-size: 15px;
+  color: var(--ink-2);
+  line-height: 1.55;
+  max-width: 760px;
+}
+
+/* FINAL CTA + FORM */
+.final {
+  position: relative;
+  padding: 110px 0;
+  background: var(--ink);
+  color: var(--bg);
+  overflow: hidden;
+}
+.final::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 500px; height: 500px;
+  background: var(--accent);
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.35;
+  z-index: 0;
+}
+.final::after {
+  content: '';
+  position: absolute;
+  bottom: -200px; left: -100px;
+  width: 400px; height: 400px;
+  background: var(--hi);
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.2;
+  z-index: 0;
+}
+.final-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+@media (max-width: 980px) { .final-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+.final-h2 {
+  font-size: clamp(36px, 5vw, 64px);
+  margin: 22px 0 22px;
+  color: var(--bg);
+  line-height: 1.04;
+}
+.final-h2 .accent-word { font-family: 'Fraunces', serif; font-style: italic; color: var(--hi); font-weight: 400; }
+.final-lead {
+  font-size: clamp(15px, 1.2vw, 18px);
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 32px;
+  max-width: 480px;
+  line-height: 1.5;
+}
+.final-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.final-bullets li {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  font-size: 14px;
+}
+.final-bullets li::before {
+  content: '';
+  width: 18px; height: 18px;
+  background: var(--hi);
+  color: var(--ink);
+  border-radius: 999px;
+  flex-shrink: 0;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%);
+}
+.final-bullets li::before {
+  content: '✓';
+  font-size: 11px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-image: none;
+}
+
+.form {
+  background: var(--bg);
+  color: var(--ink);
+  border-radius: 28px;
+  padding: 7px;
+  box-shadow: 0 40px 90px -30px rgba(0,0,0,0.4);
+}
+.form-inner {
+  background: var(--bg);
+  border-radius: 22px;
+  padding: 32px 30px 30px;
+}
+.form-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin-bottom: 22px;
+}
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.form-row label {
+  font-size: 12px;
+  color: var(--ink-2);
+  font-weight: 500;
+}
+.form-row input,
+.form-row textarea,
+.form-row select {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 15px;
+  color: var(--ink);
+  outline: none;
+  transition: all 200ms;
+  width: 100%;
+}
+.form-row input:focus,
+.form-row textarea:focus,
+.form-row select:focus {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.form-row textarea { resize: vertical; min-height: 80px; font-family: 'Inter Tight', sans-serif; }
+.form-row select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%230A2540' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  padding-right: 40px;
+}
+.form-row-double {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 540px) { .form-row-double { grid-template-columns: 1fr; } }
+
+.form-file {
+  background: var(--surface);
+  border: 1px dashed var(--hairline);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 13px;
+  color: var(--ink-2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 200ms;
+}
+.form-file:hover { background: var(--accent-soft); border-color: var(--accent); }
+.form-file::before {
+  content: '+';
+  width: 22px; height: 22px;
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-submit {
+  width: 100%;
+  margin-top: 18px;
+  padding: 16px 14px 16px 24px;
+  background: var(--hi);
+  color: var(--ink);
+  border: none;
+  border-radius: 16px;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.55),
+    0 8px 24px -6px rgba(201,240,80,0.55);
+  transition: all 400ms cubic-bezier(0.32,0.72,0,1);
+}
+.form-submit:hover {
+  transform: translateY(-2px);
+  background: var(--hi-strong);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.6),
+    0 14px 32px -6px rgba(201,240,80,0.7);
+}
+.form-submit:active { transform: translateY(0) scale(0.985); }
+.form-submit-arrow {
+  width: 32px; height: 32px;
+  background: var(--ink);
+  color: var(--hi);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.14);
+  transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.form-submit:hover .form-submit-arrow { transform: translate(3px, -1px); }
+
+.form-micro {
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--ink-2);
+  line-height: 1.45;
+}
+.form-alt {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--hairline);
+  font-size: 13px;
+  color: var(--ink-2);
+}
+.form-alt a {
+  color: var(--ink);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+}
+
+/* SEO */
+.seo {
+  padding: 90px 0;
+  background: var(--surface);
+}
+.seo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+@media (max-width: 880px) { .seo-grid { grid-template-columns: 1fr; gap: 30px; } }
+.seo-h2 {
+  font-size: clamp(28px, 3.5vw, 42px);
+  margin-bottom: 22px;
+  line-height: 1.1;
+}
+.seo-text {
+  font-size: 15px;
+  color: var(--ink-2);
+  line-height: 1.6;
+  margin: 0 0 18px;
+}
+
+/* FOOTER */
+.footer {
+  padding: 80px 0 40px;
+  background: var(--ink);
+  color: var(--bg);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+@media (max-width: 880px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+@media (max-width: 540px) { .footer-grid { grid-template-columns: 1fr; } }
+
+.footer-brand h4 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--bg);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+.footer-brand p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.5;
+  max-width: 280px;
+  margin: 0 0 20px;
+}
+.footer-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px 10px 18px;
+  background: var(--hi);
+  color: var(--ink);
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: transform 300ms;
+}
+.footer-cta-btn:hover { transform: translateY(-1px); }
+.footer-cta-btn span {
+  width: 24px; height: 24px;
+  background: var(--ink);
+  color: var(--hi);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-col h5 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin: 0 0 16px;
+  font-weight: 500;
+}
+.footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color 200ms;
+}
+.footer-col a:hover { color: var(--bg); }
+
+.footer-bottom {
+  padding-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
+}
+.footer-legal {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+.footer-legal a { color: rgba(255,255,255,0.55); text-decoration: none; }
+.footer-legal a:hover { color: var(--bg); }
+
+/* WhatsApp floating button */
+.wa-float {
+  position: fixed;
+  bottom: 100px; right: 24px;
+  z-index: 95;
+  width: 60px; height: 60px;
+  border-radius: 999px;
+  background: #25D366;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.3),
+    0 12px 28px -6px rgba(37,211,102,0.55),
+    0 4px 10px -2px rgba(37,211,102,0.3);
+  transition: transform 400ms cubic-bezier(0.32,0.72,0,1), box-shadow 400ms;
+  animation: wa-pulse 2.4s ease-in-out infinite;
+}
+.wa-float:hover {
+  transform: translateY(-3px) scale(1.06);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.4),
+    0 18px 36px -6px rgba(37,211,102,0.7),
+    0 6px 14px -2px rgba(37,211,102,0.4);
+}
+.wa-float:active { transform: translateY(0) scale(0.96); }
+.wa-float::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 999px;
+  border: 2px solid #25D366;
+  opacity: 0;
+  animation: wa-ring 2.4s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes wa-pulse {
+  0%, 100% { box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 12px 28px -6px rgba(37,211,102,0.55), 0 4px 10px -2px rgba(37,211,102,0.3), 0 0 0 0 rgba(37,211,102,0.4); }
+  50% { box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 12px 28px -6px rgba(37,211,102,0.55), 0 4px 10px -2px rgba(37,211,102,0.3), 0 0 0 14px rgba(37,211,102,0); }
+}
+@keyframes wa-ring {
+  0% { opacity: 0.6; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.45); }
+}
+@media (max-width: 640px) {
+  .wa-float { width: 52px; height: 52px; bottom: 18px; right: 18px; }
+  .wa-float svg { width: 24px; height: 24px; }
+}
+
+/* Theme switcher */
+.theme-switch {
+  position: fixed;
+  bottom: 22px; left: 22px;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px;
+  background: var(--bg);
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 10px 40px -10px rgba(var(--shadow-color), 0.2);
+}
+body[data-theme="2"] .theme-switch { background: rgba(35,35,42,0.9); }
+.theme-switch-label {
+  padding: 0 10px 0 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ink-2);
+}
+.theme-btn {
+  width: 30px; height: 30px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink);
+  background: var(--surface);
+  transition: all 200ms;
+}
+.theme-btn.active {
+  background: var(--ink);
+  color: var(--bg);
+}
+.theme-btn:hover:not(.active) { background: var(--accent-soft); }
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 800ms cubic-bezier(0.32,0.72,0,1), transform 800ms cubic-bezier(0.32,0.72,0,1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Underline link */
+.under-link {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink-2);
+  padding-bottom: 1px;
+  transition: border-color 200ms;
+}
+.under-link:hover { border-color: var(--accent); }
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body data-theme="3">
+
+<!-- WhatsApp floating button -->
+<a href="https://wa.me/" class="wa-float" aria-label="Написать в WhatsApp" target="_blank" rel="noopener">
+  <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+    <path d="M16.001 4C9.376 4 4 9.376 4 16c0 2.116.554 4.183 1.605 6.001L4 28l6.169-1.587A11.94 11.94 0 0 0 16.001 28C22.625 28 28 22.624 28 16S22.625 4 16.001 4z" fill="currentColor"/>
+    <path d="M22.45 19.276c-.319-.16-1.884-.93-2.176-1.035-.293-.107-.506-.16-.719.16-.213.319-.825 1.034-1.012 1.247-.187.213-.373.24-.692.08-.319-.16-1.346-.496-2.564-1.582-.948-.846-1.587-1.89-1.774-2.21-.187-.319-.02-.491.14-.65.144-.143.319-.373.479-.56.16-.187.213-.32.319-.533.107-.213.054-.4-.026-.56-.08-.16-.719-1.735-.985-2.376-.26-.624-.523-.54-.72-.55-.186-.01-.4-.012-.612-.012-.213 0-.56.08-.852.4-.293.32-1.118 1.092-1.118 2.665 0 1.573 1.144 3.093 1.304 3.306.16.213 2.253 3.44 5.46 4.823.762.33 1.357.527 1.821.674.765.244 1.462.21 2.013.127.614-.092 1.884-.77 2.15-1.514.266-.745.266-1.382.187-1.514-.08-.133-.293-.213-.612-.373z" fill="#25D366"/>
+  </svg>
+</a>
+
+<!-- THEME SWITCHER -->
+<div class="theme-switch" aria-label="Переключение темы">
+  <span class="theme-switch-label">Тема</span>
+  <button class="theme-btn" data-set-theme="1" title="Тёплая редакция">1</button>
+  <button class="theme-btn" data-set-theme="2" title="Тёмная премиум">2</button>
+  <button class="theme-btn active" data-set-theme="3" title="Архитектурная">3</button>
+</div>
+
+<!-- NAV -->
+<div class="nav-shell">
+  <nav class="nav">
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-mark">П·Т</span>
+      <span>Потолок и Точка</span>
+      <span class="nav-logo-desc">Натяжные потолки под ключ в&nbsp;Москве</span>
+    </a>
+    <div class="nav-menu">
+      <a href="tseny.html">Цены</a>
+      <a href="raschet-po-foto.html">Расчёт</a>
+      <a href="novostroyka.html">Новостройка</a>
+      <a href="zamena-potolka.html">Замена</a>
+      <a href="sliv-vody.html" style="background: #C8654A; color: #fff; font-weight: 600;">Слив воды</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a href="tel:+74950000000" class="nav-phone">+7 495 000-00-00</a>
+      <a href="#final" class="nav-btn">
+        <span>Получить расчёт</span>
+        <span class="nav-btn-arrow">↗</span>
+      </a>
+      <button class="nav-burger" id="burger" aria-label="Меню">
+        <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M1 1H15M1 6H15M1 11H15" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+  </nav>
+</div>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="tseny.html" onclick="closeMobile()">Цены</a>
+  <a href="raschet-po-foto.html" onclick="closeMobile()">Расчёт по фото</a>
+  <a href="novostroyka.html" onclick="closeMobile()">Новостройка</a>
+  <a href="zamena-potolka.html" onclick="closeMobile()">Замена потолка</a>
+  <a href="sliv-vody.html" style="color: #C8654A;" onclick="closeMobile()">Слив воды · аварийно</a>
+  <a href="#cases" onclick="closeMobile()">Кейсы</a>
+  <a href="#faq" onclick="closeMobile()">FAQ</a>
+  <a href="#final" onclick="closeMobile()">Получить расчёт</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-blob b1"></div>
+  <div class="hero-blob b2"></div>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-text reveal">
+      <div class="eyebrow">Москва · с 2018 года</div>
+      <h1 class="hero-h1">
+        Натяжные потолки под&nbsp;ключ с <span class="accent-word">честной&nbsp;сметой</span> до&nbsp;монтажа
+      </h1>
+      <p class="hero-lead">
+        Пришлите фото комнаты — подберём 3–5 вариантов потолка, покажем ориентир цены и объясним, что входит в работу. Без рекламного «от 290 ₽/м²», где итоговая сумма появляется только после замера.
+      </p>
+      <div class="hero-badges">
+        <span class="hero-badge">3–5 вариантов по фото</span>
+        <span class="hero-badge">Расчёт за 1 час</span>
+        <span class="hero-badge">Смета фиксируется в договоре</span>
+        <span class="hero-badge">Гарантия на монтаж</span>
+        <span class="hero-badge">Telegram напрямую</span>
+      </div>
+      <div class="hero-ctas">
+        <a href="#final" class="btn-primary">
+          <span class="btn-primary-core">
+            <span class="btn-primary-text">Получить расчёт по фото за 1 час</span>
+            <span class="btn-primary-arrow">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 11L11 3M11 3H4M11 3V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </span>
+        </a>
+        <a href="https://t.me/" class="btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 4L11 13" stroke="currentColor" stroke-width="1.5"/><path d="M22 4L15 22L11 13L2 9L22 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <span>Написать в Telegram</span>
+        </a>
+      </div>
+        <p class="hero-micro">
+          Можно без замера: пришлите фото или план комнаты, а мы скажем примерный бюджет и варианты решения.
+        </p>
+      </div>
+    </div>
+    <div class="hero-photo-wrap reveal">
+      <div class="hero-photo-wrap-img">
+        <img src="right_photo_cropped%20%281%29.png" alt="Натяжной потолок в современной гостиной — матовое полотно, световые линии, теневой профиль" loading="eager">
+      </div>
+
+      <span class="hero-badge-float hero-badge-rating">
+        <span class="hero-badge-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1.5L10 6L14.5 6.6L11.3 9.8L12 14.3L8 12.2L4 14.3L4.7 9.8L1.5 6.6L6 6L8 1.5Z" fill="currentColor"/></svg>
+        </span>
+        <span><b>4,9</b> · 240+ объектов</span>
+      </span>
+      <span class="hero-badge-float hero-badge-amber">
+        <span class="hero-badge-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M9 1L3 9H8L7 15L13 7H8L9 1Z" fill="currentColor"/></svg>
+        </span>
+        Монтаж за 1 день
+      </span>
+      <span class="hero-badge-float hero-badge-dark">
+        <span class="hero-badge-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1.5L2.5 3.3V8.2C2.5 11 5 13.3 8 14.5C11 13.3 13.5 11 13.5 8.2V3.3L8 1.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M5.5 8L7 9.5L10.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Работаем по договору
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="marquee-item">Честная смета до монтажа</span>
+    <span class="marquee-item">Расчёт по фото за 1 час</span>
+    <span class="marquee-item">3–5 вариантов потолка</span>
+    <span class="marquee-item">Москва и область</span>
+    <span class="marquee-item">Гарантия на работу</span>
+    <span class="marquee-item">Telegram · WhatsApp</span>
+    <span class="marquee-item">Договор и фиксация цены</span>
+    <span class="marquee-item">Честная смета до монтажа</span>
+    <span class="marquee-item">Расчёт по фото за 1 час</span>
+    <span class="marquee-item">3–5 вариантов потолка</span>
+    <span class="marquee-item">Москва и область</span>
+    <span class="marquee-item">Гарантия на работу</span>
+    <span class="marquee-item">Telegram · WhatsApp</span>
+    <span class="marquee-item">Договор и фиксация цены</span>
+  </div>
+</div>
+
+<!-- FACTS -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Чем отличаемся</div>
+      <h2 class="section-h2">Не продаём «м² от&nbsp;290 ₽». <br>Считаем готовый <span class="accent-word">потолок под&nbsp;ключ</span>.</h2>
+      <p class="section-lead">
+        Цена за квадратный метр почти никогда не показывает итоговую стоимость. В реальной смете есть профиль, монтаж, светильники, углы, трубы, карнизы и другие детали. Поэтому мы сразу считаем не «голое полотно», а готовый потолок.
+      </p>
+    </div>
+
+    <div class="facts-grid">
+      <div class="fact-card reveal">
+        <div class="fact-card-inner">
+          <div class="fact-num">01 · принцип</div>
+          <h3 class="fact-title">Не «от&nbsp;290 ₽/м²»</h3>
+          <p class="fact-text">Считаем итоговую стоимость потолка, а не рекламную цифру для объявления.</p>
+        </div>
+      </div>
+      <div class="fact-card reveal">
+        <div class="fact-card-inner">
+          <div class="fact-num">02 · скорость</div>
+          <h3 class="fact-title">Расчёт по фото за&nbsp;1&nbsp;час</h3>
+          <p class="fact-text">Можно понять порядок бюджета ещё до того, как приезжает замерщик.</p>
+        </div>
+      </div>
+      <div class="fact-card reveal">
+        <div class="fact-card-inner">
+          <div class="fact-num">03 · выбор</div>
+          <h3 class="fact-title">3–5 вариантов</h3>
+          <p class="fact-text">Покажем базовый, оптимальный и более красивый вариант — с разницей по цене.</p>
+        </div>
+      </div>
+      <div class="fact-card reveal">
+        <div class="fact-card-inner">
+          <div class="fact-num">04 · договор</div>
+          <h3 class="fact-title">Фиксация в&nbsp;договоре</h3>
+          <p class="fact-text">После замера цена и состав работ прописываются письменно. Доплат «по ходу» нет.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="facts-micro reveal">
+      Так клиент заранее понимает, за что платит, и не сталкивается с неожиданными доплатами в день монтажа.
+    </p>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="section" style="padding-top: 0;">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Главная боль рынка</div>
+      <h2 class="section-h2">В рекламе одна цена, на&nbsp;замере — другая. Мы&nbsp;строим работу <span class="accent-word">наоборот</span>.</h2>
+      <p class="section-lead">
+        Главный страх клиента в натяжных потолках — увидеть красивую цену в рекламе, вызвать замерщика, а потом получить смету в 2–4 раза выше. Мы не хотим играть в эту игру.
+      </p>
+    </div>
+
+    <div class="pain-split">
+      <div class="pain-card bad reveal">
+        <div class="pain-card-inner">
+          <div class="pain-tag">Как часто бывает</div>
+          <h3 class="pain-h3">Цена «от&nbsp;290 ₽/м²»</h3>
+          <p class="pain-text">В объявлении показывают минимальную цену за полотно. Но потом отдельно считают монтаж, профиль, обход труб, углы, светильники, доставку и другие работы.</p>
+          <ul class="pain-bullets">
+            <li>В рекламе — одна цифра</li>
+            <li>На замере — другая сумма</li>
+            <li>Клиент уже потратил время</li>
+            <li>Становится неловко отказаться</li>
+            <li>Цена ощущается как ловушка</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pain-card good reveal">
+        <div class="pain-card-inner">
+          <div class="pain-tag">Как у нас</div>
+          <h3 class="pain-h3">Честная смета до&nbsp;монтажа</h3>
+          <p class="pain-text">Мы сначала разбираем вашу ситуацию: площадь, свет, карнизы, трубы, тип полотна и сложность монтажа. Потом показываем варианты и объясняем, из чего складывается цена.</p>
+          <ul class="pain-bullets">
+            <li>Считаем весь потолок под ключ</li>
+            <li>Показываем несколько вариантов</li>
+            <li>Объясняем, что входит в цену</li>
+            <li>Предупреждаем, что может изменить смету</li>
+            <li>Фиксируем финальную стоимость в договоре</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="pain-quote reveal">
+      Наша задача — не заманить дешёвой цифрой, а заранее <span>показать реальный бюджет</span>.
+    </div>
+  </div>
+</section>
+
+<!-- CALC -->
+<section class="section" id="calc" style="background: var(--surface);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Расчёт по фото</div>
+      <h2 class="section-h2">Пришлите фото комнаты — получите <span class="accent-word">3–5 вариантов</span> потолка</h2>
+      <p class="section-lead">
+        Не нужно сразу вызывать замерщика, чтобы понять порядок цены. Отправьте фото комнаты или план квартиры — мы предложим несколько решений под ваш бюджет и объясним, чем они отличаются.
+      </p>
+    </div>
+
+    <div class="calc-grid">
+      <div class="reveal">
+        <div class="steps-list">
+          <div class="step-row">
+            <div class="step-num">01<small>Шаг</small></div>
+            <div class="step-body">
+              <h4>Вы отправляете фото или план</h4>
+              <p>Подойдут обычные фото на телефон: общий вид комнаты, окна, углы, трубы, место под свет и карниз.</p>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num">02<small>Шаг</small></div>
+            <div class="step-body">
+              <h4>Мы задаём 3–4 вопроса</h4>
+              <p>Уточним площадь, тип помещения, нужен ли свет, скрытый карниз, подсветка или обычный ровный потолок.</p>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num">03<small>Шаг</small></div>
+            <div class="step-body">
+              <h4>Подбираем варианты</h4>
+              <p>Например: базовый, оптимальный, со скрытым карнизом, с подсветкой или премиальное решение.</p>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num">04<small>Шаг</small></div>
+            <div class="step-body">
+              <h4>Показываем смету</h4>
+              <p>Вы видите не абстрактную цену за м², а понятный состав работ: что входит, что считается отдельно и от чего зависит финальная стоимость.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-cta-row">
+          <a href="#final" class="btn-primary">
+            <span class="btn-primary-core">
+              <span class="btn-primary-text">Рассчитать потолок по фото</span>
+              <span class="btn-primary-arrow">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 11L11 3M11 3H4M11 3V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </span>
+          </a>
+        </div>
+        <p class="calc-micro">Это бесплатно и ни к чему не обязывает. Если вариант подойдёт — договоримся о замере.</p>
+      </div>
+
+      <div class="calc-features reveal">
+        <div class="calc-features-inner">
+          <div class="calc-features-label">Что вы получите</div>
+          <h3 class="calc-features-title">Не одна цифра в&nbsp;ответе, а&nbsp;понятная картина</h3>
+          <ul>
+            <li>Ориентир стоимости</li>
+            <li>3–5 вариантов потолка</li>
+            <li>Рекомендации по свету</li>
+            <li>Подсказку по карнизу</li>
+            <li>Понимание, что входит в смету</li>
+            <li>Совет, где можно сэкономить, а где лучше не экономить</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KITS -->
+<section class="section" id="kits">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Комплекты по ситуациям</div>
+      <h2 class="section-h2">Выберите не «м²», а&nbsp;<span class="accent-word">вашу ситуацию</span></h2>
+      <p class="section-lead">
+        Потолок в новостройку, замена старого полотна и дизайнерский проект — это разные задачи. Поэтому мы считаем потолки не одной общей формулой, а по конкретному сценарию.
+      </p>
+    </div>
+
+    <div class="kits-grid">
+      <div class="kit kit-1 reveal">
+        <div class="kit-inner">
+          <div class="kit-tag">01 · Новостройка</div>
+          <h3 class="kit-h3">Потолки в&nbsp;новостройку</h3>
+          <p class="kit-text">Для квартир после сдачи: поможем выбрать потолки по комнатам, учтём свет, скрытые карнизы и этапы ремонта.</p>
+          <ul class="kit-list">
+            <li>Расчёт для 1/2/3-комнатной квартиры</li>
+            <li>Советы по этапам ремонта</li>
+            <li>Варианты со светом и карнизами</li>
+            <li>Смета до монтажа</li>
+          </ul>
+          <a href="#final" class="kit-cta">Посчитать квартиру</a>
+        </div>
+      </div>
+
+      <div class="kit kit-2 reveal">
+        <div class="kit-inner">
+          <div class="kit-tag">02 · Замена</div>
+          <h3 class="kit-h3">Замена потолка в&nbsp;жилой квартире</h3>
+          <p class="kit-text">Аккуратно заменим старое полотно, защитим мебель и отделку, обновим светильники и уберём после монтажа.</p>
+          <ul class="kit-list">
+            <li>Демонтаж старого потолка</li>
+            <li>Новое полотно</li>
+            <li>Замена или перенос светильников</li>
+            <li>Аккуратная работа в жилой квартире</li>
+          </ul>
+          <a href="#final" class="kit-cta">Оценить замену по фото</a>
+        </div>
+      </div>
+
+      <div class="kit kit-3 reveal">
+        <div class="kit-inner">
+          <div class="kit-tag">03 · Срочно</div>
+          <h3 class="kit-h3">Слив воды и&nbsp;срочный ремонт</h3>
+          <p class="kit-text">Если затопили, порезали полотно или потолок провис — подскажем по фото, что делать, и приедем на ремонт.</p>
+          <ul class="kit-list">
+            <li>Слив воды</li>
+            <li>Восстановление полотна</li>
+            <li>Замена повреждённого участка</li>
+            <li>Срочный контакт с мастером</li>
+          </ul>
+          <a href="https://t.me/" class="kit-cta">Написать мастеру</a>
+        </div>
+      </div>
+
+      <div class="kit kit-4 reveal">
+        <div class="kit-inner">
+          <div class="kit-tag">04 · Премиум</div>
+          <h3 class="kit-h3">Премиальные потолки</h3>
+          <p class="kit-text">Для дизайнерских квартир, коттеджей и сложных проектов: теневые профили, скрытые карнизы, трековый свет и аккуратные узлы.</p>
+          <ul class="kit-list">
+            <li>Работа по проекту</li>
+            <li>Сложный свет</li>
+            <li>Теневые и бесщелевые решения</li>
+            <li>Контроль монтажа</li>
+          </ul>
+          <a href="#final" class="kit-cta">Получить КП по проекту</a>
+        </div>
+      </div>
+
+      <div class="kit kit-5 reveal">
+        <div class="kit-inner">
+          <div class="kit-tag">05 · Дизайнерам</div>
+          <h3 class="kit-h3">Для дизайнеров интерьера</h3>
+          <p class="kit-text">Работаем по ТЗ, не уводим клиента, быстро считаем КП и аккуратно закрываем монтаж без самодеятельности.</p>
+          <ul class="kit-list">
+            <li>КП по проекту</li>
+            <li>Партнёрские условия</li>
+            <li>Техническая проверка узлов</li>
+            <li>Гарантия не обходить дизайнера</li>
+          </ul>
+          <a href="#final" class="kit-cta">Обсудить проект</a>
+        </div>
+      </div>
+
+      <div class="kit kit-6 reveal">
+        <div class="kit-inner">
+          <div class="kit-tag">06 · Не знаю</div>
+          <h3 class="kit-h3">Подбор по&nbsp;фото</h3>
+          <p class="kit-text">Пришлите фото комнаты — мы скажем, какой потолок подойдёт по бюджету, стилю и техническим условиям.</p>
+          <a href="#final" class="kit-cta">Получить подбор</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS -->
+<section class="section" style="background: var(--surface);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Популярные решения</div>
+      <h2 class="section-h2">Не просто белое полотно — <span class="accent-word">потолок под&nbsp;ваш интерьер</span></h2>
+      <p class="section-lead">
+        На расчёте покажем, какие решения подойдут именно вашей комнате: от спокойного матового потолка до теневого профиля, скрытого карниза и подсветки.
+      </p>
+    </div>
+
+    <div class="solutions-grid">
+      <div class="solution sol-1 reveal">
+        <div class="solution-inner">
+          <div class="solution-media">
+            <div class="solution-media-tag">Фото · комната с матовым потолком</div>
+            <div class="solution-media-text">
+              <strong>Спальня или гостиная с ровным матовым полотном</strong>
+              Дневной свет, нейтральные стены, фактура без бликов, акцент на потолок. Формат 3:4. Реальный кадр объекта, не сток.
+            </div>
+          </div>
+          <div class="solution-meta-tag">01 · Базовое решение</div>
+          <h3 class="solution-h3">Матовый потолок</h3>
+          <p class="solution-text">Спокойный вариант без бликов. Выглядит как ровный окрашенный потолок и подходит почти для любой комнаты.</p>
+          <div class="solution-rooms">
+            <span class="solution-room">Спальня</span>
+            <span class="solution-room">Детская</span>
+            <span class="solution-room">Гостиная</span>
+            <span class="solution-room">Новостройка</span>
+          </div>
+          <a href="#final" class="solution-cta">Подробнее про матовые потолки</a>
+        </div>
+      </div>
+
+      <div class="solution sol-2 reveal">
+        <div class="solution-inner">
+          <div class="solution-media">
+            <div class="solution-media-tag">Фото · сатиновое полотно</div>
+            <div class="solution-media-text">
+              <strong>Светлая комната с мягким отражением</strong>
+              Спальня или кухня-гостиная, потолок ловит свет окна, фактура чуть выраженнее матовой. Кадр в светлое время.
+            </div>
+          </div>
+          <div class="solution-meta-tag">02 · Альтернатива матовому</div>
+          <h3 class="solution-h3">Сатиновый потолок</h3>
+          <p class="solution-text">Мягкое отражение света и чуть более выразительная фактура. Хорошо смотрится в светлых интерьерах.</p>
+          <div class="solution-rooms">
+            <span class="solution-room">Спальня</span>
+            <span class="solution-room">Гостиная</span>
+            <span class="solution-room">Кабинет</span>
+            <span class="solution-room">Кухня-гостиная</span>
+          </div>
+          <a href="#final" class="solution-cta">Сравнить сатин с матовым</a>
+        </div>
+      </div>
+
+      <div class="solution sol-3 reveal">
+        <div class="solution-inner">
+          <div class="solution-media">
+            <div class="solution-media-tag">Фото · теневой стык</div>
+            <div class="solution-media-text">
+              <strong>Стык потолка и стены без плинтуса</strong>
+              Современный интерьер, чистая геометрия, узкий зазор по периметру. Макро-план угла.
+            </div>
+          </div>
+          <div class="solution-meta-tag">03 · Дизайнерское</div>
+          <h3 class="solution-h3">Теневой профиль</h3>
+          <p class="solution-text">Современный стык без потолочного плинтуса. Потолок выглядит чище и дороже, особенно в минималистичных интерьерах.</p>
+          <a href="#final" class="solution-cta">Рассчитать теневой потолок</a>
+        </div>
+      </div>
+
+      <div class="solution sol-4 reveal">
+        <div class="solution-inner">
+          <div class="solution-media">
+            <div class="solution-media-tag">Фото · скрытый карниз</div>
+            <div class="solution-media-text">
+              <strong>Шторы выходят прямо из потолка</strong>
+              Гостиная с панорамным окном, штора как из ниши, без видимой шины.
+            </div>
+          </div>
+          <div class="solution-meta-tag">04 · Для штор</div>
+          <h3 class="solution-h3">Скрытый карниз</h3>
+          <p class="solution-text">Шторы выходят прямо из потолка, без видимой шины. Интерьер выглядит чище и аккуратнее.</p>
+          <a href="#final" class="solution-cta">Рассчитать нишу под шторы</a>
+        </div>
+      </div>
+
+      <div class="solution sol-5 reveal">
+        <div class="solution-inner">
+          <div class="solution-media">
+            <div class="solution-media-tag">Фото · потолок с подсветкой</div>
+            <div class="solution-media-text">
+              <strong>Световые линии или парящий контур</strong>
+              Вечерний кадр гостиной или спальни. Мягкая подсветка по периметру, потолок «парит».
+            </div>
+          </div>
+          <div class="solution-meta-tag">05 · Свет как сценарий</div>
+          <h3 class="solution-h3">Потолок с&nbsp;подсветкой</h3>
+          <p class="solution-text">Парящий контур, световые линии или мягкая подсветка помогают сделать не просто потолок, а сценарии света.</p>
+          <div class="solution-rooms">
+            <span class="solution-room">Гостиная</span>
+            <span class="solution-room">Спальня</span>
+            <span class="solution-room">Коридор</span>
+          </div>
+          <a href="#final" class="solution-cta">Подобрать подсветку</a>
+        </div>
+      </div>
+
+      <div class="solution sol-6 reveal">
+        <div class="solution-inner">
+          <div>
+            <div class="solution-meta-tag">06 · Подбор</div>
+            <h3 class="solution-h3" style="margin-top: 10px;">Покажем варианты по&nbsp;фото</h3>
+            <p class="solution-text">Не нужно разбираться в профилях и полотнах. Пришлите фото — мы покажем, какие решения подойдут и сколько они могут стоить.</p>
+            <a href="#final" class="solution-cta" style="margin-top: 16px;">Получить 3 варианта</a>
+          </div>
+          <div class="solution-media" style="min-height: 180px;">
+            <div class="solution-media-tag">Фото · ваша комната</div>
+            <div class="solution-media-text">
+              <strong>Любой кадр на телефон</strong>
+              Общий вид, углы, окна, трубы. Можно план квартиры с размерами.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section class="section" id="cases">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Кейсы</div>
+      <h2 class="section-h2">Реальные потолки: <span class="accent-word">задача, решение, цена</span></h2>
+      <p class="section-lead">
+        Показываем не просто красивые фото, а что было нужно клиенту, какое решение выбрали, сколько занял монтаж и какой был порядок бюджета.
+      </p>
+    </div>
+
+    <div class="cases-stack">
+      <div class="case-row reveal">
+        <div class="case-media-wrap">
+          <div class="case-media-tag">Фото до / после · кейс 01</div>
+          <div class="case-media-desc">
+            <strong>Кухня-гостиная 18 м² после монтажа</strong>
+            <p>Ровное матовое полотно, 8 встроенных светильников по сетке, скрытый карниз под шторы у окна. Кадр днём, без люстры, формат 4:5.</p>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-num">Кейс 01 · Новостройка</div>
+          <h3 class="case-title">Кухня-гостиная в&nbsp;новостройке</h3>
+          <p class="case-text">Клиенту нужен был ровный потолок без люстры, с аккуратным светом и скрытым карнизом под шторы.</p>
+          <div class="case-params">
+            <div class="case-param"><span class="case-param-key">Площадь</span><span class="case-param-val">18 м²</span></div>
+            <div class="case-param"><span class="case-param-key">Срок</span><span class="case-param-val">1 день</span></div>
+            <div class="case-param" style="grid-column: span 2;"><span class="case-param-key">Решение</span><span class="case-param-val">Матовое полотно + 8 светильников + скрытый карниз</span></div>
+            <div class="case-param" style="grid-column: span 2; background: var(--accent-soft);"><span class="case-param-key">Бюджет</span><span class="case-param-val">от XX&nbsp;XXX&nbsp;₽</span></div>
+          </div>
+          <a href="#final" class="btn-secondary" style="align-self: flex-start;">Смотреть кейс →</a>
+        </div>
+      </div>
+
+      <div class="case-row reveal">
+        <div class="case-media-wrap">
+          <div class="case-media-tag">Фото до / после · кейс 02</div>
+          <div class="case-media-desc">
+            <strong>Жилая комната до и после замены полотна</strong>
+            <p>До: пожелтевшее провисшее полотно, старые точечные светильники. После: новое матовое полотно, обновлённые светильники, чистый край.</p>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-num">Кейс 02 · Замена</div>
+          <h3 class="case-title">Замена потолка в&nbsp;жилой квартире</h3>
+          <p class="case-text">Старое полотно потеряло вид, а клиент боялся испортить обои и мебель. Мы аккуратно демонтировали потолок и поставили новый.</p>
+          <div class="case-params">
+            <div class="case-param"><span class="case-param-key">Площадь</span><span class="case-param-val">14 м²</span></div>
+            <div class="case-param"><span class="case-param-key">Срок</span><span class="case-param-val">1 день</span></div>
+            <div class="case-param" style="grid-column: span 2;"><span class="case-param-key">Решение</span><span class="case-param-val">Демонтаж + новое полотно + замена светильников</span></div>
+            <div class="case-param" style="grid-column: span 2; background: var(--accent-soft);"><span class="case-param-key">Бюджет</span><span class="case-param-val">от XX&nbsp;XXX&nbsp;₽</span></div>
+          </div>
+          <a href="#final" class="btn-secondary" style="align-self: flex-start;">Смотреть кейс →</a>
+        </div>
+      </div>
+
+      <div class="case-row reveal">
+        <div class="case-media-wrap">
+          <div class="case-media-tag">Фото до / после · кейс 03</div>
+          <div class="case-media-desc">
+            <strong>Гостиная с теневым профилем по периметру</strong>
+            <p>Современный интерьер, чистый стык со стенами без плинтуса, трековый свет вдоль одной из стен. Кадр в дневное время, формат 4:5.</p>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-num">Кейс 03 · Теневой профиль</div>
+          <h3 class="case-title">Потолок с&nbsp;теневым профилем</h3>
+          <p class="case-text">Для современного интерьера нужен был чистый контур без потолочного плинтуса и аккуратный стык со стенами.</p>
+          <div class="case-params">
+            <div class="case-param"><span class="case-param-key">Площадь</span><span class="case-param-val">22 м²</span></div>
+            <div class="case-param"><span class="case-param-key">Срок</span><span class="case-param-val">2 дня</span></div>
+            <div class="case-param" style="grid-column: span 2;"><span class="case-param-key">Решение</span><span class="case-param-val">Теневой профиль + матовое полотно + трековый свет</span></div>
+            <div class="case-param" style="grid-column: span 2; background: var(--accent-soft);"><span class="case-param-key">Бюджет</span><span class="case-param-val">от XX&nbsp;XXX&nbsp;₽</span></div>
+          </div>
+          <a href="#final" class="btn-secondary" style="align-self: flex-start;">Смотреть кейс →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="cases-after reveal">
+      <a href="#cases" class="btn-primary">
+        <span class="btn-primary-core">
+          <span class="btn-primary-text">Смотреть все работы</span>
+          <span class="btn-primary-arrow">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 11L11 3M11 3H4M11 3V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </span>
+      </a>
+      <a href="#final" class="btn-secondary">Хочу похожий потолок</a>
+    </div>
+    <p class="cases-after-micro reveal">Если понравился пример — пришлите его нам, и мы посчитаем похожее решение для вашей комнаты.</p>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="section" id="trust" style="background: var(--surface);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Почему нам доверяют</div>
+      <h2 class="section-h2">За работу отвечают <span class="accent-word">конкретные люди</span>, а не безымянный сайт</h2>
+      <p class="section-lead">
+        Мы показываем, кто считает смету, кто приезжает на замер, кто монтирует и кто отвечает за результат после монтажа.
+      </p>
+    </div>
+
+    <div class="trust-grid">
+      <div class="trust-card trust-1 reveal">
+        <div class="trust-card-inner">
+          <div class="trust-num">01 · Личная ответственность</div>
+          <h4 class="trust-h4">Лицо владельца</h4>
+          <p class="trust-text">Вы можете написать напрямую ответственному за проект. Если возникнет вопрос по смете, срокам или монтажу — не придётся искать «кого-нибудь из компании».</p>
+          <div class="trust-portrait">
+            <div class="trust-portrait-tag">Фото · портрет владельца</div>
+            <div class="trust-portrait-text">
+              <strong>Реальный портрет руководителя</strong>
+              <p>Студийный или средовой кадр в мастерской / на объекте, 3/4 поворот, нейтральный фон, спокойное выражение. Формат 4:5.</p>
+            </div>
+          </div>
+          <div class="trust-sig">
+            <span class="trust-sig-dot"></span>
+            <a href="https://t.me/" style="color: inherit; text-decoration: none; border-bottom: 1px solid var(--hi);">Telegram владельца — @potolok_i_tochka</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="trust-card trust-2 reveal">
+        <div class="trust-card-inner">
+          <div class="trust-num">02 · Документы</div>
+          <h4 class="trust-h4">Договор и&nbsp;смета</h4>
+          <p class="trust-text">После замера фиксируем цену, материалы, сроки и состав работ. Это защищает клиента от неожиданных доплат в день монтажа.</p>
+        </div>
+      </div>
+
+      <div class="trust-card trust-3 reveal">
+        <div class="trust-card-inner">
+          <div class="trust-num">03 · Гарантия</div>
+          <h4 class="trust-h4">Гарантия на&nbsp;монтаж</h4>
+          <p class="trust-text">Важно не только качество полотна, но и то, как его установили. Поэтому отдельно говорим о гарантии на монтажные работы.</p>
+        </div>
+      </div>
+
+      <div class="trust-card trust-4 reveal">
+        <div class="trust-card-inner">
+          <div class="trust-num">04 · Материалы</div>
+          <h4 class="trust-h4">Понятные материалы</h4>
+          <p class="trust-text">Объясняем, какое полотно используем, чем отличаются варианты и почему один потолок может стоить дороже другого.</p>
+        </div>
+      </div>
+
+      <div class="trust-card trust-5 reveal">
+        <div class="trust-card-inner">
+          <div class="trust-num">05 · Команда</div>
+          <h4 class="trust-h4">Реальные бригады</h4>
+          <p class="trust-text">На объект приезжают проверенные монтажники, а не случайные мастера «с объявления». Работа проходит по понятным этапам.</p>
+        </div>
+      </div>
+
+      <div class="trust-card trust-6 reveal">
+        <div class="trust-card-inner">
+          <div class="trust-num">06 · Приёмка</div>
+          <h4 class="trust-h4">Фотоотчёт и&nbsp;приёмка</h4>
+          <p class="trust-text">После монтажа проверяем результат, показываем важные детали и объясняем, как ухаживать за потолком.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Как проходит работа</div>
+      <h2 class="section-h2">Путь от&nbsp;фото до&nbsp;<span class="accent-word">готового потолка</span></h2>
+      <p class="section-lead">
+        Вы заранее понимаете, что будет после заявки: когда получите расчёт, когда нужен замер, где фиксируется цена и как проходит монтаж.
+      </p>
+    </div>
+
+    <div class="process-grid reveal">
+      <div class="process-step">
+        <div class="process-marker">1</div>
+        <h5>Заявка</h5>
+        <p>Вы оставляете контакт или пишете в Telegram / WhatsApp.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-marker">2</div>
+        <h5>Фото или план</h5>
+        <p>Присылаете фото комнаты, план квартиры или просто описываете задачу.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-marker">3</div>
+        <h5>Предварительная смета</h5>
+        <p>Мы показываем 3–5 вариантов и объясняем, что входит в каждый.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-marker">4</div>
+        <h5>Замер</h5>
+        <p>Мастер проверяет размеры, углы, трубы, свет, карниз и нюансы.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-marker">5</div>
+        <h5>Договор</h5>
+        <p>Фиксируем финальную цену, материалы, сроки и гарантию.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-marker">6</div>
+        <h5>Монтаж</h5>
+        <p>Приезжает бригада, аккуратно монтирует потолок и сдаёт работу.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-marker">7</div>
+        <h5>Приёмка</h5>
+        <p>Вы проверяете результат, получаете документы и рекомендации по уходу.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="background: var(--surface);">
+  <div class="wrap-narrow">
+    <div class="section-head reveal">
+      <div class="eyebrow">FAQ</div>
+      <h2 class="section-h2">Вопросы, которые задают <span class="accent-word">до заявки</span></h2>
+      <p class="section-lead">
+        Собрали короткие честные ответы на главные сомнения: цена, сроки, запах, доплаты, гарантия и предоплата.
+      </p>
+    </div>
+
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q">Почему вы не пишете просто цену за&nbsp;м²?</button>
+        <div class="faq-a"><div class="faq-a-body">Потому что цена за м² не показывает итоговую стоимость. На смету влияют профиль, монтаж, светильники, углы, трубы, скрытые карнизы, демонтаж и сложность объекта. Мы считаем готовый потолок, а не красивую цифру для рекламы.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Можно ли узнать цену без&nbsp;замера?</button>
+        <div class="faq-a"><div class="faq-a-body">Да. По фото или плану мы можем дать предварительный расчёт и показать варианты. Финальная цена фиксируется после замера, когда мастер проверит размеры и технические нюансы.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Сколько занимает монтаж?</button>
+        <div class="faq-a"><div class="faq-a-body">Одна комната обычно занимает несколько часов. Квартира — от одного дня. Точный срок зависит от площади, количества светильников, карнизов, профиля и сложности монтажа.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Будет ли запах после установки?</button>
+        <div class="faq-a"><div class="faq-a-body">После установки ПВХ-полотна кратковременный запах возможен, особенно если помещение плохо проветривается. Мы заранее подскажем, какой материал лучше выбрать для спальни, детской, кухни или гостиной.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Вы даёте гарантию?</button>
+        <div class="faq-a"><div class="faq-a-body">Да. Гарантия прописывается в документах. Важно разделять гарантию на полотно и гарантию на монтаж — мы объясняем оба пункта до начала работ.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Нужно ли платить предоплату?</button>
+        <div class="faq-a"><div class="faq-a-body">Условия оплаты зависят от выбранного комплекта и материалов. Все суммы, сроки и состав работ фиксируются до монтажа, чтобы не было неожиданных доплат.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Можно ли сделать потолок, как на&nbsp;фото из Pinterest?</button>
+        <div class="faq-a"><div class="faq-a-body">Да, но сначала нужно проверить технические условия: высоту потолка, стены, свет, карниз, профиль и бюджет. Пришлите пример — скажем, как адаптировать его под вашу комнату.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Что делать, если я не знаю, какой потолок выбрать?</button>
+        <div class="faq-a"><div class="faq-a-body">Просто пришлите фото комнаты. Мы предложим несколько вариантов: спокойный базовый, оптимальный и более дизайнерский. Вы увидите разницу по виду и цене.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final" id="final">
+  <div class="wrap">
+    <div class="final-grid">
+      <div class="reveal">
+        <div class="eyebrow" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7);">Финальный шаг</div>
+        <h2 class="final-h2">Пришлите фото комнаты — посчитаем потолок <span class="accent-word">до замера</span></h2>
+        <p class="final-lead">Покажем 3–5 вариантов, объясним разницу по цене и скажем, что может повлиять на итоговую смету. Это бесплатно и ни к чему не обязывает.</p>
+        <ul class="final-bullets">
+          <li>Ответим в течение 1 часа</li>
+          <li>Можно отправить фото с телефона</li>
+          <li>Смета будет понятной, без «сюрпризов»</li>
+          <li>Финальную цену фиксируем после замера</li>
+          <li>Можно общаться в Telegram или WhatsApp</li>
+        </ul>
+      </div>
+
+      <div class="form reveal">
+        <div class="form-inner">
+          <div class="form-label">Расчёт по фото · бесплатно</div>
+          <div class="form-row">
+            <label for="name">Имя</label>
+            <input id="name" type="text" placeholder="Как к вам обращаться">
+          </div>
+          <div class="form-row">
+            <label for="contact">Телефон или Telegram</label>
+            <input id="contact" type="text" placeholder="+7 999 000 00 00 или @username">
+          </div>
+          <div class="form-row">
+            <label for="task">Что нужно посчитать?</label>
+            <select id="task">
+              <option>Новостройка</option>
+              <option>Замена потолка</option>
+              <option>Одна комната</option>
+              <option>Вся квартира</option>
+              <option>Скрытый карниз</option>
+              <option>Подсветка</option>
+              <option>Срочный ремонт</option>
+              <option>Дизайнерский проект</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label>Фото комнаты / план квартиры</label>
+            <label class="form-file" for="photo">Прикрепить файл — фото с телефона или PDF плана</label>
+            <input id="photo" type="file" multiple style="display: none;">
+          </div>
+          <div class="form-row">
+            <label for="note">Комментарий</label>
+            <textarea id="note" placeholder="Что для вас важно: бюджет, сроки, стиль интерьера"></textarea>
+          </div>
+          <button class="form-submit" type="submit">
+            <span>Получить расчёт по фото</span>
+            <span class="form-submit-arrow">↗</span>
+          </button>
+          <p class="form-micro">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных. Мы не передаём контакты третьим лицам и не звоним без необходимости.</p>
+          <div class="form-alt">
+            Не хотите заполнять форму? <a href="https://t.me/">Напишите в Telegram</a> — можно просто отправить фото комнаты.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEO -->
+<section class="seo">
+  <div class="wrap">
+    <div class="seo-grid">
+      <div class="reveal">
+        <div class="eyebrow">Натяжные потолки в&nbsp;Москве</div>
+        <h2 class="seo-h2" style="margin-top: 18px;">Натяжные потолки под&nbsp;ключ в&nbsp;Москве</h2>
+        <a href="#final" class="btn-primary" style="margin-top: 8px;">
+          <span class="btn-primary-core">
+            <span class="btn-primary-text">Получить расчёт</span>
+            <span class="btn-primary-arrow">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 11L11 3M11 3H4M11 3V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </span>
+        </a>
+      </div>
+      <div class="reveal">
+        <p class="seo-text">«Потолок и Точка» делает натяжные потолки для квартир, новостроек, жилых помещений и дизайнерских проектов. Мы помогаем выбрать материал, свет, карниз и профиль, рассчитываем стоимость по фото и фиксируем финальную смету в договоре после замера.</p>
+        <p class="seo-text">Мы не используем подход «цена от 290 ₽/м²», потому что такая цифра редко показывает реальную стоимость готового потолка. Вместо этого мы считаем весь проект: полотно, профиль, монтаж, светильники, углы, трубы, карнизы и другие детали, которые влияют на итоговую цену.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4>Потолок и Точка</h4>
+        <p>Натяжные потолки под ключ в Москве. Расчёт по фото, честная смета, гарантия на монтаж.</p>
+        <a href="#final" class="footer-cta-btn">
+          Получить расчёт <span>↗</span>
+        </a>
+      </div>
+      <div class="footer-col">
+        <h5>Разделы</h5>
+        <ul>
+          <li><a href="tseny.html">Цены и комплекты</a></li>
+          <li><a href="raschet-po-foto.html">Расчёт по фото</a></li>
+          <li><a href="raschet-po-foto.html#quiz">Квиз расчёта</a></li>
+          <li><a href="novostroyka.html">Новостройка</a></li>
+          <li><a href="zamena-potolka.html">Замена потолка</a></li>
+          <li><a href="sliv-vody.html" style="color: #C8654A; font-weight: 600;">Слив воды · аварийно</a></li>
+          <li><a href="#cases">Кейсы</a></li>
+          <li><a href="#trust">Гарантия</a></li>
+          <li><a href="#">Для дизайнеров</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Контакты</h5>
+        <ul>
+          <li><a href="tel:+74950000000">+7 495 000-00-00</a></li>
+          <li><a href="https://t.me/">Telegram</a></li>
+          <li><a href="https://wa.me/">WhatsApp</a></li>
+          <li><a href="#">Пн–Вс · 9:00–21:00</a></li>
+          <li><a href="#">Москва и область</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Юридическое</h5>
+        <ul>
+          <li><a href="#">Политика обработки данных</a></li>
+          <li><a href="#">Договор / реквизиты</a></li>
+          <li><a href="#">Пользовательское соглашение</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 · Потолок и Точка · Москва</div>
+      <div class="footer-legal">
+        <a href="#">Политика</a>
+        <a href="#">Договор</a>
+        <a href="#">Соглашение</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Theme switcher
+document.querySelectorAll('[data-set-theme]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const theme = btn.getAttribute('data-set-theme');
+    document.body.setAttribute('data-theme', theme);
+    document.querySelectorAll('[data-set-theme]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// Mobile menu
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobileMenu');
+burger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+  document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+});
+function closeMobile() {
+  mobileMenu.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    item.classList.toggle('open');
+  });
+});
+
+// Scroll reveal
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Smooth scroll with offset
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', (e) => {
+    const id = a.getAttribute('href');
+    if (id.length > 1) {
+      const target = document.querySelector(id);
+      if (target) {
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    }
+  });
+});
+
+// Magnetic buttons
+document.querySelectorAll('.btn-primary, .nav-btn, .form-submit, .footer-cta-btn').forEach(btn => {
+  btn.addEventListener('mousemove', (e) => {
+    const rect = btn.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    btn.style.transform = `translate(${x * 0.12}px, ${y * 0.18}px)`;
+  });
+  btn.addEventListener('mouseleave', () => {
+    btn.style.transform = '';
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,2147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Расчёт натяжного потолка по фото за 1 час — без выезда замерщика | Потолок и Точка</title>
+<meta name="description" content="Расчёт натяжного потолка по фото за 1 час. Пришлите фото комнаты — подберём 3–5 вариантов, покажем ориентир цены, объясним смету. Без давления и без вызова замерщика на первом шаге.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:ital,wght@0,400;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #FFFFFF;
+  --surface: #F4F3EE;
+  --surface-2: #E5E5DD;
+  --ink: #0A2540;
+  --ink-2: #4A5A6E;
+  --hairline: #D8DCD4;
+  --accent: #3D6B9C;
+  --accent-soft: #E8F0F8;
+  --hi: #E8FFAA;
+  --hi-strong: #C9F050;
+  --warn: #C8654A;
+  --shadow-color: 10, 37, 64;
+}
+body[data-theme="1"] { --bg: #FAFAF7; --surface: #F2E7D4; --surface-2: #EBDEC5; --ink: #0F0F12; --ink-2: #5A5246; --hairline: #DCCFB6; --accent: #B8915C; --accent-soft: #F7EEDB; --hi: #D6F26E; --hi-strong: #C2E04A; --warn: #A8442F; --shadow-color: 15, 15, 18; }
+body[data-theme="2"] { --bg: #1A1A1F; --surface: #23232A; --surface-2: #2A2A30; --ink: #F5F5F0; --ink-2: #A8A395; --hairline: #353540; --accent: #C4A572; --accent-soft: #2E2A20; --hi: #D6F26E; --hi-strong: #C2E04A; --warn: #E07854; --shadow-color: 0, 0, 0; }
+
+* { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: 'Inter Tight', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.55;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  overflow-x: hidden;
+  transition: background 600ms cubic-bezier(0.32,0.72,0,1), color 600ms cubic-bezier(0.32,0.72,0,1);
+}
+::selection { background: var(--hi); color: var(--ink); }
+h1, h2, h3, h4 { font-family: 'Inter Tight', sans-serif; font-weight: 700; letter-spacing: -0.035em; line-height: 1.02; margin: 0; color: var(--ink); }
+h1 { font-weight: 800; letter-spacing: -0.045em; }
+.mono { font-family: 'JetBrains Mono', monospace; font-feature-settings: 'tnum' on; letter-spacing: 0; }
+
+.wrap { max-width: 1340px; margin: 0 auto; padding: 0 32px; }
+.wrap-narrow { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+@media (max-width: 768px) { .wrap, .wrap-narrow { padding: 0 18px; } body { font-size: 16px; } }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  padding: 7px 14px 7px 12px;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--ink-2);
+  font-weight: 500;
+}
+.eyebrow::before { content: ''; width: 6px; height: 6px; background: var(--accent); border-radius: 999px; display: inline-block; }
+
+/* CTA — same as other pages */
+.btn-primary {
+  position: relative;
+  display: inline-flex;
+  padding: 5px;
+  background: linear-gradient(180deg, var(--surface) 0%, var(--accent-soft) 100%);
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 1px 2px rgba(var(--shadow-color), 0.04), 0 18px 36px -18px rgba(var(--shadow-color), 0.25);
+  transition: transform 500ms cubic-bezier(0.32,0.72,0,1), box-shadow 500ms cubic-bezier(0.32,0.72,0,1);
+}
+body[data-theme="2"] .btn-primary { box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 1px 2px rgba(0,0,0,0.4), 0 18px 36px -12px rgba(0,0,0,0.6); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 1px 2px rgba(var(--shadow-color), 0.04), 0 30px 50px -16px rgba(var(--shadow-color), 0.35), 0 0 0 5px rgba(201,240,80,0.18); }
+.btn-primary:active { transform: translateY(0) scale(0.985); }
+.btn-primary-core {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 9px 13px 24px;
+  background: var(--hi);
+  color: var(--ink);
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 15.5px;
+  letter-spacing: -0.01em;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -1px 0 rgba(0,0,0,0.08);
+  overflow: hidden;
+  isolation: isolate;
+  transition: background 400ms cubic-bezier(0.32,0.72,0,1);
+}
+.btn-primary:hover .btn-primary-core { background: var(--hi-strong); }
+.btn-primary-core::before { content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%; background: linear-gradient(110deg, transparent 0%, rgba(255,255,255,0.5) 50%, transparent 100%); transition: left 900ms cubic-bezier(0.32,0.72,0,1); pointer-events: none; }
+.btn-primary:hover .btn-primary-core::before { left: 130%; }
+.btn-primary-text { position: relative; z-index: 1; white-space: nowrap; }
+.btn-primary-arrow {
+  position: relative;
+  width: 38px; height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink);
+  color: var(--hi);
+  border-radius: 999px;
+  flex-shrink: 0;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.14), inset 0 -1px 0 rgba(0,0,0,0.4), 0 4px 10px -2px rgba(var(--shadow-color), 0.45);
+  overflow: hidden;
+}
+.btn-primary-arrow svg { width: 14px; height: 14px; transition: transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1); }
+.btn-primary:hover .btn-primary-arrow svg { transform: translate(2px, -2px); }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  background: var(--bg);
+  color: var(--ink);
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 400ms cubic-bezier(0.32,0.72,0,1);
+}
+.btn-secondary:hover { background: var(--surface); border-color: var(--ink-2); }
+
+/* NAV */
+.nav-shell { position: fixed; top: 18px; left: 50%; transform: translateX(-50%); z-index: 100; width: calc(100% - 36px); max-width: 1320px; display: flex; justify-content: center; pointer-events: none; }
+.nav {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 8px 8px 22px;
+  background: rgba(var(--shadow-color), 0.04);
+  border: 1px solid var(--hairline);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 999px;
+  width: 100%;
+  max-width: 1100px;
+}
+body[data-theme="2"] .nav { background: rgba(255,255,255,0.04); }
+body[data-theme="3"] .nav { background: rgba(255,255,255,0.7); }
+body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
+.nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
+.nav-logo-mark { width: 28px; height: 28px; background: var(--ink); color: var(--bg); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px; }
+.nav-logo-desc { font-size: 11px; color: var(--ink-2); font-weight: 400; letter-spacing: 0; margin-left: 4px; display: none; }
+@media (min-width: 1100px) { .nav-logo-desc { display: inline; } }
+.nav-menu { display: flex; gap: 2px; margin-left: auto; }
+.nav-menu a { padding: 8px 12px; font-size: 14px; color: var(--ink); text-decoration: none; border-radius: 999px; transition: background 200ms; font-weight: 500; }
+.nav-menu a:hover { background: var(--surface); }
+.nav-menu a.active { background: var(--accent-soft); color: var(--accent); }
+@media (max-width: 980px) { .nav-menu { display: none; } }
+.nav-cta { display: flex; align-items: center; gap: 10px; }
+.nav-phone { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--ink); text-decoration: none; padding: 6px 12px; border-radius: 999px; font-weight: 500; }
+.nav-phone:hover { background: var(--surface); }
+@media (max-width: 1180px) { .nav-phone { display: none; } }
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 8px 7px 16px;
+  background: var(--hi);
+  color: var(--ink);
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 4px 14px -4px rgba(201,240,80,0.5);
+  transition: all 300ms cubic-bezier(0.32,0.72,0,1);
+}
+.nav-btn:hover { transform: translateY(-1px); background: var(--hi-strong); }
+.nav-btn-arrow {
+  width: 26px; height: 26px;
+  background: var(--ink);
+  color: var(--hi);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.nav-btn:hover .nav-btn-arrow { transform: translate(2px, -1px); }
+.nav-burger { display: none; width: 40px; height: 40px; background: var(--ink); color: var(--bg); border-radius: 999px; align-items: center; justify-content: center; cursor: pointer; border: none; }
+@media (max-width: 980px) { .nav-burger { display: inline-flex; } }
+.mobile-menu { position: fixed; inset: 0; background: var(--bg); z-index: 200; padding: 100px 24px 40px; display: flex; flex-direction: column; gap: 28px; opacity: 0; pointer-events: none; transition: opacity 400ms cubic-bezier(0.32,0.72,0,1); }
+.mobile-menu.open { opacity: 1; pointer-events: auto; }
+.mobile-menu a { font-size: 32px; font-weight: 700; letter-spacing: -0.03em; color: var(--ink); text-decoration: none; transform: translateY(20px); opacity: 0; transition: all 600ms cubic-bezier(0.32,0.72,0,1); }
+.mobile-menu.open a { transform: translateY(0); opacity: 1; }
+.mobile-menu.open a:nth-child(1) { transition-delay: 100ms; }
+.mobile-menu.open a:nth-child(2) { transition-delay: 150ms; }
+.mobile-menu.open a:nth-child(3) { transition-delay: 200ms; }
+.mobile-menu.open a:nth-child(4) { transition-delay: 250ms; }
+.mobile-menu.open a:nth-child(5) { transition-delay: 300ms; }
+.mobile-menu.open a:nth-child(6) { transition-delay: 350ms; }
+.mobile-menu.open a:nth-child(7) { transition-delay: 400ms; }
+
+/* HERO — with 3-step flow visualization */
+.hero { position: relative; min-height: 100dvh; overflow: hidden; }
+.hero-blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5; pointer-events: none; z-index: 0; will-change: transform; }
+.hero-blob.b1 { width: 500px; height: 500px; background: var(--accent); top: -100px; right: -100px; animation: float1 14s ease-in-out infinite; }
+.hero-blob.b2 { width: 400px; height: 400px; background: var(--hi); bottom: -120px; left: -80px; opacity: 0.4; animation: float2 18s ease-in-out infinite; }
+@keyframes float1 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-40px,30px); } }
+@keyframes float2 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(50px,-40px); } }
+
+.hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 700px) 1fr; align-items: center; width: 100%; min-height: 100dvh; }
+.hero-content { padding: 120px 48px 60px 60px; display: flex; align-items: center; }
+.hero-text { max-width: 600px; width: 100%; }
+.hero-h1 { font-size: clamp(40px, 5.4vw, 74px); margin: 22px 0 22px; }
+.hero-h1 .accent-word { font-family: 'Fraunces', serif; font-weight: 400; font-style: italic; color: var(--accent); letter-spacing: -0.02em; }
+.hero-lead { font-size: clamp(15px, 1.25vw, 18px); color: var(--ink-2); max-width: 540px; line-height: 1.5; margin-bottom: 28px; }
+.hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+.hero-badge { display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; background: var(--surface); border-radius: 999px; font-size: 13px; color: var(--ink); border: 1px solid var(--hairline); }
+.hero-badge::before { content: ''; width: 5px; height: 5px; background: var(--accent); border-radius: 999px; }
+.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.hero-micro { margin-top: 16px; font-size: 13px; color: var(--ink-2); max-width: 480px; }
+
+/* 3-step flow visualization */
+.hero-flow-side {
+  padding: 120px 60px 60px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.flow-stack {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.flow-card {
+  position: relative;
+  background: var(--bg);
+  border: 1px solid var(--hairline);
+  border-radius: 22px;
+  padding: 22px 22px 20px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), 0 20px 50px -16px rgba(var(--shadow-color), 0.22), 0 4px 12px -4px rgba(var(--shadow-color), 0.1);
+  transition: transform 500ms cubic-bezier(0.32,0.72,0,1);
+}
+body[data-theme="2"] .flow-card { box-shadow: 0 20px 50px -16px rgba(0,0,0,0.5); }
+.flow-card:hover { transform: translateY(-3px); }
+.flow-card-1 { transform: rotate(-1.5deg); }
+.flow-card-1:hover { transform: rotate(0) translateY(-3px); }
+.flow-card-2 { transform: rotate(0.8deg); margin-left: 40px; }
+.flow-card-2:hover { transform: rotate(0) translateY(-3px); }
+.flow-card-3 { transform: rotate(-0.6deg); margin-left: 10px; }
+.flow-card-3:hover { transform: rotate(0) translateY(-3px); }
+@media (max-width: 768px) {
+  .flow-card-1, .flow-card-2, .flow-card-3 { transform: none; margin-left: 0; }
+}
+
+.flow-step-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.flow-step-num {
+  width: 32px; height: 32px;
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 13px;
+}
+.flow-card-3 .flow-step-num { background: var(--hi); color: var(--ink); }
+.flow-step-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-2); }
+.flow-step-title { font-size: 18px; font-weight: 700; letter-spacing: -0.025em; margin-bottom: 14px; line-height: 1.2; }
+
+/* Step 1 — photo placeholder */
+.flow-photo-area {
+  background: var(--surface);
+  border: 1px dashed var(--hairline);
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 110px;
+  justify-content: center;
+}
+.flow-photo-icon {
+  width: 32px; height: 32px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+.flow-photo-area strong { font-size: 14px; color: var(--ink); }
+.flow-photo-area span { font-size: 12px; color: var(--ink-2); }
+
+/* Step 2 — variants mini */
+.flow-variants { display: flex; flex-direction: column; gap: 6px; }
+.flow-variant {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--surface);
+  border-radius: 10px;
+  font-size: 13px;
+  transition: background 200ms;
+}
+.flow-variant:hover { background: var(--accent-soft); }
+.flow-variant-dot {
+  width: 10px; height: 10px;
+  border-radius: 999px;
+}
+.flow-variant:nth-child(1) .flow-variant-dot { background: var(--ink-2); }
+.flow-variant:nth-child(2) .flow-variant-dot { background: var(--accent); }
+.flow-variant:nth-child(3) .flow-variant-dot { background: var(--hi-strong); }
+.flow-variant-label { font-weight: 500; color: var(--ink); }
+.flow-variant-price { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; color: var(--ink-2); }
+
+/* Step 3 — premium mini invoice */
+.flow-invoice {
+  padding: 16px 16px 14px;
+  background: linear-gradient(180deg, #0E2A48 0%, #0A2540 100%);
+  color: var(--bg);
+  border-radius: 14px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+}
+body[data-theme="1"] .flow-invoice { background: linear-gradient(180deg, #18181D 0%, #0F0F12 100%); }
+body[data-theme="2"] .flow-invoice { background: linear-gradient(180deg, #2A2A30 0%, #1F1F24 100%); }
+.flow-invoice-row {
+  display: grid;
+  grid-template-columns: 10px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 4px;
+  font-size: 13px;
+  border-top: 1px dashed rgba(255,255,255,0.08);
+}
+.flow-invoice-row:first-of-type { border-top: none; padding-top: 4px; }
+.flow-invoice-dot {
+  width: 8px; height: 8px;
+  border-radius: 999px;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.06);
+}
+.flow-invoice-row:nth-child(1) .flow-invoice-dot { background: var(--hi-strong); }
+.flow-invoice-row:nth-child(2) .flow-invoice-dot { background: #5B8FE0; }
+.flow-invoice-row:nth-child(3) .flow-invoice-dot { background: #F5A623; }
+.flow-invoice-name {
+  color: rgba(255,255,255,0.92);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+.flow-invoice-price {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+  font-weight: 500;
+  font-feature-settings: 'tnum';
+  letter-spacing: -0.02em;
+}
+.flow-invoice-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(232,255,170,0.15);
+  border-radius: 10px;
+}
+.flow-invoice-total-label {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-family: 'JetBrains Mono', monospace;
+  color: rgba(255,255,255,0.55);
+  font-weight: 600;
+}
+.flow-invoice-total-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--hi);
+  letter-spacing: -0.025em;
+  font-feature-settings: 'tnum';
+  text-shadow: 0 0 20px rgba(232,255,170,0.3);
+}
+.flow-invoice-total-value small { font-size: 10px; opacity: 0.6; margin-right: 4px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* Floating sticker on flow */
+.flow-sticker {
+  position: absolute;
+  background: var(--hi);
+  color: var(--ink);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  z-index: 3;
+  box-shadow: 0 10px 22px -6px rgba(201,240,80,0.55);
+}
+.flow-sticker-1 { top: 50px; right: -10px; transform: rotate(6deg); }
+.flow-sticker-2 { bottom: 100px; left: -20px; transform: rotate(-5deg); background: var(--bg); color: var(--ink); border: 1px solid var(--hairline); }
+
+@media (max-width: 1180px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-content, .hero-flow-side { padding: 100px 32px 40px; }
+  .hero-flow-side { padding-top: 0; padding-bottom: 50px; }
+}
+@media (max-width: 768px) {
+  .hero-content { padding: 100px 18px 30px; }
+  .hero-flow-side { padding: 0 18px 40px; }
+  .flow-sticker-1, .flow-sticker-2 { right: 0; left: auto; }
+}
+
+/* Marquee */
+.marquee { position: relative; overflow: hidden; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); padding: 14px 0; background: var(--surface); }
+.marquee-track { display: flex; gap: 40px; animation: scroll-x 38s linear infinite; width: max-content; }
+.marquee-item { display: inline-flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--ink); white-space: nowrap; }
+.marquee-item::before { content: ''; width: 5px; height: 5px; background: var(--accent); border-radius: 999px; }
+@keyframes scroll-x { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* SECTION */
+.section { padding: 110px 0; position: relative; }
+.section-head { margin-bottom: 60px; max-width: 880px; }
+.section-h2 { font-size: clamp(34px, 4.6vw, 60px); margin: 18px 0 18px; line-height: 1.04; }
+.section-h2 .accent-word { font-family: 'Fraunces', serif; font-style: italic; color: var(--accent); font-weight: 400; }
+.section-lead { font-size: clamp(15px, 1.2vw, 18px); color: var(--ink-2); max-width: 640px; line-height: 1.5; }
+@media (max-width: 768px) { .section { padding: 70px 0; } .section-head { margin-bottom: 36px; } }
+
+.section-quote {
+  margin-top: 36px;
+  padding: 32px;
+  background: var(--accent-soft);
+  border: 1px solid var(--hairline);
+  border-radius: 24px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: clamp(20px, 2.2vw, 28px);
+  line-height: 1.25;
+  color: var(--ink);
+  text-align: center;
+}
+.section-quote span { color: var(--accent); }
+
+/* What you get — 6 cards (facts-grid) */
+.facts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 980px) { .facts-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .facts-grid { grid-template-columns: 1fr; } }
+.fact-card { position: relative; background: var(--surface); border: 1px solid var(--hairline); border-radius: 24px; padding: 6px; transition: transform 400ms cubic-bezier(0.32,0.72,0,1); }
+.fact-card:hover { transform: translateY(-3px); }
+.fact-card-inner { background: var(--bg); border-radius: 19px; padding: 28px 26px; box-shadow: inset 0 1px 0 rgba(255,255,255,0.4); min-height: 200px; display: flex; flex-direction: column; }
+.fact-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-2); letter-spacing: 0.16em; margin-bottom: 18px; }
+.fact-title { font-size: 19px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px; line-height: 1.2; }
+.fact-text { font-size: 14px; color: var(--ink-2); line-height: 1.45; margin-top: auto; }
+.fact-card:nth-child(2) .fact-card-inner { background: var(--accent-soft); }
+.fact-card:nth-child(4) .fact-card-inner { background: var(--ink); color: var(--bg); }
+.fact-card:nth-child(4) .fact-num, .fact-card:nth-child(4) .fact-text { color: rgba(255,255,255,0.6); }
+
+/* Photo type cards — block 3 */
+.photo-types-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+@media (max-width: 980px) { .photo-types-grid { grid-template-columns: 1fr; } }
+.photo-type-card { position: relative; background: var(--surface); border: 1px solid var(--hairline); border-radius: 24px; padding: 6px; transition: transform 400ms cubic-bezier(0.32,0.72,0,1); }
+.photo-type-card:hover { transform: translateY(-3px); }
+.photo-type-inner {
+  background: var(--bg);
+  border-radius: 19px;
+  padding: 24px 22px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.photo-type-placeholder {
+  background: var(--surface);
+  border: 1px dashed var(--hairline);
+  border-radius: 14px;
+  padding: 20px;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.photo-type-icon {
+  width: 36px; height: 36px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.photo-type-placeholder strong { font-size: 13px; color: var(--ink); font-weight: 600; }
+.photo-type-placeholder span { font-size: 12px; color: var(--ink-2); line-height: 1.4; }
+.photo-type-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+.photo-type-h4 { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; line-height: 1.2; }
+.photo-type-text { font-size: 14px; color: var(--ink-2); line-height: 1.45; margin-bottom: 14px; }
+.photo-type-hint {
+  padding: 10px 12px;
+  background: var(--accent-soft);
+  border-radius: 10px;
+  font-size: 12px;
+  color: var(--accent);
+  font-style: italic;
+  margin-top: auto;
+}
+.pt-1 { grid-column: span 5; }
+.pt-2 { grid-column: span 4; }
+.pt-3 { grid-column: span 3; }
+.pt-4 { grid-column: span 4; }
+.pt-5 { grid-column: span 8; }
+.pt-5 .photo-type-inner { background: var(--ink); color: var(--bg); }
+.pt-5 .photo-type-h4 { color: var(--bg); }
+.pt-5 .photo-type-text { color: rgba(255,255,255,0.7); }
+.pt-5 .photo-type-placeholder { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.15); }
+.pt-5 .photo-type-placeholder strong { color: var(--bg); }
+.pt-5 .photo-type-placeholder span { color: rgba(255,255,255,0.65); }
+.pt-5 .photo-type-num { color: var(--hi); }
+.pt-5 .photo-type-hint { background: rgba(255,255,255,0.08); color: var(--hi); }
+@media (max-width: 1100px) {
+  .pt-1, .pt-2, .pt-3, .pt-4, .pt-5 { grid-column: span 6; }
+}
+@media (max-width: 700px) {
+  .pt-1, .pt-2, .pt-3, .pt-4, .pt-5 { grid-column: span 1; }
+}
+
+/* Process timeline — block 4 (6 steps) */
+.process-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; position: relative; }
+.process-grid::before { content: ''; position: absolute; top: 26px; left: 6%; right: 6%; height: 1px; background: var(--hairline); z-index: 0; }
+@media (max-width: 980px) { .process-grid { grid-template-columns: 1fr; gap: 12px; } .process-grid::before { display: none; } }
+.process-step { position: relative; z-index: 1; padding: 20px; background: var(--surface); border: 1px solid var(--hairline); border-radius: 18px; display: flex; flex-direction: column; gap: 10px; transition: transform 300ms cubic-bezier(0.32,0.72,0,1); }
+.process-step:hover { transform: translateY(-3px); background: var(--accent-soft); }
+.process-marker { width: 36px; height: 36px; background: var(--ink); color: var(--bg); border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; }
+.process-step:nth-child(3) .process-marker { background: var(--accent); }
+.process-step:last-child .process-marker { background: var(--hi); color: var(--ink); }
+.process-step h5 { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; margin: 0; line-height: 1.2; }
+.process-step p { font-size: 13px; color: var(--ink-2); line-height: 1.4; margin: 0; }
+
+/* Variant cards — block 5 (4 variants) */
+.variants-context {
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 24px;
+  padding: 32px 36px;
+  margin-bottom: 28px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 28px;
+  align-items: center;
+}
+@media (max-width: 760px) { .variants-context { grid-template-columns: 1fr; padding: 26px 22px; } }
+.variants-context-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--hi);
+  color: var(--ink);
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.variants-context h3 { font-size: 24px; font-weight: 700; letter-spacing: -0.025em; margin: 12px 0 8px; color: var(--bg); line-height: 1.2; }
+.variants-context p { font-size: 14px; color: rgba(255,255,255,0.7); margin: 0; line-height: 1.5; }
+
+.variants-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+@media (max-width: 1100px) { .variants-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .variants-grid { grid-template-columns: 1fr; } }
+.variant-card { position: relative; border-radius: 22px; padding: 6px; background: var(--surface); border: 1px solid var(--hairline); transition: transform 400ms cubic-bezier(0.32,0.72,0,1); }
+.variant-card:hover { transform: translateY(-4px); }
+.variant-inner { background: var(--bg); border-radius: 17px; padding: 22px 22px 20px; height: 100%; display: flex; flex-direction: column; }
+.variant-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+.variant-tag::before { content: ''; width: 8px; height: 8px; border-radius: 999px; background: var(--ink-2); }
+.variant-card:nth-child(1) .variant-tag::before { background: var(--ink-2); }
+.variant-card:nth-child(2) .variant-tag::before { background: var(--accent); }
+.variant-card:nth-child(3) .variant-tag::before { background: var(--hi-strong); }
+.variant-card:nth-child(4) .variant-tag::before { background: var(--warn); }
+.variant-h4 { font-size: 22px; font-weight: 700; letter-spacing: -0.025em; margin-bottom: 8px; line-height: 1.15; }
+.variant-text { font-size: 13px; color: var(--ink-2); line-height: 1.5; margin-bottom: 16px; }
+.variant-list { list-style: none; padding: 0; margin: 0 0 16px; display: flex; flex-direction: column; gap: 4px; }
+.variant-list li { font-size: 13px; color: var(--ink); display: flex; gap: 8px; align-items: flex-start; line-height: 1.4; }
+.variant-list li::before { content: '+'; color: var(--accent); flex-shrink: 0; font-weight: 700; }
+.variant-for {
+  padding: 10px 12px;
+  background: var(--surface);
+  border-radius: 10px;
+  font-size: 12px;
+  color: var(--ink-2);
+  font-style: italic;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+.variant-price {
+  padding-top: 14px;
+  border-top: 1px solid var(--hairline);
+  margin-top: auto;
+}
+.variant-price-from { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 4px; display: block; }
+.variant-price-value { font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 700; color: var(--ink); letter-spacing: -0.02em; }
+.variant-card:nth-child(3) .variant-inner { background: var(--accent-soft); }
+.variant-card:nth-child(4) .variant-inner { background: var(--ink); color: var(--bg); }
+.variant-card:nth-child(4) .variant-h4 { color: var(--bg); }
+.variant-card:nth-child(4) .variant-text { color: rgba(255,255,255,0.7); }
+.variant-card:nth-child(4) .variant-list li { color: var(--bg); }
+.variant-card:nth-child(4) .variant-list li::before { color: var(--hi); }
+.variant-card:nth-child(4) .variant-tag { color: rgba(255,255,255,0.6); }
+.variant-card:nth-child(4) .variant-for { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.7); }
+.variant-card:nth-child(4) .variant-price { border-top-color: rgba(255,255,255,0.1); }
+.variant-card:nth-child(4) .variant-price-from { color: rgba(255,255,255,0.6); }
+.variant-card:nth-child(4) .variant-price-value { color: var(--hi); }
+
+/* Situations — block 6 (5 cards) */
+.situations-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+@media (max-width: 980px) { .situations-grid { grid-template-columns: 1fr; } }
+.situation-card { position: relative; border-radius: 22px; padding: 6px; background: var(--surface); border: 1px solid var(--hairline); transition: transform 400ms cubic-bezier(0.32,0.72,0,1); }
+.situation-card:hover { transform: translateY(-3px); }
+.situation-inner { background: var(--bg); border-radius: 17px; padding: 24px 22px; height: 100%; display: flex; flex-direction: column; }
+.situation-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+.situation-h4 { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; line-height: 1.2; }
+.situation-text { font-size: 13px; color: var(--ink-2); line-height: 1.5; margin-bottom: 18px; }
+.situation-cta { margin-top: auto; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ink); font-weight: 600; text-decoration: none; align-self: flex-start; }
+.situation-cta::after { content: '→'; transition: transform 300ms; }
+.situation-cta:hover::after { transform: translateX(4px); }
+.sit-1 { grid-column: span 5; }
+.sit-1 .situation-inner { background: var(--accent-soft); }
+.sit-2 { grid-column: span 4; }
+.sit-3 { grid-column: span 3; }
+.sit-4 { grid-column: span 7; }
+.sit-4 .situation-inner { background: var(--ink); color: var(--bg); }
+.sit-4 .situation-h4 { color: var(--bg); }
+.sit-4 .situation-text { color: rgba(255,255,255,0.7); }
+.sit-4 .situation-num { color: var(--hi); }
+.sit-4 .situation-cta { color: var(--bg); }
+.sit-5 { grid-column: span 5; }
+@media (max-width: 1100px) {
+  .sit-1, .sit-2, .sit-3, .sit-4, .sit-5 { grid-column: span 6; }
+}
+@media (max-width: 700px) {
+  .sit-1, .sit-2, .sit-3, .sit-4, .sit-5 { grid-column: span 1; }
+}
+
+/* Pain split */
+.pain-split { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; position: relative; }
+@media (max-width: 980px) { .pain-split { grid-template-columns: 1fr; } }
+.pain-card { position: relative; border-radius: 28px; padding: 7px; }
+.pain-card-inner { border-radius: 22px; padding: 36px 32px; height: 100%; display: flex; flex-direction: column; }
+.pain-card.bad { background: var(--surface); border: 1px solid var(--hairline); transform: rotate(-0.6deg); }
+.pain-card.bad .pain-card-inner { background: var(--bg); border: 1px solid var(--hairline); }
+.pain-card.good { background: var(--ink); color: var(--bg); transform: rotate(0.6deg) translateY(-12px); }
+.pain-card.good .pain-card-inner { background: var(--ink); border: 1px solid rgba(255,255,255,0.08); }
+@media (max-width: 980px) { .pain-card.bad, .pain-card.good { transform: none; } }
+.pain-tag { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; align-self: flex-start; margin-bottom: 26px; }
+.pain-card.bad .pain-tag { background: var(--surface); color: var(--warn); border: 1px solid var(--hairline); }
+.pain-card.bad .pain-tag::before { content: '✕'; }
+.pain-card.good .pain-tag { background: var(--hi); color: var(--ink); }
+.pain-card.good .pain-tag::before { content: '✓'; }
+.pain-h3 { font-size: clamp(22px, 2.4vw, 30px); margin-bottom: 16px; line-height: 1.15; font-weight: 700; letter-spacing: -0.03em; }
+.pain-card.good .pain-h3 { color: var(--bg); }
+.pain-text { font-size: 15px; color: var(--ink-2); margin-bottom: 24px; line-height: 1.5; }
+.pain-card.good .pain-text { color: rgba(255,255,255,0.7); }
+.pain-bullets { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.pain-bullets li { display: flex; gap: 12px; font-size: 15px; align-items: flex-start; padding: 12px 14px; border-radius: 12px; line-height: 1.4; }
+.pain-card.bad .pain-bullets li { background: var(--surface); color: var(--ink); }
+.pain-card.bad .pain-bullets li::before { content: '—'; color: var(--warn); flex-shrink: 0; font-weight: 700; }
+.pain-card.good .pain-bullets li { background: rgba(255,255,255,0.05); color: var(--bg); border: 1px solid rgba(255,255,255,0.06); }
+.pain-card.good .pain-bullets li::before { content: '→'; color: var(--hi); flex-shrink: 0; font-weight: 700; }
+
+/* Alternative options — block 9 (6 simple cards) */
+.alt-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+@media (max-width: 880px) { .alt-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .alt-grid { grid-template-columns: 1fr; } }
+.alt-card {
+  background: var(--bg);
+  border: 1px solid var(--hairline);
+  border-radius: 18px;
+  padding: 22px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: all 300ms cubic-bezier(0.32,0.72,0,1);
+}
+.alt-card:hover { background: var(--surface); transform: translateY(-2px); }
+.alt-icon {
+  width: 40px; height: 40px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.alt-body h4 { font-size: 16px; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 4px; }
+.alt-body p { font-size: 13px; color: var(--ink-2); margin: 0; line-height: 1.45; }
+
+/* Quiz — same as tseny */
+.quiz-shell { max-width: 780px; margin: 0 auto; background: var(--surface); border: 1px solid var(--hairline); border-radius: 32px; padding: 8px; box-shadow: 0 30px 70px -20px rgba(var(--shadow-color), 0.18); }
+.quiz-inner { background: var(--bg); border-radius: 26px; padding: 36px 38px 32px; }
+@media (max-width: 600px) { .quiz-inner { padding: 26px 22px 24px; } }
+.quiz-progress { display: flex; align-items: center; gap: 14px; margin-bottom: 30px; }
+.quiz-progress-bar { flex: 1; height: 6px; background: var(--surface); border-radius: 999px; overflow: hidden; position: relative; }
+.quiz-progress-fill { position: absolute; inset: 0; width: 20%; background: linear-gradient(90deg, var(--accent), var(--hi-strong)); border-radius: 999px; transition: width 500ms cubic-bezier(0.32,0.72,0,1); }
+.quiz-progress-text { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-2); font-weight: 500; white-space: nowrap; }
+.quiz-step { display: none; animation: quiz-fade 500ms cubic-bezier(0.32,0.72,0,1); }
+.quiz-step.active { display: block; }
+@keyframes quiz-fade { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+.quiz-q { font-size: clamp(24px, 2.8vw, 32px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 24px; }
+.quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 32px; }
+@media (max-width: 600px) { .quiz-options { grid-template-columns: 1fr; } }
+.quiz-option {
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1.5px solid transparent;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Inter Tight', sans-serif;
+  transition: all 300ms cubic-bezier(0.32,0.72,0,1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.quiz-option::before { content: ''; width: 18px; height: 18px; background: var(--bg); border: 1.5px solid var(--hairline); border-radius: 999px; flex-shrink: 0; transition: all 200ms; }
+.quiz-option:hover { background: var(--accent-soft); border-color: var(--accent); }
+.quiz-option.selected { background: var(--accent-soft); border-color: var(--accent); }
+.quiz-option.selected::before { background: var(--accent); box-shadow: inset 0 0 0 4px var(--bg); }
+.quiz-nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.quiz-back, .quiz-next { display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; border-radius: 999px; font-family: 'Inter Tight', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; border: none; transition: all 300ms; }
+.quiz-back { background: transparent; color: var(--ink-2); padding-left: 8px; }
+.quiz-back:hover { color: var(--ink); }
+.quiz-back:disabled { opacity: 0.3; cursor: not-allowed; }
+.quiz-next { background: var(--hi); color: var(--ink); padding: 12px 8px 12px 22px; font-weight: 600; box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 8px 22px -6px rgba(201,240,80,0.55); }
+.quiz-next:hover:not(:disabled) { background: var(--hi-strong); transform: translateY(-1px); }
+.quiz-next:disabled { opacity: 0.4; cursor: not-allowed; box-shadow: none; }
+.quiz-next-arrow { width: 28px; height: 28px; background: var(--ink); color: var(--hi); border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; }
+.quiz-final { padding: 12px 0; }
+.quiz-final h3 { font-size: clamp(24px, 2.8vw, 32px); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 8px; }
+.quiz-final p { font-size: 15px; color: var(--ink-2); margin-bottom: 22px; line-height: 1.5; }
+.quiz-form-row { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.quiz-form-row label { font-size: 12px; color: var(--ink-2); font-weight: 500; }
+.quiz-form-row input { background: var(--surface); border: 1px solid var(--hairline); border-radius: 12px; padding: 14px 16px; font-family: 'Inter Tight', sans-serif; font-size: 15px; color: var(--ink); outline: none; transition: all 200ms; width: 100%; }
+.quiz-form-row input:focus { border-color: var(--accent); background: var(--accent-soft); }
+.quiz-summary { background: var(--surface); border-radius: 14px; padding: 16px 18px; margin-bottom: 18px; font-size: 13px; color: var(--ink-2); line-height: 1.45; }
+.quiz-summary strong { color: var(--ink); display: block; margin-bottom: 6px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-family: 'JetBrains Mono', monospace; }
+.quiz-summary-row { display: flex; justify-content: space-between; padding: 4px 0; border-top: 1px dashed var(--hairline); }
+.quiz-summary-row:first-of-type { border-top: none; }
+.quiz-submit { width: 100%; margin-top: 6px; padding: 14px 14px 14px 22px; background: var(--hi); color: var(--ink); border: none; border-radius: 14px; font-family: 'Inter Tight', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; display: inline-flex; justify-content: space-between; align-items: center; box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 8px 24px -6px rgba(201,240,80,0.55); transition: all 300ms; }
+.quiz-submit:hover { transform: translateY(-1px); background: var(--hi-strong); }
+.quiz-submit-arrow { width: 30px; height: 30px; background: var(--ink); color: var(--hi); border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; }
+.quiz-micro { font-size: 12px; color: var(--ink-2); margin-top: 12px; line-height: 1.4; }
+
+/* Examples — block 11 (3 cards minimal/optimal/beautiful) */
+.tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 880px) { .tier-grid { grid-template-columns: 1fr; } }
+.tier-card { position: relative; border-radius: 24px; padding: 6px; background: var(--surface); border: 1px solid var(--hairline); transition: transform 400ms cubic-bezier(0.32,0.72,0,1); }
+.tier-card:hover { transform: translateY(-4px); }
+.tier-inner { background: var(--bg); border-radius: 19px; padding: 26px 24px; height: 100%; display: flex; flex-direction: column; }
+.tier-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 14px; }
+.tier-h3 { font-size: 24px; font-weight: 700; letter-spacing: -0.025em; margin-bottom: 10px; line-height: 1.15; }
+.tier-text { font-size: 14px; color: var(--ink-2); line-height: 1.5; margin-bottom: 18px; }
+.tier-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.tier-list li { font-size: 13px; padding: 10px 12px; background: var(--surface); border-radius: 10px; display: flex; align-items: center; gap: 8px; color: var(--ink); }
+.tier-list li::before { content: '·'; color: var(--accent); font-size: 18px; font-weight: 700; }
+.tier-card:nth-child(2) .tier-inner { background: var(--accent-soft); }
+.tier-card:nth-child(3) .tier-inner { background: var(--ink); color: var(--bg); }
+.tier-card:nth-child(3) .tier-h3 { color: var(--bg); }
+.tier-card:nth-child(3) .tier-text { color: rgba(255,255,255,0.7); }
+.tier-card:nth-child(3) .tier-tag { color: rgba(255,255,255,0.6); }
+.tier-card:nth-child(3) .tier-list li { background: rgba(255,255,255,0.05); color: var(--bg); }
+.tier-card:nth-child(3) .tier-list li::before { color: var(--hi); }
+
+/* FAQ */
+.faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 920px; }
+.faq-item { background: var(--bg); border: 1px solid var(--hairline); border-radius: 20px; overflow: hidden; transition: background 200ms; }
+.faq-item.open { background: var(--surface); }
+.faq-q { display: flex; align-items: center; justify-content: space-between; gap: 24px; width: 100%; padding: 22px 24px; background: transparent; border: none; font-family: 'Inter Tight', sans-serif; font-size: 17px; font-weight: 600; letter-spacing: -0.015em; color: var(--ink); cursor: pointer; text-align: left; line-height: 1.3; }
+.faq-q::after { content: ''; width: 32px; height: 32px; background: var(--surface); border: 1px solid var(--hairline); border-radius: 999px; flex-shrink: 0; background-image: linear-gradient(currentColor, currentColor), linear-gradient(currentColor, currentColor); background-size: 10px 1.5px, 1.5px 10px; background-position: center; background-repeat: no-repeat; transition: transform 400ms cubic-bezier(0.32,0.72,0,1); }
+.faq-item.open .faq-q::after { transform: rotate(45deg); background-color: var(--ink); background-image: linear-gradient(white, white), linear-gradient(white, white); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 500ms cubic-bezier(0.32,0.72,0,1); }
+.faq-item.open .faq-a { max-height: 500px; }
+.faq-a-body { padding: 0 24px 24px; font-size: 15px; color: var(--ink-2); line-height: 1.55; max-width: 760px; }
+
+/* Final CTA */
+.final { position: relative; padding: 110px 0; background: var(--ink); color: var(--bg); overflow: hidden; }
+.final::before { content: ''; position: absolute; top: -200px; right: -200px; width: 500px; height: 500px; background: var(--accent); border-radius: 50%; filter: blur(90px); opacity: 0.35; }
+.final::after { content: ''; position: absolute; bottom: -200px; left: -100px; width: 400px; height: 400px; background: var(--hi); border-radius: 50%; filter: blur(90px); opacity: 0.2; }
+.final-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+@media (max-width: 980px) { .final-grid { grid-template-columns: 1fr; gap: 40px; } }
+.final-h2 { font-size: clamp(36px, 5vw, 64px); margin: 22px 0 22px; color: var(--bg); line-height: 1.04; }
+.final-h2 .accent-word { font-family: 'Fraunces', serif; font-style: italic; color: var(--hi); font-weight: 400; }
+.final-lead { font-size: clamp(15px, 1.2vw, 18px); color: rgba(255,255,255,0.7); margin-bottom: 32px; max-width: 480px; line-height: 1.5; }
+.final-bullets { list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-direction: column; gap: 8px; }
+.final-bullets li { display: flex; gap: 12px; align-items: center; padding: 12px 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; font-size: 14px; }
+.final-bullets li::before { content: '✓'; width: 18px; height: 18px; background: var(--hi); color: var(--ink); border-radius: 999px; font-size: 11px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+/* Upload card on final */
+.upload-card {
+  background: var(--bg);
+  color: var(--ink);
+  border-radius: 28px;
+  padding: 7px;
+  box-shadow: 0 40px 90px -30px rgba(0,0,0,0.4);
+}
+.upload-inner { background: var(--bg); border-radius: 22px; padding: 32px 30px 30px; }
+.upload-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 22px; }
+.upload-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 12px;
+  width: 100%;
+  background: var(--surface);
+  border: 2px dashed var(--hairline);
+  border-radius: 18px;
+  padding: 32px 24px;
+  cursor: pointer;
+  transition: all 250ms cubic-bezier(0.32,0.72,0,1);
+  margin-bottom: 18px;
+  position: relative;
+  overflow: hidden;
+}
+.upload-zone::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(61,107,156,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.upload-zone:hover { background: var(--accent-soft); border-color: var(--accent); transform: translateY(-2px); }
+.upload-zone:hover .upload-icon { background: var(--hi); color: var(--ink); transform: translateY(-2px); }
+.upload-icon {
+  width: 48px; height: 48px;
+  background: var(--ink);
+  color: var(--hi);
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.14), 0 8px 18px -4px rgba(var(--shadow-color), 0.3);
+  transition: all 300ms cubic-bezier(0.32,0.72,0,1);
+  position: relative;
+  z-index: 1;
+}
+.upload-zone h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+}
+.upload-zone p {
+  font-size: 13px;
+  color: var(--ink-2);
+  margin: 0;
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+}
+.upload-zone-formats {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: var(--bg);
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin-top: 4px;
+  position: relative;
+  z-index: 1;
+}
+.upload-row { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.upload-row label { font-size: 12px; color: var(--ink-2); font-weight: 500; }
+.upload-row input, .upload-row textarea, .upload-row select { background: var(--surface); border: 1px solid var(--hairline); border-radius: 12px; padding: 14px 16px; font-family: 'Inter Tight', sans-serif; font-size: 15px; color: var(--ink); outline: none; transition: all 200ms; width: 100%; }
+.upload-row input:focus, .upload-row textarea:focus, .upload-row select:focus { border-color: var(--accent); background: var(--accent-soft); }
+.upload-submit { width: 100%; margin-top: 10px; padding: 16px 14px 16px 24px; background: var(--hi); color: var(--ink); border: none; border-radius: 16px; font-family: 'Inter Tight', sans-serif; font-size: 16px; font-weight: 600; cursor: pointer; display: inline-flex; justify-content: space-between; align-items: center; box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), 0 8px 24px -6px rgba(201,240,80,0.55); transition: all 400ms cubic-bezier(0.32,0.72,0,1); }
+.upload-submit:hover { transform: translateY(-2px); background: var(--hi-strong); }
+.upload-submit-arrow { width: 32px; height: 32px; background: var(--ink); color: var(--hi); border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; }
+.upload-micro { margin-top: 14px; font-size: 12px; color: var(--ink-2); line-height: 1.45; }
+.upload-alt { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--hairline); font-size: 13px; color: var(--ink-2); }
+.upload-alt a { color: var(--ink); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--accent); }
+
+/* SEO + Footer */
+.seo { padding: 90px 0; background: var(--surface); }
+.seo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+@media (max-width: 880px) { .seo-grid { grid-template-columns: 1fr; gap: 30px; } }
+.seo-h2 { font-size: clamp(28px, 3.5vw, 42px); margin-bottom: 22px; line-height: 1.1; }
+.seo-text { font-size: 15px; color: var(--ink-2); line-height: 1.6; margin: 0 0 18px; }
+
+.footer { padding: 80px 0 40px; background: var(--ink); color: var(--bg); }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 60px; }
+@media (max-width: 880px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+@media (max-width: 540px) { .footer-grid { grid-template-columns: 1fr; } }
+.footer-brand h4 { font-size: 22px; font-weight: 700; color: var(--bg); margin-bottom: 12px; letter-spacing: -0.02em; }
+.footer-brand p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.5; max-width: 280px; margin: 0 0 20px; }
+.footer-cta-btn { display: inline-flex; align-items: center; gap: 10px; padding: 10px 12px 10px 18px; background: var(--hi); color: var(--ink); border-radius: 999px; text-decoration: none; font-size: 14px; font-weight: 500; transition: transform 300ms; }
+.footer-cta-btn:hover { transform: translateY(-1px); }
+.footer-cta-btn span { width: 24px; height: 24px; background: var(--ink); color: var(--hi); border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; }
+.footer-col h5 { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin: 0 0 16px; font-weight: 500; }
+.footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a { font-size: 14px; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 200ms; }
+.footer-col a:hover { color: var(--bg); }
+.footer-bottom { padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 12px; color: rgba(255,255,255,0.4); font-family: 'JetBrains Mono', monospace; letter-spacing: 0.04em; }
+.footer-legal { display: flex; gap: 22px; flex-wrap: wrap; }
+.footer-legal a { color: rgba(255,255,255,0.55); text-decoration: none; }
+.footer-legal a:hover { color: var(--bg); }
+
+/* WhatsApp & Theme switcher */
+.wa-float { position: fixed; bottom: 100px; right: 24px; z-index: 95; width: 60px; height: 60px; border-radius: 999px; background: #25D366; color: #fff; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 12px 28px -6px rgba(37,211,102,0.55); transition: transform 400ms cubic-bezier(0.32,0.72,0,1); animation: wa-pulse 2.4s ease-in-out infinite; }
+.wa-float:hover { transform: translateY(-3px) scale(1.06); }
+@keyframes wa-pulse { 0%, 100% { box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 12px 28px -6px rgba(37,211,102,0.55), 0 0 0 0 rgba(37,211,102,0.4); } 50% { box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 12px 28px -6px rgba(37,211,102,0.55), 0 0 0 14px rgba(37,211,102,0); } }
+@media (max-width: 640px) { .wa-float { width: 52px; height: 52px; bottom: 18px; right: 18px; } }
+
+.theme-switch { position: fixed; bottom: 22px; left: 22px; z-index: 90; display: flex; align-items: center; gap: 4px; padding: 6px; background: var(--bg); border: 1px solid var(--hairline); border-radius: 999px; box-shadow: 0 10px 40px -10px rgba(var(--shadow-color), 0.2); }
+body[data-theme="2"] .theme-switch { background: rgba(35,35,42,0.9); }
+.theme-switch-label { padding: 0 10px 0 12px; font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--ink-2); }
+.theme-btn { width: 30px; height: 30px; border-radius: 999px; border: none; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; color: var(--ink); background: var(--surface); transition: all 200ms; }
+.theme-btn.active { background: var(--ink); color: var(--bg); }
+.theme-btn:hover:not(.active) { background: var(--accent-soft); }
+
+/* Reveal */
+.reveal { opacity: 0; transform: translateY(36px); transition: opacity 800ms cubic-bezier(0.32,0.72,0,1), transform 800ms cubic-bezier(0.32,0.72,0,1); }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+</style>
+</head>
+<body data-theme="3">
+
+<a href="https://wa.me/" class="wa-float" aria-label="Написать в WhatsApp" target="_blank" rel="noopener">
+  <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+    <path d="M16.001 4C9.376 4 4 9.376 4 16c0 2.116.554 4.183 1.605 6.001L4 28l6.169-1.587A11.94 11.94 0 0 0 16.001 28C22.625 28 28 22.624 28 16S22.625 4 16.001 4z" fill="currentColor"/>
+    <path d="M22.45 19.276c-.319-.16-1.884-.93-2.176-1.035-.293-.107-.506-.16-.719.16-.213.319-.825 1.034-1.012 1.247-.187.213-.373.24-.692.08-.319-.16-1.346-.496-2.564-1.582-.948-.846-1.587-1.89-1.774-2.21-.187-.319-.02-.491.14-.65.144-.143.319-.373.479-.56.16-.187.213-.32.319-.533.107-.213.054-.4-.026-.56-.08-.16-.719-1.735-.985-2.376-.26-.624-.523-.54-.72-.55-.186-.01-.4-.012-.612-.012-.213 0-.56.08-.852.4-.293.32-1.118 1.092-1.118 2.665 0 1.573 1.144 3.093 1.304 3.306.16.213 2.253 3.44 5.46 4.823.762.33 1.357.527 1.821.674.765.244 1.462.21 2.013.127.614-.092 1.884-.77 2.15-1.514.266-.745.266-1.382.187-1.514-.08-.133-.293-.213-.612-.373z" fill="#25D366"/>
+  </svg>
+</a>
+
+<div class="theme-switch">
+  <span class="theme-switch-label">Тема</span>
+  <button class="theme-btn" data-set-theme="1">1</button>
+  <button class="theme-btn" data-set-theme="2">2</button>
+  <button class="theme-btn active" data-set-theme="3">3</button>
+</div>
+
+<!-- NAV -->
+<div class="nav-shell">
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-mark">П·Т</span>
+      <span>Потолок и Точка</span>
+      <span class="nav-logo-desc">Натяжные потолки под&nbsp;ключ в&nbsp;Москве</span>
+    </a>
+    <div class="nav-menu">
+      <a href="index.html">Главная</a>
+      <a href="tseny.html">Цены</a>
+      <a href="raschet-po-foto.html" class="active">Расчёт</a>
+      <a href="novostroyka.html">Новостройка</a>
+      <a href="zamena-potolka.html">Замена</a>
+      <a href="sliv-vody.html" style="background: #C8654A; color: #fff; font-weight: 600;">Слив воды</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a href="tel:+74950000000" class="nav-phone">+7 495 000-00-00</a>
+      <a href="#final" class="nav-btn">
+        <span>Загрузить фото</span>
+        <span class="nav-btn-arrow">↗</span>
+      </a>
+      <button class="nav-burger" id="burger" aria-label="Меню">
+        <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M1 1H15M1 6H15M1 11H15" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+  </nav>
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobile()">Главная</a>
+  <a href="tseny.html" onclick="closeMobile()">Цены</a>
+  <a href="raschet-po-foto.html" onclick="closeMobile()">Расчёт по фото</a>
+  <a href="novostroyka.html" onclick="closeMobile()">Новостройка</a>
+  <a href="zamena-potolka.html" onclick="closeMobile()">Замена потолка</a>
+  <a href="sliv-vody.html" style="color: #C8654A;" onclick="closeMobile()">Слив воды · аварийно</a>
+  <a href="index.html#cases" onclick="closeMobile()">Кейсы</a>
+  <a href="#faq" onclick="closeMobile()">FAQ</a>
+  <a href="#final" onclick="closeMobile()">Загрузить фото</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-blob b1"></div>
+  <div class="hero-blob b2"></div>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-text reveal">
+        <div class="eyebrow">Расчёт по фото · 1 час</div>
+        <h1 class="hero-h1">
+          Рассчитайте натяжной потолок <span class="accent-word">по&nbsp;фото</span> за&nbsp;1&nbsp;час
+        </h1>
+        <p class="hero-lead">
+          Пришлите фото комнаты или план квартиры — мы подберём 3–5 вариантов потолка, покажем ориентир цены и объясним, что входит в смету. Без выезда замерщика на первом шаге и без давления.
+        </p>
+        <div class="hero-badges">
+          <span class="hero-badge">Ответим за 1 час</span>
+          <span class="hero-badge">3–5 вариантов под бюджет</span>
+          <span class="hero-badge">Объясним, что входит в цену</span>
+          <span class="hero-badge">Подскажем по свету и карнизу</span>
+          <span class="hero-badge">Финал — в договоре после замера</span>
+        </div>
+        <div class="hero-ctas">
+          <a href="#final" class="btn-primary">
+            <span class="btn-primary-core">
+              <span class="btn-primary-text">Загрузить фото комнаты</span>
+              <span class="btn-primary-arrow">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V11M7 1L3 5M7 1L11 5M2 13H12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </span>
+          </a>
+          <a href="https://t.me/" class="btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 4L11 13" stroke="currentColor" stroke-width="1.5"/><path d="M22 4L15 22L11 13L2 9L22 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            <span>Отправить фото в Telegram</span>
+          </a>
+        </div>
+        <p class="hero-micro">
+          Можно отправить обычные фото с телефона. Если не знаете площадь — ничего страшного, мы подскажем, что нужно уточнить.
+        </p>
+      </div>
+    </div>
+
+    <div class="hero-flow-side">
+      <div class="flow-stack reveal">
+        <span class="flow-sticker flow-sticker-1">Ответ за 1 час</span>
+
+        <div class="flow-card flow-card-1">
+          <div class="flow-step-head">
+            <span class="flow-step-num">1</span>
+            <span class="flow-step-label">Шаг · фото</span>
+          </div>
+          <h4 class="flow-step-title">Вы присылаете фото комнаты</h4>
+          <div class="flow-photo-area">
+            <div class="flow-photo-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4.5C2 3.67 2.67 3 3.5 3H5L6 1.5H10L11 3H12.5C13.33 3 14 3.67 14 4.5V12C14 12.83 13.33 13.5 12.5 13.5H3.5C2.67 13.5 2 12.83 2 12V4.5Z" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="8.5" r="2.5" stroke="currentColor" stroke-width="1.4"/></svg>
+            </div>
+            <strong>Любое фото на телефон</strong>
+            <span>Общий вид комнаты, окна, углы, трубы — достаточно</span>
+          </div>
+        </div>
+
+        <div class="flow-card flow-card-2">
+          <div class="flow-step-head">
+            <span class="flow-step-num">2</span>
+            <span class="flow-step-label">Шаг · варианты</span>
+          </div>
+          <h4 class="flow-step-title">Мы подбираем 3–5&nbsp;вариантов</h4>
+          <div class="flow-variants">
+            <div class="flow-variant">
+              <span class="flow-variant-dot"></span>
+              <span class="flow-variant-label">Базовый</span>
+              <span class="flow-variant-price">от XX XXX&nbsp;₽</span>
+            </div>
+            <div class="flow-variant">
+              <span class="flow-variant-dot"></span>
+              <span class="flow-variant-label">Оптимальный</span>
+              <span class="flow-variant-price">от XX XXX&nbsp;₽</span>
+            </div>
+            <div class="flow-variant">
+              <span class="flow-variant-dot"></span>
+              <span class="flow-variant-label">Со скрытым карнизом</span>
+              <span class="flow-variant-price">от XX XXX&nbsp;₽</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-card flow-card-3">
+          <div class="flow-step-head">
+            <span class="flow-step-num">3</span>
+            <span class="flow-step-label">Шаг · смета</span>
+          </div>
+          <h4 class="flow-step-title">И&nbsp;показываем понятную смету</h4>
+          <div class="flow-invoice">
+            <div class="flow-invoice-row">
+              <span class="flow-invoice-dot"></span>
+              <span class="flow-invoice-name">Полотно матовое</span>
+              <span class="flow-invoice-price">XX XXX&nbsp;₽</span>
+            </div>
+            <div class="flow-invoice-row">
+              <span class="flow-invoice-dot"></span>
+              <span class="flow-invoice-name">Профиль + монтаж</span>
+              <span class="flow-invoice-price">XX XXX&nbsp;₽</span>
+            </div>
+            <div class="flow-invoice-row">
+              <span class="flow-invoice-dot"></span>
+              <span class="flow-invoice-name">Свет, закладные</span>
+              <span class="flow-invoice-price">XX XXX&nbsp;₽</span>
+            </div>
+            <div class="flow-invoice-total">
+              <span class="flow-invoice-total-label">Итого</span>
+              <span class="flow-invoice-total-value"><small>от</small>XX&nbsp;XXX&nbsp;₽</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="marquee-item">Расчёт по фото за 1 час</span>
+    <span class="marquee-item">Без давления на замер</span>
+    <span class="marquee-item">3–5 вариантов потолка</span>
+    <span class="marquee-item">Совет по свету и карнизу</span>
+    <span class="marquee-item">Можно прислать план или фото</span>
+    <span class="marquee-item">Telegram · WhatsApp · форма</span>
+    <span class="marquee-item">Расчёт по фото за 1 час</span>
+    <span class="marquee-item">Без давления на замер</span>
+    <span class="marquee-item">3–5 вариантов потолка</span>
+    <span class="marquee-item">Совет по свету и карнизу</span>
+    <span class="marquee-item">Можно прислать план или фото</span>
+    <span class="marquee-item">Telegram · WhatsApp · форма</span>
+  </div>
+</div>
+
+<!-- BLOCK 2 — What you get -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Что вы получите</div>
+      <h2 class="section-h2">Не просто «примерную цену», а&nbsp;<span class="accent-word">понятные варианты</span></h2>
+      <p class="section-lead">
+        Наша задача — не назвать случайную сумму, а помочь вам понять, какой потолок реально подойдёт под комнату, бюджет и ремонт.
+      </p>
+    </div>
+
+    <div class="facts-grid">
+      <div class="fact-card reveal"><div class="fact-card-inner"><div class="fact-num">01 · бюджет</div><h3 class="fact-title">Ориентир стоимости</h3><p class="fact-text">Покажем примерный бюджет до замера: отдельно объясним, что входит в расчёт и что может изменить цену.</p></div></div>
+      <div class="fact-card reveal"><div class="fact-card-inner"><div class="fact-num">02 · выбор</div><h3 class="fact-title">3–5 вариантов потолка</h3><p class="fact-text">Базовый матовый, оптимальный со светом, вариант со скрытым карнизом, с подсветкой или премиальное решение.</p></div></div>
+      <div class="fact-card reveal"><div class="fact-card-inner"><div class="fact-num">03 · свет</div><h3 class="fact-title">Рекомендации по&nbsp;свету</h3><p class="fact-text">Подскажем, где лучше сделать люстру, точечные светильники, трековый свет или мягкую подсветку.</p></div></div>
+      <div class="fact-card reveal"><div class="fact-card-inner"><div class="fact-num">04 · материал</div><h3 class="fact-title">Совет по&nbsp;материалу</h3><p class="fact-text">Скажем, что лучше подойдёт: матовый, сатиновый, тканевый или другой вариант под вашу комнату.</p></div></div>
+      <div class="fact-card reveal"><div class="fact-card-inner"><div class="fact-num">05 · карниз</div><h3 class="fact-title">Подсказка по&nbsp;карнизу</h3><p class="fact-text">Если в комнате есть окно, подскажем, нужен ли скрытый карниз, ниша под шторы или обычное решение.</p></div></div>
+      <div class="fact-card reveal"><div class="fact-card-inner"><div class="fact-num">06 · следующий шаг</div><h3 class="fact-title">Понимание следующего шага</h3><p class="fact-text">Если вариант понравится, согласуем замер, после которого смета фиксируется в договоре.</p></div></div>
+    </div>
+
+    <div class="section-quote reveal">
+      Вы сначала понимаете <span>варианты и бюджет</span> — и только потом решаете, нужен ли замер.
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 3 — What photos to send -->
+<section class="section" style="background: var(--surface);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Какие фото нужны</div>
+      <h2 class="section-h2">Какие фото прислать, чтобы расчёт был <span class="accent-word">точнее</span></h2>
+      <p class="section-lead">
+        Не нужно делать профессиональную съёмку. Достаточно обычных фото на телефон, чтобы мы увидели форму комнаты, окна, углы, трубы, место под свет и карниз.
+      </p>
+    </div>
+
+    <div class="photo-types-grid">
+      <div class="photo-type-card pt-1 reveal">
+        <div class="photo-type-inner">
+          <div class="photo-type-placeholder">
+            <div class="photo-type-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="3" width="14" height="11" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M2 11L6 8L10 11L16 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <strong>Фото · общий вид комнаты</strong>
+            <span>Чтобы было видно потолок, стены и форму помещения. Снимок с одного угла на телефон.</span>
+          </div>
+          <div class="photo-type-num">01 · обязательно</div>
+          <h4 class="photo-type-h4">Общий вид комнаты</h4>
+          <p class="photo-type-text">Сфотографируйте комнату так, чтобы было видно потолок, стены и примерную форму помещения.</p>
+          <div class="photo-type-hint">Так мы поймём площадь, геометрию и общую сложность.</div>
+        </div>
+      </div>
+
+      <div class="photo-type-card pt-2 reveal">
+        <div class="photo-type-inner">
+          <div class="photo-type-placeholder">
+            <div class="photo-type-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="2" width="12" height="14" rx="1" stroke="currentColor" stroke-width="1.4"/><path d="M9 2V16M3 9H15" stroke="currentColor" stroke-width="1.2"/></svg>
+            </div>
+            <strong>Фото · окно с обеих сторон</strong>
+            <span>Зона штор полностью, от пола до потолка.</span>
+          </div>
+          <div class="photo-type-num">02 · если нужен карниз</div>
+          <h4 class="photo-type-h4">Окно и&nbsp;зона штор</h4>
+          <p class="photo-type-text">Если хотите скрытый карниз или шторы «из потолка», сфотографируйте окно полностью.</p>
+          <div class="photo-type-hint">Так мы поймём, можно ли сделать нишу и какой нужен отступ.</div>
+        </div>
+      </div>
+
+      <div class="photo-type-card pt-3 reveal">
+        <div class="photo-type-inner">
+          <div class="photo-type-placeholder">
+            <div class="photo-type-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 3V15H15M3 7H9M7 3V15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </div>
+            <strong>Фото · трубы, углы, выступы</strong>
+            <span>Крупный план мест с обходами.</span>
+          </div>
+          <div class="photo-type-num">03 · по&nbsp;ситуации</div>
+          <h4 class="photo-type-h4">Трубы, углы, сложные места</h4>
+          <p class="photo-type-text">Сфотографируйте трубы, выступы, вентиляцию, неровные участки и места обходов.</p>
+          <div class="photo-type-hint">Эти детали могут влиять на смету.</div>
+        </div>
+      </div>
+
+      <div class="photo-type-card pt-4 reveal">
+        <div class="photo-type-inner">
+          <div class="photo-type-placeholder">
+            <div class="photo-type-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M9 1V3M9 15V17M1 9H3M15 9H17M3.5 3.5L4.9 4.9M13.1 13.1L14.5 14.5M3.5 14.5L4.9 13.1M13.1 4.9L14.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </div>
+            <strong>Фото · свет или место под него</strong>
+            <span>Текущая люстра, провода, выводы на стенах.</span>
+          </div>
+          <div class="photo-type-num">04 · если важен свет</div>
+          <h4 class="photo-type-h4">Свет или место под&nbsp;свет</h4>
+          <p class="photo-type-text">Если уже есть люстра, светильники или выводы проводов — покажите их на фото.</p>
+          <div class="photo-type-hint">Поймём, сколько нужно закладных и какие варианты света предложить.</div>
+        </div>
+      </div>
+
+      <div class="photo-type-card pt-5 reveal">
+        <div class="photo-type-inner">
+          <div class="photo-type-placeholder">
+            <div class="photo-type-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="2" width="14" height="14" rx="1" stroke="currentColor" stroke-width="1.4"/><path d="M2 7H16M9 2V16M2 11H9" stroke="currentColor" stroke-width="1.2"/></svg>
+            </div>
+            <strong>План или скан · PDF / JPG</strong>
+            <span>План от застройщика, БТИ или дизайн-проект. Можно отправить файлом.</span>
+          </div>
+          <div class="photo-type-num">05 · ускоряет расчёт</div>
+          <h4 class="photo-type-h4">План квартиры, если&nbsp;есть</h4>
+          <p class="photo-type-text">Если у вас есть план от застройщика или дизайн-проект — просто приложите его. Это ускорит расчёт.</p>
+          <div class="photo-type-hint">План помогает точнее посчитать квартиру целиком.</div>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top: 30px; font-size: 14px; color: var(--ink-2); max-width: 720px;" class="reveal">
+      Если не знаете, что фотографировать — отправьте общий вид комнаты. Мы сами скажем, что нужно доснять.
+    </p>
+  </div>
+</section>
+
+<!-- BLOCK 4 — Process 6 steps -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Как проходит расчёт</div>
+      <h2 class="section-h2">Как мы считаем потолок <span class="accent-word">по&nbsp;фото</span></h2>
+      <p class="section-lead">
+        Мы не берём фото и не называем цену «на глаз». Сначала смотрим технические детали, потом предлагаем несколько вариантов и объясняем разницу.
+      </p>
+    </div>
+
+    <div class="process-grid reveal">
+      <div class="process-step"><div class="process-marker">1</div><h5>Вы отправляете фото</h5><p>Через форму на сайте, Telegram или WhatsApp. Чем больше видно — тем точнее расчёт.</p></div>
+      <div class="process-step"><div class="process-marker">2</div><h5>Уточняем задачу</h5><p>Что важнее: минимальная цена, базовый потолок, свет, карниз или премиальный вид.</p></div>
+      <div class="process-step"><div class="process-marker">3</div><h5>Подбираем варианты</h5><p>Обычно даём несколько решений: проще, оптимальнее и красивее.</p></div>
+      <div class="process-step"><div class="process-marker">4</div><h5>Объясняем смету</h5><p>Что входит: полотно, профиль, монтаж, свет, карниз, обходы, демонтаж.</p></div>
+      <div class="process-step"><div class="process-marker">5</div><h5>Согласуем замер</h5><p>Если вариант подходит — мастер приезжает и проверяет нюансы.</p></div>
+      <div class="process-step"><div class="process-marker">6</div><h5>Фиксируем в&nbsp;договоре</h5><p>После замера смета, материалы, сроки и гарантия — в договоре.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 5 — Example with 4 variants -->
+<section class="section" style="background: var(--surface);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Пример расчёта</div>
+      <h2 class="section-h2">Как выглядит расчёт <span class="accent-word">по&nbsp;фото</span></h2>
+      <p class="section-lead">
+        Пример нужен, чтобы вы поняли, что получите после заявки. Не просто «мы вам перезвоним», а конкретные варианты с разницей по цене и составу.
+      </p>
+    </div>
+
+    <div class="variants-context reveal">
+      <div class="variants-context-tag">Объект · кейс</div>
+      <div>
+        <h3>Кухня-гостиная 18&nbsp;м² в&nbsp;новостройке</h3>
+        <p>Клиент хочет ровный потолок без люстры, аккуратный свет и шторы «из потолка». Бюджет пока непонятен — нужен ориентир до замера.</p>
+      </div>
+    </div>
+
+    <div class="variants-grid">
+      <div class="variant-card reveal">
+        <div class="variant-inner">
+          <div class="variant-tag">Вариант 01 · Базовый</div>
+          <h4 class="variant-h4">Базовый</h4>
+          <p class="variant-text">Матовый потолок, стандартный профиль, подготовка под основной свет.</p>
+          <ul class="variant-list">
+            <li>Полотно</li>
+            <li>Профиль</li>
+            <li>Монтаж</li>
+            <li>Подготовка под люстру</li>
+            <li>Гарантия</li>
+          </ul>
+          <div class="variant-for">Если нужен аккуратный потолок без дополнительных решений.</div>
+          <div class="variant-price">
+            <span class="variant-price-from">Цена</span>
+            <span class="variant-price-value">от XX&nbsp;XXX&nbsp;₽</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="variant-card reveal">
+        <div class="variant-inner">
+          <div class="variant-tag">Вариант 02 · Оптимальный</div>
+          <h4 class="variant-h4">Оптимальный</h4>
+          <p class="variant-text">Матовый потолок, точечные светильники, подготовка под карниз.</p>
+          <ul class="variant-list">
+            <li>Полотно, профиль</li>
+            <li>Монтаж</li>
+            <li>6–8 светильников</li>
+            <li>Закладные</li>
+            <li>Базовая подготовка под шторы</li>
+          </ul>
+          <div class="variant-for">Если нужен ремонт «для себя» без ощущения экономии.</div>
+          <div class="variant-price">
+            <span class="variant-price-from">Цена</span>
+            <span class="variant-price-value">от XX&nbsp;XXX&nbsp;₽</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="variant-card reveal">
+        <div class="variant-inner">
+          <div class="variant-tag">Вариант 03 · Со&nbsp;скрытым карнизом</div>
+          <h4 class="variant-h4">Скрытый карниз</h4>
+          <p class="variant-text">Матовый потолок, ниша под шторы, точечный свет или трековая система.</p>
+          <ul class="variant-list">
+            <li>Полотно, профиль, монтаж</li>
+            <li>Скрытый карниз</li>
+            <li>Светильники или трек</li>
+            <li>Закладные</li>
+            <li>Гарантия</li>
+          </ul>
+          <div class="variant-for">Если хочется более современный и чистый вид интерьера.</div>
+          <div class="variant-price">
+            <span class="variant-price-from">Цена</span>
+            <span class="variant-price-value">от XX&nbsp;XXX&nbsp;₽</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="variant-card reveal">
+        <div class="variant-inner">
+          <div class="variant-tag">Вариант 04 · Премиальный</div>
+          <h4 class="variant-h4">Премиальный</h4>
+          <p class="variant-text">Теневой профиль, скрытый карниз, продуманный свет, аккуратный визуальный контур.</p>
+          <ul class="variant-list">
+            <li>Премиальный профиль</li>
+            <li>Полотно, теневой зазор</li>
+            <li>Скрытый карниз</li>
+            <li>Световые решения</li>
+            <li>Сложный монтаж</li>
+            <li>Контроль результата</li>
+          </ul>
+          <div class="variant-for">Если потолок должен выглядеть как часть дизайнерского ремонта.</div>
+          <div class="variant-price">
+            <span class="variant-price-from">Цена</span>
+            <span class="variant-price-value">от XX&nbsp;XXX&nbsp;₽</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top: 28px; font-size: 13px; color: var(--ink-2); max-width: 720px;" class="reveal">
+      Цены в примере нужно заменить на реальные. Итоговая стоимость зависит от размеров, профиля, света, карниза и технических условий.
+    </p>
+
+    <div class="reveal" style="margin-top: 28px;">
+      <a href="#final" class="btn-primary">
+        <span class="btn-primary-core">
+          <span class="btn-primary-text">Хочу такой же расчёт</span>
+          <span class="btn-primary-arrow">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4M11 3V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 6 — Situations / who benefits -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Кому подходит</div>
+      <h2 class="section-h2">Когда расчёт по&nbsp;фото <span class="accent-word">особенно полезен</span></h2>
+      <p class="section-lead">
+        Если вы пока не готовы вызывать замерщика, но хотите понять бюджет — расчёт по фото помогает быстро сориентироваться.
+      </p>
+    </div>
+
+    <div class="situations-grid">
+      <div class="situation-card sit-1 reveal">
+        <div class="situation-inner">
+          <div class="situation-num">01 · Новостройка</div>
+          <h4 class="situation-h4">Вы делаете ремонт в&nbsp;новостройке</h4>
+          <p class="situation-text">Можно заранее понять бюджет по комнатам, спланировать свет и решить, нужен ли скрытый карниз.</p>
+          <a href="#final" class="situation-cta">Посчитать новостройку</a>
+        </div>
+      </div>
+      <div class="situation-card sit-2 reveal">
+        <div class="situation-inner">
+          <div class="situation-num">02 · Сравнение</div>
+          <h4 class="situation-h4">Вы сравниваете предложения</h4>
+          <p class="situation-text">Если уже получили смету от другой компании, мы поможем понять, что в неё входит и где могут быть доплаты.</p>
+          <a href="#final" class="situation-cta">Проверить смету</a>
+        </div>
+      </div>
+      <div class="situation-card sit-3 reveal">
+        <div class="situation-inner">
+          <div class="situation-num">03 · Замена</div>
+          <h4 class="situation-h4">Нужно заменить старый потолок</h4>
+          <p class="situation-text">По фото можно оценить состояние полотна, светильников и понять стоимость замены.</p>
+          <a href="#final" class="situation-cta">Оценить замену</a>
+        </div>
+      </div>
+      <div class="situation-card sit-4 reveal">
+        <div class="situation-inner">
+          <div class="situation-num">04 · Выбор уровня</div>
+          <h4 class="situation-h4">Вы выбираете между обычным и&nbsp;красивым вариантом</h4>
+          <p class="situation-text">Покажем разницу между базовым потолком, скрытым карнизом, подсветкой и теневым профилем — с ценами рядом.</p>
+          <a href="#final" class="situation-cta">Получить варианты</a>
+        </div>
+      </div>
+      <div class="situation-card sit-5 reveal">
+        <div class="situation-inner">
+          <div class="situation-num">05 · Дизайн-проект</div>
+          <h4 class="situation-h4">У&nbsp;вас есть дизайн-проект</h4>
+          <p class="situation-text">Можно прислать чертежи или визуализации, чтобы мы подготовили КП и проверили технические узлы.</p>
+          <a href="#final" class="situation-cta">Прислать проект</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 7 — Pain split: pushy measurer vs photo-first -->
+<section class="section" style="background: var(--surface);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Без давления</div>
+      <h2 class="section-h2">Сначала <span class="accent-word">варианты и&nbsp;бюджет</span>, а&nbsp;потом замер</h2>
+      <p class="section-lead">
+        Мы не хотим, чтобы замерщик приезжал к человеку, который вообще не понимает порядок цены. Сначала лучше показать варианты, объяснить бюджет и только потом договариваться о встрече.
+      </p>
+    </div>
+
+    <div class="pain-split">
+      <div class="pain-card bad reveal">
+        <div class="pain-card-inner">
+          <div class="pain-tag">Когда сразу зовут на&nbsp;замер</div>
+          <h3 class="pain-h3">Цена становится сюрпризом</h3>
+          <p class="pain-text">Клиент не понимает цену заранее. Замерщик приезжает, называет сумму, а отказаться психологически уже сложнее.</p>
+          <ul class="pain-bullets">
+            <li>Вы тратите время на встречу</li>
+            <li>Не знаете порядок бюджета</li>
+            <li>Можно почувствовать давление</li>
+            <li>Сложно сравнить варианты</li>
+            <li>Непонятно, где могут быть доплаты</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pain-card good reveal">
+        <div class="pain-card-inner">
+          <div class="pain-tag">Когда сначала по&nbsp;фото</div>
+          <h3 class="pain-h3">Замер — осознанный шаг</h3>
+          <p class="pain-text">Вы заранее понимаете, какие варианты есть и сколько примерно может стоить каждый. Замер нужен уже для точности, а не для сюрприза.</p>
+          <ul class="pain-bullets">
+            <li>Понимаете бюджет заранее</li>
+            <li>Видите несколько вариантов</li>
+            <li>Можно спокойно сравнить</li>
+            <li>Легче задать вопросы</li>
+            <li>Замер становится осознанным шагом</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-quote reveal">
+      Замер должен <span>уточнять смету</span>, а не превращаться в момент неожиданной цены.
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 8 — Accuracy factors -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Точность сметы</div>
+      <h2 class="section-h2">От&nbsp;чего зависит точность <span class="accent-word">предварительной</span> сметы</h2>
+      <p class="section-lead">
+        Расчёт по фото помогает понять порядок бюджета, но финальная цена всё равно фиксируется после замера. Чем больше информации вы пришлёте, тем точнее будет предварительный расчёт.
+      </p>
+    </div>
+
+    <div class="facts-grid">
+      <div class="fact-card reveal"><div class="fact-card-inner"><div class="fact-num">01 · размер</div><h3 class="fact-title">Размер комнаты</h3><p class="fact-text">Если знаете площадь или есть план — расчёт будет точнее. Если не знаете, можно начать с фото.</p></div></div>
+      <div class="fact-card reveal"><div class="fact-card-inner"><div class="fact-num">02 · свет</div><h3 class="fact-title">Количество света</h3><p class="fact-text">Люстра, точечные светильники, треки или подсветка сильно влияют на состав работ.</p></div></div>
+      <div class="fact-card reveal"><div class="fact-card-inner"><div class="fact-num">03 · карниз</div><h3 class="fact-title">Карниз и&nbsp;шторы</h3><p class="fact-text">Скрытый карниз, ниша под шторы или обычный карниз считаются по-разному.</p></div></div>
+      <div class="fact-card reveal"><div class="fact-card-inner"><div class="fact-num">04 · геометрия</div><h3 class="fact-title">Трубы и&nbsp;углы</h3><p class="fact-text">Обходы труб, вентиляция, сложная геометрия и неровные стены могут менять смету.</p></div></div>
+      <div class="fact-card reveal"><div class="fact-card-inner"><div class="fact-num">05 · полотно</div><h3 class="fact-title">Материал</h3><p class="fact-text">Матовый, сатиновый, тканевый и премиальный материал отличаются по цене и назначению.</p></div></div>
+      <div class="fact-card reveal"><div class="fact-card-inner"><div class="fact-num">06 · ремонт</div><h3 class="fact-title">Состояние ремонта</h3><p class="fact-text">Новостройка, жилая квартира, мебель в комнате или старый потолок — всё это влияет на сложность работы.</p></div></div>
+    </div>
+
+    <p style="margin-top: 28px; font-size: 14px; color: var(--ink-2); max-width: 720px;" class="reveal">
+      Предварительный расчёт — это ориентир. Финальная цена фиксируется только после замера и согласования состава работ.
+    </p>
+  </div>
+</section>
+
+<!-- BLOCK 9 — Alternatives to photo -->
+<section class="section" style="background: var(--surface);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Нет фото?</div>
+      <h2 class="section-h2">Можно прислать <span class="accent-word">план, ссылку или пример</span></h2>
+      <p class="section-lead">
+        Если ремонт ещё не начался или квартира не сдана, всё равно можно получить расчёт. Подойдут любые материалы, которые помогут понять задачу.
+      </p>
+    </div>
+
+    <div class="alt-grid">
+      <div class="alt-card reveal">
+        <div class="alt-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="2" width="14" height="16" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 8H17M10 2V18M3 13H10" stroke="currentColor" stroke-width="1.3"/></svg>
+        </div>
+        <div class="alt-body">
+          <h4>План квартиры</h4>
+          <p>План от застройщика, БТИ или дизайн-проекта.</p>
+        </div>
+      </div>
+
+      <div class="alt-card reveal">
+        <div class="alt-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="3" width="16" height="13" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="7" cy="8" r="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M2 13L7 9L12 13L18 8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="alt-body">
+          <h4>Визуализация</h4>
+          <p>Картинка из дизайн-проекта или пример, как хочется.</p>
+        </div>
+      </div>
+
+      <div class="alt-card reveal">
+        <div class="alt-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 1.5C5 1.5 7 1 10 1C13 1 15 1.5 15 1.5V12C15 14 13 16 10 16C7 16 5 14 5 12V1.5Z" stroke="currentColor" stroke-width="1.5"/><path d="M5 5C5 5 7 4.5 10 4.5C13 4.5 15 5 15 5" stroke="currentColor" stroke-width="1.3"/><path d="M10 16V19M7 19H13" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <div class="alt-body">
+          <h4>Фото из Pinterest</h4>
+          <p>Можно прислать референс. Скажем, реально ли повторить и что для этого нужно.</p>
+        </div>
+      </div>
+
+      <div class="alt-card reveal">
+        <div class="alt-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="13" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M15 8L18 6V14L15 12" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="alt-body">
+          <h4>Видео комнаты</h4>
+          <p>Короткое видео иногда даже удобнее фото.</p>
+        </div>
+      </div>
+
+      <div class="alt-card reveal">
+        <div class="alt-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="7" y="2" width="6" height="11" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M4 9V11C4 14.3 6.7 17 10 17C13.3 17 16 14.3 16 11V9M10 17V20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="alt-body">
+          <h4>Голосовое сообщение</h4>
+          <p>Если проще объяснить словами — запишите голосовое в Telegram.</p>
+        </div>
+      </div>
+
+      <div class="alt-card reveal">
+        <div class="alt-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="2" width="14" height="16" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M6 6H14M6 9H14M6 12H11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <div class="alt-body">
+          <h4>Смета другой компании</h4>
+          <p>Посмотрим, что включено, а что стоит уточнить.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top: 32px;">
+      <a href="https://t.me/" class="btn-primary">
+        <span class="btn-primary-core">
+          <span class="btn-primary-text">Отправить материалы в Telegram</span>
+          <span class="btn-primary-arrow">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4M11 3V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 10 — Quiz -->
+<section class="section" id="quiz">
+  <div class="wrap">
+    <div class="section-head reveal" style="text-align: center; margin: 0 auto 50px;">
+      <div class="eyebrow" style="margin: 0 auto;">Квиз · 5 шагов</div>
+      <h2 class="section-h2">Получите расчёт <span class="accent-word">по&nbsp;фото</span></h2>
+      <p class="section-lead" style="margin: 0 auto;">
+        Заполните короткую форму. Если не знаете ответы — выбирайте «не знаю», мы уточним в переписке.
+      </p>
+    </div>
+
+    <div class="quiz-shell reveal">
+      <div class="quiz-inner">
+        <div class="quiz-progress">
+          <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizProgressFill"></div></div>
+          <span class="quiz-progress-text" id="quizProgressText">Шаг 1 / 5</span>
+        </div>
+
+        <div class="quiz-step active" data-step="1">
+          <div class="quiz-q">Что нужно посчитать?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-q="1" data-val="Одна комната">Одна комната</button>
+            <button class="quiz-option" data-q="1" data-val="Вся квартира">Вся квартира</button>
+            <button class="quiz-option" data-q="1" data-val="Новостройка">Новостройка</button>
+            <button class="quiz-option" data-q="1" data-val="Замена потолка">Замена потолка</button>
+            <button class="quiz-option" data-q="1" data-val="Слив воды / ремонт">Слив воды / ремонт</button>
+            <button class="quiz-option" data-q="1" data-val="Скрытый карниз">Скрытый карниз</button>
+            <button class="quiz-option" data-q="1" data-val="Подсветка">Подсветка</button>
+            <button class="quiz-option" data-q="1" data-val="Дизайнерский проект">Дизайнерский проект</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="2">
+          <div class="quiz-q">Какая комната?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-q="2" data-val="Спальня">Спальня</button>
+            <button class="quiz-option" data-q="2" data-val="Кухня">Кухня</button>
+            <button class="quiz-option" data-q="2" data-val="Гостиная">Гостиная</button>
+            <button class="quiz-option" data-q="2" data-val="Детская">Детская</button>
+            <button class="quiz-option" data-q="2" data-val="Коридор">Коридор</button>
+            <button class="quiz-option" data-q="2" data-val="Кухня-гостиная">Кухня-гостиная</button>
+            <button class="quiz-option" data-q="2" data-val="Вся квартира">Вся квартира</button>
+            <button class="quiz-option" data-q="2" data-val="Другое">Другое</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="3">
+          <div class="quiz-q">Что хотите по&nbsp;потолку?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-q="3" data-val="Простой матовый">Простой матовый</button>
+            <button class="quiz-option" data-q="3" data-val="Сатиновый">Сатиновый</button>
+            <button class="quiz-option" data-q="3" data-val="Теневой профиль">Теневой профиль</button>
+            <button class="quiz-option" data-q="3" data-val="Скрытый карниз">Скрытый карниз</button>
+            <button class="quiz-option" data-q="3" data-val="Подсветка">Подсветка</button>
+            <button class="quiz-option" data-q="3" data-val="Трековый свет">Трековый свет</button>
+            <button class="quiz-option" data-q="3" data-val="Нужно подсказать">Нужно подсказать</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="4">
+          <div class="quiz-q">Есть фото или план?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-q="4" data-val="Да, загружу фото">Да, загружу фото</button>
+            <button class="quiz-option" data-q="4" data-val="Да, есть план">Да, есть план</button>
+            <button class="quiz-option" data-q="4" data-val="Отправлю в Telegram">Отправлю в Telegram</button>
+            <button class="quiz-option" data-q="4" data-val="Пока нет">Пока нет</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="5">
+          <div class="quiz-q">Куда отправить расчёт?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-q="5" data-val="Telegram">Telegram</button>
+            <button class="quiz-option" data-q="5" data-val="WhatsApp">WhatsApp</button>
+            <button class="quiz-option" data-q="5" data-val="Телефон">Телефон</button>
+            <button class="quiz-option" data-q="5" data-val="Любой способ">Любой способ</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="final">
+          <div class="quiz-final">
+            <h3>Оставьте контакт — пришлём расчёт</h3>
+            <p>Подготовим предварительную смету и 2–3 варианта под бюджет на основе ваших ответов.</p>
+
+            <div class="quiz-summary" id="quizSummary">
+              <strong>Ваши ответы</strong>
+              <div id="quizSummaryRows"></div>
+            </div>
+
+            <div class="quiz-form-row">
+              <label for="quizName">Имя</label>
+              <input id="quizName" type="text" placeholder="Как к вам обращаться">
+            </div>
+            <div class="quiz-form-row">
+              <label for="quizContact">Телефон или Telegram / WhatsApp</label>
+              <input id="quizContact" type="text" placeholder="+7 999 000 00 00 или @username">
+            </div>
+
+            <button class="quiz-submit" id="quizSubmit">
+              <span>Получить расчёт</span>
+              <span class="quiz-submit-arrow">↗</span>
+            </button>
+
+            <p class="quiz-micro">Расчёт бесплатный. Мы не передаём контакты третьим лицам и не звоним без необходимости.</p>
+          </div>
+        </div>
+
+        <div class="quiz-nav" id="quizNav">
+          <button class="quiz-back" id="quizBack" disabled>← Назад</button>
+          <button class="quiz-next" id="quizNext" disabled>
+            <span>Дальше</span>
+            <span class="quiz-next-arrow">→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 11 — Three tier examples -->
+<section class="section" style="background: var(--surface);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Уровни решения</div>
+      <h2 class="section-h2">После расчёта вы получите не&nbsp;одну цифру, а&nbsp;<span class="accent-word">выбор</span></h2>
+      <p class="section-lead">
+        Мы показываем варианты, чтобы вы могли решить: сделать проще, оптимальнее или красивее.
+      </p>
+    </div>
+
+    <div class="tier-grid">
+      <div class="tier-card reveal">
+        <div class="tier-inner">
+          <div class="tier-tag">Тариф 01</div>
+          <h3 class="tier-h3">Минимальный вариант</h3>
+          <p class="tier-text">Если нужно аккуратно закрыть потолок без лишних решений.</p>
+          <ul class="tier-list">
+            <li>Матовый потолок</li>
+            <li>Стандартный профиль</li>
+            <li>Базовый свет</li>
+            <li>Минимальный бюджет</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tier-card reveal">
+        <div class="tier-inner">
+          <div class="tier-tag">Тариф 02 · чаще выбирают</div>
+          <h3 class="tier-h3">Оптимальный вариант</h3>
+          <p class="tier-text">Если нужен нормальный ремонт «для себя»: аккуратно, надёжно и без ощущения дешёвого решения.</p>
+          <ul class="tier-list">
+            <li>Матовый или сатиновый потолок</li>
+            <li>Точечные светильники</li>
+            <li>Подготовка под карниз</li>
+            <li>Гарантия на монтаж</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tier-card reveal">
+        <div class="tier-inner">
+          <div class="tier-tag">Тариф 03</div>
+          <h3 class="tier-h3">Красивый вариант</h3>
+          <p class="tier-text">Если хочется, чтобы потолок выглядел как часть интерьера, а не просто белое полотно.</p>
+          <ul class="tier-list">
+            <li>Скрытый карниз</li>
+            <li>Подсветка</li>
+            <li>Теневой профиль</li>
+            <li>Трековый свет</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-quote reveal">
+      Вы сами выбираете уровень решения, а&nbsp;не <span>соглашаетесь на одну непонятную смету</span>.
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 12 — FAQ -->
+<section class="section" id="faq">
+  <div class="wrap-narrow">
+    <div class="section-head reveal">
+      <div class="eyebrow">FAQ · расчёт по&nbsp;фото</div>
+      <h2 class="section-h2">Частые вопросы про&nbsp;<span class="accent-word">расчёт по&nbsp;фото</span></h2>
+    </div>
+
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q">Можно ли точно посчитать потолок только по&nbsp;фото?</button>
+        <div class="faq-a"><div class="faq-a-body">По фото можно дать предварительный расчёт и варианты. Точная финальная цена фиксируется после замера, когда мастер проверит размеры, углы, трубы, свет и другие нюансы.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Что делать, если я не знаю площадь комнаты?</button>
+        <div class="faq-a"><div class="faq-a-body">Ничего страшного. Пришлите фото или план, если он есть. Мы скажем, какие размеры нужно уточнить, или предложим ориентир по типовой комнате.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Расчёт бесплатный?</button>
+        <div class="faq-a"><div class="faq-a-body">Да, предварительный расчёт по фото бесплатный. Если вариант подходит, можно согласовать замер.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Вы будете мне звонить после заявки?</button>
+        <div class="faq-a"><div class="faq-a-body">Только если это удобно вам. Можно общаться в Telegram или WhatsApp и получить расчёт в переписке.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Можно ли отправить фото в&nbsp;Telegram, а&nbsp;не через форму?</button>
+        <div class="faq-a"><div class="faq-a-body">Да. Можно просто написать в Telegram и прикрепить фото комнаты, план или пример потолка, который нравится.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">А если у меня уже есть смета от&nbsp;другой компании?</button>
+        <div class="faq-a"><div class="faq-a-body">Пришлите её нам. Мы посмотрим, что входит в цену, чего не хватает и где могут быть скрытые доплаты.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Можно ли рассчитать всю квартиру?</button>
+        <div class="faq-a"><div class="faq-a-body">Да. Лучше прислать план квартиры и указать, где нужны потолки, свет, карнизы или подсветка.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Если цена устроит, что дальше?</button>
+        <div class="faq-a"><div class="faq-a-body">Мы согласуем замер. После замера фиксируем финальную смету, материалы, сроки и гарантию в договоре.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 13 — Final CTA + upload form -->
+<section class="final" id="final">
+  <div class="wrap">
+    <div class="final-grid">
+      <div class="reveal">
+        <div class="eyebrow" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7);">Финальный шаг</div>
+        <h2 class="final-h2">Начните с&nbsp;<span class="accent-word">фото</span> — это проще, чем сразу вызывать замерщика</h2>
+        <p class="final-lead">Пришлите фото комнаты, план квартиры или пример потолка, который нравится. Мы покажем варианты, объясним цену и подскажем, какой следующий шаг нужен.</p>
+        <ul class="final-bullets">
+          <li>Ответим в течение 1 часа</li>
+          <li>Дадим 3–5 вариантов</li>
+          <li>Покажем порядок цены</li>
+          <li>Объясним, что входит в смету</li>
+          <li>Можно общаться в Telegram</li>
+          <li>Финальную цену зафиксируем после замера</li>
+        </ul>
+        <a href="https://t.me/" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); color: #fff; border-radius: 999px; text-decoration: none; font-size: 14px; transition: background 200ms;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 4L11 13" stroke="currentColor" stroke-width="1.5"/><path d="M22 4L15 22L11 13L2 9L22 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          Отправить в Telegram
+        </a>
+      </div>
+
+      <div class="upload-card reveal">
+        <div class="upload-inner">
+          <div class="upload-label">Загрузка фото · бесплатно</div>
+
+          <label class="upload-zone" for="photoUpload">
+            <div class="upload-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3V15M12 3L7 8M12 3L17 8M4 19H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h4>Загрузить фото комнаты</h4>
+            <p>Можно несколько фото — общий вид, окно, углы, трубы</p>
+            <span class="upload-zone-formats">JPG · PNG · PDF · до 20&nbsp;МБ</span>
+            <input id="photoUpload" type="file" multiple accept="image/*,application/pdf" style="display: none;">
+          </label>
+
+          <div class="upload-row">
+            <label for="name">Имя</label>
+            <input id="name" type="text" placeholder="Как к вам обращаться">
+          </div>
+          <div class="upload-row">
+            <label for="contact">Телефон или Telegram</label>
+            <input id="contact" type="text" placeholder="+7 999 000 00 00 или @username">
+          </div>
+          <div class="upload-row">
+            <label for="note">Что важно знать (необязательно)</label>
+            <textarea id="note" rows="2" placeholder="Площадь, тип комнаты, бюджет, стиль интерьера" style="resize: vertical; min-height: 60px;"></textarea>
+          </div>
+          <button class="upload-submit" type="submit">
+            <span>Загрузить фото и получить расчёт</span>
+            <span class="upload-submit-arrow">↗</span>
+          </button>
+          <p class="upload-micro">Не обязательно знать площадь и технические детали. Начните с обычного фото — дальше подскажем.</p>
+          <div class="upload-alt">
+            Не хотите заполнять форму? <a href="https://t.me/">Напишите в Telegram</a> — просто отправьте фото комнаты.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK 14 — SEO -->
+<section class="seo">
+  <div class="wrap">
+    <div class="seo-grid">
+      <div class="reveal">
+        <div class="eyebrow">Расчёт по&nbsp;фото · Москва</div>
+        <h2 class="seo-h2" style="margin-top: 18px;">Расчёт натяжного потолка <br>по&nbsp;фото</h2>
+        <a href="#final" class="btn-primary" style="margin-top: 8px;">
+          <span class="btn-primary-core">
+            <span class="btn-primary-text">Получить расчёт по фото</span>
+            <span class="btn-primary-arrow">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4M11 3V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </span>
+        </a>
+      </div>
+      <div class="reveal">
+        <p class="seo-text">Расчёт натяжного потолка по фото помогает заранее понять порядок стоимости без немедленного вызова замерщика. По фото комнаты или плану квартиры можно оценить площадь, форму помещения, свет, карнизы, трубы и другие детали, которые влияют на смету.</p>
+        <p class="seo-text">«Потолок и Точка» подбирает несколько вариантов потолка под задачу и бюджет: базовый, оптимальный, вариант со скрытым карнизом, подсветкой или теневым профилем. Предварительный расчёт помогает сравнить решения и понять, какие работы входят в цену. Финальная стоимость фиксируется после замера в договоре.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4>Потолок и Точка</h4>
+        <p>Натяжные потолки под ключ в Москве. Расчёт по фото, честная смета, гарантия на монтаж.</p>
+        <a href="#final" class="footer-cta-btn">Загрузить фото <span>↗</span></a>
+      </div>
+      <div class="footer-col">
+        <h5>Разделы</h5>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="tseny.html">Цены и комплекты</a></li>
+          <li><a href="raschet-po-foto.html">Расчёт по фото</a></li>
+          <li><a href="novostroyka.html">Новостройка</a></li>
+          <li><a href="zamena-potolka.html">Замена потолка</a></li>
+          <li><a href="sliv-vody.html" style="color: #C8654A; font-weight: 600;">Слив воды · аварийно</a></li>
+          <li><a href="#quiz">Квиз расчёта</a></li>
+          <li><a href="index.html#kits">Комплекты</a></li>
+          <li><a href="index.html#cases">Кейсы</a></li>
+          <li><a href="index.html#trust">Гарантия</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Контакты</h5>
+        <ul>
+          <li><a href="tel:+74950000000">+7 495 000-00-00</a></li>
+          <li><a href="https://t.me/">Telegram</a></li>
+          <li><a href="https://wa.me/">WhatsApp</a></li>
+          <li><a href="#">Пн–Вс · 9:00–21:00</a></li>
+          <li><a href="#">Москва и область</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Юридическое</h5>
+        <ul>
+          <li><a href="#">Политика обработки данных</a></li>
+          <li><a href="#">Договор / реквизиты</a></li>
+          <li><a href="#">Пользовательское соглашение</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 · Потолок и Точка · Москва</div>
+      <div class="footer-legal">
+        <a href="#">Политика</a>
+        <a href="#">Договор</a>
+        <a href="#">Соглашение</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Theme switcher
+document.querySelectorAll('[data-set-theme]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const theme = btn.getAttribute('data-set-theme');
+    document.body.setAttribute('data-theme', theme);
+    document.querySelectorAll('[data-set-theme]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// Mobile menu
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobileMenu');
+burger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+  document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+});
+function closeMobile() { mobileMenu.classList.remove('open'); document.body.style.overflow = ''; }
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+});
+
+// Scroll reveal
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Smooth scroll with offset
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', (e) => {
+    const id = a.getAttribute('href');
+    if (id.length > 1) {
+      const target = document.querySelector(id);
+      if (target) {
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    }
+  });
+});
+
+// Quiz logic
+(function(){
+  const TOTAL_STEPS = 5;
+  let currentStep = 1;
+  const answers = {};
+  const steps = document.querySelectorAll('.quiz-step');
+  const progressFill = document.getElementById('quizProgressFill');
+  const progressText = document.getElementById('quizProgressText');
+  const backBtn = document.getElementById('quizBack');
+  const nextBtn = document.getElementById('quizNext');
+  const navBlock = document.getElementById('quizNav');
+
+  function showStep(step) {
+    steps.forEach(s => s.classList.remove('active'));
+    const target = document.querySelector('.quiz-step[data-step="' + step + '"]');
+    if (target) target.classList.add('active');
+
+    if (step === 'final') {
+      navBlock.style.display = 'none';
+      renderSummary();
+    } else {
+      navBlock.style.display = 'flex';
+      const pct = (step / TOTAL_STEPS) * 100;
+      progressFill.style.width = pct + '%';
+      progressText.textContent = 'Шаг ' + step + ' / ' + TOTAL_STEPS;
+      backBtn.disabled = step === 1;
+      nextBtn.disabled = !answers[step];
+      if (step === TOTAL_STEPS) {
+        nextBtn.querySelector('span').textContent = 'Завершить';
+      } else {
+        nextBtn.querySelector('span').textContent = 'Дальше';
+      }
+    }
+  }
+
+  document.querySelectorAll('.quiz-option').forEach(opt => {
+    opt.addEventListener('click', () => {
+      const q = opt.getAttribute('data-q');
+      const val = opt.getAttribute('data-val');
+      document.querySelectorAll('.quiz-option[data-q="' + q + '"]').forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      answers[q] = val;
+      nextBtn.disabled = false;
+    });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentStep < TOTAL_STEPS) {
+      currentStep++;
+      showStep(currentStep);
+    } else {
+      showStep('final');
+    }
+  });
+
+  backBtn.addEventListener('click', () => {
+    if (currentStep > 1) {
+      currentStep--;
+      showStep(currentStep);
+    }
+  });
+
+  function renderSummary() {
+    const labels = { '1': 'Что считать', '2': 'Комната', '3': 'Тип потолка', '4': 'Фото / план', '5': 'Канал связи' };
+    const rows = Object.entries(answers).map(([q, val]) =>
+      '<div class="quiz-summary-row"><span>' + labels[q] + '</span><span style="color: var(--ink); font-weight: 500;">' + val + '</span></div>'
+    ).join('');
+    document.getElementById('quizSummaryRows').innerHTML = rows;
+  }
+
+  document.getElementById('quizSubmit').addEventListener('click', () => {
+    const name = document.getElementById('quizName').value.trim();
+    const contact = document.getElementById('quizContact').value.trim();
+    if (!name || !contact) { alert('Пожалуйста, укажите имя и контакт'); return; }
+    alert('Спасибо! Расчёт пришлём на указанный контакт в течение 1 часа.');
+  });
+
+  showStep(1);
+})();
+
+// Magnetic buttons
+document.querySelectorAll('.btn-primary, .nav-btn, .upload-submit, .footer-cta-btn, .quiz-submit').forEach(btn => {
+  btn.addEventListener('mousemove', (e) => {
+    const rect = btn.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    btn.style.transform = 'translate(' + (x * 0.1) + 'px,' + (y * 0.15) + 'px)';
+  });
+  btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+});
+</script>
+
+</body>
+</html>
