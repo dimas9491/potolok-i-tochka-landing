@@ -353,6 +353,63 @@ img { max-width: 100%; display: block; }
 .reveal-bounce.visible { transform: translateY(0) scale(1); transition: opacity 700ms ease, transform 900ms cubic-bezier(0.34, 1.56, 0.64, 1); }
 .reveal-tilt { transform: rotate(-2deg) translateY(20px); }
 .reveal-tilt.visible { transform: rotate(0) translateY(0); }
+/* DROPDOWN NAVBAR */
+.nav-links { gap: 4px !important; }
+.nav-links > a { padding: 9px 14px !important; font-size: 14px !important; }
+.nav-dropdown { position: relative; }
+.nav-dropdown-trigger { display: inline-flex; align-items: center; padding: 9px 14px; font-size: 14px; color: var(--ink-2); border-radius: 999px; transition: all 250ms; font-weight: 500; cursor: pointer; white-space: nowrap; }
+.nav-dropdown-trigger::after { content: '▾'; margin-left: 5px; font-size: 9px; opacity: 0.6; display: inline-block; transition: transform 250ms; }
+.nav-dropdown:hover .nav-dropdown-trigger { color: var(--ink); background: var(--surface); }
+.nav-dropdown:hover .nav-dropdown-trigger::after { transform: rotate(180deg); opacity: 1; }
+.nav-dropdown.is-active .nav-dropdown-trigger { color: var(--ink); background: var(--surface-2); font-weight: 600; }
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  min-width: 260px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 250ms cubic-bezier(0.32,0.72,0,1), transform 250ms cubic-bezier(0.32,0.72,0,1), visibility 250ms;
+  background: var(--bg);
+  border: 1px solid var(--hairline);
+  border-radius: 18px;
+  padding: 10px;
+  box-shadow: 0 30px 70px -25px rgba(var(--shadow-color), 0.28);
+  z-index: 110;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.nav-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+.nav-dropdown-menu a {
+  display: block;
+  padding: 11px 14px;
+  border-radius: 12px;
+  font-size: 13.5px;
+  color: var(--ink);
+  font-weight: 500;
+  transition: all 200ms;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.nav-dropdown-menu a:hover { background: var(--surface); color: var(--accent); transform: translateX(2px); }
+.nav-dropdown-menu a.active { background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+@media (max-width: 1100px) { .nav-links, .nav-cta { display: none; } .nav-burger { display: inline-flex; } }
+
 </style>
 </head>
 <body>
@@ -367,15 +424,26 @@ img { max-width: 100%; display: block; }
       <a href="index.html">Главная</a>
       <a href="tseny.html">Цены</a>
       <a href="raschet-po-foto.html">Расчёт</a>
-      <a href="novostroyka.html">Новостройка</a>
-      <a href="zamena-potolka.html">Замена</a>
-      <a href="matovye-potolki.html">Матовые</a>
-      <a href="satinovye-potolki.html">Сатиновые</a>
-      <a href="tkanevye-potolki.html" class="active">Тканевые</a>
-      <a href="tenevye-potolki.html">Теневые</a>
-      <a href="premium-potolki.html">Премиум</a>
+      <div class="nav-dropdown">
+        <a href="#" class="nav-dropdown-trigger">Услуги</a>
+        <div class="nav-dropdown-menu">
+          <a href="novostroyka.html">Новостройка</a>
+          <a href="zamena-potolka.html">Замена потолка</a>
+          <a href="premium-potolki.html">Премиум · сложные</a>
+        </div>
+      </div>
+      <div class="nav-dropdown is-active">
+        <a href="#" class="nav-dropdown-trigger">Фактуры</a>
+        <div class="nav-dropdown-menu">
+          <a href="matovye-potolki.html">Матовые</a>
+          <a href="satinovye-potolki.html">Сатиновые</a>
+          <a href="tkanevye-potolki.html" class="active">Тканевые / бесшовные</a>
+          <a href="tenevye-potolki.html">Теневые</a>
+        </div>
+      </div>
       <a href="sliv-vody.html" style="color: var(--warn);">Слив воды</a>
     </div>
+
     <a href="#final" class="nav-cta">Подобрать потолок</a>
     <button class="nav-burger" id="burger" aria-label="Меню">
       <svg viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
