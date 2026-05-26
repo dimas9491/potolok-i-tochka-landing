@@ -303,21 +303,25 @@ body[data-theme="2"] .howit-card { box-shadow: 0 14px 32px -14px rgba(0,0,0,0.5)
   flex-shrink: 0;
 }
 
-.howit-body { min-width: 0; position: relative; padding-top: 22px; }
-.howit-num {
-  position: absolute;
-  top: 0; left: 0;
-  width: 26px; height: 26px;
-  background: var(--hi);
-  color: var(--ink);
-  border-radius: 999px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  font-weight: 700;
+.howit-body { min-width: 0; }
+.howit-step-label {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 10px -2px rgba(201,240,80,0.55);
+  gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.howit-step-label::before {
+  content: '';
+  width: 14px;
+  height: 2px;
+  background: var(--hi-strong);
+  border-radius: 999px;
 }
 .howit-body h4 {
   font-size: 17px;
@@ -1060,7 +1064,7 @@ body[data-theme="2"] .theme-switch { background: rgba(35,35,42,0.9); }
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="6" y="2" width="12" height="20" rx="2.5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="18.5" r="1" fill="currentColor"/><circle cx="12" cy="9" r="2" stroke="currentColor" stroke-width="1.6"/></svg>
           </div>
           <div class="howit-body">
-            <span class="howit-num">1</span>
+            <span class="howit-step-label">Шаг 01</span>
             <h4>Вы присылаете фото комнаты</h4>
             <p>Любое фото на телефон: общий вид, углы, окна, трубы — достаточно.</p>
           </div>
@@ -1077,7 +1081,7 @@ body[data-theme="2"] .theme-switch { background: rgba(35,35,42,0.9); }
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7L12 12L21 7L12 2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M3 12L12 17L21 12" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M3 17L12 22L21 17" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
           </div>
           <div class="howit-body">
-            <span class="howit-num">2</span>
+            <span class="howit-step-label">Шаг 02</span>
             <h4>Пришлём 3–5 визуализаций</h4>
             <p>Как потолок будет выглядеть именно у&nbsp;вас — с&nbsp;учётом интерьера и&nbsp;бюджета.</p>
           </div>
@@ -1094,7 +1098,7 @@ body[data-theme="2"] .theme-switch { background: rgba(35,35,42,0.9); }
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 8H16M8 12H16M8 16H12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </div>
           <div class="howit-body">
-            <span class="howit-num">3</span>
+            <span class="howit-step-label">Шаг 03</span>
             <h4>Показываем понятную смету</h4>
             <p>Прозрачный расчёт: что входит в&nbsp;цену и&nbsp;за&nbsp;что вы платите.</p>
           </div>
