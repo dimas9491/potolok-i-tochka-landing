@@ -110,6 +110,59 @@ body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
 .eyebrow.eyebrow-promo { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); font-weight: 700; padding: 6px 14px 6px 12px; font-size: 12px; }
 .eyebrow.eyebrow-promo::before { background: var(--accent); }
 
+/* HERO BENEFITS — 4 буллета с галочками (формула 1) */
+.hero-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 18px;
+}
+@media (max-width: 600px) { .hero-benefits { grid-template-columns: 1fr; } }
+.hero-benefits li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.4;
+  font-weight: 500;
+}
+.hero-benefits li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  background: var(--accent);
+  border-radius: 999px;
+  display: inline-block;
+}
+.hero-benefits li::after {
+  content: '✓';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+.hero-benefits li strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* BTN LEAD MAGNET — выделен «подарочной» рамкой */
+.btn-secondary.btn-lead-magnet {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+.btn-secondary.btn-lead-magnet:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-secondary.btn-lead-magnet svg { flex-shrink: 0; }
+
 /* TRUST STRIP — цифры доверия */
 .trust-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; padding: 18px 0; margin-bottom: 22px; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
 @media (max-width: 600px) { .trust-strip { grid-template-columns: 1fr 1fr; gap: 12px; } }
@@ -1161,34 +1214,43 @@ body[data-theme="2"] .btn-primary { box-shadow: none; }
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-text reveal reveal-left">
-        <div class="eyebrow eyebrow-promo">Натяжные потолки для квартир в&nbsp;новостройках</div>
+        <!-- ВЫГОДА В РУБЛЯХ (eyebrow-promo) -->
+        <div class="eyebrow eyebrow-promo">Скрытый карниз или светильники в&nbsp;подарок · комплекты для&nbsp;ЖК</div>
+
+        <!-- РКС: конкретное сообщение под нишу -->
         <h1 class="hero-h1">
-          Натяжные потолки в&nbsp;ЖК: 3–5 визуализаций и&nbsp;<span class="accent-word">фикс-цена</span> в&nbsp;день обращения
+          Натяжной потолок в&nbsp;ЖК <span class="accent-word">за&nbsp;1&nbsp;день</span> — фикс-цена и&nbsp;визуализации до&nbsp;монтажа
         </h1>
+
+        <!-- ВЫГОДА 1 + ВЫГОДА 2 -->
         <p class="hero-lead">
-          За 1 час пришлём 3–5 визуализаций под&nbsp;<strong>вашу планировку</strong> и&nbsp;зафиксируем цену в&nbsp;договоре. Без накрутки на&nbsp;замере и&nbsp;доплат «за&nbsp;непредвиденное».
+          Пришлите фото или план квартиры — <strong>за&nbsp;1&nbsp;час</strong> вернём 3–5 визуализаций под&nbsp;вашу планировку и&nbsp;<strong>зафиксируем цену в&nbsp;договоре</strong>. Без накрутки на&nbsp;замере.
         </p>
 
-        <!-- TRUST + PRICE STRIP — честные обещания, без фейк-отзывов -->
-        <div class="trust-price-strip reveal">
-          <div class="trust-item"><strong>1 час</strong><span>на&nbsp;расчёт</span></div>
-          <div class="trust-item"><strong>12 лет</strong><span>гарантия полотна</span></div>
-          <div class="trust-item"><strong>0&nbsp;₽</strong><span>выезд замерщика</span></div>
-          <div class="trust-item trust-item-price"><strong>от&nbsp;XX&nbsp;XXX&nbsp;₽</strong><span>за&nbsp;1-комн</span></div>
-        </div>
+        <!-- БУЛЛЕТЫ С ДОВЕРИЕМ (4 шт.) -->
+        <ul class="hero-benefits reveal">
+          <li><strong>Скрытый карниз или светильники</strong> в&nbsp;подарок при заказе комплекта</li>
+          <li><strong>12 лет гарантия</strong> на&nbsp;полотно от&nbsp;производителя</li>
+          <li><strong>Без предоплаты</strong> — оплата после монтажа</li>
+          <li><strong>Договор и&nbsp;чеки</strong> до&nbsp;начала работ, без скрытых доплат</li>
+        </ul>
 
+        <!-- CTA: РАССЧИТАТЬ СТОИМОСТЬ + ЛИД-МАГНИТ -->
         <div class="hero-ctas">
           <a href="#final" class="btn-primary">
             <span class="btn-primary-core">
-              <span class="btn-primary-text">Получить расчёт за 1 час</span>
+              <span class="btn-primary-text">Рассчитать стоимость по&nbsp;фото</span>
             </span>
           </a>
-          <a href="#kits" class="btn-secondary">
-            <span>Посмотреть комплекты</span>
+          <a href="#final" class="btn-secondary btn-lead-magnet">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M14 2H6C5 2 4 3 4 4V20C4 21 5 22 6 22H18C19 22 20 21 20 20V8L14 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M14 2V8H20" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 13H16M8 17H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Чек-лист «Когда ставить потолок»</span>
           </a>
         </div>
+
+        <!-- МИКРОТЕКСТ — лид-магнит подсилен -->
         <p class="hero-micro">
-          <strong>Бесплатно · без звонков</strong> — ответ в&nbsp;Telegram или на&nbsp;почту. Фикс-цена в&nbsp;договоре, без доплат.
+          <strong>Бесплатно · без звонков.</strong> Чек-лист пришлём в&nbsp;Telegram или на&nbsp;почту — даже если решите не&nbsp;заказывать. Внутри: <strong>7&nbsp;этапов ремонта</strong> и&nbsp;когда монтировать, чтобы не&nbsp;переделывать.
         </p>
       </div>
     </div>
