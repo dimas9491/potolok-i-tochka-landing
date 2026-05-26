@@ -2910,6 +2910,73 @@ body[data-theme="2"] .btn-primary { box-shadow: none; }
   .final-form-h3 { font-size: 24px !important; }
 }
 
+/* === QUIZ — интерактивный калькулятор === */
+.quiz-section { position: relative; padding: 100px 0; background: var(--bg); overflow: hidden; }
+.quiz-section::before { content: ''; position: absolute; top: 10%; right: -150px; width: 500px; height: 500px; background: radial-gradient(circle, var(--accent-soft) 0%, transparent 70%); pointer-events: none; z-index: 0; }
+.quiz-section::after { content: ''; position: absolute; bottom: 10%; left: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(201,240,80,0.18) 0%, transparent 70%); pointer-events: none; z-index: 0; }
+.quiz-wrap { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+.quiz-head { text-align: center; margin-bottom: 50px; max-width: 760px; margin-left: auto; margin-right: auto; }
+.quiz-head .section-h2 { margin-top: 18px; }
+.quiz-card { position: relative; max-width: 760px; margin: 0 auto; background: var(--bg); border: 1px solid var(--hairline); border-radius: 28px; padding: 36px 40px; min-height: 540px; display: flex; flex-direction: column; box-shadow: 0 40px 100px -30px rgba(var(--shadow-color), 0.22); }
+@media (max-width: 760px) { .quiz-card { padding: 28px 22px; border-radius: 22px; } }
+.quiz-progress-wrap { margin-bottom: 24px; }
+.quiz-progress-meta { display: flex; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 10px; font-weight: 600; }
+.quiz-progress-meta .quiz-step-label { color: var(--accent); }
+.quiz-progress-bar { height: 6px; background: var(--surface); border-radius: 999px; overflow: hidden; }
+.quiz-progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent) 0%, var(--hi) 100%); width: 25%; transition: width 500ms cubic-bezier(0.32,0.72,0,1); border-radius: 999px; }
+.quiz-content { flex: 1; display: flex; flex-direction: column; }
+.quiz-q-title { font-size: clamp(22px, 2.4vw, 30px); font-weight: 700; letter-spacing: -0.02em; margin: 0 0 8px; line-height: 1.15; color: var(--ink); }
+.quiz-q-sub { font-size: 15px; color: var(--ink-2); margin: 0 0 22px; line-height: 1.5; font-weight: 500; }
+.quiz-opts { display: flex; flex-direction: column; gap: 10px; }
+.quiz-opt { display: flex; align-items: center; gap: 14px; padding: 16px 18px; background: var(--bg); border: 1.5px solid var(--hairline); border-radius: 16px; cursor: pointer; text-align: left; font-size: 15.5px; color: var(--ink); font-family: inherit; font-weight: 500; width: 100%; transition: all 300ms cubic-bezier(0.32,0.72,0,1); }
+.quiz-opt:hover { border-color: var(--accent); background: var(--surface); transform: translateX(4px); }
+.quiz-opt.is-selected { border-color: var(--accent); background: var(--accent-soft); color: var(--ink); }
+.quiz-opt-icon { width: 36px; height: 36px; border-radius: 999px; background: var(--surface); display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; color: var(--ink-2); transition: all 300ms; }
+.quiz-opt.is-selected .quiz-opt-icon { background: var(--accent); color: #fff; }
+.quiz-opt-label { flex: 1; }
+.quiz-opt-check { width: 22px; height: 22px; border-radius: 999px; border: 1.5px solid var(--hairline); background: transparent; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 300ms; }
+.quiz-opt.is-selected .quiz-opt-check { background: var(--accent); border-color: var(--accent); }
+.quiz-opt.is-selected .quiz-opt-check::before { content: '✓'; color: #fff; font-size: 13px; font-weight: 800; }
+.quiz-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--hairline); }
+.quiz-back-btn { background: transparent; border: none; color: var(--ink-2); cursor: pointer; font-size: 14px; padding: 8px 14px; display: flex; align-items: center; gap: 6px; font-family: inherit; font-weight: 500; border-radius: 999px; transition: all 250ms; }
+.quiz-back-btn:hover { background: var(--surface); color: var(--ink); }
+.quiz-back-btn[hidden] { visibility: hidden; }
+.quiz-next-btn { background: var(--hi); color: var(--ink); border: none; padding: 14px 24px; border-radius: 999px; font-size: 15.5px; font-weight: 600; cursor: pointer; font-family: inherit; display: inline-flex; align-items: center; gap: 8px; box-shadow: inset 0 1px 0 var(--ink-2), 0 6px 18px -4px rgba(201,240,80,0.5); transition: all 300ms cubic-bezier(0.32,0.72,0,1); }
+.quiz-next-btn:hover:not(:disabled) { transform: translateY(-2px); background: var(--hi-strong); box-shadow: inset 0 1px 0 var(--ink-2), 0 12px 28px -6px rgba(201,240,80,0.6); }
+.quiz-next-btn:disabled { background: var(--surface); color: var(--ink-2); cursor: not-allowed; box-shadow: none; }
+.quiz-next-btn svg { width: 16px; height: 16px; }
+.quiz-form-grid { display: flex; flex-direction: column; gap: 14px; margin-bottom: 16px; }
+.quiz-field label { display: block; font-size: 13px; color: var(--ink-2); margin-bottom: 6px; font-weight: 600; }
+.quiz-field input { width: 100%; padding: 13px 16px; background: var(--surface); border: 1px solid var(--hairline); border-radius: 12px; font-size: 16px; font-family: inherit; color: var(--ink); font-weight: 500; transition: all 250ms; }
+.quiz-field input:focus { outline: none; border-color: var(--accent); background: var(--bg); }
+.quiz-err { font-size: 12px; color: var(--warn); margin: 6px 0 0; display: none; }
+.quiz-channels { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+@media (max-width: 480px) { .quiz-channels { grid-template-columns: 1fr; } }
+.quiz-ch { padding: 12px; border: 1.5px solid var(--hairline); background: var(--bg); color: var(--ink); border-radius: 12px; cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 6px; font-family: inherit; font-weight: 500; transition: all 250ms; }
+.quiz-ch:hover { border-color: var(--accent); background: var(--surface); }
+.quiz-ch.is-selected { border-color: var(--accent); background: var(--accent-soft); color: var(--ink); font-weight: 600; }
+.quiz-ch svg { width: 16px; height: 16px; }
+.quiz-agree { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: var(--ink-2); cursor: pointer; line-height: 1.5; margin-top: 4px; }
+.quiz-agree input { margin-top: 3px; flex-shrink: 0; accent-color: var(--accent); }
+.quiz-shield { margin-top: 16px; padding: 12px 14px; background: var(--accent-soft); border-radius: 12px; font-size: 13px; color: var(--ink); display: flex; align-items: flex-start; gap: 10px; font-weight: 500; line-height: 1.5; }
+.quiz-shield svg { width: 18px; height: 18px; color: var(--accent); flex-shrink: 0; margin-top: 1px; }
+.quiz-result-head { text-align: center; padding: 8px 0 16px; }
+.quiz-result-check { width: 64px; height: 64px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 16px; border: 2px solid var(--accent); }
+.quiz-result-check svg { width: 32px; height: 32px; }
+.quiz-result-head h3 { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 8px; color: var(--ink); }
+.quiz-result-head p { font-size: 14.5px; color: var(--ink-2); margin: 0; font-weight: 500; }
+.quiz-summary { background: var(--surface); border-radius: 16px; padding: 18px 20px; margin: 16px 0; font-size: 14.5px; line-height: 1.65; }
+.quiz-summary-label { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--accent); margin-bottom: 8px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; }
+.quiz-summary-body { color: var(--ink-2); }
+.quiz-summary-body strong { color: var(--ink); font-weight: 700; }
+.quiz-result-checklist { border: 1.5px solid var(--accent); background: var(--accent-soft); border-radius: 16px; padding: 16px 18px; display: flex; gap: 14px; align-items: flex-start; }
+.quiz-result-checklist svg { width: 24px; height: 24px; color: var(--accent); flex-shrink: 0; margin-top: 3px; }
+.quiz-result-checklist-tag { font-size: 11px; color: var(--accent); margin-bottom: 4px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; }
+.quiz-result-checklist-title { font-size: 15.5px; color: var(--ink); font-weight: 700; line-height: 1.35; }
+.quiz-result-cta { margin-top: 18px; background: var(--hi); color: var(--ink); border: none; padding: 16px; border-radius: 14px; font-size: 16px; font-weight: 700; cursor: pointer; width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; font-family: inherit; box-shadow: inset 0 1px 0 var(--ink-2), 0 8px 22px -6px rgba(201,240,80,0.55); transition: all 300ms; }
+.quiz-result-cta:hover { transform: translateY(-2px); background: var(--hi-strong); }
+.quiz-result-foot { font-size: 13px; color: var(--ink-2); text-align: center; margin: 14px 0 0; line-height: 1.5; }
+
 </style>
 
 <!-- OpenGraph (для шеринга в Telegram, WhatsApp, VK, Facebook) -->
@@ -3708,6 +3775,43 @@ body[data-theme="2"] .btn-primary { box-shadow: none; }
   </div>
 </section>
 
+
+<!-- QUIZ — калькулятор -->
+<section class="quiz-section" id="quiz">
+  <div class="quiz-wrap">
+    <div class="quiz-head reveal reveal-scale">
+      <div class="eyebrow eyebrow-promo">4 вопроса · 60 секунд</div>
+      <h2 class="section-h2">Подберём потолок <span class="accent-word">под вашу комнату</span></h2>
+      <p class="section-lead">Ответьте на 4 коротких вопроса — пришлём <strong>персональный каталог</strong> с примерами под вашу комнату и ориентиром цены в Telegram.</p>
+    </div>
+
+    <div class="quiz-card reveal reveal-bounce">
+      <div class="quiz-progress-wrap">
+        <div class="quiz-progress-meta">
+          <span class="quiz-step-label" id="quiz-step-label">Шаг 1 из 4</span>
+          <span id="quiz-step-context">Старт</span>
+        </div>
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+        </div>
+      </div>
+      <div class="quiz-content" id="quiz-content"></div>
+      <div class="quiz-nav">
+        <button class="quiz-back-btn" id="quiz-back" hidden>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Назад
+        </button>
+        <button class="quiz-next-btn" id="quiz-next" disabled>
+          <span id="quiz-next-label">Дальше</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave-divider"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C320,80 720,0 1080,40 C1260,60 1380,30 1440,40 L1440,80 L0,80 Z" fill="#F3EFE7"/></svg>
+
 <!-- FAQ -->
 <div class="zigzag-divider"></div>
 
@@ -4013,6 +4117,235 @@ document.querySelectorAll('.btn-primary, .nav-btn, .form-submit, .footer-cta-btn
     btn.style.transform = '';
   });
 });
+
+// === QUIZ ===
+(function(){
+  const questions = [
+  { id: "room", type: "single", context: "Комната", title: "Какая комната?", subtitle: "От комнаты зависит фактура и свет.",
+    options: [
+      { v: "bedroom", l: "Спальня", icon: "☾" },
+      { v: "kitchen", l: "Кухня", icon: "▦" },
+      { v: "living", l: "Гостиная", icon: "▣" },
+      { v: "kid", l: "Детская", icon: "✦" },
+      { v: "hall", l: "Коридор", icon: "▭" },
+      { v: "many", l: "Несколько комнат", icon: "▥" },
+    ]},
+  { id: "texture", type: "single", context: "Фактура", title: "Какая фактура подходит?", subtitle: "Не уверены — выберите «подскажите», объясним по фото.",
+    options: [
+      { v: "matt", l: "Матовый — спокойный без бликов", icon: "▢" },
+      { v: "satin", l: "Сатиновый — мягкое отражение", icon: "◐" },
+      { v: "fabric", l: "Тканевый — премиум", icon: "▨" },
+      { v: "gloss", l: "Глянцевый — зеркальный", icon: "◇" },
+      { v: "advise", l: "Не знаю — подскажите", icon: "?" },
+    ]},
+  { id: "extras", type: "multi", context: "Дополнения", title: "Что добавить к потолку?", subtitle: "Можно выбрать несколько или ничего.",
+    options: [
+      { v: "curtain", l: "Скрытый карниз под шторы", icon: "⌐" },
+      { v: "spots", l: "Точечные светильники", icon: "•" },
+      { v: "track", l: "Трековый свет", icon: "↔" },
+      { v: "led", l: "Подсветка по периметру", icon: "✦" },
+      { v: "none", l: "Без дополнений — базовый", icon: "—" },
+    ]},
+  { id: "budget", type: "single", context: "Бюджет", title: "Ориентир по бюджету?", subtitle: "Покажем варианты под выбранный диапазон.",
+    options: [
+      { v: "low", l: "До 30 000 ₽", icon: "₽" },
+      { v: "mid", l: "30–60 000 ₽", icon: "₽" },
+      { v: "high", l: "60–100 000 ₽", icon: "₽" },
+      { v: "premium", l: "100 000 ₽ и выше", icon: "₽" },
+      { v: "unknown", l: "Не знаю — подскажите", icon: "?" },
+    ]},
+];
+  const checklists = {
+  matt: "Матовый потолок: 7 ошибок при выборе фактуры",
+  satin: "Сатин или матовый: сравнение под 5 типов комнат",
+  fabric: "Тканевый потолок: где есть смысл переплачивать, а где — нет",
+  gloss: "Глянцевый потолок: 5 случаев когда подходит, и 4 когда нет",
+  advise: "Каталог 12 готовых решений с примерами и ценами",
+  default: "Каталог 12 готовых решений с примерами и ценами",
+};
+  const DEFAULT_CHECKLIST = 'default';
+  const texture = 'texture';
+
+  let step = 0;
+  const answers = {};
+  let phone = '';
+  let channel = 'tg';
+  let agreed = false;
+  const TOTAL = questions.length;
+
+  const content = document.getElementById('quiz-content');
+  if (!content) return;
+  const stepLabel = document.getElementById('quiz-step-label');
+  const stepContext = document.getElementById('quiz-step-context');
+  const progressFill = document.getElementById('quiz-progress-fill');
+  const btnBack = document.getElementById('quiz-back');
+  const btnNext = document.getElementById('quiz-next');
+  const btnNextLabel = document.getElementById('quiz-next-label');
+
+  function escapeHTML(s) { return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]); }
+
+  function updateProgress(){
+    const pct = step < TOTAL ? Math.round(((step + 0.0) / TOTAL) * 80) + 5 : (step === TOTAL ? 95 : 100);
+    progressFill.style.width = pct + '%';
+    if (step < TOTAL) {
+      stepLabel.textContent = 'Шаг ' + (step+1) + ' из ' + TOTAL;
+      stepContext.textContent = questions[step].context;
+    } else if (step === TOTAL) {
+      stepLabel.textContent = 'Почти готово';
+      stepContext.textContent = 'Куда прислать';
+    } else {
+      stepLabel.textContent = 'Готово';
+      stepContext.textContent = 'Отправлено';
+    }
+    btnBack.hidden = !(step > 0 && step <= TOTAL);
+  }
+
+  function setNextEnabled(on, label){
+    btnNext.disabled = !on;
+    if (label) btnNextLabel.textContent = label;
+  }
+
+  function renderQuestion(){
+    const q = questions[step];
+    const selected = answers[q.id];
+    const isMulti = q.type === 'multi';
+    const sel = isMulti ? (selected || []) : selected;
+
+    let html = '<h3 class="quiz-q-title">' + escapeHTML(q.title) + '</h3>' +
+               '<p class="quiz-q-sub">' + escapeHTML(q.subtitle) + '</p>' +
+               '<div class="quiz-opts">';
+    q.options.forEach(opt => {
+      const isSel = isMulti ? sel.includes(opt.v) : sel === opt.v;
+      html += '<button class="quiz-opt' + (isSel ? ' is-selected' : '') + '" data-val="' + opt.v + '" type="button">' +
+              '<span class="quiz-opt-icon">' + (opt.icon || '◇') + '</span>' +
+              '<span class="quiz-opt-label">' + escapeHTML(opt.l) + '</span>' +
+              '<span class="quiz-opt-check"></span>' +
+              '</button>';
+    });
+    html += '</div>';
+    content.innerHTML = html;
+
+    content.querySelectorAll('.quiz-opt').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const val = btn.dataset.val;
+        if (isMulti) {
+          const arr = answers[q.id] || [];
+          const idx = arr.indexOf(val);
+          if (idx === -1) arr.push(val); else arr.splice(idx, 1);
+          answers[q.id] = arr;
+        } else {
+          answers[q.id] = val;
+        }
+        renderQuestion();
+        checkNext();
+      });
+    });
+    checkNext();
+  }
+
+  function checkNext(){
+    if (step < TOTAL){
+      const q = questions[step];
+      const a = answers[q.id];
+      const ok = q.type === 'multi' ? (a && a.length > 0) : !!a;
+      const label = step === TOTAL - 1 ? 'К получению чек-листа' : 'Дальше';
+      setNextEnabled(ok, label);
+    } else if (step === TOTAL){
+      const phoneOk = /^\+?[78][\s\-]?\(?\d{3}\)?[\s\-]?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}$/.test(phone.replace(/\s/g, ''));
+      setNextEnabled(phoneOk && agreed, 'Получить чек-лист');
+    }
+  }
+
+  function renderContactForm(){
+    content.innerHTML =
+      '<h3 class="quiz-q-title">Готово. Куда прислать персональный чек-лист?</h3>' +
+      '<p class="quiz-q-sub">Подобрали материалы под ваши ответы. Без звонков и спама.</p>' +
+      '<div class="quiz-form-grid">' +
+        '<div class="quiz-field"><label>Имя <span style="color:var(--ink-2);font-weight:500;">(по желанию)</span></label>' +
+        '<input id="q-name" type="text" placeholder="Как к вам обращаться"></div>' +
+        '<div class="quiz-field"><label>Телефон <span style="color:var(--warn);">*</span></label>' +
+        '<input id="q-phone" type="tel" placeholder="+7 999 000-00-00" value="' + escapeHTML(phone) + '"></div>' +
+        '<div class="quiz-field"><label>Куда удобнее прислать?</label>' +
+        '<div class="quiz-channels">' +
+          '<button data-ch="tg" type="button" class="quiz-ch' + (channel==='tg'?' is-selected':'') + '"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>Telegram</button>' +
+          '<button data-ch="wa" type="button" class="quiz-ch' + (channel==='wa'?' is-selected':'') + '"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.1-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .2.2 2.1 3.2 5.1 4.4 1.7.7 2.4.8 3.3.6.5-.1 1.6-.6 1.8-1.3.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.2L2 22l5-1.4c1.5.8 3.2 1.4 5 1.4 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>WhatsApp</button>' +
+          '<button data-ch="sms" type="button" class="quiz-ch' + (channel==='sms'?' is-selected':'') + '"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>SMS</button>' +
+        '</div></div>' +
+      '</div>' +
+      '<label class="quiz-agree"><input id="q-agree" type="checkbox"' + (agreed ? ' checked' : '') + '><span>Согласен(на) с обработкой персональных данных и получением чек-листа.</span></label>' +
+      '<div class="quiz-shield"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg><span>Без звонков без вашего запроса. Чек-лист придёт через 5–15 секунд.</span></div>';
+
+    document.getElementById('q-phone').addEventListener('input', e => { phone = e.target.value; checkNext(); });
+    document.getElementById('q-agree').addEventListener('change', e => { agreed = e.target.checked; checkNext(); });
+    content.querySelectorAll('.quiz-ch').forEach(btn => {
+      btn.addEventListener('click', () => {
+        channel = btn.dataset.ch;
+        content.querySelectorAll('.quiz-ch').forEach(b => { b.classList.toggle('is-selected', b.dataset.ch === channel); });
+      });
+    });
+    checkNext();
+  }
+
+  function renderResult(){
+    const channelLabels = { tg: 'Telegram', wa: 'WhatsApp', sms: 'SMS' };
+    let checklistKey = DEFAULT_CHECKLIST;
+    if (texture && answers[texture]) {
+      const a = answers[texture];
+      if (Array.isArray(a)) {
+        const first = a.find(x => checklists[x]);
+        if (first) checklistKey = first;
+      } else if (checklists[a]) {
+        checklistKey = a;
+      }
+    }
+    const checklistTitle = checklists[checklistKey] || checklists[DEFAULT_CHECKLIST];
+
+    const summaryParts = questions.map(q => {
+      const a = answers[q.id];
+      if (!a) return null;
+      if (Array.isArray(a)) {
+        return a.map(v => (q.options.find(o => o.v === v) || {}).l).filter(Boolean).join(', ');
+      }
+      return (q.options.find(o => o.v === a) || {}).l;
+    }).filter(Boolean);
+
+    content.innerHTML =
+      '<div class="quiz-result-head">' +
+        '<div class="quiz-result-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div>' +
+        '<h3>Чек-лист уходит в ' + channelLabels[channel] + '</h3>' +
+        '<p>Сообщение придёт через 5–15 секунд на номер ' + escapeHTML(phone || '+7 XXX XXX-XX-XX') + '</p>' +
+      '</div>' +
+      '<div class="quiz-summary">' +
+        '<div class="quiz-summary-label">Ваш профиль</div>' +
+        '<div class="quiz-summary-body">' + summaryParts.map(escapeHTML).join('<br>') + '</div>' +
+      '</div>' +
+      '<div class="quiz-result-checklist">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>' +
+        '<div>' +
+          '<div class="quiz-result-checklist-tag">PDF в ' + channelLabels[channel] + '</div>' +
+          '<div class="quiz-result-checklist-title">«' + escapeHTML(checklistTitle) + '»</div>' +
+        '</div>' +
+      '</div>' +
+      '<button type="button" class="quiz-result-cta" onclick="window.location.href=\'https://t.me/\'">Открыть ' + channelLabels[channel] + '</button>' +
+      '<p class="quiz-result-foot">Личный ответственный посмотрит ваши ответы и напишет лично — если будут вопросы.</p>';
+
+    btnNext.style.display = 'none';
+    btnBack.hidden = true;
+  }
+
+  function render(){
+    updateProgress();
+    if (step < TOTAL) renderQuestion();
+    else if (step === TOTAL) renderContactForm();
+    else renderResult();
+  }
+
+  btnNext.addEventListener('click', () => { if (!btnNext.disabled) { step++; render(); } });
+  btnBack.addEventListener('click', () => { if (step > 0) { step--; render(); } });
+
+  render();
+})();
+
 </script>
 
 </body>
