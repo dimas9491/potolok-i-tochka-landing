@@ -713,6 +713,59 @@ body[data-theme="2"] .btn-primary { box-shadow: none; }
 .fear-pill, .fear-bubble { font-size: 15px; font-weight: 500; }
 
 
+
+/* === MASTER HERO PHOTO — full-bleed справа === */
+.hero-master-side {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 52vw;
+  z-index: 1;
+  overflow: hidden;
+}
+.hero-master-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 8%, rgba(0,0,0,0.85) 18%, black 26%, black 100%),
+    linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 4%, black 10%, black 92%, rgba(0,0,0,0.7) 97%, transparent 100%);
+  mask-image:
+    linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 8%, rgba(0,0,0,0.85) 18%, black 26%, black 100%),
+    linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 4%, black 10%, black 92%, rgba(0,0,0,0.7) 97%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+.hero-master-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transition: transform 1600ms cubic-bezier(0.32,0.72,0,1);
+}
+.hero-master-side:hover .hero-master-img img { transform: scale(1.03); }
+
+@media (max-width: 1180px) {
+  .hero-master-side { width: 48vw; }
+}
+@media (max-width: 980px) {
+  .hero-master-side {
+    position: relative;
+    width: calc(100% - 36px);
+    margin: 0 18px 40px;
+    aspect-ratio: 5/4;
+    max-height: 520px;
+    height: auto;
+    order: -1;
+    border-radius: 22px;
+  }
+  .hero-master-img { -webkit-mask-image: none; mask-image: none; }
+}
+
+
 </style>
 </head>
 <body data-theme="1">
@@ -808,52 +861,12 @@ body[data-theme="2"] .btn-primary { box-shadow: none; }
         </p>
       </div>
     </div>
-
-    <div class="hero-ba-side">
-      <div class="ba-card reveal reveal-right">
-        <span class="ba-sticker">Монтаж за 1 день</span>
-        <div class="ba-inner">
-          <div class="ba-head">
-            <span class="ba-tag">До / После</span>
-            <span class="ba-room">Комната · 14 м²</span>
-          </div>
-
-          <div class="ba-section before">
-            <span class="ba-section-label">До замены</span>
-            <h4>Старый пожелтевший потолок</h4>
-            <p>Глянцевое полотно потеряло вид, провисло после залива, светильники устарели. Профиль в нормальном состоянии — можно оставить.</p>
-          </div>
-
-          <div class="ba-arrow">
-            <div class="ba-arrow-line"></div>
-            <div class="ba-arrow-circle">
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2V14M8 14L3 9M8 14L13 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-          </div>
-
-          <div class="ba-section after">
-            <span class="ba-section-label">После замены</span>
-            <h4>Новый матовый потолок + 6 светильников</h4>
-            <p>Свежее матовое полотно, обновлённый свет, аккуратные стыки. Мебель и обои не пострадали — работали с защитой.</p>
-          </div>
-
-          <div class="ba-foot">
-            <div class="ba-foot-cell">
-              <span class="ba-foot-key">Срок</span>
-              <span class="ba-foot-val">1 день</span>
-            </div>
-            <div class="ba-foot-cell">
-              <span class="ba-foot-key">Оценка</span>
-              <span class="ba-foot-val">за 1 час</span>
-            </div>
-            <div class="ba-foot-cell">
-              <span class="ba-foot-key">Цена</span>
-              <span class="ba-foot-val">от XX&nbsp;XXX&nbsp;₽</span>
-            </div>
-          </div>
-        </div>
+    <div class="hero-master-side reveal reveal-right">
+      <div class="hero-master-img">
+        <img src="master_potolok_clean_crop.png" alt="Мастер натяжных потолков за работой" loading="eager">
       </div>
     </div>
+
   </div>
 </section>
 

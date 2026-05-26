@@ -1185,6 +1185,59 @@ body[data-theme="2"] .btn-primary { box-shadow: none; }
 .fear-pill, .fear-bubble { font-size: 15px; font-weight: 500; }
 
 
+
+/* === MASTER HERO PHOTO — full-bleed справа === */
+.hero-master-side {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 52vw;
+  z-index: 1;
+  overflow: hidden;
+}
+.hero-master-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 8%, rgba(0,0,0,0.85) 18%, black 26%, black 100%),
+    linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 4%, black 10%, black 92%, rgba(0,0,0,0.7) 97%, transparent 100%);
+  mask-image:
+    linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 8%, rgba(0,0,0,0.85) 18%, black 26%, black 100%),
+    linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 4%, black 10%, black 92%, rgba(0,0,0,0.7) 97%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+.hero-master-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transition: transform 1600ms cubic-bezier(0.32,0.72,0,1);
+}
+.hero-master-side:hover .hero-master-img img { transform: scale(1.03); }
+
+@media (max-width: 1180px) {
+  .hero-master-side { width: 48vw; }
+}
+@media (max-width: 980px) {
+  .hero-master-side {
+    position: relative;
+    width: calc(100% - 36px);
+    margin: 0 18px 40px;
+    aspect-ratio: 5/4;
+    max-height: 520px;
+    height: auto;
+    order: -1;
+    border-radius: 22px;
+  }
+  .hero-master-img { -webkit-mask-image: none; mask-image: none; }
+}
+
+
 </style>
 </head>
 <body data-theme="1">
@@ -1280,79 +1333,12 @@ body[data-theme="2"] .btn-primary { box-shadow: none; }
         </p>
       </div>
     </div>
-
-    <div class="hero-howit-side">
-      <div class="howit-stack reveal reveal-right">
-        <div class="howit-head">
-          <h3>Как это работает</h3>
-          <span class="howit-meta">Всего 3 шага</span>
-        </div>
-
-        <div class="howit-card">
-          <div class="howit-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="6" y="2" width="12" height="20" rx="2.5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="18.5" r="1" fill="currentColor"/><circle cx="12" cy="9" r="2" stroke="currentColor" stroke-width="1.6"/></svg>
-          </div>
-          <div class="howit-body">
-            <span class="howit-step-label">Шаг 01</span>
-            <h4>Вы присылаете фото комнаты</h4>
-            <p>Любое фото на телефон: общий вид, углы, окна, трубы — достаточно.</p>
-          </div>
-          <div class="howit-visual">
-            <div class="howit-visual-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7V12L15 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <span class="howit-visual-label">Ответ за&nbsp;1&nbsp;час</span>
-          </div>
-        </div>
-
-        <div class="howit-card">
-          <div class="howit-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7L12 12L21 7L12 2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M3 12L12 17L21 12" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M3 17L12 22L21 17" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="howit-body">
-            <span class="howit-step-label">Шаг 02</span>
-            <h4>Пришлём 3–5 визуализаций</h4>
-            <p>Как потолок будет выглядеть именно у&nbsp;вас — с&nbsp;учётом интерьера и&nbsp;бюджета.</p>
-          </div>
-          <div class="howit-visual">
-            <div class="howit-visual-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6H10M14 6H20M4 12H6M10 12H20M4 18H14M18 18H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="6" r="2.2" stroke="currentColor" stroke-width="1.6" fill="none"/><circle cx="8" cy="12" r="2.2" stroke="currentColor" stroke-width="1.6" fill="none"/><circle cx="16" cy="18" r="2.2" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
-            </div>
-            <span class="howit-visual-label">Варианты под&nbsp;бюджет</span>
-          </div>
-        </div>
-
-        <div class="howit-card">
-          <div class="howit-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 8H16M8 12H16M8 16H12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          </div>
-          <div class="howit-body">
-            <span class="howit-step-label">Шаг 03</span>
-            <h4>Показываем понятную смету</h4>
-            <p>Прозрачный расчёт: что входит в&nbsp;цену и&nbsp;за&nbsp;что вы платите.</p>
-          </div>
-          <div class="howit-visual">
-            <div class="howit-visual-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 6H14C15.66 6 17 7.34 17 9C17 10.66 15.66 12 14 12H9V6ZM9 12V19M7 9H13M7 14H13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <span class="howit-visual-label">Без скрытых платежей</span>
-          </div>
-        </div>
-
-        <div class="howit-badge-card">
-          <div class="howit-badge-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 5V11C4 16 7 20 12 22C17 20 20 16 20 11V5L12 2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 12L11 15L16 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="howit-badge-body">
-            <h4>Точно по делу, без лишних визитов</h4>
-            <p>Вы получаете расчёт и&nbsp;рекомендации, а&nbsp;замер — только когда вы готовы.</p>
-          </div>
-          <div class="howit-badge-sparkle">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z" fill="currentColor"/><path d="M19 16L19.7 18.3L22 19L19.7 19.7L19 22L18.3 19.7L16 19L18.3 18.3L19 16Z" fill="currentColor"/></svg>
-          </div>
-        </div>
+    <div class="hero-master-side reveal reveal-right">
+      <div class="hero-master-img">
+        <img src="master_potolok_clean_crop.png" alt="Мастер натяжных потолков за работой" loading="eager">
       </div>
     </div>
+
   </div>
 </section>
 
