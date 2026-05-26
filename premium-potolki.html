@@ -116,17 +116,6 @@ img { max-width: 100%; display: block; }
 .hero-master-img img { width: 100%; height: 100%; object-fit: cover; object-position: center center; -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 8%, #000 92%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0%, #000 8%, #000 92%, transparent 100%); transition: transform 1600ms cubic-bezier(0.32,0.72,0,1); }
 .hero-master-side:hover .hero-master-img img { transform: scale(1.03); }
 
-/* HERO MINI-CARD (floating QC) */
-.hero-mini-card { position: absolute; bottom: 60px; right: 60px; z-index: 3; background: var(--bg); border: 1px solid var(--hairline); border-radius: 22px; padding: 20px 22px; max-width: 320px; box-shadow: 0 30px 70px -20px rgba(var(--shadow-color), 0.28); transform: rotate(1.5deg); }
-.hero-mini-card-tag { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; background: var(--accent-soft); color: var(--accent); border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; margin-bottom: 12px; }
-.hero-mini-card-tag::before { content: ''; width: 5px; height: 5px; background: var(--accent); border-radius: 999px; }
-.hero-mini-card-title { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 10px; letter-spacing: -0.01em; }
-.hero-mini-card-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
-.hero-mini-card-list li { font-size: 12.5px; color: var(--ink-2); line-height: 1.4; padding-left: 14px; position: relative; }
-.hero-mini-card-list li::before { content: ''; position: absolute; left: 0; top: 7px; width: 5px; height: 5px; background: var(--accent); border-radius: 999px; }
-@media (max-width: 1200px) { .hero-mini-card { right: 30px; max-width: 280px; } }
-@media (max-width: 1080px) { .hero-mini-card { display: none; } }
-
 @media (max-width: 1080px) {
   .hero-inner { grid-template-columns: 1fr; }
   .hero-content { padding: 100px 24px 60px; }
@@ -465,19 +454,6 @@ img { max-width: 100%; display: block; }
       <div class="hero-master-img">
         <img src="master_potolok_clean_crop.png" alt="Мастер натяжных потолков за работой" loading="eager">
       </div>
-    </div>
-
-    <!-- MINI КП CARD -->
-    <div class="hero-mini-card reveal reveal-bounce">
-      <div class="hero-mini-card-tag">Пример КП</div>
-      <div class="hero-mini-card-title">Кухня-гостиная · 32 м²</div>
-      <ul class="hero-mini-card-list">
-        <li>Теневой профиль</li>
-        <li>Скрытый карниз под шторы</li>
-        <li>Трековый свет + подсветка</li>
-        <li>Расчёт по проекту</li>
-        <li>Согласование узлов до монтажа</li>
-      </ul>
     </div>
 
   </div>
