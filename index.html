@@ -2361,7 +2361,7 @@ body[data-theme="2"] .theme-switch { background: rgba(35,35,42,0.9); }
 }
 </style>
 </head>
-<body data-theme="3">
+<body data-theme="1">
 
 <!-- WhatsApp floating button -->
 <a href="https://wa.me/" class="wa-float" aria-label="Написать в WhatsApp" target="_blank" rel="noopener">
@@ -2372,12 +2372,6 @@ body[data-theme="2"] .theme-switch { background: rgba(35,35,42,0.9); }
 </a>
 
 <!-- THEME SWITCHER -->
-<div class="theme-switch" aria-label="Переключение темы">
-  <span class="theme-switch-label">Тема</span>
-  <button class="theme-btn" data-set-theme="1" title="Тёплая редакция">1</button>
-  <button class="theme-btn" data-set-theme="2" title="Тёмная премиум">2</button>
-  <button class="theme-btn active" data-set-theme="3" title="Архитектурная">3</button>
-</div>
 
 <!-- NAV -->
 <div class="nav-shell">
@@ -3321,14 +3315,6 @@ body[data-theme="2"] .theme-switch { background: rgba(35,35,42,0.9); }
 
 <script>
 // Theme switcher
-document.querySelectorAll('[data-set-theme]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const theme = btn.getAttribute('data-set-theme');
-    document.body.setAttribute('data-theme', theme);
-    document.querySelectorAll('[data-set-theme]').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-  });
-});
 
 // Mobile menu
 const burger = document.getElementById('burger');

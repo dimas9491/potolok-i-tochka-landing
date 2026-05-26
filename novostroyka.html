@@ -689,7 +689,7 @@ body[data-theme="2"] .theme-switch { background: rgba(35,35,42,0.9); }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
 </style>
 </head>
-<body data-theme="3">
+<body data-theme="1">
 
 <a href="https://wa.me/" class="wa-float" aria-label="Написать в WhatsApp" target="_blank" rel="noopener">
   <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
@@ -698,12 +698,6 @@ body[data-theme="2"] .theme-switch { background: rgba(35,35,42,0.9); }
   </svg>
 </a>
 
-<div class="theme-switch">
-  <span class="theme-switch-label">Тема</span>
-  <button class="theme-btn" data-set-theme="1">1</button>
-  <button class="theme-btn" data-set-theme="2">2</button>
-  <button class="theme-btn active" data-set-theme="3">3</button>
-</div>
 
 <!-- NAV -->
 <div class="nav-shell">
@@ -1634,14 +1628,6 @@ body[data-theme="2"] .theme-switch { background: rgba(35,35,42,0.9); }
 </footer>
 
 <script>
-document.querySelectorAll('[data-set-theme]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const theme = btn.getAttribute('data-set-theme');
-    document.body.setAttribute('data-theme', theme);
-    document.querySelectorAll('[data-set-theme]').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-  });
-});
 
 const burger = document.getElementById('burger');
 const mobileMenu = document.getElementById('mobileMenu');
