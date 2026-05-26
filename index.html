@@ -2334,6 +2334,11 @@ body[data-theme="2"] .theme-switch { background: rgba(35,35,42,0.9); }
 }
 .theme-btn:hover:not(.active) { background: var(--accent-soft); }
 
+/* Btn-primary без обводки — outer shell убран */
+.btn-primary { padding: 0; background: transparent; border: none; box-shadow: none; }
+.btn-primary:hover { box-shadow: 0 14px 28px -8px rgba(201,240,80,0.45); }
+body[data-theme="2"] .btn-primary { box-shadow: none; }
+
 /* Scroll reveal */
 .reveal {
   opacity: 0;
