@@ -96,16 +96,35 @@ body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
 @keyframes float2 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(50px,-40px); } }
 
 .hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 700px) 1fr; align-items: center; width: 100%; min-height: 100dvh; }
-.hero-content { padding: 120px 48px 60px 60px; display: flex; align-items: center; }
+.hero-content { padding: 110px 48px 40px 60px; display: flex; align-items: center; }
 .hero-text { max-width: 600px; width: 100%; }
-.hero-h1 { font-size: clamp(40px, 5.4vw, 74px); margin: 22px 0 22px; }
+.hero-h1 { font-size: clamp(36px, 4.6vw, 60px); margin: 16px 0 16px; line-height: 1.05; }
 .hero-h1 .accent-word { font-family: 'Fraunces', serif; font-weight: 400; font-style: italic; color: var(--accent); letter-spacing: -0.02em; }
-.hero-lead { font-size: clamp(17px, 1.45vw, 21px); color: var(--ink-2); max-width: 540px; line-height: 1.5; margin-bottom: 28px; }
-.hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
-.hero-badge { display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; background: var(--surface); border-radius: 999px; font-size: 13px; color: var(--ink); border: 1px solid var(--hairline); }
-.hero-badge::before { content: ''; width: 5px; height: 5px; background: var(--accent); border-radius: 999px; }
-.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-.hero-micro { margin-top: 16px; font-size: 13px; color: var(--ink-2); max-width: 480px; }
+.hero-lead { font-size: clamp(15px, 1.2vw, 18px); color: var(--ink-2); max-width: 540px; line-height: 1.45; margin-bottom: 18px; }
+.hero-badges { display: none; }
+
+/* TRUST + PRICE STRIP — честные обещания + price-заглушка */
+.trust-price-strip { display: grid; grid-template-columns: 1fr 1fr 1fr 1.3fr; gap: 0; margin: 18px 0 22px; border: 1px solid var(--hairline); border-radius: 16px; overflow: hidden; background: var(--bg); }
+.trust-price-strip .trust-item { padding: 12px 14px; display: flex; flex-direction: column; gap: 2px; border-right: 1px solid var(--hairline); }
+.trust-price-strip .trust-item:last-child { border-right: none; }
+.trust-price-strip .trust-item strong { font-family: 'Inter Tight', sans-serif; font-size: 19px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; line-height: 1; }
+.trust-price-strip .trust-item span { font-size: 11.5px; color: var(--ink-2); font-weight: 500; line-height: 1.3; }
+.trust-price-strip .trust-item-price { background: var(--accent-soft); border-left: 1px solid var(--accent); }
+.trust-price-strip .trust-item-price strong { color: var(--accent); font-size: 20px; }
+.trust-price-strip .trust-item-price span { color: var(--ink); font-weight: 600; }
+@media (max-width: 600px) {
+  .trust-price-strip { grid-template-columns: 1fr 1fr; }
+  .trust-price-strip .trust-item:nth-child(2) { border-right: none; }
+  .trust-price-strip .trust-item:nth-child(-n+2) { border-bottom: 1px solid var(--hairline); }
+  .trust-price-strip .trust-item-price { border-left: none; border-top: 1px solid var(--accent); }
+}
+
+.eyebrow.eyebrow-promo { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); font-weight: 700; padding: 6px 14px 6px 12px; font-size: 12px; }
+.eyebrow.eyebrow-promo::before { background: var(--accent); }
+
+.hero-ctas { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.hero-micro { margin-top: 12px; font-size: 13px; color: var(--ink-2); max-width: 480px; line-height: 1.45; }
+.hero-micro strong { color: var(--ink); font-weight: 700; }
 
 /* Hero before/after card */
 .hero-ba-side { padding: 120px 60px 60px 0; display: flex; align-items: center; justify-content: center; height: 100%; position: relative; }
@@ -818,33 +837,34 @@ body[data-theme="2"] .btn-primary { box-shadow: none; }
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-text reveal reveal-left">
-        <div class="eyebrow">Замена · жилая квартира</div>
+        <div class="eyebrow eyebrow-promo">Замена · жилая квартира</div>
         <h1 class="hero-h1">
           Аккуратно заменим натяжной потолок <span class="accent-word">в&nbsp;жилой</span> квартире
         </h1>
         <p class="hero-lead">
-          Пришлите фото старого потолка — оценим состояние полотна, света и профиля, подскажем варианты замены и покажем ориентир цены. Работаем аккуратно: с защитой мебели, пола и отделки.
+          Пришлите фото старого потолка — за 1 час оценим состояние и&nbsp;<strong>зафиксируем цену</strong> в&nbsp;договоре. Защитим мебель, пол и&nbsp;отделку — без переезда из&nbsp;квартиры.
         </p>
-        <div class="hero-badges">
-          <span class="hero-badge">Оценка по фото за 1 час</span>
-          <span class="hero-badge">Можно заменить только полотно</span>
-          <span class="hero-badge">Защитим мебель и пол</span>
-          <span class="hero-badge">Обновим свет и карниз</span>
-          <span class="hero-badge">Смета фиксируется до монтажа</span>
+
+        <!-- TRUST + PRICE STRIP — честные обещания + price-заглушка -->
+        <div class="trust-price-strip reveal">
+          <div class="trust-item"><strong>1 час</strong><span>на&nbsp;оценку</span></div>
+          <div class="trust-item"><strong>1 день</strong><span>на&nbsp;монтаж</span></div>
+          <div class="trust-item"><strong>0&nbsp;₽</strong><span>защита мебели</span></div>
+          <div class="trust-item trust-item-price"><strong>от&nbsp;XX&nbsp;XXX&nbsp;₽</strong><span>замена под&nbsp;ключ</span></div>
         </div>
+
         <div class="hero-ctas">
           <a href="#final" class="btn-primary">
             <span class="btn-primary-core">
               <span class="btn-primary-text">Оценить замену по фото</span>
             </span>
           </a>
-          <a href="https://t.me/" class="btn-secondary">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 4L11 13" stroke="currentColor" stroke-width="1.5"/><path d="M22 4L15 22L11 13L2 9L22 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-            <span>Написать мастеру в Telegram</span>
+          <a href="#faq" class="btn-secondary">
+            <span>Частые вопросы</span>
           </a>
         </div>
         <p class="hero-micro">
-          Можно отправить обычное фото старого потолка с телефона. Если нужно — подскажем, что ещё сфотографировать.
+          <strong>Бесплатно · без звонков</strong> — ответ в&nbsp;Telegram или на&nbsp;почту. Подскажем, что ещё сфотографировать.
         </p>
       </div>
     </div>

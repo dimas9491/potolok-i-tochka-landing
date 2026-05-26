@@ -133,6 +133,8 @@ h1 { font-weight: 800; letter-spacing: -0.045em; }
   border-radius: 999px;
   display: inline-block;
 }
+.eyebrow.eyebrow-promo { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); font-weight: 700; padding: 6px 14px 6px 12px; font-size: 12px; }
+.eyebrow.eyebrow-promo::before { background: var(--accent); }
 
 /* Buttons */
 .btn-primary {
@@ -596,8 +598,9 @@ body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
 }
 
 .hero-h1 {
-  font-size: clamp(40px, 5.6vw, 78px);
-  margin: 22px 0 22px;
+  font-size: clamp(36px, 4.8vw, 62px);
+  margin: 16px 0 16px;
+  line-height: 1.05;
 }
 .hero-h1 .accent-word {
   font-family: 'Fraunces', serif;
@@ -608,50 +611,76 @@ body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
 }
 
 .hero-lead {
-  font-size: clamp(16px, 1.3vw, 19px);
+  font-size: clamp(15px, 1.2vw, 18px);
   color: var(--ink-2);
   max-width: 540px;
-  line-height: 1.5;
-  margin-bottom: 28px;
+  line-height: 1.45;
+  margin-bottom: 18px;
 }
 
-.hero-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 32px;
-}
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 7px 12px;
-  background: var(--surface);
-  border-radius: 999px;
-  font-size: 13px;
-  color: var(--ink);
+.hero-badges { display: none; }
+
+/* TRUST + PRICE STRIP — честные обещания + price-заглушка */
+.trust-price-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1.3fr;
+  gap: 0;
+  margin: 18px 0 22px;
   border: 1px solid var(--hairline);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--bg);
 }
-.hero-badge::before {
-  content: '';
-  width: 5px; height: 5px;
-  background: var(--accent);
-  border-radius: 999px;
+.trust-price-strip .trust-item {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-right: 1px solid var(--hairline);
+}
+.trust-price-strip .trust-item:last-child { border-right: none; }
+.trust-price-strip .trust-item strong {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.trust-price-strip .trust-item span {
+  font-size: 11.5px;
+  color: var(--ink-2);
+  font-weight: 500;
+  line-height: 1.3;
+}
+.trust-price-strip .trust-item-price {
+  background: var(--accent-soft);
+  border-left: 1px solid var(--accent);
+}
+.trust-price-strip .trust-item-price strong { color: var(--accent); font-size: 20px; }
+.trust-price-strip .trust-item-price span { color: var(--ink); font-weight: 600; }
+@media (max-width: 600px) {
+  .trust-price-strip { grid-template-columns: 1fr 1fr; }
+  .trust-price-strip .trust-item:nth-child(2) { border-right: none; }
+  .trust-price-strip .trust-item:nth-child(-n+2) { border-bottom: 1px solid var(--hairline); }
+  .trust-price-strip .trust-item-price { border-left: none; border-top: 1px solid var(--accent); }
 }
 
 .hero-ctas {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
   align-items: center;
 }
 
 .hero-micro {
-  margin-top: 16px;
+  margin-top: 12px;
   font-size: 13px;
   color: var(--ink-2);
   max-width: 460px;
+  line-height: 1.45;
 }
+.hero-micro strong { color: var(--ink); font-weight: 700; }
 
 /* HERO media — real photo + floating chips */
 .hero-media {
@@ -2703,33 +2732,34 @@ body[data-theme="2"] .btn-primary { box-shadow: none; }
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-text reveal reveal-left">
-      <div class="eyebrow">Москва · с 2018 года</div>
-      <h1 class="hero-h1">
-        Натяжные потолки под&nbsp;ключ с <span class="accent-word">честной&nbsp;сметой</span> до&nbsp;монтажа
-      </h1>
-      <p class="hero-lead">
-        Пришлите фото комнаты — пришлём 3–5 визуализаций, как потолок будет выглядеть у&nbsp;вас, покажем ориентир цены и объясним, что входит в работу. Без рекламного «от 290 ₽/м²», где итоговая сумма появляется только после замера.
-      </p>
-      <div class="hero-badges">
-        <span class="hero-badge">3–5 визуализаций по фото</span>
-        <span class="hero-badge">Расчёт за 1 час</span>
-        <span class="hero-badge">Смета фиксируется в договоре</span>
-        <span class="hero-badge">Гарантия на монтаж</span>
-        <span class="hero-badge">Telegram напрямую</span>
-      </div>
-      <div class="hero-ctas">
-        <a href="#final" class="btn-primary">
-          <span class="btn-primary-core">
-            <span class="btn-primary-text">Получить расчёт по фото за 1 час</span>
-          </span>
-        </a>
-        <a href="https://t.me/" class="btn-secondary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 4L11 13" stroke="currentColor" stroke-width="1.5"/><path d="M22 4L15 22L11 13L2 9L22 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-          <span>Написать в Telegram</span>
-        </a>
-      </div>
+        <div class="eyebrow eyebrow-promo">Натяжные потолки в&nbsp;Москве</div>
+        <h1 class="hero-h1">
+          Натяжные потолки под&nbsp;ключ с <span class="accent-word">честной&nbsp;сметой</span> до&nbsp;монтажа
+        </h1>
+        <p class="hero-lead">
+          Пришлите фото комнаты — за 1 час вернём 3–5 визуализаций под&nbsp;<strong>вашу планировку</strong> и&nbsp;зафиксируем цену в&nbsp;договоре. Без накрутки на&nbsp;замере и&nbsp;доплат «за&nbsp;непредвиденное».
+        </p>
+
+        <!-- TRUST + PRICE STRIP — честные обещания + price-заглушка -->
+        <div class="trust-price-strip reveal">
+          <div class="trust-item"><strong>1 час</strong><span>на&nbsp;расчёт</span></div>
+          <div class="trust-item"><strong>12 лет</strong><span>гарантия полотна</span></div>
+          <div class="trust-item"><strong>0&nbsp;₽</strong><span>выезд замерщика</span></div>
+          <div class="trust-item trust-item-price"><strong>от&nbsp;XX&nbsp;XXX&nbsp;₽</strong><span>под&nbsp;ключ</span></div>
+        </div>
+
+        <div class="hero-ctas">
+          <a href="#final" class="btn-primary">
+            <span class="btn-primary-core">
+              <span class="btn-primary-text">Получить расчёт по фото за 1 час</span>
+            </span>
+          </a>
+          <a href="#kits" class="btn-secondary">
+            <span>Посмотреть комплекты</span>
+          </a>
+        </div>
         <p class="hero-micro">
-          Можно без замера: пришлите фото или план комнаты, а мы скажем примерный бюджет и варианты решения.
+          <strong>Бесплатно · без звонков</strong> — ответ в&nbsp;Telegram или на&nbsp;почту. Фикс-цена в&nbsp;договоре, без доплат.
         </p>
       </div>
     </div>
