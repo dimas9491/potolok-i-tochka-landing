@@ -229,209 +229,197 @@ body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
 .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 .hero-micro { margin-top: 16px; font-size: 13px; color: var(--ink-2); max-width: 480px; }
 
-/* 3-step flow visualization */
-.hero-flow-side {
+/* Hero «Как это работает» — 3 clean cards + bottom badge */
+.hero-howit-side {
   padding: 120px 60px 60px 0;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
-.flow-stack {
+.howit-stack {
   position: relative;
   width: 100%;
-  max-width: 460px;
+  max-width: 580px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 14px;
 }
-.flow-card {
-  position: relative;
-  background: var(--bg);
-  border: 1px solid var(--hairline);
-  border-radius: 22px;
-  padding: 22px 22px 20px;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), 0 20px 50px -16px rgba(var(--shadow-color), 0.22), 0 4px 12px -4px rgba(var(--shadow-color), 0.1);
-  transition: transform 500ms cubic-bezier(0.32,0.72,0,1);
-}
-body[data-theme="2"] .flow-card { box-shadow: 0 20px 50px -16px rgba(0,0,0,0.5); }
-.flow-card:hover { transform: translateY(-3px); }
-.flow-card-1 { transform: rotate(-1.5deg); }
-.flow-card-1:hover { transform: rotate(0) translateY(-3px); }
-.flow-card-2 { transform: rotate(0.8deg); margin-left: 40px; }
-.flow-card-2:hover { transform: rotate(0) translateY(-3px); }
-.flow-card-3 { transform: rotate(-0.6deg); margin-left: 10px; }
-.flow-card-3:hover { transform: rotate(0) translateY(-3px); }
-@media (max-width: 768px) {
-  .flow-card-1, .flow-card-2, .flow-card-3 { transform: none; margin-left: 0; }
-}
-
-.flow-step-head {
+.howit-head {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  margin-bottom: 14px;
+  align-items: baseline;
+  padding: 0 6px 6px;
+  margin-bottom: 4px;
 }
-.flow-step-num {
-  width: 32px; height: 32px;
-  background: var(--ink);
-  color: var(--bg);
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'JetBrains Mono', monospace;
+.howit-head h3 {
+  font-size: 19px;
   font-weight: 700;
-  font-size: 13px;
+  letter-spacing: -0.02em;
+  position: relative;
+  padding-right: 16px;
 }
-.flow-card-3 .flow-step-num { background: var(--hi); color: var(--ink); }
-.flow-step-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-2); }
-.flow-step-title { font-size: 18px; font-weight: 700; letter-spacing: -0.025em; margin-bottom: 14px; line-height: 1.2; }
-
-/* Step 1 — photo placeholder */
-.flow-photo-area {
-  background: var(--surface);
-  border: 1px dashed var(--hairline);
-  border-radius: 14px;
-  padding: 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  min-height: 110px;
-  justify-content: center;
-}
-.flow-photo-icon {
-  width: 32px; height: 32px;
+.howit-head h3::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 56px;
+  height: 2px;
   background: var(--accent);
-  color: #fff;
-  border-radius: 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 6px;
+  border-radius: 999px;
 }
-.flow-photo-area strong { font-size: 14px; color: var(--ink); }
-.flow-photo-area span { font-size: 12px; color: var(--ink-2); }
+.howit-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-2);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
 
-/* Step 2 — variants mini */
-.flow-variants { display: flex; flex-direction: column; gap: 6px; }
-.flow-variant {
+.howit-card {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  background: var(--surface);
-  border-radius: 10px;
-  font-size: 13px;
-  transition: background 200ms;
+  gap: 20px;
+  padding: 20px 22px;
+  background: var(--bg);
+  border: 1px solid var(--hairline);
+  border-radius: 24px;
+  box-shadow: 0 14px 32px -14px rgba(var(--shadow-color), 0.16), inset 0 1px 0 rgba(255,255,255,0.6);
+  transition: transform 400ms cubic-bezier(0.32,0.72,0,1);
 }
-.flow-variant:hover { background: var(--accent-soft); }
-.flow-variant-dot {
-  width: 10px; height: 10px;
-  border-radius: 999px;
-}
-.flow-variant:nth-child(1) .flow-variant-dot { background: var(--ink-2); }
-.flow-variant:nth-child(2) .flow-variant-dot { background: var(--accent); }
-.flow-variant:nth-child(3) .flow-variant-dot { background: var(--hi-strong); }
-.flow-variant-label { font-weight: 500; color: var(--ink); }
-.flow-variant-price { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; color: var(--ink-2); }
+body[data-theme="2"] .howit-card { box-shadow: 0 14px 32px -14px rgba(0,0,0,0.5); }
+.howit-card:hover { transform: translateY(-3px); }
 
-/* Step 3 — premium mini invoice */
-.flow-invoice {
-  padding: 16px 16px 14px;
-  background: linear-gradient(180deg, #0E2A48 0%, #0A2540 100%);
-  color: var(--bg);
-  border-radius: 14px;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
-}
-body[data-theme="1"] .flow-invoice { background: linear-gradient(180deg, #18181D 0%, #0F0F12 100%); }
-body[data-theme="2"] .flow-invoice { background: linear-gradient(180deg, #2A2A30 0%, #1F1F24 100%); }
-.flow-invoice-row {
-  display: grid;
-  grid-template-columns: 10px 1fr auto;
-  align-items: center;
-  gap: 10px;
-  padding: 9px 4px;
-  font-size: 13px;
-  border-top: 1px dashed rgba(255,255,255,0.08);
-}
-.flow-invoice-row:first-of-type { border-top: none; padding-top: 4px; }
-.flow-invoice-dot {
-  width: 8px; height: 8px;
+.howit-icon {
+  width: 64px; height: 64px;
+  background: var(--accent-soft);
+  color: var(--accent);
   border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 0 0 2px rgba(255,255,255,0.06);
 }
-.flow-invoice-row:nth-child(1) .flow-invoice-dot { background: var(--hi-strong); }
-.flow-invoice-row:nth-child(2) .flow-invoice-dot { background: #5B8FE0; }
-.flow-invoice-row:nth-child(3) .flow-invoice-dot { background: #F5A623; }
-.flow-invoice-name {
-  color: rgba(255,255,255,0.92);
-  font-weight: 500;
-  letter-spacing: -0.005em;
-}
-.flow-invoice-price {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  color: rgba(255,255,255,0.7);
-  font-weight: 500;
-  font-feature-settings: 'tnum';
-  letter-spacing: -0.02em;
-}
-.flow-invoice-total {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-  padding: 12px 14px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(232,255,170,0.15);
-  border-radius: 10px;
-}
-.flow-invoice-total-label {
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-family: 'JetBrains Mono', monospace;
-  color: rgba(255,255,255,0.55);
-  font-weight: 600;
-}
-.flow-invoice-total-value {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--hi);
-  letter-spacing: -0.025em;
-  font-feature-settings: 'tnum';
-  text-shadow: 0 0 20px rgba(232,255,170,0.3);
-}
-.flow-invoice-total-value small { font-size: 10px; opacity: 0.6; margin-right: 4px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
 
-/* Floating sticker on flow */
-.flow-sticker {
+.howit-body { min-width: 0; position: relative; padding-top: 22px; }
+.howit-num {
   position: absolute;
+  top: 0; left: 0;
+  width: 26px; height: 26px;
   background: var(--hi);
   color: var(--ink);
-  padding: 8px 14px;
   border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 12px;
   font-weight: 700;
-  z-index: 3;
-  box-shadow: 0 10px 22px -6px rgba(201,240,80,0.55);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px -2px rgba(201,240,80,0.55);
 }
-.flow-sticker-1 { top: 50px; right: -10px; transform: rotate(6deg); }
-.flow-sticker-2 { bottom: 100px; left: -20px; transform: rotate(-5deg); background: var(--bg); color: var(--ink); border: 1px solid var(--hairline); }
+.howit-body h4 {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 4px;
+  line-height: 1.2;
+}
+.howit-body p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--ink-2);
+  line-height: 1.45;
+}
+
+.howit-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  width: 88px;
+}
+.howit-visual-icon {
+  width: 52px; height: 52px;
+  background: var(--surface);
+  color: var(--ink);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04);
+}
+body[data-theme="2"] .howit-visual-icon { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06); }
+.howit-visual-label {
+  font-size: 10px;
+  color: var(--ink-2);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+
+/* Bottom badge card — «Точно по делу...» */
+.howit-badge-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 22px;
+  margin-top: 6px;
+  transition: transform 300ms;
+}
+.howit-badge-card:hover { transform: translateY(-2px); }
+.howit-badge-icon {
+  width: 44px; height: 44px;
+  background: var(--bg);
+  color: var(--accent);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--hairline);
+  flex-shrink: 0;
+}
+.howit-badge-body h4 {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin: 0 0 2px;
+  line-height: 1.2;
+}
+.howit-badge-body p {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--ink-2);
+  line-height: 1.4;
+}
+.howit-badge-sparkle {
+  color: var(--accent);
+  opacity: 0.7;
+  flex-shrink: 0;
+  animation: sparkle-pulse 3s ease-in-out infinite;
+}
+@keyframes sparkle-pulse { 0%, 100% { opacity: 0.5; transform: scale(1); } 50% { opacity: 1; transform: scale(1.15); } }
 
 @media (max-width: 1180px) {
   .hero-inner { grid-template-columns: 1fr; }
-  .hero-content, .hero-flow-side { padding: 100px 32px 40px; }
-  .hero-flow-side { padding-top: 0; padding-bottom: 50px; }
+  .hero-content, .hero-howit-side { padding: 100px 32px 40px; }
+  .hero-howit-side { padding-top: 0; padding-bottom: 50px; }
 }
 @media (max-width: 768px) {
   .hero-content { padding: 100px 18px 30px; }
-  .hero-flow-side { padding: 0 18px 40px; }
-  .flow-sticker-1, .flow-sticker-2 { right: 0; left: auto; }
+  .hero-howit-side { padding: 0 18px 40px; }
+  .howit-card { grid-template-columns: auto 1fr; gap: 14px; padding: 18px; }
+  .howit-visual { display: none; }
+  .howit-icon { width: 52px; height: 52px; }
+  .howit-badge-card { grid-template-columns: auto 1fr; padding: 16px 18px; }
+  .howit-badge-sparkle { display: none; }
 }
 
 /* Marquee */
@@ -1060,76 +1048,74 @@ body[data-theme="2"] .theme-switch { background: rgba(35,35,42,0.9); }
       </div>
     </div>
 
-    <div class="hero-flow-side">
-      <div class="flow-stack reveal">
-        <span class="flow-sticker flow-sticker-1">Ответ за 1 час</span>
+    <div class="hero-howit-side">
+      <div class="howit-stack reveal">
+        <div class="howit-head">
+          <h3>Как это работает</h3>
+          <span class="howit-meta">Всего 3 шага</span>
+        </div>
 
-        <div class="flow-card flow-card-1">
-          <div class="flow-step-head">
-            <span class="flow-step-num">1</span>
-            <span class="flow-step-label">Шаг · фото</span>
+        <div class="howit-card">
+          <div class="howit-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="6" y="2" width="12" height="20" rx="2.5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="18.5" r="1" fill="currentColor"/><circle cx="12" cy="9" r="2" stroke="currentColor" stroke-width="1.6"/></svg>
           </div>
-          <h4 class="flow-step-title">Вы присылаете фото комнаты</h4>
-          <div class="flow-photo-area">
-            <div class="flow-photo-icon">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4.5C2 3.67 2.67 3 3.5 3H5L6 1.5H10L11 3H12.5C13.33 3 14 3.67 14 4.5V12C14 12.83 13.33 13.5 12.5 13.5H3.5C2.67 13.5 2 12.83 2 12V4.5Z" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="8.5" r="2.5" stroke="currentColor" stroke-width="1.4"/></svg>
+          <div class="howit-body">
+            <span class="howit-num">1</span>
+            <h4>Вы присылаете фото комнаты</h4>
+            <p>Любое фото на телефон: общий вид, углы, окна, трубы — достаточно.</p>
+          </div>
+          <div class="howit-visual">
+            <div class="howit-visual-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7V12L15 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
-            <strong>Любое фото на телефон</strong>
-            <span>Общий вид комнаты, окна, углы, трубы — достаточно</span>
+            <span class="howit-visual-label">Ответ за&nbsp;1&nbsp;час</span>
           </div>
         </div>
 
-        <div class="flow-card flow-card-2">
-          <div class="flow-step-head">
-            <span class="flow-step-num">2</span>
-            <span class="flow-step-label">Шаг · варианты</span>
+        <div class="howit-card">
+          <div class="howit-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7L12 12L21 7L12 2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M3 12L12 17L21 12" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M3 17L12 22L21 17" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
           </div>
-          <h4 class="flow-step-title">Пришлём 3–5&nbsp;визуализаций</h4>
-          <div class="flow-variants">
-            <div class="flow-variant">
-              <span class="flow-variant-dot"></span>
-              <span class="flow-variant-label">Базовый</span>
-              <span class="flow-variant-price">от XX XXX&nbsp;₽</span>
+          <div class="howit-body">
+            <span class="howit-num">2</span>
+            <h4>Пришлём 3–5 визуализаций</h4>
+            <p>Как потолок будет выглядеть именно у&nbsp;вас — с&nbsp;учётом интерьера и&nbsp;бюджета.</p>
+          </div>
+          <div class="howit-visual">
+            <div class="howit-visual-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6H10M14 6H20M4 12H6M10 12H20M4 18H14M18 18H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="6" r="2.2" stroke="currentColor" stroke-width="1.6" fill="none"/><circle cx="8" cy="12" r="2.2" stroke="currentColor" stroke-width="1.6" fill="none"/><circle cx="16" cy="18" r="2.2" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
             </div>
-            <div class="flow-variant">
-              <span class="flow-variant-dot"></span>
-              <span class="flow-variant-label">Оптимальный</span>
-              <span class="flow-variant-price">от XX XXX&nbsp;₽</span>
-            </div>
-            <div class="flow-variant">
-              <span class="flow-variant-dot"></span>
-              <span class="flow-variant-label">Со скрытым карнизом</span>
-              <span class="flow-variant-price">от XX XXX&nbsp;₽</span>
-            </div>
+            <span class="howit-visual-label">Варианты под&nbsp;бюджет</span>
           </div>
         </div>
 
-        <div class="flow-card flow-card-3">
-          <div class="flow-step-head">
-            <span class="flow-step-num">3</span>
-            <span class="flow-step-label">Шаг · смета</span>
+        <div class="howit-card">
+          <div class="howit-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 8H16M8 12H16M8 16H12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </div>
-          <h4 class="flow-step-title">И&nbsp;показываем понятную смету</h4>
-          <div class="flow-invoice">
-            <div class="flow-invoice-row">
-              <span class="flow-invoice-dot"></span>
-              <span class="flow-invoice-name">Полотно матовое</span>
-              <span class="flow-invoice-price">XX XXX&nbsp;₽</span>
+          <div class="howit-body">
+            <span class="howit-num">3</span>
+            <h4>Показываем понятную смету</h4>
+            <p>Прозрачный расчёт: что входит в&nbsp;цену и&nbsp;за&nbsp;что вы платите.</p>
+          </div>
+          <div class="howit-visual">
+            <div class="howit-visual-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 6H14C15.66 6 17 7.34 17 9C17 10.66 15.66 12 14 12H9V6ZM9 12V19M7 9H13M7 14H13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
-            <div class="flow-invoice-row">
-              <span class="flow-invoice-dot"></span>
-              <span class="flow-invoice-name">Профиль + монтаж</span>
-              <span class="flow-invoice-price">XX XXX&nbsp;₽</span>
-            </div>
-            <div class="flow-invoice-row">
-              <span class="flow-invoice-dot"></span>
-              <span class="flow-invoice-name">Свет, закладные</span>
-              <span class="flow-invoice-price">XX XXX&nbsp;₽</span>
-            </div>
-            <div class="flow-invoice-total">
-              <span class="flow-invoice-total-label">Итого</span>
-              <span class="flow-invoice-total-value"><small>от</small>XX&nbsp;XXX&nbsp;₽</span>
-            </div>
+            <span class="howit-visual-label">Без скрытых платежей</span>
+          </div>
+        </div>
+
+        <div class="howit-badge-card">
+          <div class="howit-badge-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 5V11C4 16 7 20 12 22C17 20 20 16 20 11V5L12 2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 12L11 15L16 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="howit-badge-body">
+            <h4>Точно по делу, без лишних визитов</h4>
+            <p>Вы получаете расчёт и&nbsp;рекомендации, а&nbsp;замер — только когда вы готовы.</p>
+          </div>
+          <div class="howit-badge-sparkle">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z" fill="currentColor"/><path d="M19 16L19.7 18.3L22 19L19.7 19.7L19 22L18.3 19.7L16 19L18.3 18.3L19 16Z" fill="currentColor"/></svg>
           </div>
         </div>
       </div>
