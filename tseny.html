@@ -2091,6 +2091,52 @@ body[data-theme="2"] .btn-primary { box-shadow: none; }
 .nav-menu > .nav-dropdown { display: inline-block; }
 .nav-menu .nav-dropdown-trigger { padding: 9px 14px; font-size: 14px; color: var(--ink-2); border-radius: 999px; transition: all 250ms; font-weight: 500; cursor: pointer; white-space: nowrap; display: inline-flex; align-items: center; }
 
+/* HERO BENEFITS — 4 буллета с галочками (формула 1) */
+.hero-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 18px;
+}
+@media (max-width: 600px) { .hero-benefits { grid-template-columns: 1fr; } }
+.hero-benefits li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.4;
+  font-weight: 500;
+}
+.hero-benefits li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  background: var(--accent);
+  border-radius: 999px;
+  display: inline-block;
+}
+.hero-benefits li::after {
+  content: '✓';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+.hero-benefits li strong { color: var(--ink); font-weight: 700; }
+
+/* BTN LEAD MAGNET */
+.btn-secondary.btn-lead-magnet { border-color: var(--accent); background: var(--accent-soft); color: var(--ink); }
+.btn-secondary.btn-lead-magnet:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-secondary.btn-lead-magnet svg { flex-shrink: 0; }
+
 </style>
 </head>
 <body data-theme="1">
@@ -2162,34 +2208,34 @@ body[data-theme="2"] .btn-primary { box-shadow: none; }
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-text reveal reveal-left">
-        <div class="eyebrow eyebrow-promo">Прайс · честная смета</div>
+        <div class="eyebrow eyebrow-promo">Скидка 5&nbsp;000&nbsp;₽ при заказе через сайт</div>
         <h1 class="hero-h1">
-          Цены на&nbsp;натяжные потолки <span class="accent-word">без сюрпризов</span> после&nbsp;замера
+          Цены на&nbsp;натяжные потолки <span class="accent-word">без сюрпризов</span> — точная смета по&nbsp;фото за&nbsp;1&nbsp;час
         </h1>
         <p class="hero-lead">
-          Считаем потолок под&nbsp;ключ: материал, профиль, монтаж, свет и&nbsp;обходы труб — <strong>одна цифра</strong> в&nbsp;договоре. Без рекламного «от 290&nbsp;₽/м²» и&nbsp;доплат на&nbsp;замере.
+          Считаем потолок <strong>под ключ</strong>: материал, профиль, монтаж, свет, обходы труб — <strong>одна цифра в&nbsp;договоре</strong>. Без рекламного «от 290&nbsp;₽/м²» и&nbsp;доплат на&nbsp;замере.
         </p>
 
-        <!-- TRUST + PRICE STRIP — честные обещания + price-заглушка -->
-        <div class="trust-price-strip reveal">
-          <div class="trust-item"><strong>1 час</strong><span>на&nbsp;расчёт</span></div>
-          <div class="trust-item"><strong>12 лет</strong><span>гарантия полотна</span></div>
-          <div class="trust-item"><strong>0&nbsp;₽</strong><span>выезд замерщика</span></div>
-          <div class="trust-item trust-item-price"><strong>от&nbsp;XX&nbsp;XXX&nbsp;₽</strong><span>под&nbsp;ключ</span></div>
-        </div>
+        <ul class="hero-benefits reveal">
+          <li><strong>Скидка 5&nbsp;000&nbsp;₽</strong> при заказе через сайт</li>
+          <li><strong>Смета не&nbsp;меняется</strong> на&nbsp;замере — зафиксируем до&nbsp;работ</li>
+          <li><strong>12 лет гарантия</strong> на&nbsp;полотно</li>
+          <li><strong>Без предоплаты</strong> — оплата после монтажа</li>
+        </ul>
 
         <div class="hero-ctas">
           <a href="#final" class="btn-primary">
             <span class="btn-primary-core">
-              <span class="btn-primary-text">Получить точную смету по фото</span>
+              <span class="btn-primary-text">Рассчитать стоимость по&nbsp;фото</span>
             </span>
           </a>
-          <a href="#kits" class="btn-secondary">
-            <span>Посмотреть комплекты</span>
+          <a href="#final" class="btn-secondary btn-lead-magnet">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M14 2H6C5 2 4 3 4 4V20C4 21 5 22 6 22H18C19 22 20 21 20 20V8L14 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M14 2V8H20" stroke="currentColor" stroke-width="1.5"/><path d="M8 13H16M8 17H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Прайс-лист с&nbsp;5&nbsp;комплектами</span>
           </a>
         </div>
         <p class="hero-micro">
-          <strong>Бесплатно · без звонков</strong> — ответ в&nbsp;Telegram или на&nbsp;почту. Фикс-цена в&nbsp;договоре, без доплат.
+          <strong>Бесплатно · без звонков.</strong> Прайс пришлём в&nbsp;Telegram — внутри 5&nbsp;готовых комплектов под разные бюджеты и&nbsp;комнаты, с&nbsp;составом работ.
         </p>
       </div>
     </div>

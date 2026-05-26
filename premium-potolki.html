@@ -430,6 +430,52 @@ img { max-width: 100%; display: block; }
 .nav-dropdown-menu a.active { background: var(--accent-soft); color: var(--accent); font-weight: 700; }
 @media (max-width: 1100px) { .nav-links, .nav-cta { display: none; } .nav-burger { display: inline-flex; } }
 
+/* HERO BENEFITS — 4 буллета с галочками (формула 1) */
+.hero-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 18px;
+}
+@media (max-width: 600px) { .hero-benefits { grid-template-columns: 1fr; } }
+.hero-benefits li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.4;
+  font-weight: 500;
+}
+.hero-benefits li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  background: var(--accent);
+  border-radius: 999px;
+  display: inline-block;
+}
+.hero-benefits li::after {
+  content: '✓';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+.hero-benefits li strong { color: var(--ink); font-weight: 700; }
+
+/* BTN LEAD MAGNET */
+.btn-secondary.btn-lead-magnet { border-color: var(--accent); background: var(--accent-soft); color: var(--ink); }
+.btn-secondary.btn-lead-magnet:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-secondary.btn-lead-magnet svg { flex-shrink: 0; }
+
 </style>
 </head>
 <body>
@@ -494,34 +540,34 @@ img { max-width: 100%; display: block; }
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-text reveal reveal-left">
-        <div class="eyebrow eyebrow-promo">Премиум · сложные интерьеры</div>
+        <div class="eyebrow eyebrow-promo">Личный ответственный за&nbsp;проект — бесплатно</div>
         <h1 class="hero-h1">
-          Премиальные натяжные потолки для квартир, коттеджей и&nbsp;<span class="accent-word">сложных интерьеров</span>
+          Премиальные натяжные потолки <span class="accent-word">по&nbsp;дизайн-проекту</span> — КП за&nbsp;1–2 дня
         </h1>
         <p class="hero-lead">
-          Теневые и&nbsp;бесщелевые профили, скрытые карнизы, трековый свет, подсветка. Считаем по&nbsp;<strong>проекту, плану или фото</strong> — с&nbsp;дизайнером или без.
+          Пришлите PDF проекта или фото объекта — за&nbsp;1–2 дня подготовим <strong>КП по&nbsp;помещениям</strong> с&nbsp;проверкой узлов. Без накрутки на&nbsp;замере и&nbsp;доплат «за&nbsp;непредвиденное».
         </p>
 
-        <!-- TRUST + PRICE STRIP -->
-        <div class="trust-price-strip reveal">
-          <div class="trust-item"><strong>По&nbsp;проекту</strong><span>чертежи / фото</span></div>
-          <div class="trust-item"><strong>1–2 дня</strong><span>на&nbsp;подготовку КП</span></div>
-          <div class="trust-item"><strong>0&nbsp;₽</strong><span>выезд замерщика</span></div>
-          <div class="trust-item trust-item-price"><strong>от&nbsp;XX&nbsp;XXX&nbsp;₽</strong><span>под&nbsp;ключ</span></div>
-        </div>
+        <ul class="hero-benefits reveal">
+          <li><strong>Личный ответственный</strong> за&nbsp;проект — один контакт</li>
+          <li><strong>Согласование с&nbsp;дизайнером</strong> в&nbsp;общем чате</li>
+          <li><strong>КП по&nbsp;помещениям</strong> и&nbsp;узлам, не&nbsp;«от&nbsp;м²»</li>
+          <li><strong>Фикс-цена</strong> в&nbsp;договоре до&nbsp;монтажа</li>
+        </ul>
 
         <div class="hero-ctas">
           <a href="#final" class="btn-primary">
             <span class="btn-primary-core">
-              <span class="btn-primary-text">Прислать проект на расчёт</span>
+              <span class="btn-primary-text">Рассчитать стоимость по&nbsp;проекту</span>
             </span>
           </a>
-          <a href="https://t.me/" class="btn-secondary">
-            <span>Обсудить задачу в Telegram</span>
+          <a href="#final" class="btn-secondary btn-lead-magnet">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M14 2H6C5 2 4 3 4 4V20C4 21 5 22 6 22H18C19 22 20 21 20 20V8L14 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M14 2V8H20" stroke="currentColor" stroke-width="1.5"/><path d="M8 13H16M8 17H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Каталог: теневые / карнизы / треки</span>
           </a>
         </div>
         <p class="hero-micro">
-          Можно прислать <strong>PDF, план, визуализацию, фото объекта или референс</strong>. Скажем, что реально сделать, где есть риски и&nbsp;какой порядок бюджета.
+          <strong>Бесплатно · без звонков.</strong> Каталог премиум-узлов с&nbsp;фото и&nbsp;сметами в&nbsp;Telegram. Внутри: 12 кейсов с&nbsp;разбивкой по&nbsp;помещениям.
         </p>
       </div>
     </div>

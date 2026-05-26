@@ -875,6 +875,52 @@ body[data-theme="2"] .btn-primary { box-shadow: none; }
 .nav-menu > .nav-dropdown { display: inline-block; }
 .nav-menu .nav-dropdown-trigger { padding: 9px 14px; font-size: 14px; color: var(--ink-2); border-radius: 999px; transition: all 250ms; font-weight: 500; cursor: pointer; white-space: nowrap; display: inline-flex; align-items: center; }
 
+/* HERO BENEFITS — 4 буллета с галочками (формула 1) */
+.hero-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 18px;
+}
+@media (max-width: 600px) { .hero-benefits { grid-template-columns: 1fr; } }
+.hero-benefits li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.4;
+  font-weight: 500;
+}
+.hero-benefits li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  background: var(--warn);
+  border-radius: 999px;
+  display: inline-block;
+}
+.hero-benefits li::after {
+  content: '✓';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+.hero-benefits li strong { color: var(--ink); font-weight: 700; }
+
+/* BTN LEAD MAGNET */
+.btn-secondary.btn-lead-magnet { border-color: var(--warn); background: rgba(200,101,74,0.12); color: var(--ink); }
+.btn-secondary.btn-lead-magnet:hover { background: var(--warn); color: #fff; border-color: var(--warn); }
+.btn-secondary.btn-lead-magnet svg { flex-shrink: 0; }
+
 </style>
 </head>
 <body data-theme="1">
@@ -946,21 +992,20 @@ body[data-theme="2"] .btn-primary { box-shadow: none; }
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-text reveal reveal-left">
-        <div class="eyebrow eyebrow-emergency">Аварийная ситуация · слив воды</div>
+        <div class="eyebrow eyebrow-emergency">Бесплатная инструкция «Что делать прямо сейчас» — пока ждёте мастера</div>
         <h1 class="hero-h1">
-          Затопили натяжной потолок? Сольём воду и <span class="accent-word">восстановим</span> полотно
+          Затопили натяжной потолок? Сольём воду <span class="accent-word">за&nbsp;30–60 минут</span> — без снятия полотна
         </h1>
         <p class="hero-lead">
-          Если потолок надулся или провис после залива&nbsp;— <strong>не прокалывайте полотно</strong>. Пришлите фото&nbsp;— подскажем, что делать прямо сейчас, и&nbsp;согласуем выезд.
+          <strong>Не&nbsp;прокалывайте полотно!</strong> Пришлите фото — подскажем что делать прямо сейчас и&nbsp;<strong>согласуем выезд сегодня</strong>. Сольём через светильник, без демонтажа.
         </p>
 
-        <!-- TRUST + PRICE STRIP — аварийные обещания + price-заглушка -->
-        <div class="trust-price-strip reveal">
-          <div class="trust-item"><strong>30 мин</strong><span>на&nbsp;ответ</span></div>
-          <div class="trust-item"><strong>Сегодня</strong><span>выезд мастера</span></div>
-          <div class="trust-item"><strong>Без снятия</strong><span>сливаем через светильник</span></div>
-          <div class="trust-item trust-item-price"><strong>от&nbsp;XX&nbsp;XXX&nbsp;₽</strong><span>слив&nbsp;+ просушка</span></div>
-        </div>
+        <ul class="hero-benefits reveal">
+          <li><strong>30 мин на&nbsp;ответ</strong> в&nbsp;Telegram или по&nbsp;телефону</li>
+          <li><strong>Выезд сегодня</strong> — без переноса и&nbsp;задержек</li>
+          <li><strong>Без снятия полотна</strong> — сливаем через светильник</li>
+          <li><strong>Гарантия восстановления</strong> — если порвём, ставим новое</li>
+        </ul>
 
         <div class="hero-ctas">
           <a href="https://t.me/" class="btn-primary btn-emergency">
@@ -968,13 +1013,13 @@ body[data-theme="2"] .btn-primary { box-shadow: none; }
               <span class="btn-primary-text">Написать мастеру сейчас</span>
             </span>
           </a>
-          <a href="tel:+74950000000" class="btn-secondary">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 16.92V20C22 21 21 22 20 22C9 22 2 15 2 4C2 3 3 2 4 2H7.09C7.59 2 8 2.41 8 2.91C8 5 8 7 8.46 8.89C8.59 9.27 8.45 9.7 8.16 9.99L6.62 11.53C8.06 14.15 10.85 16.94 13.47 18.38L15.01 16.84C15.3 16.55 15.73 16.41 16.11 16.54C18 17 20 17 22.09 17C22.59 17 23 17.41 23 17.91L22 16.92Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <a href="tel:+74950000000" class="btn-secondary btn-lead-magnet">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 16.92V20C22 21 21 22 20 22C9 22 2 15 2 4C2 3 3 2 4 2H7.09C7.59 2 8 2.41 8 2.91C8 5 8 7 8.46 8.89C8.59 9.27 8.45 9.7 8.16 9.99L6.62 11.53C8.06 14.15 10.85 16.94 13.47 18.38L15.01 16.84C15.3 16.55 15.73 16.41 16.11 16.54C18 17 20 17 22.09 17C22.59 17 23 17.41 23 17.91L22 16.92Z" stroke="currentColor" stroke-width="1.5"/></svg>
             <span>Позвонить мастеру</span>
           </a>
         </div>
         <p class="hero-micro">
-          <strong>Пока ждёте мастера</strong> — поставьте таз под провис, выключите свет в&nbsp;комнате, отодвиньте мебель от&nbsp;центра потолка.
+          <strong>Пока ждёте мастера:</strong> поставьте таз под провис, выключите свет в&nbsp;комнате и&nbsp;отодвиньте мебель от&nbsp;центра потолка. Полную инструкцию из&nbsp;5&nbsp;шагов пришлём в&nbsp;Telegram сразу.
         </p>
       </div>
     </div>

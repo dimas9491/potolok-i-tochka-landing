@@ -410,6 +410,52 @@ img { max-width: 100%; display: block; }
 .nav-dropdown-menu a.active { background: var(--accent-soft); color: var(--accent); font-weight: 700; }
 @media (max-width: 1100px) { .nav-links, .nav-cta { display: none; } .nav-burger { display: inline-flex; } }
 
+/* HERO BENEFITS — 4 буллета с галочками (формула 1) */
+.hero-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 18px;
+}
+@media (max-width: 600px) { .hero-benefits { grid-template-columns: 1fr; } }
+.hero-benefits li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.4;
+  font-weight: 500;
+}
+.hero-benefits li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  background: var(--accent);
+  border-radius: 999px;
+  display: inline-block;
+}
+.hero-benefits li::after {
+  content: '✓';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+.hero-benefits li strong { color: var(--ink); font-weight: 700; }
+
+/* BTN LEAD MAGNET */
+.btn-secondary.btn-lead-magnet { border-color: var(--accent); background: var(--accent-soft); color: var(--ink); }
+.btn-secondary.btn-lead-magnet:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-secondary.btn-lead-magnet svg { flex-shrink: 0; }
+
 </style>
 </head>
 <body>
@@ -474,33 +520,34 @@ img { max-width: 100%; display: block; }
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-text reveal reveal-left">
-        <div class="eyebrow eyebrow-promo">Фактура · сатин</div>
+        <div class="eyebrow eyebrow-promo">Скидка 4&nbsp;000&nbsp;₽ при заказе сатина от&nbsp;14&nbsp;м²</div>
         <h1 class="hero-h1">
-          Сатиновые натяжные потолки с&nbsp;<span class="accent-word">мягким отражением</span> света
+          Сатиновые натяжные потолки с&nbsp;<span class="accent-word">мягким отражением</span> — спокойнее глянца, выразительнее матового
         </h1>
         <p class="hero-lead">
-          Спокойнее глянца, выразительнее матового. Пришлите фото — покажем, как смотрится сатин, <strong>сравним с&nbsp;матовым вариантом</strong> и&nbsp;рассчитаем стоимость.
+          Пришлите фото — <strong>за&nbsp;1&nbsp;час</strong> сравним сатин с&nbsp;матовым именно для вашей комнаты. Покажем, <strong>как меняется фактура</strong> при разном свете.
         </p>
 
-        <div class="trust-price-strip reveal">
-          <div class="trust-item"><strong>1 час</strong><span>на&nbsp;расчёт</span></div>
-          <div class="trust-item"><strong>12 лет</strong><span>гарантия полотна</span></div>
-          <div class="trust-item"><strong>0&nbsp;₽</strong><span>выезд замерщика</span></div>
-          <div class="trust-item trust-item-price"><strong>от&nbsp;XX&nbsp;XXX&nbsp;₽</strong><span>за&nbsp;комнату</span></div>
-        </div>
+        <ul class="hero-benefits reveal">
+          <li><strong>Скидка 4&nbsp;000&nbsp;₽</strong> при заказе от&nbsp;14&nbsp;м²</li>
+          <li><strong>Сравним сатин с&nbsp;матовым</strong> по&nbsp;вашему фото</li>
+          <li><strong>12 лет гарантия</strong> на&nbsp;полотно</li>
+          <li><strong>Без предоплаты</strong> — оплата после монтажа</li>
+        </ul>
 
         <div class="hero-ctas">
           <a href="#final" class="btn-primary">
             <span class="btn-primary-core">
-              <span class="btn-primary-text">Сравнить сатин с&nbsp;матовым по&nbsp;фото</span>
+              <span class="btn-primary-text">Рассчитать сатин по&nbsp;фото</span>
             </span>
           </a>
-          <a href="#price" class="btn-secondary">
-            <span>Узнать цену</span>
+          <a href="#final" class="btn-secondary btn-lead-magnet">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M14 2H6C5 2 4 3 4 4V20C4 21 5 22 6 22H18C19 22 20 21 20 20V8L14 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M14 2V8H20" stroke="currentColor" stroke-width="1.5"/><path d="M8 13H16M8 17H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Чек-лист: где сатин лучше матового</span>
           </a>
         </div>
         <p class="hero-micro">
-          <strong>Бесплатно · без звонков</strong> — пришлите фото комнаты, подскажем, будет ли сатин смотреться лучше матового именно в&nbsp;вашем интерьере.
+          <strong>Бесплатно · без звонков.</strong> Чек-лист пришлём в&nbsp;Telegram. Внутри: 5&nbsp;типов комнат где сатин раскрывается, а&nbsp;где лучше выбрать матовый.
         </p>
       </div>
     </div>

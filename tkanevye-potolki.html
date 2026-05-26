@@ -410,6 +410,52 @@ img { max-width: 100%; display: block; }
 .nav-dropdown-menu a.active { background: var(--accent-soft); color: var(--accent); font-weight: 700; }
 @media (max-width: 1100px) { .nav-links, .nav-cta { display: none; } .nav-burger { display: inline-flex; } }
 
+/* HERO BENEFITS — 4 буллета с галочками (формула 1) */
+.hero-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 18px;
+}
+@media (max-width: 600px) { .hero-benefits { grid-template-columns: 1fr; } }
+.hero-benefits li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.4;
+  font-weight: 500;
+}
+.hero-benefits li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  background: var(--accent);
+  border-radius: 999px;
+  display: inline-block;
+}
+.hero-benefits li::after {
+  content: '✓';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+.hero-benefits li strong { color: var(--ink); font-weight: 700; }
+
+/* BTN LEAD MAGNET */
+.btn-secondary.btn-lead-magnet { border-color: var(--accent); background: var(--accent-soft); color: var(--ink); }
+.btn-secondary.btn-lead-magnet:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-secondary.btn-lead-magnet svg { flex-shrink: 0; }
+
 </style>
 </head>
 <body>
@@ -474,33 +520,34 @@ img { max-width: 100%; display: block; }
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-text reveal reveal-left">
-        <div class="eyebrow eyebrow-promo">Фактура · ткань / бесшов</div>
+        <div class="eyebrow eyebrow-promo">Скидка 8&nbsp;000&nbsp;₽ или комплект светильников в&nbsp;подарок</div>
         <h1 class="hero-h1">
-          Тканевые натяжные потолки для <span class="accent-word">спокойного премиального</span> интерьера
+          Тканевые и&nbsp;бесшовные потолки — <span class="accent-word">премиальный вид</span> и&nbsp;ширина до&nbsp;5&nbsp;м без шва
         </h1>
         <p class="hero-lead">
-          Мягкая фактура, бесшовные решения для больших комнат. <strong>Сравним с&nbsp;ПВХ</strong> — скажем честно, где есть смысл переплачивать, а&nbsp;где достаточно качественного матового потолка.
+          Пришлите фото или план — <strong>за&nbsp;1&nbsp;час</strong> сравним тканевый с&nbsp;ПВХ. Скажем <strong>честно</strong>, где есть смысл переплачивать, а&nbsp;где достаточно матового ПВХ.
         </p>
 
-        <div class="trust-price-strip reveal">
-          <div class="trust-item"><strong>1 час</strong><span>на&nbsp;расчёт</span></div>
-          <div class="trust-item"><strong>До&nbsp;5&nbsp;м</strong><span>ширина бесшовного</span></div>
-          <div class="trust-item"><strong>0&nbsp;₽</strong><span>выезд замерщика</span></div>
-          <div class="trust-item trust-item-price"><strong>от&nbsp;XX&nbsp;XXX&nbsp;₽</strong><span>за&nbsp;комнату</span></div>
-        </div>
+        <ul class="hero-benefits reveal">
+          <li><strong>Скидка 8&nbsp;000&nbsp;₽</strong> или светильники в&nbsp;подарок</li>
+          <li><strong>До&nbsp;5&nbsp;м ширина</strong> бесшовного полотна</li>
+          <li><strong>15 лет гарантия</strong> на&nbsp;премиум-полотно</li>
+          <li><strong>Сравним с&nbsp;ПВХ</strong> честно — без давления</li>
+        </ul>
 
         <div class="hero-ctas">
           <a href="#final" class="btn-primary">
             <span class="btn-primary-core">
-              <span class="btn-primary-text">Понять, нужен ли тканевый потолок</span>
+              <span class="btn-primary-text">Рассчитать тканевый по&nbsp;фото</span>
             </span>
           </a>
-          <a href="#price" class="btn-secondary">
-            <span>Рассчитать бесшовный</span>
+          <a href="#final" class="btn-secondary btn-lead-magnet">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M14 2H6C5 2 4 3 4 4V20C4 21 5 22 6 22H18C19 22 20 21 20 20V8L14 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M14 2V8H20" stroke="currentColor" stroke-width="1.5"/><path d="M8 13H16M8 17H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Каталог: Pongs / MSD / Descor</span>
           </a>
         </div>
         <p class="hero-micro">
-          <strong>Бесплатно · без звонков</strong> — пришлите фото комнаты или план. Скажем, есть ли смысл переплачивать за&nbsp;тканевый или лучше выбрать матовый ПВХ.
+          <strong>Бесплатно · без звонков.</strong> Каталог премиум-полотен в&nbsp;Telegram. Внутри: документы, фактуры и&nbsp;сравнение брендов с&nbsp;ценами.
         </p>
       </div>
     </div>

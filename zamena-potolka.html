@@ -847,6 +847,52 @@ body[data-theme="2"] .btn-primary { box-shadow: none; }
 .nav-menu > .nav-dropdown { display: inline-block; }
 .nav-menu .nav-dropdown-trigger { padding: 9px 14px; font-size: 14px; color: var(--ink-2); border-radius: 999px; transition: all 250ms; font-weight: 500; cursor: pointer; white-space: nowrap; display: inline-flex; align-items: center; }
 
+/* HERO BENEFITS — 4 буллета с галочками (формула 1) */
+.hero-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 18px;
+}
+@media (max-width: 600px) { .hero-benefits { grid-template-columns: 1fr; } }
+.hero-benefits li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.4;
+  font-weight: 500;
+}
+.hero-benefits li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  background: var(--accent);
+  border-radius: 999px;
+  display: inline-block;
+}
+.hero-benefits li::after {
+  content: '✓';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+.hero-benefits li strong { color: var(--ink); font-weight: 700; }
+
+/* BTN LEAD MAGNET */
+.btn-secondary.btn-lead-magnet { border-color: var(--accent); background: var(--accent-soft); color: var(--ink); }
+.btn-secondary.btn-lead-magnet:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-secondary.btn-lead-magnet svg { flex-shrink: 0; }
+
 </style>
 </head>
 <body data-theme="1">
@@ -918,34 +964,34 @@ body[data-theme="2"] .btn-primary { box-shadow: none; }
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-text reveal reveal-left">
-        <div class="eyebrow eyebrow-promo">Замена · жилая квартира</div>
+        <div class="eyebrow eyebrow-promo">Защита мебели и&nbsp;пола в&nbsp;подарок · без переезда</div>
         <h1 class="hero-h1">
-          Аккуратно заменим натяжной потолок <span class="accent-word">в&nbsp;жилой</span> квартире
+          Аккуратная замена натяжного потолка <span class="accent-word">за&nbsp;1&nbsp;день</span> — без переезда из&nbsp;квартиры
         </h1>
         <p class="hero-lead">
-          Пришлите фото старого потолка — за 1 час оценим состояние и&nbsp;<strong>зафиксируем цену</strong> в&nbsp;договоре. Защитим мебель, пол и&nbsp;отделку — без переезда из&nbsp;квартиры.
+          Пришлите фото старого потолка — <strong>за&nbsp;1&nbsp;час</strong> оценим состояние и&nbsp;<strong>зафиксируем цену</strong> в&nbsp;договоре. Накроем мебель, пол и&nbsp;отделку плёнкой бесплатно.
         </p>
 
-        <!-- TRUST + PRICE STRIP — честные обещания + price-заглушка -->
-        <div class="trust-price-strip reveal">
-          <div class="trust-item"><strong>1 час</strong><span>на&nbsp;оценку</span></div>
-          <div class="trust-item"><strong>1 день</strong><span>на&nbsp;монтаж</span></div>
-          <div class="trust-item"><strong>0&nbsp;₽</strong><span>защита мебели</span></div>
-          <div class="trust-item trust-item-price"><strong>от&nbsp;XX&nbsp;XXX&nbsp;₽</strong><span>замена под&nbsp;ключ</span></div>
-        </div>
+        <ul class="hero-benefits reveal">
+          <li><strong>Защита мебели и&nbsp;пола</strong> в&nbsp;подарок при замене</li>
+          <li><strong>1 день на&nbsp;замену</strong>, без переезда из&nbsp;квартиры</li>
+          <li><strong>12 лет гарантия</strong> на&nbsp;новое полотно</li>
+          <li><strong>Можно заменить только полотно</strong> — без слома профиля</li>
+        </ul>
 
         <div class="hero-ctas">
           <a href="#final" class="btn-primary">
             <span class="btn-primary-core">
-              <span class="btn-primary-text">Оценить замену по фото</span>
+              <span class="btn-primary-text">Рассчитать замену по&nbsp;фото</span>
             </span>
           </a>
-          <a href="#faq" class="btn-secondary">
-            <span>Частые вопросы</span>
+          <a href="#final" class="btn-secondary btn-lead-magnet">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M14 2H6C5 2 4 3 4 4V20C4 21 5 22 6 22H18C19 22 20 21 20 20V8L14 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M14 2V8H20" stroke="currentColor" stroke-width="1.5"/><path d="M8 13H16M8 17H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Чек-лист: когда замена не&nbsp;нужна</span>
           </a>
         </div>
         <p class="hero-micro">
-          <strong>Бесплатно · без звонков</strong> — ответ в&nbsp;Telegram или на&nbsp;почту. Подскажем, что ещё сфотографировать.
+          <strong>Бесплатно · без звонков.</strong> Чек-лист пришлём в&nbsp;Telegram. Внутри: 5&nbsp;случаев когда дешевле подремонтировать чем менять полотно целиком.
         </p>
       </div>
     </div>
