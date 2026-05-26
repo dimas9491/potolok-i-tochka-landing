@@ -190,8 +190,8 @@ body[data-theme="2"] .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--ink);
-  color: var(--hi);
+  background: var(--accent);
+  color: #fff;
   border-radius: 999px;
   flex-shrink: 0;
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.14), inset 0 -1px 0 rgba(0,0,0,0.4), 0 4px 10px -2px rgba(var(--shadow-color), 0.45);
@@ -262,7 +262,7 @@ body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
 }
 .nav-logo-mark {
   width: 28px; height: 28px;
-  background: var(--ink);
+  background: var(--accent);
   color: var(--ink);
   border-radius: 8px;
   display: flex;
@@ -271,6 +271,7 @@ body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
   font-weight: 800;
   font-size: 13px;
 }
+.nav-logo-img { width: 36px; height: 36px; object-fit: contain; flex-shrink: 0; }
 .nav-logo-desc {
   font-size: 11px;
   color: var(--ink-2);
@@ -325,8 +326,8 @@ body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
 .nav-btn:hover { transform: translateY(-1px); background: var(--hi-strong); }
 .nav-btn-arrow {
   width: 26px; height: 26px;
-  background: var(--ink);
-  color: var(--hi);
+  background: var(--accent);
+  color: #fff;
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
@@ -339,7 +340,7 @@ body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
 .nav-burger {
   display: none;
   width: 40px; height: 40px;
-  background: var(--ink);
+  background: var(--accent);
   color: var(--ink);
   border-radius: 999px;
   align-items: center;
@@ -593,7 +594,7 @@ body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
   justify-content: space-between;
   align-items: baseline;
   padding: 18px 18px;
-  background: var(--ink);
+  background: var(--accent);
   color: var(--ink);
   border-radius: 14px;
   margin-bottom: 14px;
@@ -1103,7 +1104,7 @@ body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
 /* Promo card — block 9 */
 .promo-card {
   position: relative;
-  background: var(--ink);
+  background: var(--accent);
   color: var(--ink);
   border-radius: 32px;
   padding: 8px;
@@ -1326,8 +1327,8 @@ body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
 .quiz-next:disabled { opacity: 0.4; cursor: not-allowed; box-shadow: none; }
 .quiz-next-arrow {
   width: 28px; height: 28px;
-  background: var(--ink);
-  color: var(--hi);
+  background: var(--accent);
+  color: #fff;
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
@@ -1391,8 +1392,8 @@ body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
 .quiz-submit:hover { transform: translateY(-1px); background: var(--hi-strong); }
 .quiz-submit-arrow {
   width: 30px; height: 30px;
-  background: var(--ink);
-  color: var(--hi);
+  background: var(--accent);
+  color: #fff;
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
@@ -1576,7 +1577,7 @@ body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
 .form-file::before {
   content: '+';
   width: 22px; height: 22px;
-  background: var(--ink);
+  background: var(--accent);
   color: var(--ink);
   border-radius: 999px;
   display: inline-flex;
@@ -1606,8 +1607,8 @@ body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
 .form-submit:hover { transform: translateY(-2px); background: var(--hi-strong); }
 .form-submit-arrow {
   width: 32px; height: 32px;
-  background: var(--ink);
-  color: var(--hi);
+  background: var(--accent);
+  color: #fff;
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
@@ -1653,8 +1654,8 @@ body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
 .footer-cta-btn:hover { transform: translateY(-1px); }
 .footer-cta-btn span {
   width: 24px; height: 24px;
-  background: var(--ink);
-  color: var(--hi);
+  background: var(--accent);
+  color: #fff;
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
@@ -1998,19 +1999,11 @@ body[data-theme="2"] .btn-primary { box-shadow: none; }
 </head>
 <body data-theme="1">
 
-<a href="https://wa.me/" class="wa-float" aria-label="Написать в WhatsApp" target="_blank" rel="noopener">
-  <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-    <path d="M16.001 4C9.376 4 4 9.376 4 16c0 2.116.554 4.183 1.605 6.001L4 28l6.169-1.587A11.94 11.94 0 0 0 16.001 28C22.625 28 28 22.624 28 16S22.625 4 16.001 4z" fill="currentColor"/>
-    <path d="M22.45 19.276c-.319-.16-1.884-.93-2.176-1.035-.293-.107-.506-.16-.719.16-.213.319-.825 1.034-1.012 1.247-.187.213-.373.24-.692.08-.319-.16-1.346-.496-2.564-1.582-.948-.846-1.587-1.89-1.774-2.21-.187-.319-.02-.491.14-.65.144-.143.319-.373.479-.56.16-.187.213-.32.319-.533.107-.213.054-.4-.026-.56-.08-.16-.719-1.735-.985-2.376-.26-.624-.523-.54-.72-.55-.186-.01-.4-.012-.612-.012-.213 0-.56.08-.852.4-.293.32-1.118 1.092-1.118 2.665 0 1.573 1.144 3.093 1.304 3.306.16.213 2.253 3.44 5.46 4.823.762.33 1.357.527 1.821.674.765.244 1.462.21 2.013.127.614-.092 1.884-.77 2.15-1.514.266-.745.266-1.382.187-1.514-.08-.133-.293-.213-.612-.373z" fill="#25D366"/>
-  </svg>
-</a>
-
-
 <!-- NAV -->
 <div class="nav-shell">
   <nav class="nav">
     <a href="index.html" class="nav-logo">
-      <span class="nav-logo-mark">П·Т</span>
+      <img class="nav-logo-img" src="logo.png" alt="Потолок и Точка">
       <span>Потолок и Точка</span>
       <span class="nav-logo-desc">Натяжные потолки под&nbsp;ключ в&nbsp;Москве</span>
     </a>
