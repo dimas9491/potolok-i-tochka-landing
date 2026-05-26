@@ -476,6 +476,79 @@ img { max-width: 100%; display: block; }
 .btn-secondary.btn-lead-magnet:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 .btn-secondary.btn-lead-magnet svg { flex-shrink: 0; }
 
+/* === MOBILE OPTIMIZATIONS — общие правила для всех экранов ≤ 640px === */
+@media (max-width: 640px) {
+  .wrap { padding: 0 18px !important; }
+
+  /* HERO — компактнее на мобайле */
+  .hero-content { padding: 90px 18px 36px !important; }
+  .hero-h1 { font-size: clamp(28px, 8vw, 40px) !important; line-height: 1.08 !important; margin: 14px 0 14px !important; }
+  .hero-lead { font-size: 15px !important; line-height: 1.5 !important; margin-bottom: 16px !important; }
+  .hero-master-side { height: 42vh !important; max-width: none !important; }
+
+  /* HERO CTAs — full-width кнопки на мобайле */
+  .hero-ctas { flex-direction: column !important; align-items: stretch !important; gap: 10px !important; }
+  .hero-ctas .btn-primary { display: flex !important; width: 100% !important; }
+  .hero-ctas .btn-primary-core { width: 100% !important; justify-content: center !important; padding: 14px 20px !important; font-size: 15px !important; }
+  .hero-ctas .btn-secondary { width: 100% !important; justify-content: center !important; }
+
+  /* HERO BENEFITS компактнее */
+  .hero-benefits { gap: 8px 14px !important; margin: 14px 0 18px !important; }
+  .hero-benefits li { font-size: 13.5px !important; padding-left: 26px !important; }
+
+  .hero-micro { font-size: 13px !important; line-height: 1.5 !important; margin-top: 10px !important; }
+
+  /* EYEBROW — компактнее */
+  .eyebrow.eyebrow-promo, .eyebrow.eyebrow-emergency { font-size: 11px !important; padding: 6px 11px 6px 9px !important; }
+
+  /* SECTION padding и заголовки */
+  .section { padding: 56px 0 !important; }
+  .section-h2 { font-size: clamp(24px, 7vw, 36px) !important; line-height: 1.1 !important; }
+  .section-lead { font-size: 14.5px !important; line-height: 1.5 !important; }
+  .section-head { margin-bottom: 38px !important; }
+  .section-quote { padding: 22px 20px !important; font-size: 17px !important; margin-top: 36px !important; line-height: 1.4 !important; }
+
+  /* MARQUEE компактнее */
+  .marquee { padding: 13px 0 !important; }
+  .marquee-track { font-size: 11.5px !important; gap: 36px !important; }
+
+  /* FOOTER на мобайле */
+  .footer { padding: 50px 0 30px !important; }
+  .footer-grid { gap: 28px !important; margin-bottom: 36px !important; }
+  .footer-brand h4 { font-size: 19px !important; }
+  .footer-bottom { font-size: 11px !important; flex-direction: column; align-items: flex-start; gap: 12px; }
+  .footer-legal { gap: 16px !important; }
+
+  /* FINAL форма */
+  .final { padding: 60px 0 80px !important; }
+  .final-form { padding: 24px 22px !important; }
+  .final-text h2 { font-size: clamp(26px, 7vw, 36px) !important; }
+
+  /* PHOTO BLOCK */
+  .photo-block { min-height: 220px !important; }
+  .photo-block-desc { font-size: 11.5px !important; }
+
+  /* FAQ */
+  .faq-q { padding: 18px 22px !important; font-size: 15px !important; }
+  .faq-item.open .faq-a { padding: 0 22px 20px !important; }
+
+  /* CARDS — общая компактность */
+  .situation-card, .plus-card, .principle-card, .three-col-card, .material-card { padding: 22px 20px !important; }
+  .situation-h3, .plus-h4, .principle-h4 { font-size: 18px !important; }
+}
+
+@media (max-width: 420px) {
+  .wrap { padding: 0 14px !important; }
+  .hero-content { padding: 80px 14px 28px !important; }
+  .hero-h1 { font-size: 26px !important; }
+  .hero-master-side { height: 38vh !important; }
+  .nav-logo-img { width: 60px !important; height: 60px !important; }
+  .nav-burger { width: 40px !important; height: 40px !important; }
+  .navbar { padding: 10px 16px !important; }
+  .section { padding: 44px 0 !important; }
+  .final-form { padding: 20px 18px !important; }
+}
+
 </style>
 </head>
 <body>
