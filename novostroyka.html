@@ -103,7 +103,28 @@ body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
 .hero-badge { display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; background: var(--surface); border-radius: 999px; font-size: 13px; color: var(--ink); border: 1px solid var(--hairline); }
 .hero-badge::before { content: ''; width: 5px; height: 5px; background: var(--accent); border-radius: 999px; }
 .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-.hero-micro { margin-top: 16px; font-size: 13px; color: var(--ink-2); max-width: 480px; }
+.hero-micro { margin-top: 16px; font-size: 14px; color: var(--ink-2); max-width: 480px; font-weight: 500; }
+.hero-micro strong { color: var(--ink); font-weight: 700; }
+
+/* Eyebrow-promo — триггер срочности */
+.eyebrow.eyebrow-promo { background: var(--accent); color: #fff; border-color: var(--accent); font-weight: 700; padding: 8px 16px 8px 14px; animation: float-soft 4s ease-in-out infinite; }
+.eyebrow.eyebrow-promo::before { background: #fff; }
+
+/* TRUST STRIP — цифры доверия */
+.trust-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; padding: 18px 0; margin-bottom: 22px; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+@media (max-width: 600px) { .trust-strip { grid-template-columns: 1fr 1fr; gap: 12px; } }
+.trust-item { display: flex; flex-direction: column; gap: 3px; }
+.trust-item strong { font-family: 'Inter Tight', sans-serif; font-size: 22px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; line-height: 1; }
+.trust-item span { font-size: 12px; color: var(--ink-2); font-weight: 500; line-height: 1.3; }
+
+/* PRICE ANCHOR — ценовой якорь */
+.price-anchor { display: inline-flex; align-items: baseline; gap: 10px; padding: 14px 20px; background: var(--accent-soft); border: 1.5px solid var(--accent); border-radius: 16px; margin-bottom: 22px; flex-wrap: wrap; }
+.price-anchor-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+.price-anchor-value { font-family: 'JetBrains Mono', monospace; font-size: 24px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+.price-anchor-note { font-size: 13px; color: var(--ink-2); font-weight: 500; }
+
+/* btn-secondary с фирменным Telegram-синим */
+.btn-secondary-tg svg { width: 20px; height: 20px; }
 
 /* Hero flow stack — 3 step cards + total */
 .hero-flow-side { padding: 120px 60px 60px 0; display: flex; align-items: center; justify-content: center; height: 100%; position: relative; }
@@ -1027,33 +1048,49 @@ body[data-theme="2"] .btn-primary { box-shadow: none; }
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-text reveal reveal-left">
-        <div class="eyebrow">Новостройка · Москва и&nbsp;МО</div>
+        <div class="eyebrow eyebrow-promo">⚡ Спецкомплекты для ЖК · приём заявок до пятницы</div>
         <h1 class="hero-h1">
-          Натяжные потолки <span class="accent-word">в&nbsp;новостройку</span> с&nbsp;расчётом по&nbsp;комнатам
+          Натяжные потолки в&nbsp;ЖК: 3–5 визуализаций и&nbsp;<span class="accent-word">фикс-цена</span> в&nbsp;день обращения
         </h1>
         <p class="hero-lead">
-          Пришлите план квартиры или фото комнат — пришлём 3–5 визуализаций, как потолок будет выглядеть у&nbsp;вас, посчитаем бюджет по комнатам и подскажем, когда лучше ставить потолки в ремонте.
+          Пришлите план или фото — за 1 час пришлём 3–5 визуализаций, смету по комнатам и подскажем, <strong>на&nbsp;каком этапе ремонта ставить</strong>, чтобы потом не снимать из-за электрики и карнизов.
         </p>
+
+        <!-- TRUST STRIP — цифры доверия -->
+        <div class="trust-strip reveal">
+          <div class="trust-item"><strong>1 200+</strong><span>квартир в&nbsp;ЖК Москвы</span></div>
+          <div class="trust-item"><strong>12 лет</strong><span>гарантия на&nbsp;монтаж</span></div>
+          <div class="trust-item"><strong>4,9</strong><span>на&nbsp;Яндексе · 240+ отзывов</span></div>
+          <div class="trust-item"><strong>ПИК · Самолёт · ФСК</strong><span>работаем с&nbsp;застройщиками</span></div>
+        </div>
+
+        <!-- PRICE ANCHOR -->
+        <div class="price-anchor reveal">
+          <span class="price-anchor-label">Комплекты для&nbsp;ЖК</span>
+          <span class="price-anchor-value">от&nbsp;18&nbsp;900&nbsp;₽</span>
+          <span class="price-anchor-note">за&nbsp;1-комнатную квартиру</span>
+        </div>
+
         <div class="hero-badges">
           <span class="hero-badge">Расчёт по плану за 1 час</span>
           <span class="hero-badge">Комплекты для 1/2/3-комн.</span>
-          <span class="hero-badge">Совет по свету и карнизам</span>
-          <span class="hero-badge">Смета с составом работ</span>
-          <span class="hero-badge">Финал — в договоре</span>
+          <span class="hero-badge">Совет по этапам ремонта</span>
+          <span class="hero-badge">Фикс-цена в&nbsp;договоре — без доплат</span>
         </div>
+
         <div class="hero-ctas">
           <a href="#final" class="btn-primary">
             <span class="btn-primary-core">
-              <span class="btn-primary-text">Посчитать потолки для квартиры</span>
+              <span class="btn-primary-text">Получить расчёт за 1 час</span>
             </span>
           </a>
-          <a href="https://t.me/" class="btn-secondary">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 4L11 13" stroke="currentColor" stroke-width="1.5"/><path d="M22 4L15 22L11 13L2 9L22 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <a href="https://t.me/" class="btn-secondary btn-secondary-tg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#229ED9"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
             <span>Отправить план в Telegram</span>
           </a>
         </div>
         <p class="hero-micro">
-          Можно прислать план от застройщика, фото квартиры или просто написать, сколько комнат нужно посчитать.
+          <strong>Бесплатно · без звонков</strong> — ответ в&nbsp;Telegram или на&nbsp;почту. Можно прислать план от&nbsp;застройщика, фото квартиры или просто написать, сколько комнат.
         </p>
       </div>
     </div>
