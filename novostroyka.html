@@ -243,33 +243,135 @@ body[data-theme="2"] .flow-step-card { box-shadow: 0 16px 40px -16px rgba(0,0,0,
   border-radius: 999px;
 }
 
-/* Visual 2 — 3 variant photos */
-.visual-variants { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
-.vv-photos { display: flex; gap: 5px; }
+/* Visual 2 — 3 variant mini-previews of ceiling types */
+.visual-variants { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+.vv-photos { display: flex; gap: 6px; }
 .vv-photo {
-  width: 38px;
-  height: 50px;
-  border-radius: 8px;
-  background: var(--surface);
+  width: 64px;
+  height: 80px;
+  border-radius: 10px;
+  background: var(--bg);
   border: 1px solid var(--hairline);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px -3px rgba(var(--shadow-color), 0.12);
+  transition: transform 300ms cubic-bezier(0.32,0.72,0,1);
 }
-.vv-photo::before {
+.vv-photo:hover { transform: translateY(-3px); }
+.vv-photo:nth-child(1) { transform: rotate(-2deg); }
+.vv-photo:nth-child(2) { transform: translateY(-2px); z-index: 1; }
+.vv-photo:nth-child(3) { transform: rotate(2deg); }
+.vv-photo:nth-child(1):hover { transform: rotate(0) translateY(-3px); }
+.vv-photo:nth-child(3):hover { transform: rotate(0) translateY(-3px); }
+
+/* Ceiling area — top 45% */
+.vv-ceiling {
+  height: 45%;
+  background: #F7F7F4;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+body[data-theme="2"] .vv-ceiling { background: #34343C; }
+body[data-theme="1"] .vv-ceiling { background: #FAFAF7; }
+
+/* Wall area — bottom 55% */
+.vv-wall {
+  flex: 1;
+  background: linear-gradient(180deg, #EDEDE8 0%, #DCDCD6 100%);
+}
+body[data-theme="2"] .vv-wall { background: linear-gradient(180deg, #2C2C32 0%, #232328 100%); }
+body[data-theme="1"] .vv-wall { background: linear-gradient(180deg, #E8E0CC 0%, #D8CFB8 100%); }
+
+/* Variant 1 — Matte ceiling with 2 spotlights */
+.vv-spot {
+  width: 4px; height: 4px;
+  background: var(--accent);
+  border-radius: 999px;
+  box-shadow: 0 0 6px rgba(61,107,156,0.6);
+  opacity: 0.7;
+}
+
+/* Variant 2 — With curtain niche */
+.vv-photo-carnis .vv-ceiling { background: #F7F7F4; }
+body[data-theme="2"] .vv-photo-carnis .vv-ceiling { background: #34343C; }
+.vv-carnis-shadow {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.18) 0%, transparent 100%);
+}
+.vv-curtain {
+  flex: 1;
+  background: repeating-linear-gradient(180deg, #C9A87C 0%, #C9A87C 3px, #B89968 3px, #B89968 5px);
+  position: relative;
+}
+.vv-curtain::after {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, var(--accent-soft) 0%, transparent 60%);
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, transparent 100%);
 }
-.vv-photo:nth-child(1)::after {
-  content: '';
+body[data-theme="2"] .vv-curtain { background: repeating-linear-gradient(180deg, #6B5E48 0%, #6B5E48 3px, #5A4F3D 3px, #5A4F3D 5px); }
+
+/* Variant 3 — Light lines / glow */
+.vv-ceiling-glow {
+  background: linear-gradient(180deg, #F7F7F4 60%, rgba(232,255,170,0.4) 100%);
+  position: relative;
+  align-items: flex-start;
+  padding-top: 4px;
+}
+body[data-theme="2"] .vv-ceiling-glow { background: linear-gradient(180deg, #34343C 60%, rgba(214,242,110,0.3) 100%); }
+.vv-light-line {
+  width: 18px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--hi-strong) 50%, transparent 100%);
+  border-radius: 999px;
+  box-shadow: 0 0 8px rgba(201,240,80,0.7);
+}
+.vv-light-line:nth-child(2) { width: 12px; margin-top: 4px; }
+
+/* Photo label at very bottom */
+.vv-photo-label {
   position: absolute;
-  inset: 4px;
-  background: linear-gradient(180deg, transparent 60%, rgba(61,107,156,0.15));
-  border-radius: 4px;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3px 8px;
+  background: var(--bg);
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px -2px rgba(var(--shadow-color), 0.15);
 }
-.vv-photo:nth-child(2) { background: var(--accent-soft); }
-.vv-photo:nth-child(3) { background: linear-gradient(180deg, var(--surface) 0%, var(--accent-soft) 100%); }
+
+.vv-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.vv-meta-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  padding: 4px 9px;
+  background: var(--accent-soft);
+  border-radius: 999px;
+}
 .vv-dots { display: flex; gap: 5px; }
 .vv-dot {
   width: 6px; height: 6px;
@@ -801,20 +903,43 @@ body[data-theme="2"] .theme-switch { background: rgba(35,35,42,0.9); }
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="13" y="3" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="13" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="13" y="13" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.8"/></svg>
           </div>
           <div class="flow-step-body">
-            <h4>Получите 3–5 вариантов</h4>
-            <p>Подберём решения под ваш интерьер и&nbsp;бюджет</p>
+            <h4>Пришлём фото вариантов</h4>
+            <p>Покажем, как будет выглядеть потолок именно в&nbsp;вашей квартире</p>
           </div>
           <div class="flow-step-visual">
             <div class="visual-variants">
               <div class="vv-photos">
-                <div class="vv-photo"></div>
-                <div class="vv-photo"></div>
-                <div class="vv-photo"></div>
+                <div class="vv-photo vv-photo-matte">
+                  <div class="vv-ceiling">
+                    <span class="vv-spot"></span>
+                    <span class="vv-spot"></span>
+                  </div>
+                  <div class="vv-wall"></div>
+                  <span class="vv-photo-label">Матовый</span>
+                </div>
+                <div class="vv-photo vv-photo-carnis">
+                  <div class="vv-ceiling">
+                    <span class="vv-carnis-shadow"></span>
+                  </div>
+                  <div class="vv-curtain"></div>
+                  <span class="vv-photo-label">С карнизом</span>
+                </div>
+                <div class="vv-photo vv-photo-light">
+                  <div class="vv-ceiling vv-ceiling-glow">
+                    <span class="vv-light-line"></span>
+                    <span class="vv-light-line"></span>
+                  </div>
+                  <div class="vv-wall"></div>
+                  <span class="vv-photo-label">Подсветка</span>
+                </div>
               </div>
-              <div class="vv-dots">
-                <span class="vv-dot active"></span>
-                <span class="vv-dot"></span>
-                <span class="vv-dot"></span>
+              <div class="vv-meta">
+                <span class="vv-meta-badge">+2 ещё</span>
+                <div class="vv-dots">
+                  <span class="vv-dot active"></span>
+                  <span class="vv-dot"></span>
+                  <span class="vv-dot"></span>
+                </div>
               </div>
             </div>
           </div>
