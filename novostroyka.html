@@ -104,66 +104,292 @@ body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
 .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 .hero-micro { margin-top: 16px; font-size: 13px; color: var(--ink-2); max-width: 480px; }
 
-/* Hero floorplan visualization */
-.hero-plan-side { padding: 120px 60px 60px 0; display: flex; align-items: center; justify-content: center; height: 100%; position: relative; }
-.floorplan-card { position: relative; width: 100%; max-width: 540px; background: var(--surface); border: 1px solid var(--hairline); border-radius: 28px; padding: 8px; box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), 0 30px 70px -20px rgba(var(--shadow-color), 0.25); transform: rotate(-0.5deg); transition: transform 600ms cubic-bezier(0.32,0.72,0,1); }
-.floorplan-card:hover { transform: rotate(0) translateY(-4px); }
-.floorplan-inner { background: var(--bg); border-radius: 22px; padding: 24px 24px 22px; }
-.floorplan-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
-.floorplan-tag { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: var(--accent-soft); color: var(--accent); border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; }
-.floorplan-tag::before { content: ''; width: 5px; height: 5px; background: var(--accent); border-radius: 999px; }
-.floorplan-area { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-2); }
+/* Hero flow stack — 3 step cards + total */
+.hero-flow-side { padding: 120px 60px 60px 0; display: flex; align-items: center; justify-content: center; height: 100%; position: relative; }
+.flow-stack { position: relative; width: 100%; max-width: 580px; display: flex; flex-direction: column; gap: 16px; }
+.flow-stack::before {
+  content: '';
+  position: absolute;
+  top: 60px;
+  bottom: 130px;
+  left: 38px;
+  width: 1.5px;
+  background-image: linear-gradient(180deg, var(--accent) 50%, transparent 50%);
+  background-size: 1.5px 8px;
+  background-repeat: repeat-y;
+  opacity: 0.35;
+  z-index: 0;
+}
 
-.floorplan-svg-wrap { position: relative; background: var(--surface); border-radius: 14px; padding: 24px; margin-bottom: 16px; aspect-ratio: 16/10; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.floorplan-svg-wrap::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(61,107,156,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(61,107,156,0.06) 1px, transparent 1px); background-size: 20px 20px; pointer-events: none; }
-.floorplan-svg { position: relative; width: 100%; height: 100%; max-height: 280px; }
-.floorplan-room {
+.flow-step-card {
   position: relative;
-  transition: all 300ms;
-  cursor: pointer;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 36px 56px 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  background: var(--bg);
+  border: 1px solid var(--hairline);
+  border-radius: 28px;
+  box-shadow: 0 16px 40px -16px rgba(var(--shadow-color), 0.18), inset 0 1px 0 rgba(255,255,255,0.6);
+  transition: transform 400ms cubic-bezier(0.32,0.72,0,1);
 }
-.floorplan-room:hover .room-bg { fill: var(--accent-soft); stroke: var(--accent); }
-.room-label {
-  font-family: 'Inter Tight', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  fill: var(--ink);
-  letter-spacing: -0.01em;
-}
-.room-meta {
+body[data-theme="2"] .flow-step-card { box-shadow: 0 16px 40px -16px rgba(0,0,0,0.5); }
+.flow-step-card:hover { transform: translateY(-3px); }
+
+.flow-step-num {
+  width: 32px; height: 32px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 999px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 9px;
-  fill: var(--ink-2);
-  letter-spacing: 0;
+  font-size: 14px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.floorplan-rooms-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
-.floorplan-room-row { display: grid; grid-template-columns: 12px 1fr auto; align-items: center; gap: 10px; padding: 8px 10px; background: var(--surface); border-radius: 8px; font-size: 13px; }
-.floorplan-room-row-dot { width: 8px; height: 8px; border-radius: 999px; }
-.floorplan-room-row:nth-child(1) .floorplan-room-row-dot { background: var(--accent); }
-.floorplan-room-row:nth-child(2) .floorplan-room-row-dot { background: var(--hi-strong); }
-.floorplan-room-row:nth-child(3) .floorplan-room-row-dot { background: #F5A623; }
-.floorplan-room-row:nth-child(4) .floorplan-room-row-dot { background: #5B8FE0; }
-.floorplan-room-row-label { color: var(--ink); font-weight: 500; }
-.floorplan-room-row-price { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-2); font-weight: 500; }
+.flow-step-icon {
+  width: 56px; height: 56px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
 
-.floorplan-total { display: flex; justify-content: space-between; align-items: baseline; padding: 14px 16px; background: var(--ink); color: var(--bg); border-radius: 12px; }
-.floorplan-total-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.65; font-weight: 600; }
-.floorplan-total-value { font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 700; color: var(--hi); letter-spacing: -0.02em; }
-.floorplan-total-value small { font-size: 10px; opacity: 0.6; margin-right: 4px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+.flow-step-body { min-width: 0; }
+.flow-step-body h4 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 4px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.flow-step-body p {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--ink-2);
+  line-height: 1.4;
+}
 
-.floorplan-sticker { position: absolute; top: -18px; right: -16px; background: var(--hi); color: var(--ink); padding: 9px 16px; border-radius: 999px; font-size: 12px; font-weight: 700; transform: rotate(7deg); box-shadow: 0 12px 24px -6px rgba(201,240,80,0.55); z-index: 2; }
+.flow-step-visual {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Visual 1 — phone with plan over room placeholder */
+.visual-phone-plan {
+  position: relative;
+  width: 132px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+.vpp-room {
+  width: 86px;
+  height: 100%;
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px var(--hairline);
+}
+.vpp-phone {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 80px;
+  background: var(--ink);
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0 8px 20px -4px rgba(var(--shadow-color), 0.3);
+}
+.vpp-screen {
+  width: 100%;
+  height: 100%;
+  background: var(--accent-soft);
+  border-radius: 6px;
+  padding: 6px 4px;
+  position: relative;
+}
+.vpp-plan {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  height: 100%;
+}
+.vpp-plan-row {
+  background: var(--accent);
+  opacity: 0.4;
+  border-radius: 2px;
+  flex: 1;
+}
+.vpp-plan-row:nth-child(2) { opacity: 0.25; flex: 0.6; }
+.vpp-plan-row:nth-child(3) { opacity: 0.55; flex: 0.8; }
+.vpp-notch {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 3px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 999px;
+}
+
+/* Visual 2 — 3 variant photos */
+.visual-variants { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
+.vv-photos { display: flex; gap: 5px; }
+.vv-photo {
+  width: 38px;
+  height: 50px;
+  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  position: relative;
+  overflow: hidden;
+}
+.vv-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--accent-soft) 0%, transparent 60%);
+}
+.vv-photo:nth-child(1)::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  background: linear-gradient(180deg, transparent 60%, rgba(61,107,156,0.15));
+  border-radius: 4px;
+}
+.vv-photo:nth-child(2) { background: var(--accent-soft); }
+.vv-photo:nth-child(3) { background: linear-gradient(180deg, var(--surface) 0%, var(--accent-soft) 100%); }
+.vv-dots { display: flex; gap: 5px; }
+.vv-dot {
+  width: 6px; height: 6px;
+  background: var(--hairline);
+  border-radius: 999px;
+}
+.vv-dot.active { background: var(--accent); width: 14px; border-radius: 999px; }
+
+/* Visual 3 — rooms list with prices */
+.visual-rooms-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 240px;
+}
+.vrl-row {
+  display: grid;
+  grid-template-columns: 10px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
+  background: var(--surface);
+  border-radius: 999px;
+  font-size: 12px;
+}
+.vrl-dot {
+  width: 8px; height: 8px;
+  border-radius: 999px;
+}
+.vrl-label { color: var(--ink); font-weight: 500; }
+.vrl-price { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink); font-weight: 600; }
+.vrl-show-all {
+  font-size: 11px;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 6px 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 999px;
+  transition: background 200ms;
+}
+.vrl-show-all:hover { background: var(--accent-soft); }
+.vrl-show-all span { font-size: 9px; line-height: 1; }
+
+/* Total card */
+.total-card {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 26px;
+  background: var(--bg);
+  border: 1px solid var(--hairline);
+  border-radius: 32px;
+  box-shadow: 0 18px 40px -14px rgba(var(--shadow-color), 0.22), inset 0 1px 0 rgba(255,255,255,0.6);
+  margin-top: 6px;
+  transition: transform 400ms cubic-bezier(0.32,0.72,0,1);
+}
+body[data-theme="2"] .total-card { box-shadow: 0 18px 40px -14px rgba(0,0,0,0.5); }
+.total-card:hover { transform: translateY(-3px); }
+.total-card-icon {
+  width: 56px; height: 56px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 6px 14px -4px rgba(61,107,156,0.45);
+}
+.total-card-body h4 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 3px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.total-card-body p {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--ink-2);
+}
+.total-card-price { text-align: right; }
+.total-card-price-value {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 2px;
+  white-space: nowrap;
+}
+.total-card-price-note {
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 600;
+}
 
 @media (max-width: 1180px) {
   .hero-inner { grid-template-columns: 1fr; }
-  .hero-content, .hero-plan-side { padding: 100px 32px 40px; }
-  .hero-plan-side { padding-top: 0; padding-bottom: 50px; }
+  .hero-content, .hero-flow-side { padding: 100px 32px 40px; }
+  .hero-flow-side { padding-top: 0; padding-bottom: 50px; }
+}
+@media (max-width: 880px) {
+  .flow-step-card { grid-template-columns: 32px 48px 1fr; }
+  .flow-step-visual { display: none; }
+  .flow-stack::before { left: 36px; }
+  .flow-step-icon { width: 48px; height: 48px; }
+  .total-card { grid-template-columns: auto 1fr; gap: 14px; padding: 18px 20px; }
+  .total-card-price { grid-column: 1 / -1; text-align: left; padding-top: 8px; border-top: 1px solid var(--hairline); }
 }
 @media (max-width: 768px) {
   .hero-content { padding: 100px 18px 30px; }
-  .hero-plan-side { padding: 0 18px 40px; }
-  .floorplan-card { transform: none; }
-  .floorplan-sticker { right: 0; }
+  .hero-flow-side { padding: 0 18px 40px; }
 }
 
 /* MARQUEE */
@@ -540,93 +766,105 @@ body[data-theme="2"] .theme-switch { background: rgba(35,35,42,0.9); }
       </div>
     </div>
 
-    <div class="hero-plan-side">
-      <div class="floorplan-card reveal">
-        <span class="floorplan-sticker">2-комн · 3 варианта</span>
-        <div class="floorplan-inner">
-          <div class="floorplan-head">
-            <span class="floorplan-tag">План квартиры</span>
-            <span class="floorplan-area">≈ 56 м²</span>
+    <div class="hero-flow-side">
+      <div class="flow-stack reveal">
+
+        <div class="flow-step-card">
+          <div class="flow-step-num">1</div>
+          <div class="flow-step-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="14" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/><circle cx="10" cy="11" r="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 17L7 13L13 17L17 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="19" cy="6" r="3" fill="currentColor"/><path d="M19 4.5V7.5M17.5 6H20.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/></svg>
           </div>
-
-          <div class="floorplan-svg-wrap">
-            <svg class="floorplan-svg" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <!-- Apartment outline -->
-              <rect x="4" y="4" width="312" height="192" rx="6" stroke="#0A2540" stroke-width="2" fill="none" stroke-linejoin="round"/>
-
-              <!-- Bedroom -->
-              <g class="floorplan-room">
-                <rect class="room-bg" x="8" y="8" width="120" height="92" fill="rgba(61,107,156,0.08)" stroke="#0A2540" stroke-width="1.2"/>
-                <text class="room-label" x="68" y="48" text-anchor="middle">Спальня</text>
-                <text class="room-meta" x="68" y="62" text-anchor="middle">14 м²</text>
-              </g>
-
-              <!-- Kitchen-living -->
-              <g class="floorplan-room">
-                <rect class="room-bg" x="128" y="8" width="184" height="124" fill="rgba(232,255,170,0.25)" stroke="#0A2540" stroke-width="1.2"/>
-                <text class="room-label" x="220" y="60" text-anchor="middle">Кухня-гостиная</text>
-                <text class="room-meta" x="220" y="74" text-anchor="middle">22 м²</text>
-              </g>
-
-              <!-- Corridor -->
-              <g class="floorplan-room">
-                <rect class="room-bg" x="8" y="100" width="120" height="46" fill="rgba(245,166,35,0.12)" stroke="#0A2540" stroke-width="1.2"/>
-                <text class="room-label" x="68" y="122" text-anchor="middle">Коридор</text>
-                <text class="room-meta" x="68" y="135" text-anchor="middle">8 м²</text>
-              </g>
-
-              <!-- Bathroom -->
-              <g class="floorplan-room">
-                <rect class="room-bg" x="8" y="146" width="60" height="46" fill="rgba(91,143,224,0.12)" stroke="#0A2540" stroke-width="1.2"/>
-                <text class="room-label" x="38" y="170" text-anchor="middle" style="font-size: 9px;">С/у</text>
-                <text class="room-meta" x="38" y="180" text-anchor="middle">4 м²</text>
-              </g>
-
-              <!-- Hallway -->
-              <g class="floorplan-room">
-                <rect class="room-bg" x="68" y="146" width="60" height="46" fill="rgba(200,101,74,0.1)" stroke="#0A2540" stroke-width="1.2"/>
-                <text class="room-label" x="98" y="170" text-anchor="middle" style="font-size: 9px;">Прихожая</text>
-                <text class="room-meta" x="98" y="180" text-anchor="middle">4 м²</text>
-              </g>
-
-              <!-- Living room (continuation) -->
-              <g class="floorplan-room">
-                <rect class="room-bg" x="128" y="132" width="184" height="60" fill="rgba(232,255,170,0.18)" stroke="#0A2540" stroke-width="1.2"/>
-                <text class="room-label" x="220" y="160" text-anchor="middle" style="font-size: 10px;">Балкон</text>
-                <text class="room-meta" x="220" y="174" text-anchor="middle">4 м²</text>
-              </g>
-
-              <!-- Door openings (gaps) -->
-              <line x1="68" y1="100" x2="84" y2="100" stroke="#FFFFFF" stroke-width="2.5"/>
-              <line x1="128" y1="50" x2="128" y2="70" stroke="#FFFFFF" stroke-width="2.5"/>
-              <line x1="68" y1="146" x2="84" y2="146" stroke="#FFFFFF" stroke-width="2.5"/>
-              <line x1="128" y1="155" x2="128" y2="170" stroke="#FFFFFF" stroke-width="2.5"/>
-            </svg>
+          <div class="flow-step-body">
+            <h4>Отправьте план или&nbsp;фото</h4>
+            <p>Пришлите план квартиры или фото комнат в&nbsp;удобном мессенджере</p>
           </div>
-
-          <div class="floorplan-rooms-list">
-            <div class="floorplan-room-row">
-              <span class="floorplan-room-row-dot"></span>
-              <span class="floorplan-room-row-label">Спальня · матовый</span>
-              <span class="floorplan-room-row-price">от XX XXX&nbsp;₽</span>
+          <div class="flow-step-visual">
+            <div class="visual-phone-plan">
+              <div class="vpp-room"></div>
+              <div class="vpp-phone">
+                <div class="vpp-screen">
+                  <div class="vpp-plan">
+                    <span class="vpp-plan-row"></span>
+                    <span class="vpp-plan-row"></span>
+                    <span class="vpp-plan-row"></span>
+                  </div>
+                </div>
+                <div class="vpp-notch"></div>
+              </div>
             </div>
-            <div class="floorplan-room-row">
-              <span class="floorplan-room-row-dot"></span>
-              <span class="floorplan-room-row-label">Кухня-гостиная · карниз</span>
-              <span class="floorplan-room-row-price">от XX XXX&nbsp;₽</span>
-            </div>
-            <div class="floorplan-room-row">
-              <span class="floorplan-room-row-dot"></span>
-              <span class="floorplan-room-row-label">Коридор · точечный свет</span>
-              <span class="floorplan-room-row-price">от XX XXX&nbsp;₽</span>
-            </div>
-          </div>
-
-          <div class="floorplan-total">
-            <span class="floorplan-total-label">Смета по&nbsp;квартире</span>
-            <span class="floorplan-total-value"><small>от</small>XXX&nbsp;XXX&nbsp;₽</span>
           </div>
         </div>
+
+        <div class="flow-step-card">
+          <div class="flow-step-num">2</div>
+          <div class="flow-step-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="13" y="3" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="13" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="13" y="13" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.8"/></svg>
+          </div>
+          <div class="flow-step-body">
+            <h4>Получите 3–5 вариантов</h4>
+            <p>Подберём решения под ваш интерьер и&nbsp;бюджет</p>
+          </div>
+          <div class="flow-step-visual">
+            <div class="visual-variants">
+              <div class="vv-photos">
+                <div class="vv-photo"></div>
+                <div class="vv-photo"></div>
+                <div class="vv-photo"></div>
+              </div>
+              <div class="vv-dots">
+                <span class="vv-dot active"></span>
+                <span class="vv-dot"></span>
+                <span class="vv-dot"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-step-card">
+          <div class="flow-step-num">3</div>
+          <div class="flow-step-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="7" y="6" width="10" height="4" rx="0.5" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="13.5" r="0.8" fill="currentColor"/><circle cx="12" cy="13.5" r="0.8" fill="currentColor"/><circle cx="16" cy="13.5" r="0.8" fill="currentColor"/><circle cx="8" cy="17" r="0.8" fill="currentColor"/><circle cx="12" cy="17" r="0.8" fill="currentColor"/><circle cx="16" cy="17" r="0.8" fill="currentColor"/></svg>
+          </div>
+          <div class="flow-step-body">
+            <h4>Смета по&nbsp;комнатам</h4>
+            <p>Прозрачный расчёт стоимости и&nbsp;состава работ</p>
+          </div>
+          <div class="flow-step-visual">
+            <div class="visual-rooms-list">
+              <div class="vrl-row">
+                <span class="vrl-dot" style="background: var(--accent);"></span>
+                <span class="vrl-label">Спальня</span>
+                <span class="vrl-price">от XX&nbsp;XXX&nbsp;₽</span>
+              </div>
+              <div class="vrl-row">
+                <span class="vrl-dot" style="background: var(--hi-strong);"></span>
+                <span class="vrl-label">Кухня-гостиная</span>
+                <span class="vrl-price">от XX&nbsp;XXX&nbsp;₽</span>
+              </div>
+              <div class="vrl-row">
+                <span class="vrl-dot" style="background: #F5A623;"></span>
+                <span class="vrl-label">Коридор</span>
+                <span class="vrl-price">от XX&nbsp;XXX&nbsp;₽</span>
+              </div>
+              <a href="#kits" class="vrl-show-all">Показать все комнаты <span>⌄</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="total-card">
+          <div class="total-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M9 8H13C14.1 8 15 8.9 15 10C15 11.1 14.1 12 13 12H9V8ZM9 12V17M7 10H12M7 14H12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="total-card-body">
+            <h4>Итого по&nbsp;квартире</h4>
+            <p>с материалами и работами</p>
+          </div>
+          <div class="total-card-price">
+            <span class="total-card-price-value">от XXX&nbsp;XXX&nbsp;₽</span>
+            <span class="total-card-price-note">Фиксируем цену в&nbsp;договоре</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
