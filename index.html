@@ -1142,7 +1142,7 @@ body[data-theme="2"] .fact-card-inner { box-shadow: inset 0 1px 0 rgba(255,255,2
 }
 .pain-card.good .pain-bullets li::before {
   content: '→';
-  color: var(--hi);
+  color: var(--accent);
   flex-shrink: 0;
   font-weight: 700;
 }
@@ -1385,7 +1385,7 @@ body[data-theme="2"] .fact-card-inner { box-shadow: inset 0 1px 0 rgba(255,255,2
 .kit-1 .kit-h3, .kit-1 .kit-cta { color: var(--ink); }
 .kit-1 .kit-text, .kit-1 .kit-list li { color: var(--ink-2); }
 .kit-1 .kit-tag { background: var(--bg); color: var(--ink-2); }
-.kit-1 .kit-list li::before { color: var(--hi); }
+.kit-1 .kit-list li::before { color: var(--accent); }
 
 .kit-2 { grid-column: span 5; }
 .kit-3 { grid-column: span 5; }
@@ -1395,6 +1395,11 @@ body[data-theme="2"] .fact-card-inner { box-shadow: inset 0 1px 0 rgba(255,255,2
 .kit-6 { grid-column: span 3; }
 .kit-6 .kit-inner { background: var(--hi); }
 .kit-6 .kit-text { color: var(--ink); }
+/* kit-6: lime фон — переопределяем все вложенные элементы для контраста */
+.kit-6 .kit-tag { background: var(--ink) !important; color: var(--bg) !important; border: none; }
+.kit-6 .kit-tag::before { background: var(--hi); }
+.kit-6 .kit-h3, .kit-6 .kit-price-value, .kit-6 .kit-list li { color: var(--ink); }
+.kit-6 .kit-list li::before { color: var(--ink); }
 
 @media (max-width: 1100px) {
   .kit-1 { grid-column: span 12; grid-row: span 1; }
@@ -1522,7 +1527,7 @@ body[data-theme="2"] .fact-card-inner { box-shadow: inset 0 1px 0 rgba(255,255,2
 .sol-5 .solution-text { color: var(--ink-2); }
 .sol-5 .solution-meta-tag { color: var(--ink-2); }
 .sol-5 .solution-cta { color: var(--ink); }
-.sol-5 .solution-media { background: var(--bg); border-color: rgba(255,255,255,0.1); }
+.sol-5 .solution-media { background: var(--bg); border-color: var(--hairline); }
 .sol-5 .solution-media-text { color: var(--ink-2); }
 .sol-5 .solution-media-text strong { color: var(--ink); }
 .sol-5 .solution-room { background: var(--surface-2); color: var(--ink); }
@@ -1736,7 +1741,7 @@ body[data-theme="2"] .fact-card-inner { box-shadow: inset 0 1px 0 rgba(255,255,2
 .trust-1 .trust-card-inner { background: var(--accent-soft); color: var(--ink); }
 .trust-1 .trust-h4 { color: var(--ink); }
 .trust-1 .trust-text { color: var(--ink-2); }
-.trust-1 .trust-num { color: var(--hi); }
+.trust-1 .trust-num { color: var(--accent); }
 .trust-1 .trust-sig {
   border-top-color: rgba(255,255,255,0.1);
   color: var(--ink);
@@ -3538,7 +3543,7 @@ body[data-theme="2"] .btn-primary { box-shadow: none; }
           </div>
           <div class="trust-sig">
             <span class="trust-sig-dot"></span>
-            <a href="https://t.me/" style="color: inherit; text-decoration: none; border-bottom: 1px solid var(--hi);">Telegram владельца — @potolok_i_tochka</a>
+            <a href="https://t.me/" style="color: inherit; text-decoration: none; border-bottom: 1px solid var(--accent);">Telegram владельца — @potolok_i_tochka</a>
           </div>
         </div>
       </div>
@@ -3744,7 +3749,7 @@ body[data-theme="2"] .btn-primary { box-shadow: none; }
   <div class="wrap">
     <div class="final-grid">
       <div class="reveal">
-        <div class="eyebrow" style="background: var(--bg); border-color: rgba(255,255,255,0.1); color: var(--ink-2);">Финальный шаг</div>
+        <div class="eyebrow" style="background: var(--bg); border-color: var(--hairline); color: var(--ink-2);">Финальный шаг</div>
         <h2 class="final-h2">Пришлите фото комнаты — посчитаем потолок <span class="accent-word">до замера</span></h2>
         <p class="final-lead">Пришлём 3–5 визуализаций (как потолок будет выглядеть именно у&nbsp;вас), объясним разницу по цене и скажем, что может повлиять на итоговую смету. Бесплатно, без обязательств.</p>
         <ul class="final-bullets">

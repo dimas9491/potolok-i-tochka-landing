@@ -277,7 +277,7 @@ body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
 .restore-card h3 { font-size: 20px; font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; }
 .restore-card ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
 .restore-card ul li { font-size: 14px; padding: 10px 14px; background: var(--bg); border-radius: 10px; display: flex; align-items: center; gap: 10px; line-height: 1.4; color: var(--ink); }
-.restore-card.good ul li::before { content: '·'; color: var(--hi-strong); font-size: 18px; font-weight: 700; }
+.restore-card.good ul li::before { content: '·'; color: var(--accent); font-size: 18px; font-weight: 700; }
 .restore-card.bad ul li::before { content: '·'; color: var(--warn); font-size: 18px; font-weight: 700; }
 
 .what-we-do { margin-top: 28px; background: var(--accent-soft); color: var(--ink); border-radius: 24px; padding: 32px; }
@@ -287,7 +287,7 @@ body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
 @media (max-width: 880px) { .what-we-do-list { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 540px) { .what-we-do-list { grid-template-columns: 1fr; } }
 .what-we-do-list li { font-size: 14px; padding: 12px 14px; background: var(--bg); border: 1px solid var(--hairline); border-radius: 12px; display: flex; align-items: center; gap: 10px; line-height: 1.35; }
-.what-we-do-list li::before { content: '→'; color: var(--hi); flex-shrink: 0; font-weight: 700; }
+.what-we-do-list li::before { content: '→'; color: var(--accent); flex-shrink: 0; font-weight: 700; }
 
 /* Generic situation cards — used in blocks 4, 5 */
 .sit-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
@@ -412,7 +412,7 @@ body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
 .qc-checklist-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 12px; font-weight: 600; }
 .qc-checklist ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
 .qc-checklist ul li { font-size: 13px; color: var(--ink-2); padding: 6px 0; display: flex; align-items: flex-start; gap: 10px; line-height: 1.4; }
-.qc-checklist ul li::before { content: '•'; color: var(--hi); flex-shrink: 0; font-size: 18px; line-height: 1; }
+.qc-checklist ul li::before { content: '•'; color: var(--accent); flex-shrink: 0; font-size: 18px; line-height: 1; }
 
 /* Template message — copy block */
 .template-card {
@@ -1709,7 +1709,7 @@ body[data-theme="2"] .btn-primary { box-shadow: none; }
   <div class="wrap">
     <div class="final-grid">
       <div class="reveal">
-        <div class="eyebrow" style="background: var(--bg); border-color: rgba(255,255,255,0.16); color: #fff;">Финальный шаг</div>
+        <div class="eyebrow" style="background: var(--bg); border-color: var(--hairline); color: var(--ink-2);">Финальный шаг</div>
         <h2 class="final-h2">Не&nbsp;прокалывайте потолок — сначала пришлите <span class="accent-word">фото мастеру</span></h2>
         <p class="final-lead">По фото мы скажем, что делать прямо сейчас: можно ли слить воду, восстановить полотно, отремонтировать повреждение или нужна замена.</p>
         <ul class="final-bullets">
