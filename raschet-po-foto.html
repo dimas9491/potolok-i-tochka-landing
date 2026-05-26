@@ -1023,6 +1023,112 @@ body[data-theme="2"] .theme-switch { background: rgba(35,35,42,0.9); }
 .wave-divider.flip svg { transform: scaleY(-1); }
 
 
+/* === EXTENDED ANIMATIONS — wow-эффекты === */
+@keyframes reveal-left { from { opacity: 0; transform: translateX(-60px) rotate(-2deg); } to { opacity: 1; transform: translateX(0) rotate(0); } }
+@keyframes reveal-right { from { opacity: 0; transform: translateX(60px) rotate(2deg); } to { opacity: 1; transform: translateX(0) rotate(0); } }
+@keyframes reveal-scale { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
+@keyframes reveal-bounce {
+  0% { opacity: 0; transform: translateY(60px) scale(0.92); }
+  60% { opacity: 1; transform: translateY(-10px) scale(1.02); }
+  100% { transform: translateY(0) scale(1); }
+}
+@keyframes reveal-tilt {
+  from { opacity: 0; transform: perspective(800px) rotateX(-12deg) translateY(36px); }
+  to { opacity: 1; transform: perspective(800px) rotateX(0) translateY(0); }
+}
+@keyframes reveal-blur { from { opacity: 0; filter: blur(14px); transform: translateY(28px); } to { opacity: 1; filter: blur(0); transform: translateY(0); } }
+@keyframes float-soft { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes drift-x { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(8px); } }
+@keyframes pulse-accent {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(184,145,92, 0.55); }
+  50% { box-shadow: 0 0 0 16px rgba(184,145,92, 0); }
+}
+@keyframes shimmer-text {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.reveal.in.reveal-left { animation: reveal-left 900ms cubic-bezier(0.32,0.72,0,1) both; }
+.reveal.in.reveal-right { animation: reveal-right 900ms cubic-bezier(0.32,0.72,0,1) both; }
+.reveal.in.reveal-scale { animation: reveal-scale 800ms cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+.reveal.in.reveal-bounce { animation: reveal-bounce 1000ms cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+.reveal.in.reveal-tilt { animation: reveal-tilt 1100ms cubic-bezier(0.32,0.72,0,1) both; }
+.reveal.in.reveal-blur { animation: reveal-blur 1000ms cubic-bezier(0.32,0.72,0,1) both; }
+
+.float-soft { animation: float-soft 5s ease-in-out infinite; }
+.drift-x { animation: drift-x 6s ease-in-out infinite; }
+.pulse-accent { animation: pulse-accent 2.4s ease-in-out infinite; }
+
+.shimmer-text {
+  background: linear-gradient(90deg, var(--ink) 0%, var(--accent) 50%, var(--ink) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer-text 4s linear infinite;
+}
+
+/* === НОВЫЕ DIVIDERS — все НЕ прямые === */
+.zigzag-divider {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  background-image: linear-gradient(135deg, transparent 50%, var(--surface) 50%), linear-gradient(225deg, transparent 50%, var(--surface) 50%);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 0;
+  background-repeat: repeat-x;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  z-index: 1;
+}
+.zigzag-divider.to-bg { background-image: linear-gradient(135deg, transparent 50%, var(--bg) 50%), linear-gradient(225deg, transparent 50%, var(--bg) 50%); }
+.zigzag-divider.to-accent-soft { background-image: linear-gradient(135deg, transparent 50%, var(--accent-soft) 50%), linear-gradient(225deg, transparent 50%, var(--accent-soft) 50%); }
+
+.arc-divider {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  margin-top: -30px;
+  margin-bottom: -1px;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.arc-divider::before {
+  content: '';
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  bottom: 0;
+  height: 100%;
+  background: var(--surface);
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+}
+.arc-divider.to-bg::before { background: var(--bg); }
+.arc-divider.to-accent-soft::before { background: var(--accent-soft); }
+.arc-divider.flip::before { border-radius: 50% 50% 0 0 / 100% 100% 0 0; bottom: auto; top: 0; }
+
+.blob-divider {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  line-height: 0;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  z-index: 1;
+  pointer-events: none;
+}
+.blob-divider svg { width: 100%; height: 100%; display: block; }
+.blob-divider svg path { fill: var(--surface); }
+.blob-divider.to-bg svg path { fill: var(--bg); }
+.blob-divider.to-accent-soft svg path { fill: var(--accent-soft); }
+.blob-divider.flip svg { transform: scaleY(-1); }
+
+/* Marquee тоже не прямая — пусть будет с лёгкой ротацией для динамики */
+.marquee.tilted { transform: rotate(-1deg); margin-top: -10px; margin-bottom: -10px; }
+
+
 /* Btn-primary без обводки — outer shell убран */
 .btn-primary { padding: 0; background: transparent; border: none; box-shadow: none; }
 .btn-primary:hover { box-shadow: 0 14px 28px -8px rgba(201,240,80,0.45); }
