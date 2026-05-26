@@ -425,8 +425,44 @@ body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
   padding: 120px 48px 60px 60px;
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 3;
 }
-.hero-text { max-width: 600px; width: 100%; }
+.hero-text { max-width: 600px; width: 100%; position: relative; z-index: 3; }
+
+/* Master photo — full-bleed справа с soft-feathering слева */
+.hero-master-side {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 52vw;
+  z-index: 1;
+  overflow: hidden;
+}
+.hero-master-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 8%, rgba(0,0,0,0.85) 18%, black 26%, black 100%),
+    linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 4%, black 10%, black 92%, rgba(0,0,0,0.7) 97%, transparent 100%);
+  mask-image:
+    linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 8%, rgba(0,0,0,0.85) 18%, black 26%, black 100%),
+    linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 4%, black 10%, black 92%, rgba(0,0,0,0.7) 97%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+.hero-master-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transition: transform 1600ms cubic-bezier(0.32,0.72,0,1);
+}
+.hero-master-side:hover .hero-master-img img { transform: scale(1.03); }
 
 .hero-h1 {
   font-size: clamp(40px, 5.4vw, 74px);
@@ -601,15 +637,26 @@ body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
 }
 
 @media (max-width: 1180px) {
-  .hero-inner { grid-template-columns: 1fr; }
-  .hero-content, .hero-invoice-side { padding: 100px 32px 30px; }
-  .hero-invoice-side { padding-top: 0; padding-bottom: 50px; }
+  .hero-master-side { width: 48vw; }
+  .hero-content { padding: 100px 32px 30px; }
+  .hero-text { max-width: 500px; }
 }
-@media (max-width: 768px) {
+@media (max-width: 980px) {
+  .hero { padding-bottom: 0; }
+  .hero-inner { grid-template-columns: 1fr; min-height: auto; gap: 0; }
   .hero-content { padding: 100px 18px 30px; }
-  .hero-invoice-side { padding: 0 18px 40px; }
-  .invoice-card { transform: none; }
-  .invoice-sticker { right: 0; top: -16px; }
+  .hero-text { max-width: 100%; }
+  .hero-master-side {
+    position: relative;
+    width: calc(100% - 36px);
+    margin: 0 18px 40px;
+    aspect-ratio: 5/4;
+    max-height: 520px;
+    height: auto;
+    order: -1;
+    border-radius: 22px;
+  }
+  .hero-master-img { -webkit-mask-image: none; mask-image: none; }
 }
 
 /* MARQUEE */
@@ -2043,47 +2090,9 @@ body[data-theme="2"] .btn-primary { box-shadow: none; }
       </div>
     </div>
 
-    <div class="hero-invoice-side">
-      <div class="invoice-card reveal reveal-right">
-        <span class="invoice-sticker">Пример сметы</span>
-        <div class="invoice-card-inner">
-          <div class="invoice-head">
-            <span class="invoice-tag">Расчёт по фото</span>
-            <span class="invoice-room">Комната · 14 м²</span>
-          </div>
-          <h3 class="invoice-title">Матовый потолок + 6 светильников</h3>
-          <p class="invoice-subtitle">Базовый комплект, монтаж под ключ</p>
-
-          <div class="invoice-rows">
-            <div class="invoice-row">
-              <span class="invoice-row-label">Полотно матовое<small>14 м² · ПВХ</small></span>
-              <span class="invoice-row-price">XX XXX ₽</span>
-            </div>
-            <div class="invoice-row">
-              <span class="invoice-row-label">Профиль стандартный<small>периметр</small></span>
-              <span class="invoice-row-price">X XXX ₽</span>
-            </div>
-            <div class="invoice-row">
-              <span class="invoice-row-label">Светильники<small>6 шт. + закладные</small></span>
-              <span class="invoice-row-price">XX XXX ₽</span>
-            </div>
-            <div class="invoice-row">
-              <span class="invoice-row-label">Монтаж<small>1 день</small></span>
-              <span class="invoice-row-price">XX XXX ₽</span>
-            </div>
-            <div class="invoice-row">
-              <span class="invoice-row-label">Гарантия на монтаж<small>в договоре</small></span>
-              <span class="invoice-row-price">включено</span>
-            </div>
-          </div>
-
-          <div class="invoice-total">
-            <span class="invoice-total-label">Смета до замера</span>
-            <span class="invoice-total-price">от XX&nbsp;XXX&nbsp;₽</span>
-          </div>
-
-          <p class="invoice-note">Финальная цена — в договоре после замера</p>
-        </div>
+    <div class="hero-master-side">
+      <div class="hero-master-img">
+        <img src="master_potolok_clean_crop.png" alt="Мастер натяжных потолков за работой — установка профиля" loading="eager">
       </div>
     </div>
   </div>
