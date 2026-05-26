@@ -1039,6 +1039,84 @@ body[data-theme="2"] .btn-primary { box-shadow: none; }
   .final-form-h3 { font-size: 24px !important; }
 }
 
+/* === MOBILE FIX: предотвращение горизонтального скролла и улучшение hero === */
+html { overflow-x: hidden !important; max-width: 100vw; }
+body { overflow-x: hidden !important; max-width: 100vw; position: relative; }
+img, svg, video { max-width: 100%; }
+
+@media (max-width: 880px) {
+  /* HERO — убрать decorative blob'ы которые торчат за viewport */
+  .hero-blob { display: none !important; }
+  .hero { overflow: hidden !important; }
+
+  /* HERO LAYOUT — стек на мобайле */
+  .hero-inner { grid-template-columns: 1fr !important; max-width: 100vw !important; }
+  .hero-content { padding: 92px 18px 28px !important; max-width: 100vw !important; }
+  .hero-text { max-width: 100% !important; }
+  .hero-master-side {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    height: 280px !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    margin: 0 !important;
+  }
+  .hero-master-img { -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 20%, #000 90%, transparent 100%) !important; mask-image: linear-gradient(180deg, transparent 0%, #000 20%, #000 90%, transparent 100%) !important; }
+  .hero-master-img img { -webkit-mask-image: none !important; mask-image: none !important; }
+
+  /* HERO TYPO compact */
+  .hero-h1 { font-size: clamp(28px, 7.5vw, 38px) !important; line-height: 1.1 !important; margin: 14px 0 14px !important; }
+  .hero-lead { font-size: 15.5px !important; line-height: 1.5 !important; }
+
+  /* QUIZ section без декорации */
+  .quiz-section { overflow: hidden !important; }
+  .quiz-section::before, .quiz-section::after { display: none !important; }
+
+  /* MARQUEE */
+  .marquee { overflow: hidden !important; width: 100%; }
+
+  /* SECTIONS не шире экрана */
+  .section { overflow-x: hidden; }
+  .wrap { max-width: 100vw !important; padding: 0 18px !important; }
+
+  /* FOOTER */
+  .footer .wrap { padding: 0 18px !important; }
+
+  /* WAVE DIVIDER */
+  .wave-divider { overflow: hidden; max-width: 100vw; }
+}
+
+@media (max-width: 480px) {
+  .hero-content { padding: 84px 14px 24px !important; }
+  .hero-master-side { height: 240px !important; }
+  .hero-h1 { font-size: clamp(26px, 8vw, 34px) !important; }
+  .wrap, .footer .wrap { padding: 0 14px !important; }
+}
+
+/* === MOBILE FIX v2: правильный порядок hero на мобайле === */
+@media (max-width: 880px) {
+  .hero { min-height: auto !important; }
+  .hero-inner {
+    align-items: flex-start !important;
+    min-height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .hero-content { order: 1 !important; }
+  .hero-master-side {
+    order: 2 !important;
+    aspect-ratio: auto !important;
+    max-height: 280px !important;
+    margin: 0 0 20px !important;
+  }
+  .hero-photo-wrap { order: 2 !important; }
+}
+@media (max-width: 480px) {
+  .hero-master-side { max-height: 240px !important; }
+}
+
 </style>
 
 <!-- OpenGraph (для шеринга в Telegram, WhatsApp, VK, Facebook) -->
