@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 110" fill="none" role="img" aria-label="Потолок и Точка">
+  <!-- Крыша — две диагонали, как в оригинальном лого -->
+  <path d="M18 42 L70 10 L122 42"
+        stroke="#1A1410"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <!-- Горизонтальная балка под крышей -->
+  <line x1="36" y1="42" x2="104" y2="42"
+        stroke="#1A1410"
+        stroke-width="2.5"
+        stroke-linecap="round"/>
+
+  <!-- Текст 1: ПОТ●ЛОК (● = bullet вместо О) -->
+  <text x="70" y="72"
+        font-family="'Inter Tight', -apple-system, system-ui, Helvetica, Arial, sans-serif"
+        font-weight="700"
+        font-size="17"
+        letter-spacing="0.6"
+        fill="#1A1410"
+        text-anchor="middle">ПОТ●ЛОК</text>
+
+  <!-- Текст 2: И ТОЧКА -->
+  <text x="70" y="95"
+        font-family="'Inter Tight', -apple-system, system-ui, Helvetica, Arial, sans-serif"
+        font-weight="700"
+        font-size="14"
+        letter-spacing="1.6"
+        fill="#1A1410"
+        text-anchor="middle">И ТОЧКА</text>
+</svg>

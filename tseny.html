@@ -271,7 +271,7 @@ body[data-theme="1"] .nav { background: rgba(250,250,247,0.7); }
   font-weight: 800;
   font-size: 13px;
 }
-.nav-logo-img { width: 80px; height: 80px; object-fit: contain; flex-shrink: 0; }
+.nav-logo-img { width: auto; height: 64px; max-height: 100%; object-fit: contain; flex-shrink: 0; }
 .nav-logo-desc {
   font-size: 11px;
   color: var(--ink-2);
@@ -2204,7 +2204,7 @@ body[data-theme="2"] .btn-primary { box-shadow: none; }
   .hero-content { padding: 80px 14px 28px !important; }
   .hero-h1 { font-size: 26px !important; }
   .hero-master-side { height: 38vh !important; }
-  .nav-logo-img { width: 60px !important; height: 60px !important; }
+  .nav-logo-img { width: auto !important; height: 56px !important; }
   .nav-burger { width: 40px !important; height: 40px !important; }
   .navbar { padding: 10px 16px !important; }
   .section { padding: 44px 0 !important; }
@@ -2477,8 +2477,8 @@ img, svg, video { max-width: 100%; }
   transform: none !important;
 }
 .nav-logo-img {
-  width: 54px !important;
-  height: 54px !important;
+  width: auto !important;
+  height: 64px !important;
   object-fit: contain !important;
   flex-shrink: 0 !important;
   position: static !important;
@@ -2762,7 +2762,7 @@ a.nav-btn {
 
 @media (max-width: 480px) {
   .nav-shell, .navbar { padding: 8px 14px !important; }
-  .nav-logo-img { width: 46px !important; height: 46px !important; }
+  .nav-logo-img { width: auto !important; height: 50px !important; }
   .nav-burger { width: 40px !important; height: 40px !important; }
 }
 
@@ -2776,8 +2776,8 @@ a.nav-btn {
   margin: 0 !important;
 }
 .nav-logo-img {
-  width: 46px !important;
-  height: 46px !important;
+  width: auto !important;
+  height: 50px !important;
 }
 .nav-menu > a,
 .nav-links > a,
@@ -2800,7 +2800,7 @@ a.nav-cta {
 
 @media (max-width: 480px) {
   .nav-shell, .navbar { padding: 5px 14px !important; }
-  .nav-logo-img { width: 40px !important; height: 40px !important; }
+  .nav-logo-img { width: auto !important; height: 44px !important; }
   .nav-burger { width: 36px !important; height: 36px !important; }
 }
 
@@ -2990,7 +2990,7 @@ a.nav-cta {
 <div class="nav-shell">
   <nav class="nav">
     <a href="index.html" class="nav-logo">
-      <img class="nav-logo-img" src="logo.png" alt="Потолок и Точка">
+      <img class="nav-logo-img" src="logo.svg" alt="Потолок и Точка">
     </a>
     <div class="nav-menu">
       <a href="index.html">Главная</a>
