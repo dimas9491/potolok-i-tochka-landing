@@ -3584,6 +3584,40 @@ a.nav-cta {
 .sticky-cta-tg:active { transform: scale(0.93); }
 .sticky-cta-tg svg { width: 22px; height: 22px; }
 
+
+  /* === GALLERY === */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 200px;
+    gap: 14px;
+  }
+  .gallery-cell .photo-block {
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+  }
+  .gallery-cell.tall { grid-row: span 2; }
+  .gallery-cell.wide { grid-column: span 2; }
+
+  @media (max-width: 960px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 180px;
+    }
+    .gallery-cell.wide { grid-column: span 2; }
+    .gallery-cell.tall { grid-row: span 2; }
+  }
+  @media (max-width: 560px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 140px;
+      gap: 10px;
+    }
+  }
+
 </style>
 
 <!-- OpenGraph (для шеринга в Telegram, WhatsApp, VK, Facebook) -->
@@ -3806,124 +3840,52 @@ a.nav-cta {
   </div>
 </div>
 
-<!-- FACTS -->
-<section class="section">
+<!-- GALLERY -->
+<section class="section" id="gallery" style="background: var(--surface);">
   <div class="wrap">
-    <div class="section-head reveal reveal-scale">
-      <div class="eyebrow">Чем отличаемся</div>
-      <h2 class="section-h2">Не продаём «м² от&nbsp;290 ₽». <br>Считаем готовый <span class="accent-word">потолок под&nbsp;ключ</span>.</h2>
-      <p class="section-lead">
-        Цена за квадратный метр почти никогда не показывает итоговую стоимость. В реальной смете есть профиль, монтаж, светильники, углы, трубы, карнизы и другие детали. Поэтому мы сразу считаем не «голое полотно», а готовый потолок.
-      </p>
+    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 40px; max-width: 720px;">
+      <div class="eyebrow" style="margin: 0 auto;">Наши работы</div>
+      <h2 class="section-h2">Реальные потолки <span class="accent-word">наших клиентов</span></h2>
+      <p class="section-lead">Не stock-картинки, а готовые объекты в&nbsp;Москве. Любой пример можно повторить под&nbsp;вашу комнату — пришлите фото, посчитаем.</p>
     </div>
 
-    <div class="facts-grid">
-      <div class="fact-card reveal">
-        <div class="fact-card-inner">
-          <div class="fact-num">01 · принцип</div>
-          <h3 class="fact-title">Не «от&nbsp;290 ₽/м²»</h3>
-          <p class="fact-text">Считаем итоговую стоимость потолка, а не рекламную цифру для объявления.</p>
-        </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-cell tall">
+        <div class="photo-block large"><span class="photo-block-label">Фото · спальня матовый</span></div>
       </div>
-      <div class="fact-card reveal">
-        <div class="fact-card-inner">
-          <div class="fact-num">02 · скорость</div>
-          <h3 class="fact-title">Расчёт по фото за&nbsp;1&nbsp;час</h3>
-          <p class="fact-text">Можно понять порядок бюджета ещё до того, как приезжает замерщик.</p>
-        </div>
+      <div class="gallery-cell">
+        <div class="photo-block"><span class="photo-block-label">Фото · скрытый карниз</span></div>
       </div>
-      <div class="fact-card reveal">
-        <div class="fact-card-inner">
-          <div class="fact-num">03 · выбор</div>
-          <h3 class="fact-title">3–5 визуализаций</h3>
-          <p class="fact-text">Пришлём фото-варианты — как потолок будет выглядеть у&nbsp;вас, а&nbsp;не&nbsp;просто список названий.</p>
-        </div>
+      <div class="gallery-cell">
+        <div class="photo-block"><span class="photo-block-label">Фото · теневой профиль</span></div>
       </div>
-      <div class="fact-card reveal">
-        <div class="fact-card-inner">
-          <div class="fact-num">04 · договор</div>
-          <h3 class="fact-title">Фиксация в&nbsp;договоре</h3>
-          <p class="fact-text">После замера цена и состав работ прописываются письменно. Доплат «по ходу» нет.</p>
-        </div>
+      <div class="gallery-cell wide">
+        <div class="photo-block"><span class="photo-block-label">Фото · кухня-гостиная панорама</span></div>
+      </div>
+      <div class="gallery-cell">
+        <div class="photo-block"><span class="photo-block-label">Фото · подсветка по&nbsp;периметру</span></div>
+      </div>
+      <div class="gallery-cell">
+        <div class="photo-block"><span class="photo-block-label">Фото · трековый свет</span></div>
+      </div>
+      <div class="gallery-cell tall">
+        <div class="photo-block large"><span class="photo-block-label">Фото · до / после замены</span></div>
+      </div>
+      <div class="gallery-cell">
+        <div class="photo-block"><span class="photo-block-label">Фото · детская</span></div>
       </div>
     </div>
 
-    <p class="facts-micro reveal">
-      Так клиент заранее понимает, за что платит, и не сталкивается с неожиданными доплатами в день монтажа.
-    </p>
-  </div>
-</section>
-
-<!-- PAIN -->
-<section class="section" style="padding-top: 0;">
-  <div class="wrap">
-    <div class="section-head reveal reveal-scale">
-      <div class="eyebrow">Главная боль рынка</div>
-      <h2 class="section-h2">В рекламе одна цена, на&nbsp;замере — другая. Мы&nbsp;строим работу <span class="accent-word">наоборот</span>.</h2>
-      <p class="section-lead">
-        Главный страх клиента в натяжных потолках — увидеть красивую цену в рекламе, вызвать замерщика, а потом получить смету в 2–4 раза выше. Мы не хотим играть в эту игру.
-      </p>
-    </div>
-
-    <div class="pain-split">
-      <div class="pain-card bad reveal">
-        <div class="pain-card-inner">
-          <div class="pain-tag">Как часто бывает</div>
-          <h3 class="pain-h3">Цена «от&nbsp;290 ₽/м²»</h3>
-          <p class="pain-text">В объявлении показывают минимальную цену за полотно. Но потом отдельно считают монтаж, профиль, обход труб, углы, светильники, доставку и другие работы.</p>
-          <ul class="pain-bullets">
-            <li>В рекламе — одна цифра</li>
-            <li>На замере — другая сумма</li>
-            <li>Клиент уже потратил время</li>
-            <li>Становится неловко отказаться</li>
-            <li>Цена ощущается как ловушка</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="pain-card good reveal">
-        <div class="pain-card-inner">
-          <div class="pain-tag">Как у нас</div>
-          <h3 class="pain-h3">Честная смета до&nbsp;монтажа</h3>
-          <p class="pain-text">Мы сначала разбираем вашу ситуацию: площадь, свет, карнизы, трубы, тип полотна и сложность монтажа. Потом показываем варианты и объясняем, из чего складывается цена.</p>
-          <ul class="pain-bullets">
-            <li>Считаем весь потолок под ключ</li>
-            <li>Показываем несколько вариантов</li>
-            <li>Объясняем, что входит в цену</li>
-            <li>Предупреждаем, что может изменить смету</li>
-            <li>Фиксируем финальную стоимость в договоре</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="pain-quote reveal">
-      Наша задача — не заманить дешёвой цифрой, а заранее <span>показать реальный бюджет</span>.
+    <div class="gallery-cta reveal" style="text-align: center; margin-top: 36px;">
+      <a href="#quiz" class="btn-primary">
+        <span class="btn-primary-core"><span class="btn-primary-text">Узнать цену похожего потолка</span></span>
+      </a>
     </div>
   </div>
 </section>
-<!-- PHOTO STRIP — превью работ (горизонтальная полоса) -->
-<section class="section" style="padding: 70px 0; background: var(--bg);">
-  <div class="wrap">
-    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 32px; max-width: 720px;">
-      <div class="eyebrow" style="margin: 0 auto;">Примеры работ</div>
-      <h2 class="section-h2" style="font-size: clamp(26px, 3.2vw, 38px);">Реальные <span class="accent-word">потолки</span> наших клиентов</h2>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;" class="reveal reveal-bounce">
-      <div class="photo-block small float-soft" style="animation-delay: 0s;"><span class="photo-block-label">Фото</span></div>
-      <div class="photo-block small float-soft" style="animation-delay: 0.2s;"><span class="photo-block-label">Фото</span></div>
-      <div class="photo-block small float-soft" style="animation-delay: 0.4s;"><span class="photo-block-label">Фото</span></div>
-      <div class="photo-block small float-soft" style="animation-delay: 0.6s;"><span class="photo-block-label">Фото</span></div>
-      <div class="photo-block small float-soft" style="animation-delay: 0.8s;"><span class="photo-block-label">Фото</span></div>
-    </div>
-  </div>
-</section>
-
-<div class="wave-divider to-surface"><svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,80 C320,20 720,90 1440,30 L1440,80 L0,80 Z"/></svg></div>
-
-
 
 <!-- CALC -->
+
 <div class="blob-divider to-surface"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 Q180,100 360,50 T720,40 T1080,55 T1440,30 L1440,100 L0,100 Z"/></svg></div>
 
 <section class="section" id="calc" style="background: var(--surface);">
@@ -3997,107 +3959,6 @@ a.nav-cta {
   </div>
 </section>
 
-<!-- KITS -->
-<div class="blob-divider to-bg flip"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 Q180,100 360,50 T720,40 T1080,55 T1440,30 L1440,100 L0,100 Z"/></svg></div>
-
-<section class="section" id="kits">
-  <div class="wrap">
-    <div class="section-head reveal reveal-scale">
-      <div class="eyebrow">Комплекты по ситуациям</div>
-      <h2 class="section-h2">Выберите не «м²», а&nbsp;<span class="accent-word">вашу ситуацию</span></h2>
-      <p class="section-lead">
-        Потолок в новостройку, замена старого полотна и дизайнерский проект — это разные задачи. Поэтому мы считаем потолки не одной общей формулой, а по конкретному сценарию.
-      </p>
-    </div>
-
-    <div class="kits-grid">
-      <div class="kit kit-1 reveal">
-        <div class="kit-inner">
-          <div class="kit-tag">01 · Новостройка</div>
-          <h3 class="kit-h3">Потолки в&nbsp;новостройку</h3>
-          <p class="kit-text">Для квартир после сдачи: поможем выбрать потолки по комнатам, учтём свет, скрытые карнизы и этапы ремонта.</p>
-          <ul class="kit-list">
-            <li>Расчёт для 1/2/3-комнатной квартиры</li>
-            <li>Советы по этапам ремонта</li>
-            <li>Варианты со светом и карнизами</li>
-            <li>Смета до монтажа</li>
-          </ul>
-          <a href="#final" class="kit-cta">Посчитать квартиру</a>
-        </div>
-      </div>
-
-      <div class="kit kit-2 reveal">
-        <div class="kit-inner">
-          <div class="kit-tag">02 · Замена</div>
-          <h3 class="kit-h3">Замена потолка в&nbsp;жилой квартире</h3>
-          <p class="kit-text">Аккуратно заменим старое полотно, защитим мебель и отделку, обновим светильники и уберём после монтажа.</p>
-          <ul class="kit-list">
-            <li>Демонтаж старого потолка</li>
-            <li>Новое полотно</li>
-            <li>Замена или перенос светильников</li>
-            <li>Аккуратная работа в жилой квартире</li>
-          </ul>
-          <a href="#final" class="kit-cta">Оценить замену по фото</a>
-        </div>
-      </div>
-
-      <div class="kit kit-3 reveal">
-        <div class="kit-inner">
-          <div class="kit-tag">03 · Срочно</div>
-          <h3 class="kit-h3">Слив воды и&nbsp;срочный ремонт</h3>
-          <p class="kit-text">Если затопили, порезали полотно или потолок провис — подскажем по фото, что делать, и приедем на ремонт.</p>
-          <ul class="kit-list">
-            <li>Слив воды</li>
-            <li>Восстановление полотна</li>
-            <li>Замена повреждённого участка</li>
-            <li>Срочный контакт с мастером</li>
-          </ul>
-          <a href="https://t.me/" class="kit-cta">Написать мастеру</a>
-        </div>
-      </div>
-
-      <div class="kit kit-4 reveal">
-        <div class="kit-inner">
-          <div class="kit-tag">04 · Премиум</div>
-          <h3 class="kit-h3">Премиальные потолки</h3>
-          <p class="kit-text">Для дизайнерских квартир, коттеджей и сложных проектов: теневые профили, скрытые карнизы, трековый свет и аккуратные узлы.</p>
-          <ul class="kit-list">
-            <li>Работа по проекту</li>
-            <li>Сложный свет</li>
-            <li>Теневые и бесщелевые решения</li>
-            <li>Контроль монтажа</li>
-          </ul>
-          <a href="#final" class="kit-cta">Получить КП по проекту</a>
-        </div>
-      </div>
-
-      <div class="kit kit-5 reveal">
-        <div class="kit-inner">
-          <div class="kit-tag">05 · Дизайнерам</div>
-          <h3 class="kit-h3">Для дизайнеров интерьера</h3>
-          <p class="kit-text">Работаем по ТЗ, не уводим клиента, быстро считаем КП и аккуратно закрываем монтаж без самодеятельности.</p>
-          <ul class="kit-list">
-            <li>КП по проекту</li>
-            <li>Партнёрские условия</li>
-            <li>Техническая проверка узлов</li>
-            <li>Гарантия не обходить дизайнера</li>
-          </ul>
-          <a href="#final" class="kit-cta">Обсудить проект</a>
-        </div>
-      </div>
-
-      <div class="kit kit-6 reveal">
-        <div class="kit-inner">
-          <div class="kit-tag">06 · Не знаю</div>
-          <h3 class="kit-h3">Подбор по&nbsp;фото</h3>
-          <p class="kit-text">Пришлите фото комнаты — мы скажем, какой потолок подойдёт по бюджету, стилю и техническим условиям.</p>
-          <a href="#final" class="kit-cta">Получить подбор</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- SOLUTIONS -->
 <div class="wave-divider to-surface"><svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,80 C320,20 720,90 1440,30 L1440,80 L0,80 Z"/></svg></div>
 
@@ -4116,21 +3977,13 @@ a.nav-cta {
         <div class="solution-inner">
           <div class="solution-media">
             <div class="solution-media-tag">Фото · комната с матовым потолком</div>
-            <div class="solution-media-text">
-              <strong>Спальня или гостиная с ровным матовым полотном</strong>
-              Дневной свет, нейтральные стены, фактура без бликов, акцент на потолок. Формат 3:4. Реальный кадр объекта, не сток.
-            </div>
+            
           </div>
           <div class="solution-meta-tag">01 · Базовое решение</div>
           <h3 class="solution-h3">Матовый потолок</h3>
           <p class="solution-text">Спокойный вариант без бликов. Выглядит как ровный окрашенный потолок и подходит почти для любой комнаты.</p>
-          <div class="solution-rooms">
-            <span class="solution-room">Спальня</span>
-            <span class="solution-room">Детская</span>
-            <span class="solution-room">Гостиная</span>
-            <span class="solution-room">Новостройка</span>
-          </div>
-          <a href="#final" class="solution-cta">Подробнее про матовые потолки</a>
+          
+          <a href="#quiz" class="solution-cta">Подробнее про матовые потолки</a>
         </div>
       </div>
 
@@ -4138,21 +3991,13 @@ a.nav-cta {
         <div class="solution-inner">
           <div class="solution-media">
             <div class="solution-media-tag">Фото · сатиновое полотно</div>
-            <div class="solution-media-text">
-              <strong>Светлая комната с мягким отражением</strong>
-              Спальня или кухня-гостиная, потолок ловит свет окна, фактура чуть выраженнее матовой. Кадр в светлое время.
-            </div>
+            
           </div>
           <div class="solution-meta-tag">02 · Альтернатива матовому</div>
           <h3 class="solution-h3">Сатиновый потолок</h3>
           <p class="solution-text">Мягкое отражение света и чуть более выразительная фактура. Хорошо смотрится в светлых интерьерах.</p>
-          <div class="solution-rooms">
-            <span class="solution-room">Спальня</span>
-            <span class="solution-room">Гостиная</span>
-            <span class="solution-room">Кабинет</span>
-            <span class="solution-room">Кухня-гостиная</span>
-          </div>
-          <a href="#final" class="solution-cta">Сравнить сатин с матовым</a>
+          
+          <a href="#quiz" class="solution-cta">Сравнить сатин с матовым</a>
         </div>
       </div>
 
@@ -4160,15 +4005,12 @@ a.nav-cta {
         <div class="solution-inner">
           <div class="solution-media">
             <div class="solution-media-tag">Фото · теневой стык</div>
-            <div class="solution-media-text">
-              <strong>Стык потолка и стены без плинтуса</strong>
-              Современный интерьер, чистая геометрия, узкий зазор по периметру. Макро-план угла.
-            </div>
+            
           </div>
           <div class="solution-meta-tag">03 · Дизайнерское</div>
           <h3 class="solution-h3">Теневой профиль</h3>
           <p class="solution-text">Современный стык без потолочного плинтуса. Потолок выглядит чище и дороже, особенно в минималистичных интерьерах.</p>
-          <a href="#final" class="solution-cta">Рассчитать теневой потолок</a>
+          <a href="#quiz" class="solution-cta">Рассчитать теневой потолок</a>
         </div>
       </div>
 
@@ -4176,15 +4018,12 @@ a.nav-cta {
         <div class="solution-inner">
           <div class="solution-media">
             <div class="solution-media-tag">Фото · скрытый карниз</div>
-            <div class="solution-media-text">
-              <strong>Шторы выходят прямо из потолка</strong>
-              Гостиная с панорамным окном, штора как из ниши, без видимой шины.
-            </div>
+            
           </div>
           <div class="solution-meta-tag">04 · Для штор</div>
           <h3 class="solution-h3">Скрытый карниз</h3>
           <p class="solution-text">Шторы выходят прямо из потолка, без видимой шины. Интерьер выглядит чище и аккуратнее.</p>
-          <a href="#final" class="solution-cta">Рассчитать нишу под шторы</a>
+          <a href="#quiz" class="solution-cta">Рассчитать нишу под шторы</a>
         </div>
       </div>
 
@@ -4192,20 +4031,13 @@ a.nav-cta {
         <div class="solution-inner">
           <div class="solution-media">
             <div class="solution-media-tag">Фото · потолок с подсветкой</div>
-            <div class="solution-media-text">
-              <strong>Световые линии или парящий контур</strong>
-              Вечерний кадр гостиной или спальни. Мягкая подсветка по периметру, потолок «парит».
-            </div>
+            
           </div>
           <div class="solution-meta-tag">05 · Свет как сценарий</div>
           <h3 class="solution-h3">Потолок с&nbsp;подсветкой</h3>
           <p class="solution-text">Парящий контур, световые линии или мягкая подсветка помогают сделать не просто потолок, а сценарии света.</p>
-          <div class="solution-rooms">
-            <span class="solution-room">Гостиная</span>
-            <span class="solution-room">Спальня</span>
-            <span class="solution-room">Коридор</span>
-          </div>
-          <a href="#final" class="solution-cta">Подобрать подсветку</a>
+          
+          <a href="#quiz" class="solution-cta">Подобрать подсветку</a>
         </div>
       </div>
 
@@ -4219,107 +4051,11 @@ a.nav-cta {
           </div>
           <div class="solution-media" style="min-height: 180px;">
             <div class="solution-media-tag">Фото · ваша комната</div>
-            <div class="solution-media-text">
-              <strong>Любой кадр на телефон</strong>
-              Общий вид, углы, окна, трубы. Можно план квартиры с размерами.
-            </div>
+            
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- CASES -->
-<div class="wave-divider to-bg flip"><svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,80 C320,20 720,90 1440,30 L1440,80 L0,80 Z"/></svg></div>
-
-<section class="section" id="cases">
-  <div class="wrap">
-    <div class="section-head reveal reveal-scale">
-      <div class="eyebrow">Кейсы</div>
-      <h2 class="section-h2">Реальные потолки: <span class="accent-word">задача, решение, цена</span></h2>
-      <p class="section-lead">
-        Показываем не просто красивые фото, а что было нужно клиенту, какое решение выбрали, сколько занял монтаж и какой был порядок бюджета.
-      </p>
-    </div>
-
-    <div class="cases-stack">
-      <div class="case-row reveal">
-        <div class="case-media-wrap">
-          <div class="case-media-tag">Фото до / после · кейс 01</div>
-          <div class="case-media-desc">
-            <strong>Кухня-гостиная 18 м² после монтажа</strong>
-            <p>Ровное матовое полотно, 8 встроенных светильников по сетке, скрытый карниз под шторы у окна. Кадр днём, без люстры, формат 4:5.</p>
-          </div>
-        </div>
-        <div class="case-body">
-          <div class="case-num">Кейс 01 · Новостройка</div>
-          <h3 class="case-title">Кухня-гостиная в&nbsp;новостройке</h3>
-          <p class="case-text">Клиенту нужен был ровный потолок без люстры, с аккуратным светом и скрытым карнизом под шторы.</p>
-          <div class="case-params">
-            <div class="case-param"><span class="case-param-key">Площадь</span><span class="case-param-val">18 м²</span></div>
-            <div class="case-param"><span class="case-param-key">Срок</span><span class="case-param-val">1 день</span></div>
-            <div class="case-param" style="grid-column: span 2;"><span class="case-param-key">Решение</span><span class="case-param-val">Матовое полотно + 8 светильников + скрытый карниз</span></div>
-            <div class="case-param" style="grid-column: span 2; background: var(--accent-soft);"><span class="case-param-key">Бюджет</span><span class="case-param-val">от XX&nbsp;XXX&nbsp;₽</span></div>
-          </div>
-          <a href="#final" class="btn-secondary" style="align-self: flex-start;">Смотреть кейс →</a>
-        </div>
-      </div>
-
-      <div class="case-row reveal">
-        <div class="case-media-wrap">
-          <div class="case-media-tag">Фото до / после · кейс 02</div>
-          <div class="case-media-desc">
-            <strong>Жилая комната до и после замены полотна</strong>
-            <p>До: пожелтевшее провисшее полотно, старые точечные светильники. После: новое матовое полотно, обновлённые светильники, чистый край.</p>
-          </div>
-        </div>
-        <div class="case-body">
-          <div class="case-num">Кейс 02 · Замена</div>
-          <h3 class="case-title">Замена потолка в&nbsp;жилой квартире</h3>
-          <p class="case-text">Старое полотно потеряло вид, а клиент боялся испортить обои и мебель. Мы аккуратно демонтировали потолок и поставили новый.</p>
-          <div class="case-params">
-            <div class="case-param"><span class="case-param-key">Площадь</span><span class="case-param-val">14 м²</span></div>
-            <div class="case-param"><span class="case-param-key">Срок</span><span class="case-param-val">1 день</span></div>
-            <div class="case-param" style="grid-column: span 2;"><span class="case-param-key">Решение</span><span class="case-param-val">Демонтаж + новое полотно + замена светильников</span></div>
-            <div class="case-param" style="grid-column: span 2; background: var(--accent-soft);"><span class="case-param-key">Бюджет</span><span class="case-param-val">от XX&nbsp;XXX&nbsp;₽</span></div>
-          </div>
-          <a href="#final" class="btn-secondary" style="align-self: flex-start;">Смотреть кейс →</a>
-        </div>
-      </div>
-
-      <div class="case-row reveal">
-        <div class="case-media-wrap">
-          <div class="case-media-tag">Фото до / после · кейс 03</div>
-          <div class="case-media-desc">
-            <strong>Гостиная с теневым профилем по периметру</strong>
-            <p>Современный интерьер, чистый стык со стенами без плинтуса, трековый свет вдоль одной из стен. Кадр в дневное время, формат 4:5.</p>
-          </div>
-        </div>
-        <div class="case-body">
-          <div class="case-num">Кейс 03 · Теневой профиль</div>
-          <h3 class="case-title">Потолок с&nbsp;теневым профилем</h3>
-          <p class="case-text">Для современного интерьера нужен был чистый контур без потолочного плинтуса и аккуратный стык со стенами.</p>
-          <div class="case-params">
-            <div class="case-param"><span class="case-param-key">Площадь</span><span class="case-param-val">22 м²</span></div>
-            <div class="case-param"><span class="case-param-key">Срок</span><span class="case-param-val">2 дня</span></div>
-            <div class="case-param" style="grid-column: span 2;"><span class="case-param-key">Решение</span><span class="case-param-val">Теневой профиль + матовое полотно + трековый свет</span></div>
-            <div class="case-param" style="grid-column: span 2; background: var(--accent-soft);"><span class="case-param-key">Бюджет</span><span class="case-param-val">от XX&nbsp;XXX&nbsp;₽</span></div>
-          </div>
-          <a href="#final" class="btn-secondary" style="align-self: flex-start;">Смотреть кейс →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="cases-after reveal">
-      <a href="#cases" class="btn-primary">
-        <span class="btn-primary-core">
-          <span class="btn-primary-text">Смотреть все работы</span>
-        </span>
-      </a>
-      <a href="#final" class="btn-secondary">Хочу похожий потолок</a>
-    </div>
-    <p class="cases-after-micro reveal">Если понравился пример — пришлите его нам, и мы посчитаем похожее решение для вашей комнаты.</p>
   </div>
 </section>
 
@@ -4415,38 +4151,23 @@ a.nav-cta {
     <div class="process-grid reveal">
       <div class="process-step">
         <div class="process-marker">1</div>
-        <h5>Заявка</h5>
-        <p>Вы оставляете контакт или пишете в Telegram / WhatsApp.</p>
+        <h5>Фото комнаты</h5>
+        <p>Присылаете фото или план — через форму или в&nbsp;Telegram.</p>
       </div>
       <div class="process-step">
         <div class="process-marker">2</div>
-        <h5>Фото или план</h5>
-        <p>Присылаете фото комнаты, план квартиры или просто описываете задачу.</p>
+        <h5>Расчёт за&nbsp;1&nbsp;час</h5>
+        <p>Показываем 3–5&nbsp;вариантов с&nbsp;ориентиром цены.</p>
       </div>
       <div class="process-step">
         <div class="process-marker">3</div>
-        <h5>Предварительная смета</h5>
-        <p>Мы показываем 3–5 вариантов и объясняем, что входит в каждый.</p>
+        <h5>Замер + договор</h5>
+        <p>Мастер проверяет нюансы, фиксируем финальную цену в&nbsp;договоре.</p>
       </div>
       <div class="process-step">
         <div class="process-marker">4</div>
-        <h5>Замер</h5>
-        <p>Мастер проверяет размеры, углы, трубы, свет, карниз и нюансы.</p>
-      </div>
-      <div class="process-step">
-        <div class="process-marker">5</div>
-        <h5>Договор</h5>
-        <p>Фиксируем финальную цену, материалы, сроки и гарантию.</p>
-      </div>
-      <div class="process-step">
-        <div class="process-marker">6</div>
-        <h5>Монтаж</h5>
-        <p>Приезжает бригада, аккуратно монтирует потолок и сдаёт работу.</p>
-      </div>
-      <div class="process-step">
-        <div class="process-marker">7</div>
-        <h5>Приёмка</h5>
-        <p>Вы проверяете результат, получаете документы и рекомендации по уходу.</p>
+        <h5>Монтаж за&nbsp;1&nbsp;день</h5>
+        <p>Приезжает бригада, ставит потолок, сдаём работу.</p>
       </div>
     </div>
   </div>
@@ -4504,92 +4225,30 @@ a.nav-cta {
 
     <div class="faq-list reveal">
       <div class="faq-item">
-        <button class="faq-q">Почему вы не пишете просто цену за&nbsp;м²?</button>
-        <div class="faq-a"><div class="faq-a-body">Потому что цена за м² не показывает итоговую стоимость. На смету влияют профиль, монтаж, светильники, углы, трубы, скрытые карнизы, демонтаж и сложность объекта. Мы считаем готовый потолок, а не красивую цифру для рекламы.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Можно ли узнать цену без&nbsp;замера?</button>
-        <div class="faq-a"><div class="faq-a-body">Да. По фото или плану мы можем дать предварительный расчёт и показать варианты. Финальная цена фиксируется после замера, когда мастер проверит размеры и технические нюансы.</div></div>
+        <button class="faq-q">Почему нельзя сразу назвать цену?</button>
+        <div class="faq-a"><div class="faq-a-body">Цена за&nbsp;м² не&nbsp;показывает итоговую стоимость&nbsp;— на&nbsp;неё влияют профиль, монтаж, светильники, углы, трубы, карнизы. Мы считаем готовый потолок, а&nbsp;не&nbsp;цифру для рекламы. Пришлите фото&nbsp;— покажем 3–5&nbsp;вариантов с&nbsp;ориентиром цены.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Сколько занимает монтаж?</button>
-        <div class="faq-a"><div class="faq-a-body">Одна комната обычно занимает несколько часов. Квартира — от одного дня. Точный срок зависит от площади, количества светильников, карнизов, профиля и сложности монтажа.</div></div>
+        <div class="faq-a"><div class="faq-a-body">Одна комната&nbsp;— несколько часов. Квартира&nbsp;— от&nbsp;одного дня. Зависит от&nbsp;площади, светильников, карнизов и&nbsp;профиля.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Будет ли запах после установки?</button>
-        <div class="faq-a"><div class="faq-a-body">После установки ПВХ-полотна кратковременный запах возможен, особенно если помещение плохо проветривается. Мы заранее подскажем, какой материал лучше выбрать для спальни, детской, кухни или гостиной.</div></div>
+        <button class="faq-q">Будет ли запах?</button>
+        <div class="faq-a"><div class="faq-a-body">У&nbsp;ПВХ-полотна кратковременный запах возможен, особенно при плохом проветривании. Для спальни и&nbsp;детской подскажем тканевые варианты без&nbsp;запаха.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Вы даёте гарантию?</button>
-        <div class="faq-a"><div class="faq-a-body">Да. Гарантия прописывается в документах. Важно разделять гарантию на полотно и гарантию на монтаж — мы объясняем оба пункта до начала работ.</div></div>
+        <button class="faq-q">Какая гарантия?</button>
+        <div class="faq-a"><div class="faq-a-body">Гарантия прописывается в&nbsp;договоре отдельно на&nbsp;полотно и&nbsp;на&nbsp;монтаж. Поясняем оба пункта до&nbsp;начала работ.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Нужно ли платить предоплату?</button>
-        <div class="faq-a"><div class="faq-a-body">Условия оплаты зависят от выбранного комплекта и материалов. Все суммы, сроки и состав работ фиксируются до монтажа, чтобы не было неожиданных доплат.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Можно ли сделать потолок, как на&nbsp;фото из Pinterest?</button>
-        <div class="faq-a"><div class="faq-a-body">Да, но сначала нужно проверить технические условия: высоту потолка, стены, свет, карниз, профиль и бюджет. Пришлите пример — скажем, как адаптировать его под вашу комнату.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Что делать, если я не знаю, какой потолок выбрать?</button>
-        <div class="faq-a"><div class="faq-a-body">Просто пришлите фото комнаты. Мы предложим несколько вариантов: спокойный базовый, оптимальный и более дизайнерский. Вы увидите разницу по виду и цене.</div></div>
+        <button class="faq-q">Не&nbsp;знаю, какой потолок выбрать&nbsp;— что делать?</button>
+        <div class="faq-a"><div class="faq-a-body">Пришлите фото комнаты. Предложим 3&nbsp;варианта: базовый, оптимальный и&nbsp;дизайнерский&nbsp;— увидите разницу по&nbsp;виду и&nbsp;цене.</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FINAL CTA -->
-
-
-<!-- PHOTO BEFORE/AFTER — реальные сравнения -->
-<section class="section" style="padding: 90px 0; background: var(--accent-soft);">
-  <div class="wrap">
-    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 40px; max-width: 720px;">
-      <div class="eyebrow" style="margin: 0 auto;">До и&nbsp;после</div>
-      <h2 class="section-h2">Реальные примеры <span class="accent-word">до и&nbsp;после</span></h2>
-    </div>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;" class="reveal reveal-bounce">
-      <div>
-        <div class="photo-block large"><span class="photo-block-label">Фото</span></div>
-        <p style="text-align: center; margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-2); font-weight: 700;">До замены</p>
-      </div>
-      <div>
-        <div class="photo-block large"><span class="photo-block-label">Фото</span></div>
-        <p style="text-align: center; margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 700;">После · от&nbsp;нас</p>
-      </div>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px;" class="reveal">
-      <div class="photo-block small float-soft" style="animation-delay: 0s;"><span class="photo-block-label">Фото</span></div>
-      <div class="photo-block small float-soft" style="animation-delay: 0.3s;"><span class="photo-block-label">Фото</span></div>
-      <div class="photo-block small float-soft" style="animation-delay: 0.6s;"><span class="photo-block-label">Фото</span></div>
-    </div>
-  </div>
-</section>
-
-<div class="blob-divider to-bg flip"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 Q180,100 360,50 T720,40 T1080,55 T1440,30 L1440,100 L0,100 Z"/></svg></div>
-
-<!-- PHOTO GALLERY — автоматически добавленный портфолио блок -->
-<section class="section" style="background: var(--accent-soft); padding: 80px 0;">
-  <div class="wrap">
-    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 40px;">
-      <div class="eyebrow" style="margin: 0 auto;">Портфолио · реальные работы</div>
-      <h2 class="section-h2">Примеры наших <span class="accent-word">потолков</span></h2>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;" class="reveal reveal-bounce">
-      <div class="photo-block small float-soft" style="animation-delay: 0s;"><span class="photo-block-label">Фото</span></div>
-      <div class="photo-block small float-soft" style="grid-row: span 2; min-height: 460px; animation-delay: 0.4s;"><span class="photo-block-label">Фото</span></div>
-      <div class="photo-block small float-soft" style="animation-delay: 0.8s;"><span class="photo-block-label">Фото</span></div>
-      <div class="photo-block small float-soft" style="animation-delay: 1.2s;"><span class="photo-block-label">Фото</span></div>
-      <div class="photo-block small float-soft" style="animation-delay: 0.2s;"><span class="photo-block-label">Фото</span></div>
-      <div class="photo-block small float-soft" style="animation-delay: 1s;"><span class="photo-block-label">Фото</span></div>
-      <div class="photo-block small float-soft" style="animation-delay: 0.6s;"><span class="photo-block-label">Фото</span></div>
-    </div>
-  </div>
-</section>
-
-<div class="blob-divider to-bg flip"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 Q180,100 360,50 T720,40 T1080,55 T1440,30 L1440,100 L0,100 Z"/></svg></div>
-
+<!-- FINAL FORM -->
 <section class="final" id="final">
   <div class="wrap">
     <div class="final-grid">
