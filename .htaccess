@@ -1,22 +1,13 @@
 # =============================================================
 # Beget — potolok-i-tochka.ru
-# Когда SSL выпустится — раскомментируй HTTP→HTTPS блок и HSTS
 # =============================================================
 
-# Главная — index.html (а не дефолтный index.php от хостинга)
 DirectoryIndex index.html index.htm
-
-# Кастомная 404
 ErrorDocument 404 /404.html
-
-# Запрет листинга директорий
 Options -Indexes
-
-# UTF-8 по умолчанию для текстовых файлов
 AddDefaultCharset UTF-8
 AddCharset UTF-8 .html .css .js .xml .json .txt .svg
 
-# Корректные MIME для современных файлов
 <IfModule mod_mime.c>
   AddType image/svg+xml .svg
   AddType image/webp .webp
@@ -26,27 +17,97 @@ AddCharset UTF-8 .html .css .js .xml .json .txt .svg
 </IfModule>
 
 # =============================================================
-# Редиректы
+# REWRITE — короткие URL без .html + 301 редиректы со старых
 # =============================================================
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # 1) HTTP → HTTPS (SSL Let's Encrypt активен)
-  RewriteCond %{HTTPS} !=on
+  # --- HTTPS-redirect через X-Forwarded-Proto (Beget nginx-прокси) ---
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
   RewriteCond %{HTTP_HOST} ^(www\.)?potolok-i-tochka\.ru$ [NC]
   RewriteRule ^ https://potolok-i-tochka.ru%{REQUEST_URI} [L,R=301]
 
-  # 2) www → без www (всегда HTTPS)
+  # --- www → без www ---
   RewriteCond %{HTTP_HOST} ^www\.potolok-i-tochka\.ru$ [NC]
   RewriteRule ^ https://potolok-i-tochka.ru%{REQUEST_URI} [L,R=301]
 
-  # 3) verbov1j.beget.tech → potolok-i-tochka.ru (HTTPS)
+  # --- Старый поддомен → новый домен ---
   RewriteCond %{HTTP_HOST} ^verbov1j\.beget\.tech$ [NC]
   RewriteRule ^ https://potolok-i-tochka.ru%{REQUEST_URI} [L,R=301]
 
-  # 4) /index.html → / (убираем дубль главной для SEO)
+  # --- /index.html → / ---
   RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
-  RewriteRule ^index\.html$ / [L,R=301]
+  RewriteRule ^index\.html$ https://potolok-i-tochka.ru/ [L,R=301]
+
+  # --- 301 редиректы со старых .html на короткие URL ---
+  # %{THE_REQUEST} проверяет ОРИГИНАЛЬНЫЙ запрос клиента, не rewritten —
+  # иначе будет бесконечный цикл с внутренним rewrite ниже
+  RewriteCond %{THE_REQUEST} \s/+tseny\.html[\s?] [NC]
+  RewriteRule ^ https://potolok-i-tochka.ru/tseny [R=301,L]
+
+  RewriteCond %{THE_REQUEST} \s/+raschet-po-foto\.html[\s?] [NC]
+  RewriteRule ^ https://potolok-i-tochka.ru/raschet [R=301,L]
+
+  RewriteCond %{THE_REQUEST} \s/+novostroyka\.html[\s?] [NC]
+  RewriteRule ^ https://potolok-i-tochka.ru/novostroyka [R=301,L]
+
+  RewriteCond %{THE_REQUEST} \s/+zamena-potolka\.html[\s?] [NC]
+  RewriteRule ^ https://potolok-i-tochka.ru/zamena [R=301,L]
+
+  RewriteCond %{THE_REQUEST} \s/+sliv-vody\.html[\s?] [NC]
+  RewriteRule ^ https://potolok-i-tochka.ru/sliv-vody [R=301,L]
+
+  RewriteCond %{THE_REQUEST} \s/+matovye-potolki\.html[\s?] [NC]
+  RewriteRule ^ https://potolok-i-tochka.ru/matovye [R=301,L]
+
+  RewriteCond %{THE_REQUEST} \s/+satinovye-potolki\.html[\s?] [NC]
+  RewriteRule ^ https://potolok-i-tochka.ru/satinovye [R=301,L]
+
+  RewriteCond %{THE_REQUEST} \s/+tkanevye-potolki\.html[\s?] [NC]
+  RewriteRule ^ https://potolok-i-tochka.ru/tkanevye [R=301,L]
+
+  RewriteCond %{THE_REQUEST} \s/+tenevye-potolki\.html[\s?] [NC]
+  RewriteRule ^ https://potolok-i-tochka.ru/tenevye [R=301,L]
+
+  RewriteCond %{THE_REQUEST} \s/+premium-potolki\.html[\s?] [NC]
+  RewriteRule ^ https://potolok-i-tochka.ru/premium [R=301,L]
+
+  RewriteCond %{THE_REQUEST} \s/+potolki-s-podsvetkoy\.html[\s?] [NC]
+  RewriteRule ^ https://potolok-i-tochka.ru/podsvetka [R=301,L]
+
+  RewriteCond %{THE_REQUEST} \s/+skrytyy-karniz\.html[\s?] [NC]
+  RewriteRule ^ https://potolok-i-tochka.ru/karniz [R=301,L]
+
+  RewriteCond %{THE_REQUEST} \s/+potolok-v-spalnu\.html[\s?] [NC]
+  RewriteRule ^ https://potolok-i-tochka.ru/spalnya [R=301,L]
+
+  RewriteCond %{THE_REQUEST} \s/+potolok-na-kuhnu\.html[\s?] [NC]
+  RewriteRule ^ https://potolok-i-tochka.ru/kuhnya [R=301,L]
+
+  RewriteCond %{THE_REQUEST} \s/+potolok-v-gostinuyu\.html[\s?] [NC]
+  RewriteRule ^ https://potolok-i-tochka.ru/gostinaya [R=301,L]
+
+  # --- Слэш на конце → без слэша ---
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{THE_REQUEST} \s/+([^\s?]+)/[\s?]
+  RewriteRule ^(.+)/$ https://potolok-i-tochka.ru/$1 [R=301,L]
+
+  # --- Короткий URL → реальный файл (внутренний rewrite, без редиректа) ---
+  RewriteRule ^tseny$       tseny.html               [L]
+  RewriteRule ^raschet$     raschet-po-foto.html     [L]
+  RewriteRule ^novostroyka$ novostroyka.html         [L]
+  RewriteRule ^zamena$      zamena-potolka.html      [L]
+  RewriteRule ^sliv-vody$   sliv-vody.html           [L]
+  RewriteRule ^matovye$     matovye-potolki.html     [L]
+  RewriteRule ^satinovye$   satinovye-potolki.html   [L]
+  RewriteRule ^tkanevye$    tkanevye-potolki.html    [L]
+  RewriteRule ^tenevye$     tenevye-potolki.html     [L]
+  RewriteRule ^premium$     premium-potolki.html     [L]
+  RewriteRule ^podsvetka$   potolki-s-podsvetkoy.html [L]
+  RewriteRule ^karniz$      skrytyy-karniz.html      [L]
+  RewriteRule ^spalnya$     potolok-v-spalnu.html    [L]
+  RewriteRule ^kuhnya$      potolok-na-kuhnu.html    [L]
+  RewriteRule ^gostinaya$   potolok-v-gostinuyu.html [L]
 </IfModule>
 
 # =============================================================
@@ -86,7 +147,6 @@ AddCharset UTF-8 .html .css .js .xml .json .txt .svg
   ExpiresByType application/manifest+json "access plus 7 days"
 </IfModule>
 
-# Cache-Control как страховка
 <IfModule mod_headers.c>
   <FilesMatch "\.(css|js|svg|png|jpg|jpeg|webp|ico|woff2?)$">
     Header set Cache-Control "public, max-age=2592000, immutable"
@@ -109,36 +169,15 @@ AddCharset UTF-8 .html .css .js .xml .json .txt .svg
 # Security headers
 # =============================================================
 <IfModule mod_headers.c>
-  # Защита от MIME-sniffing
   Header set X-Content-Type-Options "nosniff"
-
-  # Защита от clickjacking (но разрешаем фреймы с того же домена)
   Header set X-Frame-Options "SAMEORIGIN"
-
-  # XSS защита для старых браузеров
   Header set X-XSS-Protection "1; mode=block"
-
-  # Referrer-Policy: отправляем referer только на свой домен полностью, иначе только origin
   Header set Referrer-Policy "strict-origin-when-cross-origin"
-
-  # Permissions-Policy — выключаем доступ к камере/микрофону/геолокации
   Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
-
-  # Cross-Origin policies
   Header set Cross-Origin-Opener-Policy "same-origin-allow-popups"
-
-  # HSTS — заставляет браузер использовать только HTTPS на год
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-
-  # Удаляем серверные fingerprint-заголовки
   Header unset X-Powered-By
   Header unset Server
-</IfModule>
-
-# =============================================================
-# Отключаем ETag (используем Last-Modified)
-# =============================================================
-<IfModule mod_headers.c>
   Header unset ETag
 </IfModule>
 FileETag None
