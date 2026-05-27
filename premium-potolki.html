@@ -305,6 +305,36 @@ img { max-width: 100%; display: block; }
 .faq-a p { font-size: 15.5px; color: var(--ink-2); line-height: 1.55; font-weight: 500; }
 
 /* FINAL */
+  /* === FINAL: подарки за заявку до 1 июня === */
+  .final-bullets.final-gifts li {
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  .final-bullets.final-gifts li strong {
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .final-deadline {
+    margin: 22px 0 18px;
+    padding: 12px 16px;
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--ink-2);
+  }
+  .final-deadline strong {
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .final-form-sub {
+    color: var(--ink-2);
+    font-size: 14px;
+    line-height: 1.45;
+    margin: 8px 0 18px;
+  }
+
+
 .final { padding: 100px 0 120px; background: linear-gradient(180deg, var(--bg) 0%, var(--surface) 50%, var(--surface-2) 100%); position: relative; }
 .final-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: start; max-width: 1200px; margin: 0 auto; }
 @media (max-width: 880px) { .final-grid { grid-template-columns: 1fr; gap: 36px; } }
@@ -2516,97 +2546,47 @@ a.nav-cta {
   <div class="wrap">
     <div class="final-grid">
       <div class="final-text reveal reveal-left">
-        <div class="eyebrow eyebrow-promo">Финальный шаг</div>
-        <h2 style="margin-top: 16px;">Пришлите проект — подготовим <span class="accent-word">КП по&nbsp;потолкам</span></h2>
-        <p>Посмотрим чертежи, визуализации или фото объекта, проверим сложные узлы, предложим решения и&nbsp;покажем порядок бюджета.</p>
+        <div class="eyebrow eyebrow-promo">До&nbsp;1&nbsp;июня · 3&nbsp;подарка за&nbsp;заявку</div>
+        <h2 style="margin-top: 16px;">Оставьте заявку — пришлём <span class="accent-word">3&nbsp;полезных подарка</span></h2>
+        <p>Расскажем, какой потолок подойдёт под вашу комнату и&nbsp;бюджет. Подарки придут на&nbsp;телефон или в&nbsp;Telegram в&nbsp;течение часа.</p>
 
-        <ul class="final-bullets">
-          <li>Работа по&nbsp;дизайн-проекту</li>
-          <li>Теневые и&nbsp;бесщелевые профили</li>
-          <li>Скрытые карнизы</li>
-          <li>Трековый свет и&nbsp;подсветка</li>
-          <li>КП по&nbsp;помещениям и&nbsp;решениям</li>
-          <li>Личный контакт с&nbsp;ответственным</li>
-          <li>Финальная смета после замера</li>
+        <ul class="final-bullets final-gifts">
+          <li><strong>3D-визуализация по&nbsp;вашему фото</strong> — увидите потолок до&nbsp;монтажа (обычно&nbsp;1&nbsp;500&nbsp;₽, сейчас бесплатно)</li>
+          <li><strong>PDF-гайд «7&nbsp;шагов к&nbsp;потолку без ошибок»</strong> — что спросить у&nbsp;мастера, как сравнить сметы</li>
+          <li><strong>Скидка&nbsp;7%</strong> на&nbsp;заказ при подтверждении после визуализации</li>
         </ul>
+
+        <p class="final-deadline"><strong>До&nbsp;1&nbsp;июня.</strong> Дальше&nbsp;— только базовое предложение.</p>
 
         <a href="https://t.me/" class="final-tg">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="#229ED9"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
-          <span>Или написать в Telegram</span>
+          <span>Или написать в&nbsp;Telegram</span>
         </a>
       </div>
 
-      <form class="final-form reveal reveal-right" onsubmit="event.preventDefault(); alert('Заявка отправлена. Перезвоним в течение дня.');">
-        <h3 class="final-form-h3">Заявка на&nbsp;КП по&nbsp;проекту</h3>
+      <form class="final-form reveal reveal-right" onsubmit="event.preventDefault(); alert('Заявка принята! Подарки придут в течение часа.');">
+        <h3 class="final-form-h3">Получить 3&nbsp;подарка</h3>
+        <p class="final-form-sub">Оставьте имя и&nbsp;телефон — этого хватит. Перезвоним в&nbsp;течение часа и&nbsp;вышлем 3D-визуализацию + гайд.</p>
+
         <div class="form-grid">
-          <div class="form-row">
-            <label>Имя
-              <input id="name" type="text" placeholder="Как к вам обращаться" required>
-            </label>
-            <label>Телефон или Telegram
-              <input id="contact" type="text" placeholder="+7 999 000 00 00 или @username" required>
-            </label>
-          </div>
-
-          <div class="form-row">
-            <label>Тип объекта
-              <select id="object-type">
-                <option>Квартира</option>
-                <option>Коттедж</option>
-                <option>Кухня-гостиная</option>
-                <option>Премиальная спальня</option>
-                <option>Коммерческое помещение</option>
-                <option>Проект от дизайнера</option>
-                <option>Пока не знаю, нужна консультация</option>
-              </select>
-            </label>
-            <label>Есть ли дизайн-проект?
-              <select id="has-project">
-                <option>Да, есть готовый</option>
-                <option>Только визуализации</option>
-                <option>Только план / чертёж</option>
-                <option>Только фото объекта</option>
-                <option>Только референсы</option>
-                <option>Пока ничего нет</option>
-              </select>
-            </label>
-          </div>
-
-          <label>Файл проекта / фото / план
-            <span class="form-file">📎 Прикрепить PDF, изображения или архив
-              <input type="file" multiple>
-            </span>
+          <label>Имя
+            <input id="name" type="text" placeholder="Как к вам обращаться" required>
           </label>
-
-          <label>Комментарий
-            <textarea id="note" rows="3" placeholder="Что важно учесть: профиль, карниз, свет, сроки, бюджетные ограничения, нестандартные узлы"></textarea>
+          <label>Телефон или Telegram
+            <input id="contact" type="text" placeholder="+7 999 000 00 00 или @username" required>
           </label>
         </div>
 
-        <button type="submit" class="form-submit">Получить КП по проекту</button>
+        <button type="submit" class="form-submit">Хочу 3&nbsp;подарка до&nbsp;1&nbsp;июня</button>
+
         <p class="form-micro">
-          Можно прислать даже черновой план или референс. Скажем, какие данные нужны для точного расчёта.
+          Звонок&nbsp;— в&nbsp;течение часа. Без спама, без рассылок. Подарки придут в&nbsp;Telegram или СМС.
         </p>
       </form>
     </div>
   </div>
 </section>
 
-<!-- SEO BLOCK -->
-<section class="seo">
-  <div class="wrap">
-    <div class="seo-wrap reveal">
-      <h2>Премиальные натяжные потолки в&nbsp;Москве</h2>
-      <p>
-        Премиальные натяжные потолки отличаются от&nbsp;стандартных решений не&nbsp;только материалом, но и&nbsp;уровнем проработки деталей. В&nbsp;таких проектах важны теневые и&nbsp;бесщелевые профили, скрытые карнизы, трековый свет, подсветка, световые линии, качество примыкания к&nbsp;стенам и&nbsp;точность монтажа.
-      </p>
-      <p>
-        «Потолок и&nbsp;Точка» выполняет сложные натяжные потолки для дизайнерских квартир, коттеджей и&nbsp;объектов с&nbsp;индивидуальным проектом. Работаем по&nbsp;чертежам, визуализациям, планам света и&nbsp;фото объекта, готовим КП, согласовываем технические решения и&nbsp;фиксируем финальную смету после замера.
-      </p>
-      <a href="#final" class="seo-cta">Прислать проект на расчёт</a>
-    </div>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer class="footer">

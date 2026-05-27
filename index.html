@@ -2837,7 +2837,38 @@ body[data-theme="2"] .btn-primary { box-shadow: none; }
 
   /* FINAL форма */
   .final { padding: 60px 0 80px !important; }
-  .final-form { padding: 24px 22px !important; }
+  
+  /* === FINAL: подарки за заявку до 1 июня === */
+  .final-bullets.final-gifts li {
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  .final-bullets.final-gifts li strong {
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .final-deadline {
+    margin: 22px 0 18px;
+    padding: 12px 16px;
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--ink-2);
+  }
+  .final-deadline strong {
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .final-form-sub {
+    color: var(--ink-2);
+    font-size: 14px;
+    line-height: 1.45;
+    margin: 8px 0 18px;
+  }
+
+
+.final-form { padding: 24px 22px !important; }
   .final-text h2 { font-size: clamp(26px, 7vw, 36px) !important; }
 
   /* PHOTO BLOCK */
@@ -4562,64 +4593,48 @@ a.nav-cta {
 <section class="final" id="final">
   <div class="wrap">
     <div class="final-grid">
-      <div class="reveal">
-        <div class="eyebrow" style="background: var(--bg); border-color: var(--hairline); color: var(--ink-2);">Финальный шаг</div>
-        <h2 class="final-h2">Пришлите фото комнаты — посчитаем потолок <span class="accent-word">до замера</span></h2>
-        <p class="final-lead">Пришлём 3–5 визуализаций (как потолок будет выглядеть именно у&nbsp;вас), объясним разницу по цене и скажем, что может повлиять на итоговую смету. Бесплатно, без обязательств.</p>
-        <ul class="final-bullets">
-          <li>Ответим в течение 1 часа</li>
-          <li>Можно отправить фото с телефона</li>
-          <li>Смета будет понятной, без «сюрпризов»</li>
-          <li>Финальную цену фиксируем после замера</li>
-          <li>Можно общаться в Telegram или WhatsApp</li>
+      <div class="final-text reveal reveal-left">
+        <div class="eyebrow eyebrow-promo">До&nbsp;1&nbsp;июня · 3&nbsp;подарка за&nbsp;заявку</div>
+        <h2 style="margin-top: 16px;">Оставьте заявку — пришлём <span class="accent-word">3&nbsp;полезных подарка</span></h2>
+        <p>Расскажем, какой потолок подойдёт под вашу комнату и&nbsp;бюджет. Подарки придут на&nbsp;телефон или в&nbsp;Telegram в&nbsp;течение часа.</p>
+
+        <ul class="final-bullets final-gifts">
+          <li><strong>3D-визуализация по&nbsp;вашему фото</strong> — увидите потолок до&nbsp;монтажа (обычно&nbsp;1&nbsp;500&nbsp;₽, сейчас бесплатно)</li>
+          <li><strong>PDF-гайд «7&nbsp;шагов к&nbsp;потолку без ошибок»</strong> — что спросить у&nbsp;мастера, как сравнить сметы</li>
+          <li><strong>Скидка&nbsp;7%</strong> на&nbsp;заказ при подтверждении после визуализации</li>
         </ul>
+
+        <p class="final-deadline"><strong>До&nbsp;1&nbsp;июня.</strong> Дальше&nbsp;— только базовое предложение.</p>
+
+        <a href="https://t.me/" class="final-tg">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#229ED9"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+          <span>Или написать в&nbsp;Telegram</span>
+        </a>
       </div>
 
-      <div class="form reveal">
-        <div class="form-inner">
-          <div class="form-label">Расчёт по фото · бесплатно</div>
-          <div class="form-row">
-            <label for="name">Имя</label>
-            <input id="name" type="text" placeholder="Как к вам обращаться">
-          </div>
-          <div class="form-row">
-            <label for="contact">Телефон или Telegram</label>
-            <input id="contact" type="text" placeholder="+7 999 000 00 00 или @username">
-          </div>
-          <div class="form-row">
-            <label for="task">Что нужно посчитать?</label>
-            <select id="task">
-              <option>Новостройка</option>
-              <option>Замена потолка</option>
-              <option>Одна комната</option>
-              <option>Вся квартира</option>
-              <option>Скрытый карниз</option>
-              <option>Подсветка</option>
-              <option>Срочный ремонт</option>
-              <option>Дизайнерский проект</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <label>Фото комнаты / план квартиры</label>
-            <label class="form-file" for="photo">Прикрепить файл — фото с телефона или PDF плана</label>
-            <input id="photo" type="file" multiple style="display: none;">
-          </div>
-          <div class="form-row">
-            <label for="note">Комментарий</label>
-            <textarea id="note" placeholder="Что для вас важно: бюджет, сроки, стиль интерьера"></textarea>
-          </div>
-          <button class="form-submit" type="submit">
-            <span>Получить расчёт по фото</span>
-          </button>
-          <p class="form-micro">Нажимая кнопку — соглашаетесь с обработкой данных. Не передаём контакты третьим лицам.</p>
-          <div class="form-alt">
-            Не хотите заполнять форму? <a href="https://t.me/">Напишите в Telegram</a> — можно просто отправить фото комнаты.
-          </div>
+      <form class="final-form reveal reveal-right" onsubmit="event.preventDefault(); alert('Заявка принята! Подарки придут в течение часа.');">
+        <h3 class="final-form-h3">Получить 3&nbsp;подарка</h3>
+        <p class="final-form-sub">Оставьте имя и&nbsp;телефон — этого хватит. Перезвоним в&nbsp;течение часа и&nbsp;вышлем 3D-визуализацию + гайд.</p>
+
+        <div class="form-grid">
+          <label>Имя
+            <input id="name" type="text" placeholder="Как к вам обращаться" required>
+          </label>
+          <label>Телефон или Telegram
+            <input id="contact" type="text" placeholder="+7 999 000 00 00 или @username" required>
+          </label>
         </div>
-      </div>
+
+        <button type="submit" class="form-submit">Хочу 3&nbsp;подарка до&nbsp;1&nbsp;июня</button>
+
+        <p class="form-micro">
+          Звонок&nbsp;— в&nbsp;течение часа. Без спама, без рассылок. Подарки придут в&nbsp;Telegram или СМС.
+        </p>
+      </form>
     </div>
   </div>
 </section>
+
 
 <!-- FOOTER -->
 <footer class="footer">

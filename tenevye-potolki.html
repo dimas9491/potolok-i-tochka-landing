@@ -256,6 +256,36 @@ img { max-width: 100%; display: block; }
 .faq-a p { font-size: 15.5px; color: var(--ink-2); line-height: 1.55; font-weight: 500; }
 
 /* FINAL */
+  /* === FINAL: подарки за заявку до 1 июня === */
+  .final-bullets.final-gifts li {
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  .final-bullets.final-gifts li strong {
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .final-deadline {
+    margin: 22px 0 18px;
+    padding: 12px 16px;
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--ink-2);
+  }
+  .final-deadline strong {
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .final-form-sub {
+    color: var(--ink-2);
+    font-size: 14px;
+    line-height: 1.45;
+    margin: 8px 0 18px;
+  }
+
+
 .final { padding: 100px 0 120px; background: linear-gradient(180deg, var(--bg) 0%, var(--surface) 50%, var(--surface-2) 100%); position: relative; }
 .final-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: start; max-width: 1200px; margin: 0 auto; }
 @media (max-width: 880px) { .final-grid { grid-template-columns: 1fr; gap: 36px; } }
@@ -1984,95 +2014,47 @@ a.nav-cta {
   <div class="wrap">
     <div class="final-grid">
       <div class="final-text reveal reveal-left">
-        <div class="eyebrow eyebrow-promo">Финальный шаг</div>
-        <h2 style="margin-top: 16px;">Хотите понять, подойдёт ли теневой потолок <span class="accent-word">вашей комнате?</span></h2>
-        <p>Пришлите фото стен, углов и&nbsp;комнаты — скажем, можно ли сделать аккуратный теневой зазор, покажем варианты и&nbsp;рассчитаем стоимость.</p>
+        <div class="eyebrow eyebrow-promo">До&nbsp;1&nbsp;июня · 3&nbsp;подарка за&nbsp;заявку</div>
+        <h2 style="margin-top: 16px;">Оставьте заявку — пришлём <span class="accent-word">3&nbsp;полезных подарка</span></h2>
+        <p>Расскажем, какой потолок подойдёт под вашу комнату и&nbsp;бюджет. Подарки придут на&nbsp;телефон или в&nbsp;Telegram в&nbsp;течение часа.</p>
 
-        <ul class="final-bullets">
-          <li>Проверим стены по&nbsp;фото</li>
-          <li>Сравним обычный и&nbsp;теневой профиль</li>
-          <li>Подскажем по&nbsp;скрытому карнизу</li>
-          <li>Посчитаем свет и&nbsp;дополнительные элементы</li>
-          <li>Покажем порядок бюджета</li>
-          <li>Финальную смету зафиксируем после замера</li>
+        <ul class="final-bullets final-gifts">
+          <li><strong>3D-визуализация по&nbsp;вашему фото</strong> — увидите потолок до&nbsp;монтажа (обычно&nbsp;1&nbsp;500&nbsp;₽, сейчас бесплатно)</li>
+          <li><strong>PDF-гайд «7&nbsp;шагов к&nbsp;потолку без ошибок»</strong> — что спросить у&nbsp;мастера, как сравнить сметы</li>
+          <li><strong>Скидка&nbsp;7%</strong> на&nbsp;заказ при подтверждении после визуализации</li>
         </ul>
+
+        <p class="final-deadline"><strong>До&nbsp;1&nbsp;июня.</strong> Дальше&nbsp;— только базовое предложение.</p>
 
         <a href="https://t.me/" class="final-tg">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="#229ED9"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
-          <span>Или отправить фото в&nbsp;Telegram</span>
+          <span>Или написать в&nbsp;Telegram</span>
         </a>
       </div>
 
-      <form class="final-form reveal reveal-right" onsubmit="event.preventDefault(); alert('Заявка отправлена. Перезвоним в течение дня.');">
-        <h3 class="final-form-h3">Проверить теневой профиль</h3>
+      <form class="final-form reveal reveal-right" onsubmit="event.preventDefault(); alert('Заявка принята! Подарки придут в течение часа.');">
+        <h3 class="final-form-h3">Получить 3&nbsp;подарка</h3>
+        <p class="final-form-sub">Оставьте имя и&nbsp;телефон — этого хватит. Перезвоним в&nbsp;течение часа и&nbsp;вышлем 3D-визуализацию + гайд.</p>
+
         <div class="form-grid">
-          <div class="form-row">
-            <label>Имя
-              <input id="name" type="text" placeholder="Как к вам обращаться" required>
-            </label>
-            <label>Телефон или Telegram
-              <input id="contact" type="text" placeholder="+7 999 000 00 00 или @username" required>
-            </label>
-          </div>
-
-          <div class="form-row">
-            <label>Какая комната?
-              <select id="room">
-                <option>Спальня</option>
-                <option>Гостиная</option>
-                <option>Кухня-гостиная</option>
-                <option>Кухня</option>
-                <option>Детская</option>
-                <option>Коридор</option>
-                <option>Коттедж / несколько комнат</option>
-                <option>Пока не знаю</option>
-              </select>
-            </label>
-            <label>Площадь (если знаете)
-              <input id="area" type="text" placeholder="например 18 м²">
-            </label>
-          </div>
-
-          <div class="form-row">
-            <label>Скрытый карниз / свет?
-              <select id="extras">
-                <option>Только теневой потолок</option>
-                <option>+ скрытый карниз</option>
-                <option>+ трековый свет</option>
-                <option>+ подсветка</option>
-                <option>Несколько решений</option>
-                <option>Пока не знаю — подскажите</option>
-              </select>
-            </label>
-            <label>Есть дизайн-проект?
-              <select id="project">
-                <option>Нет, ремонт «для себя»</option>
-                <option>Есть план / визуализации</option>
-                <option>Есть полный дизайн-проект</option>
-                <option>Работаю с дизайнером</option>
-              </select>
-            </label>
-          </div>
-
-          <label>Фото комнаты / стен
-            <span class="form-file">📎 Прикрепить фото углов, стен и&nbsp;комнаты
-              <input type="file" multiple accept="image/*">
-            </span>
+          <label>Имя
+            <input id="name" type="text" placeholder="Как к вам обращаться" required>
           </label>
-
-          <label>Комментарий
-            <textarea id="note" rows="3" placeholder="Что важно: бюджет, срочность, особенности стен"></textarea>
+          <label>Телефон или Telegram
+            <input id="contact" type="text" placeholder="+7 999 000 00 00 или @username" required>
           </label>
         </div>
 
-        <button type="submit" class="form-submit">Проверить теневой профиль</button>
+        <button type="submit" class="form-submit">Хочу 3&nbsp;подарка до&nbsp;1&nbsp;июня</button>
+
         <p class="form-micro">
-          Если не&nbsp;знаете, подойдут ли стены — пришлите фото углов и&nbsp;примыкания к&nbsp;потолку. Подскажем.
+          Звонок&nbsp;— в&nbsp;течение часа. Без спама, без рассылок. Подарки придут в&nbsp;Telegram или СМС.
         </p>
       </form>
     </div>
   </div>
 </section>
+
 
 <!-- FOOTER -->
 <footer class="footer">
