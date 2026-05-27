@@ -1680,6 +1680,96 @@ a.nav-cta {
     .section-photo-bridge .photo-block { height: 220px !important; min-height: 220px !important; }
   }
 
+
+  /* === FINAL FORM FIX: стили для новой 2-полей формы === */
+  .final-form {
+    background: var(--bg) !important;
+    border-radius: 24px !important;
+    padding: 32px 30px 28px !important;
+    box-shadow: 0 30px 80px -30px rgba(0,0,0,0.2), 0 0 0 1px var(--hairline) !important;
+  }
+  .final-form .final-form-h3 {
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    margin: 0 0 8px !important;
+    letter-spacing: -0.02em !important;
+    color: var(--ink) !important;
+  }
+  .final-form .final-form-sub {
+    margin: 0 0 22px !important;
+    font-size: 14.5px !important;
+    color: var(--ink-2) !important;
+    line-height: 1.5 !important;
+  }
+  .final-form .form-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    margin-bottom: 20px !important;
+  }
+  .final-form .form-grid label {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    font-size: 13px !important;
+    color: var(--ink-2) !important;
+    font-weight: 500 !important;
+  }
+  .final-form .form-grid input,
+  .final-form .form-grid textarea,
+  .final-form .form-grid select {
+    background: var(--surface) !important;
+    border: 1px solid var(--hairline) !important;
+    border-radius: 12px !important;
+    padding: 14px 16px !important;
+    font-family: 'Inter Tight', sans-serif !important;
+    font-size: 15px !important;
+    color: var(--ink) !important;
+    outline: none !important;
+    transition: all 200ms !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .final-form .form-grid input:focus,
+  .final-form .form-grid textarea:focus {
+    border-color: var(--accent) !important;
+    background: var(--accent-soft) !important;
+  }
+  .final-form .form-submit {
+    width: 100% !important;
+    background: var(--hi) !important;
+    color: var(--ink) !important;
+    border: none !important;
+    border-radius: 16px !important;
+    padding: 18px 24px !important;
+    font-family: 'Inter Tight', sans-serif !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.01em !important;
+    cursor: pointer !important;
+    display: block !important;
+    text-align: center !important;
+    box-shadow: 0 8px 24px -6px rgba(201,240,80,0.55) !important;
+    transition: all 300ms cubic-bezier(0.32,0.72,0,1) !important;
+  }
+  .final-form .form-submit:hover {
+    transform: translateY(-2px) !important;
+    background: var(--hi-strong) !important;
+    box-shadow: 0 14px 32px -6px rgba(201,240,80,0.7) !important;
+  }
+  .final-form .form-micro {
+    margin: 16px 0 0 !important;
+    font-size: 12.5px !important;
+    color: var(--ink-2) !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+  }
+  @media (max-width: 520px) {
+    .final-form { padding: 24px 20px !important; border-radius: 20px !important; }
+    .final-form .final-form-h3 { font-size: 20px !important; }
+    .final-form .form-submit { font-size: 15px !important; padding: 16px 20px !important; }
+  }
+
 </style>
 
 <!-- OpenGraph (для шеринга в Telegram, WhatsApp, VK, Facebook) -->
@@ -2016,6 +2106,31 @@ a.nav-cta {
     </div>
   </div>
 </section>
+
+<!-- VIDEO -->
+<section class="section" style="padding: 80px 0;">
+  <div class="wrap">
+    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 36px; max-width: 720px;">
+      <div class="eyebrow" style="margin: 0 auto;">Как мы работаем</div>
+      <h2 class="section-h2">5&nbsp;минут о&nbsp;том, <span class="accent-word">как проходит монтаж</span></h2>
+    </div>
+    <div class="video-frame reveal">
+      <div class="video-placeholder">
+        <button class="video-play" aria-label="Смотреть видео">
+          <svg viewBox="0 0 80 80" width="80" height="80" fill="none">
+            <circle cx="40" cy="40" r="38" fill="rgba(26,20,16,0.85)" stroke="#C9F050" stroke-width="2"/>
+            <path d="M32 26 L56 40 L32 54 Z" fill="#C9F050"/>
+          </svg>
+        </button>
+        <div class="video-caption">
+          <strong>Видео · монтаж натяжного потолка под&nbsp;ключ</strong>
+          <p>Реальный объект в&nbsp;Москве. 4K, продолжительность 4:52, кадры замера → монтажа → приёмки.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 <!-- GALLERY -->
@@ -2830,30 +2945,6 @@ a.nav-cta {
       <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · тканевый коттедж</span></div></div>
       <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · тканевый детская</span></div></div>
 
-    </div>
-  </div>
-</section>
-
-<!-- VIDEO -->
-<section class="section" style="padding: 80px 0;">
-  <div class="wrap">
-    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 36px; max-width: 720px;">
-      <div class="eyebrow" style="margin: 0 auto;">Как мы работаем</div>
-      <h2 class="section-h2">5&nbsp;минут о&nbsp;том, <span class="accent-word">как проходит монтаж</span></h2>
-    </div>
-    <div class="video-frame reveal">
-      <div class="video-placeholder">
-        <button class="video-play" aria-label="Смотреть видео">
-          <svg viewBox="0 0 80 80" width="80" height="80" fill="none">
-            <circle cx="40" cy="40" r="38" fill="rgba(26,20,16,0.85)" stroke="#C9F050" stroke-width="2"/>
-            <path d="M32 26 L56 40 L32 54 Z" fill="#C9F050"/>
-          </svg>
-        </button>
-        <div class="video-caption">
-          <strong>Видео · монтаж натяжного потолка под&nbsp;ключ</strong>
-          <p>Реальный объект в&nbsp;Москве. 4K, продолжительность 4:52, кадры замера → монтажа → приёмки.</p>
-        </div>
-      </div>
     </div>
   </div>
 </section>
