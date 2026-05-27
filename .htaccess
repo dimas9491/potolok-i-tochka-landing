@@ -31,18 +31,18 @@ AddCharset UTF-8 .html .css .js .xml .json .txt .svg
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # 1) HTTP → HTTPS — РАСКОММЕНТИРОВАТЬ ПОСЛЕ ВЫПУСКА SSL
-  # RewriteCond %{HTTPS} !=on
-  # RewriteCond %{HTTP_HOST} ^(www\.)?potolok-i-tochka\.ru$ [NC]
-  # RewriteRule ^ https://potolok-i-tochka.ru%{REQUEST_URI} [L,R=301]
+  # 1) HTTP → HTTPS (SSL Let's Encrypt активен)
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP_HOST} ^(www\.)?potolok-i-tochka\.ru$ [NC]
+  RewriteRule ^ https://potolok-i-tochka.ru%{REQUEST_URI} [L,R=301]
 
-  # 2) www → без www
+  # 2) www → без www (всегда HTTPS)
   RewriteCond %{HTTP_HOST} ^www\.potolok-i-tochka\.ru$ [NC]
-  RewriteRule ^ http://potolok-i-tochka.ru%{REQUEST_URI} [L,R=301]
+  RewriteRule ^ https://potolok-i-tochka.ru%{REQUEST_URI} [L,R=301]
 
-  # 3) verbov1j.beget.tech → potolok-i-tochka.ru
+  # 3) verbov1j.beget.tech → potolok-i-tochka.ru (HTTPS)
   RewriteCond %{HTTP_HOST} ^verbov1j\.beget\.tech$ [NC]
-  RewriteRule ^ http://potolok-i-tochka.ru%{REQUEST_URI} [L,R=301]
+  RewriteRule ^ https://potolok-i-tochka.ru%{REQUEST_URI} [L,R=301]
 
   # 4) /index.html → / (убираем дубль главной для SEO)
   RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
@@ -127,8 +127,8 @@ AddCharset UTF-8 .html .css .js .xml .json .txt .svg
   # Cross-Origin policies
   Header set Cross-Origin-Opener-Policy "same-origin-allow-popups"
 
-  # HSTS — РАСКОММЕНТИРОВАТЬ ПОСЛЕ ВЫПУСКА SSL И ПРОВЕРКИ HTTPS
-  # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  # HSTS — заставляет браузер использовать только HTTPS на год
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 
   # Удаляем серверные fingerprint-заголовки
   Header unset X-Powered-By
