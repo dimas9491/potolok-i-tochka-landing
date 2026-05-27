@@ -1418,6 +1418,139 @@ a.nav-cta {
     #gallery .gal-row-2 .photo-block { height: 220px !important; min-height: 220px !important; }
   }
 
+
+  /* === WITRINA: 2×2 крупные карточки с фото + подписью === */
+  .witrina-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .witrina-card {
+    background: var(--surface);
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--hairline);
+    transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s;
+  }
+  .witrina-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px -30px rgba(0,0,0,0.18);
+  }
+  .witrina-photo .photo-block {
+    height: 380px !important;
+    min-height: 380px !important;
+    border-radius: 0 !important;
+  }
+  .witrina-info {
+    padding: 24px 26px 28px;
+  }
+  .witrina-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    margin-bottom: 8px;
+  }
+  .witrina-title {
+    margin: 0 0 4px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .witrina-sub {
+    margin: 0;
+    font-size: 14px;
+    color: var(--ink-2);
+    line-height: 1.4;
+  }
+  @media (max-width: 760px) {
+    .witrina-grid { grid-template-columns: 1fr; gap: 16px; }
+    .witrina-photo .photo-block { height: 260px !important; min-height: 260px !important; }
+  }
+
+  /* === INSTAGRAM WALL: 3×3 квадратные === */
+  .insta-wall {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+  .insta-cell {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 4px;
+    position: relative;
+    text-decoration: none;
+    display: block;
+  }
+  .insta-cell .photo-block {
+    width: 100%;
+    height: 100% !important;
+    min-height: 100% !important;
+    border-radius: 4px !important;
+    transition: transform .5s ease;
+  }
+  .insta-cell:hover .photo-block {
+    transform: scale(1.05);
+  }
+  .insta-cell::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(26,20,16,0);
+    transition: background .3s;
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .insta-cell:hover::after {
+    background: rgba(26,20,16,0.1);
+  }
+  @media (max-width: 560px) {
+    .insta-wall { gap: 4px; }
+  }
+
+  /* === HORIZONTAL CAROUSEL === */
+  .carousel-wrap {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding: 0 24px 20px;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+  .carousel-wrap::-webkit-scrollbar {
+    height: 6px;
+  }
+  .carousel-wrap::-webkit-scrollbar-track {
+    background: var(--hairline);
+    border-radius: 3px;
+  }
+  .carousel-wrap::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 3px;
+  }
+  .carousel-track {
+    display: inline-flex;
+    gap: 16px;
+    padding: 0 max(24px, calc((100vw - 1240px) / 2));
+  }
+  .carousel-cell {
+    flex: 0 0 360px;
+    scroll-snap-align: center;
+  }
+  .carousel-cell .photo-block {
+    width: 360px;
+    height: 280px !important;
+    min-height: 280px !important;
+    border-radius: 20px !important;
+  }
+  @media (max-width: 760px) {
+    .carousel-cell { flex: 0 0 280px; }
+    .carousel-cell .photo-block { width: 280px; height: 220px !important; min-height: 220px !important; }
+  }
+
 </style>
 
 <!-- OpenGraph (для шеринга в Telegram, WhatsApp, VK, Facebook) -->
@@ -1685,6 +1818,60 @@ a.nav-cta {
     </div>
   </div>
 </section>
+
+<!-- WITRINA -->
+<section class="section" style="padding: 80px 0;">
+  <div class="wrap">
+    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 40px; max-width: 720px;">
+      <div class="eyebrow" style="margin: 0 auto;">Витрина решений</div>
+      <h2 class="section-h2">Что мы предлагаем <span class="accent-word">под вашу комнату</span></h2>
+    </div>
+    <div class="witrina-grid reveal">
+      <div class="witrina-card witrina-card-shtory">
+        <div class="witrina-photo">
+          <div class="photo-block large"><span class="photo-block-label">Фото · Под шторы</span></div>
+        </div>
+        <div class="witrina-info">
+          <div class="witrina-num">01</div>
+          <h3 class="witrina-title">Под шторы</h3>
+          <p class="witrina-sub">Из потолка</p>
+        </div>
+      </div>
+      <div class="witrina-card witrina-card-led">
+        <div class="witrina-photo">
+          <div class="photo-block large"><span class="photo-block-label">Фото · С подсветкой</span></div>
+        </div>
+        <div class="witrina-info">
+          <div class="witrina-num">02</div>
+          <h3 class="witrina-title">С подсветкой</h3>
+          <p class="witrina-sub">Линейная LED</p>
+        </div>
+      </div>
+      <div class="witrina-card witrina-card-electric">
+        <div class="witrina-photo">
+          <div class="photo-block large"><span class="photo-block-label">Фото · Под раздвижные</span></div>
+        </div>
+        <div class="witrina-info">
+          <div class="witrina-num">03</div>
+          <h3 class="witrina-title">Под раздвижные</h3>
+          <p class="witrina-sub">Электрокарниз</p>
+        </div>
+      </div>
+      <div class="witrina-card witrina-card-erker">
+        <div class="witrina-photo">
+          <div class="photo-block large"><span class="photo-block-label">Фото · Эркер</span></div>
+        </div>
+        <div class="witrina-info">
+          <div class="witrina-num">04</div>
+          <h3 class="witrina-title">Эркер</h3>
+          <p class="witrina-sub">Угловые формы</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
 <!-- GALLERY -->
 <section class="section" id="gallery" style="background: var(--surface);">
@@ -2152,6 +2339,29 @@ a.nav-cta {
   </div>
 </section>
 
+<!-- INSTAGRAM WALL -->
+<section class="section" style="padding: 80px 0; background: var(--surface);">
+  <div class="wrap">
+    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 40px; max-width: 720px;">
+      <div class="eyebrow" style="margin: 0 auto;">Лента работ</div>
+      <h2 class="section-h2">9&nbsp;последних работ <span class="accent-word">из наших соцсетей</span></h2>
+    </div>
+    <div class="insta-wall reveal">
+      <a class="insta-cell" href="#quiz"><div class="photo-block"><span class="photo-block-label">шторы из потолка</span></div></a>
+      <a class="insta-cell" href="#quiz"><div class="photo-block"><span class="photo-block-label">ниша макро</span></div></a>
+      <a class="insta-cell" href="#quiz"><div class="photo-block"><span class="photo-block-label">панорамное окно</span></div></a>
+      <a class="insta-cell" href="#quiz"><div class="photo-block"><span class="photo-block-label">в спальне</span></div></a>
+      <a class="insta-cell" href="#quiz"><div class="photo-block"><span class="photo-block-label">в гостиной</span></div></a>
+      <a class="insta-cell" href="#quiz"><div class="photo-block"><span class="photo-block-label">карниз+подсветка</span></div></a>
+      <a class="insta-cell" href="#quiz"><div class="photo-block"><span class="photo-block-label">эркер</span></div></a>
+      <a class="insta-cell" href="#quiz"><div class="photo-block"><span class="photo-block-label">электрокарниз</span></div></a>
+      <a class="insta-cell" href="#quiz"><div class="photo-block"><span class="photo-block-label">двойной карниз</span></div></a>
+
+    </div>
+  </div>
+</section>
+
+
 <!-- STATS -->
 <section class="section" style="padding: 60px 0; background: var(--ink); color: #F2EEE3;">
   <div class="wrap">
@@ -2174,6 +2384,29 @@ a.nav-cta {
       </div>
     </div>
     <p class="stats-micro reveal">Без накруток и&nbsp;ботов&nbsp;— реальные отзывы клиентов в&nbsp;Яндексе, на&nbsp;Авито и&nbsp;в&nbsp;Профи.ру.</p>
+  </div>
+</section>
+
+<!-- HORIZONTAL CAROUSEL -->
+<section class="section" style="padding: 80px 0;">
+  <div class="wrap">
+    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 40px; max-width: 720px;">
+      <div class="eyebrow" style="margin: 0 auto;">Свайп / прокрутка</div>
+      <h2 class="section-h2">Ещё больше примеров — <span class="accent-word">пролистайте</span></h2>
+    </div>
+  </div>
+  <div class="carousel-wrap reveal">
+    <div class="carousel-track">
+      <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · шторы из потолка</span></div></div>
+      <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · ниша макро</span></div></div>
+      <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · панорамное окно</span></div></div>
+      <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · спальня</span></div></div>
+      <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · гостиная</span></div></div>
+      <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · карниз+подсветка</span></div></div>
+      <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · эркер</span></div></div>
+      <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · электрокарниз</span></div></div>
+
+    </div>
   </div>
 </section>
 
