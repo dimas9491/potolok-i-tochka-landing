@@ -2270,6 +2270,88 @@ a.nav-cta {
     .carousel-cell .photo-block { width: 280px; height: 220px !important; min-height: 220px !important; }
   }
 
+
+  /* === MASONRY: 5 фото разной формы, не сетка === */
+  .masonry-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 280px 280px;
+    gap: 16px;
+  }
+  .masonry-cell .photo-block {
+    width: 100%;
+    height: 100% !important;
+    min-height: 100% !important;
+    border-radius: 20px !important;
+  }
+  /* Tall — слева на 2 ряда */
+  .masonry-cell.m-tall { grid-column: 1; grid-row: 1 / span 2; }
+  /* Wide — растягивается на 2 колонки */
+  .masonry-cell.m-wide:first-of-type { grid-column: 2 / span 2; grid-row: 1; }
+  .masonry-cell.m-wide:last-of-type { grid-column: 2 / span 2; grid-row: 2; }
+  /* Squares — между tall и wide. Только если используем layout без двух wide */
+  .masonry-cell.m-square { display: none; }
+
+  /* Адаптивный вариант с 4 ячейками вместо 5 — простой и красивый */
+  @media (min-width: 1px) {
+    .masonry-grid {
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 280px 280px;
+    }
+    .masonry-cell.m-tall { grid-column: 1; grid-row: 1 / span 2; }
+    .masonry-cell.m-wide:first-of-type { grid-column: 2 / span 2; grid-row: 1; }
+    .masonry-cell.m-square { display: block; grid-column: auto; grid-row: 2; }
+    .masonry-cell.m-square:nth-of-type(3) { grid-column: 2; grid-row: 2; }
+    .masonry-cell.m-square:nth-of-type(4) { grid-column: 3; grid-row: 2; }
+    .masonry-cell.m-wide:last-of-type { display: none; }
+  }
+
+  .masonry-cell {
+    transition: transform .35s cubic-bezier(.2,.7,.2,1);
+  }
+  .masonry-cell:hover { transform: translateY(-4px); }
+
+  @media (max-width: 960px) {
+    .masonry-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 240px 240px 240px;
+    }
+    .masonry-cell.m-tall { grid-column: 1 / span 2; grid-row: 1; }
+    .masonry-cell.m-wide:first-of-type { grid-column: 1 / span 2; grid-row: 3; }
+    .masonry-cell.m-square:nth-of-type(3) { grid-column: 1; grid-row: 2; }
+    .masonry-cell.m-square:nth-of-type(4) { grid-column: 2; grid-row: 2; }
+    .masonry-cell.m-wide:last-of-type { display: none; }
+  }
+  @media (max-width: 560px) {
+    .masonry-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 220px 180px 180px 220px;
+    }
+    .masonry-cell.m-tall { grid-column: 1 / span 2; grid-row: 1; }
+    .masonry-cell.m-square:nth-of-type(3) { grid-column: 1; grid-row: 2; }
+    .masonry-cell.m-square:nth-of-type(4) { grid-column: 2; grid-row: 2; }
+    .masonry-cell.m-wide:first-of-type { grid-column: 1 / span 2; grid-row: 3; }
+    .masonry-cell.m-wide:last-of-type { display: none; }
+  }
+
+
+  /* === INLINE PHOTO ROW: 2 фото в строку между группами текстовых карточек === */
+  .inline-photo-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin: 32px 0;
+  }
+  .inline-photo-row .photo-block {
+    height: 300px !important;
+    min-height: 300px !important;
+    border-radius: 20px !important;
+  }
+  @media (max-width: 760px) {
+    .inline-photo-row { grid-template-columns: 1fr; gap: 12px; margin: 24px 0; }
+    .inline-photo-row .photo-block { height: 220px !important; min-height: 220px !important; }
+  }
+
 </style>
 
 <!-- OpenGraph (для шеринга в Telegram, WhatsApp, VK, Facebook) -->
@@ -3234,6 +3316,17 @@ a.nav-cta {
   </div>
 </section>
 
+<!-- INLINE PHOTO ROW 1 -->
+<section class="section" style="padding: 30px 0;">
+  <div class="wrap">
+    <div class="inline-photo-row reveal">
+      <div class="photo-block"><span class="photo-block-label">фото · новостройка до отделки</span></div>
+      <div class="photo-block"><span class="photo-block-label">фото · после монтажа потолка</span></div>
+    </div>
+
+  </div>
+</section>
+
 <!-- WITRINA -->
 <section class="section" style="padding: 80px 0;">
   <div class="wrap">
@@ -3358,24 +3451,29 @@ a.nav-cta {
   </div>
 </section>
 
-<!-- INSTAGRAM WALL -->
+<!-- MASONRY GALLERY -->
 <section class="section" style="padding: 80px 0; background: var(--surface);">
   <div class="wrap">
     <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 40px; max-width: 720px;">
-      <div class="eyebrow" style="margin: 0 auto;">Лента работ</div>
-      <h2 class="section-h2">9&nbsp;последних работ <span class="accent-word">из наших соцсетей</span></h2>
+      <div class="eyebrow" style="margin: 0 auto;">Ещё работы</div>
+      <h2 class="section-h2">Разные комнаты — <span class="accent-word">разные решения</span></h2>
     </div>
-    <div class="insta-wall reveal">
-      <a class="insta-cell" href="#quiz"><div class="photo-block"><span class="photo-block-label">новостройка до</span></div></a>
-      <a class="insta-cell" href="#quiz"><div class="photo-block"><span class="photo-block-label">после монтажа</span></div></a>
-      <a class="insta-cell" href="#quiz"><div class="photo-block"><span class="photo-block-label">спальня</span></div></a>
-      <a class="insta-cell" href="#quiz"><div class="photo-block"><span class="photo-block-label">кухня</span></div></a>
-      <a class="insta-cell" href="#quiz"><div class="photo-block"><span class="photo-block-label">гостиная</span></div></a>
-      <a class="insta-cell" href="#quiz"><div class="photo-block"><span class="photo-block-label">детская</span></div></a>
-      <a class="insta-cell" href="#quiz"><div class="photo-block"><span class="photo-block-label">мастер</span></div></a>
-      <a class="insta-cell" href="#quiz"><div class="photo-block"><span class="photo-block-label">коридор</span></div></a>
-      <a class="insta-cell" href="#quiz"><div class="photo-block"><span class="photo-block-label">санузел</span></div></a>
-
+    <div class="masonry-grid reveal">
+      <div class="masonry-cell m-tall">
+        <div class="photo-block large"><span class="photo-block-label">Фото · новостройка до</span></div>
+      </div>
+      <div class="masonry-cell m-wide">
+        <div class="photo-block"><span class="photo-block-label">Фото · после: матовый+карниз</span></div>
+      </div>
+      <div class="masonry-cell m-square">
+        <div class="photo-block"><span class="photo-block-label">Фото · кухня-гостиная</span></div>
+      </div>
+      <div class="masonry-cell m-square">
+        <div class="photo-block"><span class="photo-block-label">Фото · спальня</span></div>
+      </div>
+      <div class="masonry-cell m-wide">
+        <div class="photo-block"><span class="photo-block-label">Фото · мастер</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -3403,6 +3501,17 @@ a.nav-cta {
       </div>
     </div>
     <p class="stats-micro reveal">Без накруток и&nbsp;ботов&nbsp;— реальные отзывы клиентов в&nbsp;Яндексе, на&nbsp;Авито и&nbsp;в&nbsp;Профи.ру.</p>
+  </div>
+</section>
+
+<!-- INLINE PHOTO ROW 2 -->
+<section class="section" style="padding: 30px 0;">
+  <div class="wrap">
+    <div class="inline-photo-row reveal">
+      <div class="photo-block"><span class="photo-block-label">фото · новостройка до отделки</span></div>
+      <div class="photo-block"><span class="photo-block-label">фото · после монтажа потолка</span></div>
+    </div>
+
   </div>
 </section>
 
