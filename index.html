@@ -3618,6 +3618,146 @@ a.nav-cta {
     }
   }
 
+
+  /* === BEFORE / AFTER === */
+  .ba-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .ba-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .ba-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .ba-item .photo-block {
+    width: 100%;
+    height: 320px;
+    border-radius: 20px;
+  }
+  .ba-label {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    padding: 6px 14px;
+    background: rgba(26, 20, 16, 0.85);
+    color: #F2EEE3;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+  }
+  .ba-label-after {
+    background: var(--accent);
+    color: #fff;
+  }
+  @media (max-width: 760px) {
+    .ba-pair { grid-template-columns: 1fr; gap: 10px; }
+    .ba-item .photo-block { height: 220px; }
+  }
+
+  /* === VIDEO === */
+  .video-frame {
+    border-radius: 24px;
+    overflow: hidden;
+    background: #1A1410;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    box-shadow: 0 30px 80px -30px rgba(0,0,0,0.4);
+  }
+  .video-placeholder {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(135deg, rgba(184,137,58,0.15), rgba(26,20,16,0.6)),
+      repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0 2px, transparent 2px 8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+    padding: 40px 24px;
+    text-align: center;
+  }
+  .video-play {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform .25s ease;
+  }
+  .video-play:hover { transform: scale(1.08); }
+  .video-caption {
+    color: #F2EEE3;
+    max-width: 480px;
+  }
+  .video-caption strong {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .video-caption p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+    opacity: 0.7;
+  }
+
+  /* === PROCESS MINI-PHOTO === */
+  .process-mini-photo {
+    width: 100%;
+    height: 120px;
+    border-radius: 14px;
+    background:
+      linear-gradient(135deg, var(--surface-2), var(--surface)),
+      repeating-linear-gradient(45deg, transparent 0 6px, rgba(0,0,0,0.025) 6px 12px);
+    background-blend-mode: multiply;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+    border: 1px dashed var(--hairline);
+    position: relative;
+  }
+  .process-mini-photo .photo-block-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    opacity: 0.7;
+  }
+
+  /* === MINI PHOTOS STRIP === */
+  .mini-photos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .mini-photos-grid .photo-block {
+    width: 100%;
+    height: 220px;
+    border-radius: 16px;
+  }
+  @media (max-width: 760px) {
+    .mini-photos-grid { grid-template-columns: 1fr; }
+    .mini-photos-grid .photo-block { height: 180px; }
+  }
+
+  /* === CALC photo row mobile === */
+  @media (max-width: 800px) {
+    .calc-photo-row { grid-template-columns: 1fr !important; }
+    .calc-photo-row .photo-block { height: 240px; }
+  }
+
 </style>
 
 <!-- OpenGraph (для шеринга в Telegram, WhatsApp, VK, Facebook) -->
@@ -3843,10 +3983,9 @@ a.nav-cta {
 <!-- GALLERY -->
 <section class="section" id="gallery" style="background: var(--surface);">
   <div class="wrap">
-    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 40px; max-width: 720px;">
+    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 32px; max-width: 720px;">
       <div class="eyebrow" style="margin: 0 auto;">Наши работы</div>
       <h2 class="section-h2">Реальные потолки <span class="accent-word">наших клиентов</span></h2>
-      <p class="section-lead">Не stock-картинки, а готовые объекты в&nbsp;Москве. Любой пример можно повторить под&nbsp;вашу комнату — пришлите фото, посчитаем.</p>
     </div>
 
     <div class="gallery-grid reveal">
@@ -3862,23 +4001,46 @@ a.nav-cta {
       <div class="gallery-cell wide">
         <div class="photo-block"><span class="photo-block-label">Фото · кухня-гостиная панорама</span></div>
       </div>
-      <div class="gallery-cell">
-        <div class="photo-block"><span class="photo-block-label">Фото · подсветка по&nbsp;периметру</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE/AFTER -->
+<section class="section" style="padding: 70px 0;">
+  <div class="wrap">
+    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 36px; max-width: 720px;">
+      <div class="eyebrow" style="margin: 0 auto;">До · после</div>
+      <h2 class="section-h2">Как выглядит замена <span class="accent-word">в&nbsp;реальной квартире</span></h2>
+      <p class="section-lead">Не рендеры из&nbsp;CGI, а&nbsp;кадры с&nbsp;наших монтажей. Слайдер «до/после» можно нажать.</p>
+    </div>
+
+    <div class="ba-grid reveal">
+      <div class="ba-pair">
+        <div class="ba-item ba-before">
+          <span class="ba-label">До</span>
+          <div class="photo-block large"><span class="photo-block-label">Фото · старое жёлтое полотно, провисло</span></div>
+        </div>
+        <div class="ba-item ba-after">
+          <span class="ba-label ba-label-after">После</span>
+          <div class="photo-block large"><span class="photo-block-label">Фото · новый матовый, 8 светильников</span></div>
+        </div>
       </div>
-      <div class="gallery-cell">
-        <div class="photo-block"><span class="photo-block-label">Фото · трековый свет</span></div>
-      </div>
-      <div class="gallery-cell tall">
-        <div class="photo-block large"><span class="photo-block-label">Фото · до / после замены</span></div>
-      </div>
-      <div class="gallery-cell">
-        <div class="photo-block"><span class="photo-block-label">Фото · детская</span></div>
+
+      <div class="ba-pair">
+        <div class="ba-item ba-before">
+          <span class="ba-label">До</span>
+          <div class="photo-block large"><span class="photo-block-label">Фото · бетонный потолок новостройки</span></div>
+        </div>
+        <div class="ba-item ba-after">
+          <span class="ba-label ba-label-after">После</span>
+          <div class="photo-block large"><span class="photo-block-label">Фото · сатин + скрытый карниз + треки</span></div>
+        </div>
       </div>
     </div>
 
-    <div class="gallery-cta reveal" style="text-align: center; margin-top: 36px;">
+    <div class="ba-cta reveal" style="text-align: center; margin-top: 32px;">
       <a href="#quiz" class="btn-primary">
-        <span class="btn-primary-core"><span class="btn-primary-text">Узнать цену похожего потолка</span></span>
+        <span class="btn-primary-core"><span class="btn-primary-text">Узнать цену для&nbsp;своей комнаты</span></span>
       </a>
     </div>
   </div>
@@ -3892,6 +4054,14 @@ a.nav-cta {
   <div class="wrap">
     <div class="section-head reveal reveal-scale">
       <div class="eyebrow">Расчёт по фото</div>
+    <div class="calc-photo-row reveal" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; margin-bottom: 40px;">
+      <div class="photo-block large"><span class="photo-block-label">Фото · процесс замера в&nbsp;квартире клиента</span></div>
+      <div>
+        <h3 style="margin: 0 0 12px; font-size: 22px; line-height: 1.2;">Расчёт за&nbsp;1&nbsp;час по&nbsp;фото</h3>
+        <p style="margin: 0; color: var(--ink-2); line-height: 1.55;">Пришлите 2–3&nbsp;кадра комнаты&nbsp;— покажем 3–5&nbsp;вариантов с&nbsp;ценой и&nbsp;объясним, что входит. Без обязательств.</p>
+      </div>
+    </div>
+
       <h2 class="section-h2">Пришлите фото комнаты — получите <span class="accent-word">3–5 визуализаций</span> потолка под&nbsp;вас</h2>
       <p class="section-lead">
         Не нужно сразу вызывать замерщика, чтобы понять порядок цены. Отправьте фото комнаты или план квартиры — мы предложим несколько решений под ваш бюджет и объясним, чем они отличаются.
@@ -4059,6 +4229,32 @@ a.nav-cta {
   </div>
 </section>
 
+<!-- VIDEO -->
+<section class="section" style="padding: 80px 0;">
+  <div class="wrap">
+    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 36px; max-width: 720px;">
+      <div class="eyebrow" style="margin: 0 auto;">Как мы работаем</div>
+      <h2 class="section-h2">5&nbsp;минут о&nbsp;том, <span class="accent-word">как проходит монтаж</span></h2>
+      <p class="section-lead">Замер, фиксация цены, монтаж за&nbsp;день, приёмка. Без сюрпризов «по&nbsp;ходу».</p>
+    </div>
+
+    <div class="video-frame reveal">
+      <div class="video-placeholder">
+        <button class="video-play" aria-label="Смотреть видео">
+          <svg viewBox="0 0 80 80" width="80" height="80" fill="none">
+            <circle cx="40" cy="40" r="38" fill="rgba(26,20,16,0.85)" stroke="#C9F050" stroke-width="2"/>
+            <path d="M32 26 L56 40 L32 54 Z" fill="#C9F050"/>
+          </svg>
+        </button>
+        <div class="video-caption">
+          <strong>Видео · монтаж натяжного потолка под&nbsp;ключ</strong>
+          <p>Реальный объект в&nbsp;Москве. 4K, продолжительность 4:52, кадры замера → монтажа → приёмки.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- TRUST -->
 <div class="arc-divider to-surface"></div>
 
@@ -4150,21 +4346,25 @@ a.nav-cta {
 
     <div class="process-grid reveal">
       <div class="process-step">
+        <div class="process-mini-photo"><span class="photo-block-label">Фото·шаг&nbsp;1</span></div>
         <div class="process-marker">1</div>
         <h5>Фото комнаты</h5>
         <p>Присылаете фото или план — через форму или в&nbsp;Telegram.</p>
       </div>
       <div class="process-step">
+        <div class="process-mini-photo"><span class="photo-block-label">Фото·шаг&nbsp;2</span></div>
         <div class="process-marker">2</div>
         <h5>Расчёт за&nbsp;1&nbsp;час</h5>
         <p>Показываем 3–5&nbsp;вариантов с&nbsp;ориентиром цены.</p>
       </div>
       <div class="process-step">
+        <div class="process-mini-photo"><span class="photo-block-label">Фото·шаг&nbsp;3</span></div>
         <div class="process-marker">3</div>
         <h5>Замер + договор</h5>
         <p>Мастер проверяет нюансы, фиксируем финальную цену в&nbsp;договоре.</p>
       </div>
       <div class="process-step">
+        <div class="process-mini-photo"><span class="photo-block-label">Фото·шаг&nbsp;4</span></div>
         <div class="process-marker">4</div>
         <h5>Монтаж за&nbsp;1&nbsp;день</h5>
         <p>Приезжает бригада, ставит потолок, сдаём работу.</p>
@@ -4244,6 +4444,20 @@ a.nav-cta {
         <button class="faq-q">Не&nbsp;знаю, какой потолок выбрать&nbsp;— что делать?</button>
         <div class="faq-a"><div class="faq-a-body">Пришлите фото комнаты. Предложим 3&nbsp;варианта: базовый, оптимальный и&nbsp;дизайнерский&nbsp;— увидите разницу по&nbsp;виду и&nbsp;цене.</div></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- MINI PHOTO STRIP -->
+<section class="section" style="padding: 60px 0; background: var(--bg);">
+  <div class="wrap">
+    <div style="text-align: center; margin-bottom: 24px;">
+      <div class="eyebrow" style="margin: 0 auto;">Свежие работы</div>
+    </div>
+    <div class="mini-photos-grid reveal">
+      <div class="photo-block"><span class="photo-block-label">Фото · спальня этой недели</span></div>
+      <div class="photo-block"><span class="photo-block-label">Фото · кухня-гостиная сегодня</span></div>
+      <div class="photo-block"><span class="photo-block-label">Фото · теневой профиль вчера</span></div>
     </div>
   </div>
 </section>
