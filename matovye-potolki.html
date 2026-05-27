@@ -1358,6 +1358,33 @@ a.nav-cta {
     }
   }
 
+
+  /* === GALLERY: чистая сетка 3×2 из крупных одинаковых фото === */
+  .gallery-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    grid-auto-rows: auto !important;
+    gap: 18px !important;
+  }
+  .gallery-cell {
+    grid-row: auto !important;
+    grid-column: auto !important;
+  }
+  .gallery-cell .photo-block {
+    width: 100% !important;
+    height: 380px !important;
+    min-height: 380px !important;
+    border-radius: 22px !important;
+  }
+  @media (max-width: 960px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .gallery-cell .photo-block { height: 300px !important; min-height: 300px !important; }
+  }
+  @media (max-width: 560px) {
+    .gallery-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
+    .gallery-cell .photo-block { height: 240px !important; min-height: 240px !important; }
+  }
+
 </style>
 
 <!-- OpenGraph (для шеринга в Telegram, WhatsApp, VK, Facebook) -->
@@ -1630,12 +1657,12 @@ a.nav-cta {
 <!-- GALLERY -->
 <section class="section" id="gallery" style="background: var(--surface);">
   <div class="wrap">
-    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 32px; max-width: 720px;">
+    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 40px; max-width: 720px;">
       <div class="eyebrow" style="margin: 0 auto;">Наши работы</div>
       <h2 class="section-h2">Реальные потолки <span class="accent-word">наших клиентов</span></h2>
     </div>
     <div class="gallery-grid reveal">
-      <div class="gallery-cell tall">
+      <div class="gallery-cell">
         <div class="photo-block large"><span class="photo-block-label">Фото · матовый в гостиной</span></div>
       </div>
       <div class="gallery-cell">
@@ -1644,8 +1671,14 @@ a.nav-cta {
       <div class="gallery-cell">
         <div class="photo-block large"><span class="photo-block-label">Фото · матовый в детской</span></div>
       </div>
-      <div class="gallery-cell wide">
+      <div class="gallery-cell">
         <div class="photo-block large"><span class="photo-block-label">Фото · матовый в коридоре</span></div>
+      </div>
+      <div class="gallery-cell">
+        <div class="photo-block large"><span class="photo-block-label">Фото · матовый на кухне</span></div>
+      </div>
+      <div class="gallery-cell">
+        <div class="photo-block large"><span class="photo-block-label">Фото · макро фактуры</span></div>
       </div>
     </div>
   </div>
