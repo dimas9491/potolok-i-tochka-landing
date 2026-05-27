@@ -1,0 +1,67 @@
+# =============================================================
+# Beget — potolok-i-tochka.ru
+# ВРЕМЕННО: HTTPS-редирект отключён до выпуска Let's Encrypt
+# Когда SSL заработает — раскомментировать блок (1)
+# =============================================================
+
+# Главная — index.html (а не дефолтный index.php от хостинга)
+DirectoryIndex index.html index.htm
+
+# =============================================================
+# Редиректы
+# =============================================================
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 1) HTTP → HTTPS — РАСКОММЕНТИРОВАТЬ ПОСЛЕ ВЫПУСКА SSL
+  # RewriteCond %{HTTPS} !=on
+  # RewriteCond %{HTTP_HOST} ^(www\.)?potolok-i-tochka\.ru$ [NC]
+  # RewriteRule ^ https://potolok-i-tochka.ru%{REQUEST_URI} [L,R=301]
+
+  # 2) www → без www (работает и на HTTP и на HTTPS)
+  RewriteCond %{HTTP_HOST} ^www\.potolok-i-tochka\.ru$ [NC]
+  RewriteRule ^ http://potolok-i-tochka.ru%{REQUEST_URI} [L,R=301]
+
+  # 3) verbov1j.beget.tech → potolok-i-tochka.ru
+  RewriteCond %{HTTP_HOST} ^verbov1j\.beget\.tech$ [NC]
+  RewriteRule ^ http://potolok-i-tochka.ru%{REQUEST_URI} [L,R=301]
+
+  # 4) /index.html → / (убираем дубль главной)
+  RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+  RewriteRule ^index\.html$ / [L,R=301]
+</IfModule>
+
+# =============================================================
+# Кэш браузера для статики
+# =============================================================
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType image/x-icon "access plus 365 days"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType font/woff2 "access plus 365 days"
+  ExpiresByType text/html "access plus 1 hour"
+</IfModule>
+
+# =============================================================
+# Gzip-сжатие
+# =============================================================
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/xml application/xml image/svg+xml application/json
+</IfModule>
+
+# =============================================================
+# Безопасность (минимум)
+# =============================================================
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Запрет листинга директорий
+Options -Indexes
