@@ -1248,6 +1248,30 @@ a.nav-cta {
   @media (max-width: 760px) { .mini-photos-grid { grid-template-columns: 1fr; } .mini-photos-grid .photo-block { height: 180px; } }
 
 
+
+  /* === GALLERY === */
+  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; gap: 14px; }
+  .gallery-cell .photo-block { width: 100%; height: 100%; border-radius: 18px; overflow: hidden; position: relative; }
+  .gallery-cell.tall { grid-row: span 2; }
+  .gallery-cell.wide { grid-column: span 2; }
+  @media (max-width: 960px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; }
+    .gallery-cell.wide { grid-column: span 2; }
+    .gallery-cell.tall { grid-row: span 2; }
+  }
+  @media (max-width: 560px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 140px; gap: 10px; }
+  }
+
+  /* === STATS === */
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 28px; }
+  .stat-card { text-align: center; }
+  .stat-num { font-family: 'Inter Tight', sans-serif; font-weight: 800; font-size: clamp(48px, 7vw, 84px); line-height: 1; letter-spacing: -0.05em; color: #C9F050; }
+  .stat-num span { font-size: 0.4em; letter-spacing: 0.05em; margin-left: 4px; color: #F2EEE3; opacity: 0.7; }
+  .stat-label { margin-top: 10px; font-size: 13px; letter-spacing: 0.05em; color: #F2EEE3; opacity: 0.65; line-height: 1.4; }
+  .stats-micro { text-align: center; font-size: 13px; color: #F2EEE3; opacity: 0.5; margin: 0; }
+  @media (max-width: 760px) { .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 30px 20px; } }
+
 </style>
 
 <!-- OpenGraph (для шеринга в Telegram, WhatsApp, VK, Facebook) -->
@@ -1515,6 +1539,32 @@ a.nav-cta {
     </div>
   </div>
 </section>
+
+<!-- GALLERY -->
+<section class="section" id="gallery" style="background: var(--surface);">
+  <div class="wrap">
+    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 32px; max-width: 720px;">
+      <div class="eyebrow" style="margin: 0 auto;">Наши работы</div>
+      <h2 class="section-h2">Реальные потолки <span class="accent-word">наших клиентов</span></h2>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-cell tall">
+        <div class="photo-block large"><span class="photo-block-label">Фото · шторы из потолка — гостиная</span></div>
+      </div>
+      <div class="gallery-cell">
+        <div class="photo-block large"><span class="photo-block-label">Фото · ниша под карниз — макро</span></div>
+      </div>
+      <div class="gallery-cell">
+        <div class="photo-block large"><span class="photo-block-label">Фото · панорамное окно + карниз</span></div>
+      </div>
+      <div class="gallery-cell wide">
+        <div class="photo-block large"><span class="photo-block-label">Фото · спальня со скрытым карнизом</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 
 
@@ -1937,6 +1987,31 @@ a.nav-cta {
         <span class="btn-primary-core"><span class="btn-primary-text">Узнать цену для&nbsp;своей комнаты</span></span>
       </a>
     </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section" style="padding: 60px 0; background: var(--ink); color: #F2EEE3;">
+  <div class="wrap">
+    <div class="stats-grid reveal">
+      <div class="stat-card">
+        <div class="stat-num">10<span>лет</span></div>
+        <div class="stat-label">на&nbsp;рынке Москвы</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">800<span>+</span></div>
+        <div class="stat-label">потолков смонтировали</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">4,9<span>★</span></div>
+        <div class="stat-label">средняя оценка клиентов</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">10<span>лет</span></div>
+        <div class="stat-label">гарантия по&nbsp;договору</div>
+      </div>
+    </div>
+    <p class="stats-micro reveal">Без накруток и&nbsp;ботов&nbsp;— реальные отзывы клиентов в&nbsp;Яндексе, на&nbsp;Авито и&nbsp;в&nbsp;Профи.ру.</p>
   </div>
 </section>
 
