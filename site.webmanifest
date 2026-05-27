@@ -1,0 +1,25 @@
+{
+  "name": "Потолок и Точка — натяжные потолки в Москве",
+  "short_name": "Потолок и Точка",
+  "description": "Натяжные потолки в Москве: матовые, сатиновые, теневые, со скрытым карнизом. Расчёт по фото за 1 час.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#FAF7F0",
+  "theme_color": "#1A1410",
+  "lang": "ru",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

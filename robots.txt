@@ -3,6 +3,41 @@ Allow: /
 Disallow: /cgi-bin/
 Disallow: /.git/
 Disallow: /.htaccess
+Disallow: /404.html
+Disallow: /*?*utm_
+Disallow: /*?*ref=
+Disallow: /*?*fbclid
+Disallow: /*?*gclid
+
+User-agent: Yandex
+Allow: /
+Disallow: /cgi-bin/
+Disallow: /.git/
+Disallow: /.htaccess
+Disallow: /404.html
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid&gclid&fbclid&ref
+
+User-agent: Googlebot
+Allow: /
+Disallow: /cgi-bin/
+Disallow: /.git/
+Disallow: /.htaccess
+
+# Защита от плохих ботов / AI-скраперов (опционально)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
 
 Sitemap: https://potolok-i-tochka.ru/sitemap.xml
 
