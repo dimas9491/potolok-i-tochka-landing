@@ -3758,6 +3758,98 @@ a.nav-cta {
     .calc-photo-row .photo-block { height: 240px; }
   }
 
+
+  /* === USP === */
+  .usp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .usp-card {
+    padding: 22px 22px 24px;
+    background: var(--surface);
+    border-radius: 18px;
+    border: 1px solid var(--hairline);
+    transition: transform .2s, box-shadow .2s;
+    position: relative;
+  }
+  .usp-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px -16px rgba(0,0,0,0.12);
+  }
+  .usp-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    margin-bottom: 10px;
+  }
+  .usp-card h4 {
+    margin: 0 0 8px;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+  .usp-card p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink-2);
+  }
+  @media (max-width: 880px) {
+    .usp-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 520px) {
+    .usp-grid { grid-template-columns: 1fr; }
+  }
+
+  /* === STATS === */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 28px;
+  }
+  .stat-card {
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800;
+    font-size: clamp(48px, 7vw, 84px);
+    line-height: 1;
+    letter-spacing: -0.05em;
+    color: #C9F050;
+  }
+  .stat-num span {
+    font-size: 0.4em;
+    letter-spacing: 0.05em;
+    margin-left: 4px;
+    color: #F2EEE3;
+    opacity: 0.7;
+  }
+  .stat-label {
+    margin-top: 10px;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    color: #F2EEE3;
+    opacity: 0.65;
+    line-height: 1.4;
+  }
+  .stats-micro {
+    text-align: center;
+    font-size: 13px;
+    color: #F2EEE3;
+    opacity: 0.5;
+    margin: 0;
+  }
+  @media (max-width: 760px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 30px 20px; }
+  }
+
 </style>
 
 <!-- OpenGraph (для шеринга в Telegram, WhatsApp, VK, Facebook) -->
@@ -3979,6 +4071,49 @@ a.nav-cta {
     <span class="marquee-item">Договор и фиксация цены</span>
   </div>
 </div>
+
+<!-- USP -->
+<section class="section" style="padding: 60px 0; background: var(--bg);">
+  <div class="wrap">
+    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 36px; max-width: 720px;">
+      <div class="eyebrow" style="margin: 0 auto;">Почему мы</div>
+      <h2 class="section-h2">6&nbsp;вещей, в&nbsp;которых <span class="accent-word">мы&nbsp;не&nbsp;экономим</span></h2>
+    </div>
+
+    <div class="usp-grid reveal">
+      <div class="usp-card">
+        <div class="usp-num">01</div>
+        <h4>Расчёт за&nbsp;1&nbsp;час</h4>
+        <p>По&nbsp;фото комнаты&nbsp;— без выезда замерщика.</p>
+      </div>
+      <div class="usp-card">
+        <div class="usp-num">02</div>
+        <h4>Фиксация в&nbsp;договоре</h4>
+        <p>Цена и&nbsp;состав работ&nbsp;— письменно до&nbsp;монтажа.</p>
+      </div>
+      <div class="usp-card">
+        <div class="usp-num">03</div>
+        <h4>Без предоплаты</h4>
+        <p>Оплата только после монтажа и&nbsp;приёмки.</p>
+      </div>
+      <div class="usp-card">
+        <div class="usp-num">04</div>
+        <h4>Монтаж за&nbsp;1&nbsp;день</h4>
+        <p>Одна комната&nbsp;— несколько часов. Без грязи.</p>
+      </div>
+      <div class="usp-card">
+        <div class="usp-num">05</div>
+        <h4>Гарантия 10&nbsp;лет</h4>
+        <p>На&nbsp;полотно и&nbsp;на&nbsp;монтаж&nbsp;— отдельно.</p>
+      </div>
+      <div class="usp-card">
+        <div class="usp-num">06</div>
+        <h4>0&nbsp;₽ за&nbsp;замер</h4>
+        <p>Бесплатный выезд по&nbsp;Москве и&nbsp;области.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- GALLERY -->
 <section class="section" id="gallery" style="background: var(--surface);">
@@ -4328,6 +4463,32 @@ a.nav-cta {
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section" style="padding: 60px 0; background: var(--ink); color: #F2EEE3;">
+  <div class="wrap">
+    <div class="stats-grid reveal">
+      <div class="stat-card">
+        <div class="stat-num">10<span>лет</span></div>
+        <div class="stat-label">на&nbsp;рынке Москвы</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">800<span>+</span></div>
+        <div class="stat-label">потолков смонтировали</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">4,9<span>★</span></div>
+        <div class="stat-label">средняя оценка клиентов</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">10<span>лет</span></div>
+        <div class="stat-label">гарантия по&nbsp;договору</div>
+      </div>
+    </div>
+
+    <p class="stats-micro reveal">Без накруток и&nbsp;ботов&nbsp;— реальные отзывы клиентов в&nbsp;Яндексе, на&nbsp;Авито и&nbsp;в&nbsp;Профи.ру.</p>
   </div>
 </section>
 

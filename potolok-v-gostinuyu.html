@@ -1216,6 +1216,38 @@ a.nav-cta {
 .sticky-cta-tg:active { transform: scale(0.93); }
 .sticky-cta-tg svg { width: 22px; height: 22px; }
 
+
+  /* === USP / STATS / BEFORE-AFTER / VIDEO / MINI STRIP === */
+  .usp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .usp-card { padding: 22px 22px 24px; background: var(--surface); border-radius: 18px; border: 1px solid var(--hairline); transition: transform .2s, box-shadow .2s; position: relative; }
+  .usp-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px -16px rgba(0,0,0,0.12); }
+  .usp-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.18em; margin-bottom: 10px; }
+  .usp-card h4 { margin: 0 0 8px; font-size: 17px; font-weight: 700; line-height: 1.15; letter-spacing: -0.015em; color: var(--ink); }
+  .usp-card p { margin: 0; font-size: 14px; line-height: 1.5; color: var(--ink-2); }
+  @media (max-width: 880px) { .usp-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .usp-grid { grid-template-columns: 1fr; } }
+
+  .ba-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+  .ba-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .ba-item { position: relative; border-radius: 20px; overflow: hidden; }
+  .ba-item .photo-block { width: 100%; height: 320px; border-radius: 20px; }
+  .ba-label { position: absolute; top: 14px; left: 14px; z-index: 2; padding: 6px 14px; background: rgba(26, 20, 16, 0.85); color: #F2EEE3; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; border-radius: 999px; backdrop-filter: blur(4px); }
+  .ba-label-after { background: var(--accent); color: #fff; }
+  @media (max-width: 760px) { .ba-pair { grid-template-columns: 1fr; gap: 10px; } .ba-item .photo-block { height: 220px; } }
+
+  .video-frame { border-radius: 24px; overflow: hidden; background: #1A1410; aspect-ratio: 16 / 9; position: relative; box-shadow: 0 30px 80px -30px rgba(0,0,0,0.4); }
+  .video-placeholder { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(184,137,58,0.15), rgba(26,20,16,0.6)), repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0 2px, transparent 2px 8px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; padding: 40px 24px; text-align: center; }
+  .video-play { background: transparent; border: none; cursor: pointer; transition: transform .25s ease; }
+  .video-play:hover { transform: scale(1.08); }
+  .video-caption { color: #F2EEE3; max-width: 480px; }
+  .video-caption strong { display: block; font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+  .video-caption p { margin: 0; font-size: 13px; line-height: 1.5; opacity: 0.7; }
+
+  .mini-photos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .mini-photos-grid .photo-block { width: 100%; height: 220px; border-radius: 16px; }
+  @media (max-width: 760px) { .mini-photos-grid { grid-template-columns: 1fr; } .mini-photos-grid .photo-block { height: 180px; } }
+
+
 </style>
 
 <!-- OpenGraph (для шеринга в Telegram, WhatsApp, VK, Facebook) -->
@@ -1465,6 +1497,26 @@ a.nav-cta {
     </div>
   </div>
 </section>
+
+<!-- USP -->
+<section class="section" style="padding: 60px 0; background: var(--bg);">
+  <div class="wrap">
+    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 36px; max-width: 720px;">
+      <div class="eyebrow" style="margin: 0 auto;">Почему мы</div>
+      <h2 class="section-h2">6&nbsp;вещей, в&nbsp;которых <span class="accent-word">мы&nbsp;не&nbsp;экономим</span></h2>
+    </div>
+    <div class="usp-grid reveal">
+      <div class="usp-card"><div class="usp-num">01</div><h4>Расчёт за&nbsp;1&nbsp;час</h4><p>По&nbsp;фото комнаты&nbsp;— без выезда замерщика.</p></div>
+      <div class="usp-card"><div class="usp-num">02</div><h4>Фиксация в&nbsp;договоре</h4><p>Цена и&nbsp;состав работ&nbsp;— письменно до&nbsp;монтажа.</p></div>
+      <div class="usp-card"><div class="usp-num">03</div><h4>Без предоплаты</h4><p>Оплата только после монтажа и&nbsp;приёмки.</p></div>
+      <div class="usp-card"><div class="usp-num">04</div><h4>Монтаж за&nbsp;1&nbsp;день</h4><p>Одна комната&nbsp;— несколько часов. Без грязи.</p></div>
+      <div class="usp-card"><div class="usp-num">05</div><h4>Гарантия 10&nbsp;лет</h4><p>На&nbsp;полотно и&nbsp;на&nbsp;монтаж&nbsp;— отдельно.</p></div>
+      <div class="usp-card"><div class="usp-num">06</div><h4>0&nbsp;₽ за&nbsp;замер</h4><p>Бесплатный выезд по&nbsp;Москве и&nbsp;области.</p></div>
+    </div>
+  </div>
+</section>
+
+
 
 
 <div class="wave-divider wave-up"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C320,80 720,0 1080,40 C1260,60 1380,30 1440,40 L1440,80 L0,80 Z" fill="#F3EFE7"/></svg></div>
@@ -1860,6 +1912,72 @@ a.nav-cta {
 <div class="wave-divider"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C320,80 720,0 1080,40 C1260,60 1380,30 1440,40 L1440,80 L0,80 Z" fill="#F3EFE7"/></svg></div>
 
 <!-- FINAL -->
+<!-- BEFORE/AFTER -->
+<section class="section" style="padding: 70px 0;">
+  <div class="wrap">
+    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 36px; max-width: 720px;">
+      <div class="eyebrow" style="margin: 0 auto;">До · после</div>
+      <h2 class="section-h2">Как меняется комната <span class="accent-word">после монтажа</span></h2>
+      <p class="section-lead">Реальные кадры с&nbsp;объектов в&nbsp;Москве. Любой пример повторим под&nbsp;вашу комнату&nbsp;— пришлите фото.</p>
+    </div>
+    <div class="ba-grid reveal">
+      <div class="ba-pair">
+        <div class="ba-item ba-before">
+          <span class="ba-label">До</span>
+          <div class="photo-block large"><span class="photo-block-label">Фото · гостиная с устаревшим потолком</span></div>
+        </div>
+        <div class="ba-item ba-after">
+          <span class="ba-label ba-label-after">После</span>
+          <div class="photo-block large"><span class="photo-block-label">Фото · скрытый карниз + треки + чистый потолок</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="ba-cta reveal" style="text-align: center; margin-top: 32px;">
+      <a href="#quiz" class="btn-primary">
+        <span class="btn-primary-core"><span class="btn-primary-text">Узнать цену для&nbsp;своей комнаты</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="section" style="padding: 80px 0;">
+  <div class="wrap">
+    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 36px; max-width: 720px;">
+      <div class="eyebrow" style="margin: 0 auto;">Как мы работаем</div>
+      <h2 class="section-h2">5&nbsp;минут о&nbsp;том, <span class="accent-word">как проходит монтаж</span></h2>
+    </div>
+    <div class="video-frame reveal">
+      <div class="video-placeholder">
+        <button class="video-play" aria-label="Смотреть видео">
+          <svg viewBox="0 0 80 80" width="80" height="80" fill="none">
+            <circle cx="40" cy="40" r="38" fill="rgba(26,20,16,0.85)" stroke="#C9F050" stroke-width="2"/>
+            <path d="M32 26 L56 40 L32 54 Z" fill="#C9F050"/>
+          </svg>
+        </button>
+        <div class="video-caption">
+          <strong>Видео · монтаж натяжного потолка под&nbsp;ключ</strong>
+          <p>Реальный объект в&nbsp;Москве. 4K, продолжительность 4:52, кадры замера → монтажа → приёмки.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MINI PHOTO STRIP -->
+<section class="section" style="padding: 60px 0; background: var(--bg);">
+  <div class="wrap">
+    <div style="text-align: center; margin-bottom: 24px;">
+      <div class="eyebrow" style="margin: 0 auto;">Свежие работы</div>
+    </div>
+    <div class="mini-photos-grid reveal">
+      <div class="photo-block"><span class="photo-block-label">Фото · гостиная этой недели</span></div>
+      <div class="photo-block"><span class="photo-block-label">Фото · гостиная сегодня</span></div>
+      <div class="photo-block"><span class="photo-block-label">Фото · гостиная вчера</span></div>
+    </div>
+  </div>
+</section>
+
 <section class="final" id="final">
   <div class="wrap">
     <div class="final-grid">
