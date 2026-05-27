@@ -3711,30 +3711,7 @@ a.nav-cta {
     opacity: 0.7;
   }
 
-  /* === PROCESS MINI-PHOTO === */
-  .process-mini-photo {
-    width: 100%;
-    height: 120px;
-    border-radius: 14px;
-    background:
-      linear-gradient(135deg, var(--surface-2), var(--surface)),
-      repeating-linear-gradient(45deg, transparent 0 6px, rgba(0,0,0,0.025) 6px 12px);
-    background-blend-mode: multiply;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 14px;
-    border: 1px dashed var(--hairline);
-    position: relative;
-  }
-  .process-mini-photo .photo-block-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink-2);
-    opacity: 0.7;
-  }
+  
 
   /* === MINI PHOTOS STRIP === */
   .mini-photos-grid {
@@ -3848,6 +3825,60 @@ a.nav-cta {
   }
   @media (max-width: 760px) {
     .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 30px 20px; }
+  }
+
+
+  /* === ENLARGE: крупные фото-плейсхолдеры везде === */
+  .gallery-grid {
+    grid-auto-rows: 280px !important;
+    gap: 18px !important;
+  }
+  .gallery-cell .photo-block {
+    min-height: 280px;
+  }
+
+  .ba-item .photo-block {
+    height: 420px !important;
+  }
+  @media (max-width: 760px) {
+    .ba-item .photo-block { height: 280px !important; }
+  }
+
+  .mini-photos-grid {
+    gap: 18px !important;
+  }
+  .mini-photos-grid .photo-block {
+    height: 320px !important;
+  }
+  @media (max-width: 760px) {
+    .mini-photos-grid .photo-block { height: 240px !important; }
+  }
+
+  /* Solution-media (карточки решений на главной) — крупнее */
+  .solution-media {
+    min-height: 280px !important;
+  }
+
+  /* Любой одиночный photo-block.large — крупнее */
+  .photo-block.large {
+    min-height: 320px;
+  }
+
+  /* Мини-фото-блоки в карточках (если где-то остались) — минимум */
+  .photo-block {
+    min-height: 200px;
+  }
+
+  /* Адаптив на узких экранах */
+  @media (max-width: 960px) {
+    .gallery-grid {
+      grid-auto-rows: 220px !important;
+    }
+  }
+  @media (max-width: 560px) {
+    .gallery-grid {
+      grid-auto-rows: 180px !important;
+    }
   }
 
 </style>
@@ -4507,25 +4538,21 @@ a.nav-cta {
 
     <div class="process-grid reveal">
       <div class="process-step">
-        <div class="process-mini-photo"><span class="photo-block-label">Фото·шаг&nbsp;1</span></div>
         <div class="process-marker">1</div>
         <h5>Фото комнаты</h5>
         <p>Присылаете фото или план — через форму или в&nbsp;Telegram.</p>
       </div>
       <div class="process-step">
-        <div class="process-mini-photo"><span class="photo-block-label">Фото·шаг&nbsp;2</span></div>
         <div class="process-marker">2</div>
         <h5>Расчёт за&nbsp;1&nbsp;час</h5>
         <p>Показываем 3–5&nbsp;вариантов с&nbsp;ориентиром цены.</p>
       </div>
       <div class="process-step">
-        <div class="process-mini-photo"><span class="photo-block-label">Фото·шаг&nbsp;3</span></div>
         <div class="process-marker">3</div>
         <h5>Замер + договор</h5>
         <p>Мастер проверяет нюансы, фиксируем финальную цену в&nbsp;договоре.</p>
       </div>
       <div class="process-step">
-        <div class="process-mini-photo"><span class="photo-block-label">Фото·шаг&nbsp;4</span></div>
         <div class="process-marker">4</div>
         <h5>Монтаж за&nbsp;1&nbsp;день</h5>
         <p>Приезжает бригада, ставит потолок, сдаём работу.</p>

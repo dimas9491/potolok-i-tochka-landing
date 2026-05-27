@@ -2214,6 +2214,60 @@ a.nav-cta {
   .stats-micro { text-align: center; font-size: 13px; color: #F2EEE3; opacity: 0.5; margin: 0; }
   @media (max-width: 760px) { .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 30px 20px; } }
 
+
+  /* === ENLARGE: крупные фото-плейсхолдеры везде === */
+  .gallery-grid {
+    grid-auto-rows: 280px !important;
+    gap: 18px !important;
+  }
+  .gallery-cell .photo-block {
+    min-height: 280px;
+  }
+
+  .ba-item .photo-block {
+    height: 420px !important;
+  }
+  @media (max-width: 760px) {
+    .ba-item .photo-block { height: 280px !important; }
+  }
+
+  .mini-photos-grid {
+    gap: 18px !important;
+  }
+  .mini-photos-grid .photo-block {
+    height: 320px !important;
+  }
+  @media (max-width: 760px) {
+    .mini-photos-grid .photo-block { height: 240px !important; }
+  }
+
+  /* Solution-media (карточки решений на главной) — крупнее */
+  .solution-media {
+    min-height: 280px !important;
+  }
+
+  /* Любой одиночный photo-block.large — крупнее */
+  .photo-block.large {
+    min-height: 320px;
+  }
+
+  /* Мини-фото-блоки в карточках (если где-то остались) — минимум */
+  .photo-block {
+    min-height: 200px;
+  }
+
+  /* Адаптив на узких экранах */
+  @media (max-width: 960px) {
+    .gallery-grid {
+      grid-auto-rows: 220px !important;
+    }
+  }
+  @media (max-width: 560px) {
+    .gallery-grid {
+      grid-auto-rows: 180px !important;
+    }
+  }
+
 </style>
 
 <!-- OpenGraph (для шеринга в Telegram, WhatsApp, VK, Facebook) -->
