@@ -1386,73 +1386,68 @@ a.nav-cta {
   }
 
 
-  /* === GALLERY CREATIVE: интересный non-grid layout === */
-  #gallery .gallery-row {
+  
+  /* === GALLERY BALANCED: ритмичный layout без асимметричных пустот === */
+  #gallery .gal-row {
     display: grid;
     gap: 18px;
     margin-bottom: 18px;
   }
-  #gallery .gallery-row-hero {
-    grid-template-columns: 2fr 1fr;
-  }
-  #gallery .gallery-row-hero .gallery-cell.hero .photo-block {
-    height: 580px !important;
-    min-height: 580px !important;
+  #gallery .gal-row:last-child { margin-bottom: 0; }
+
+  /* ROW 1: hero на всю ширину */
+  #gallery .gal-row-hero { grid-template-columns: 1fr; }
+  #gallery .gal-row-hero .photo-block {
+    height: 460px !important;
+    min-height: 460px !important;
     border-radius: 24px !important;
   }
-  #gallery .gallery-stack {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    gap: 18px;
-  }
-  #gallery .gallery-stack .photo-block {
-    height: 281px !important;
-    min-height: 281px !important;
-    border-radius: 22px !important;
-  }
-  #gallery .gallery-row-three {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  #gallery .gallery-row-three .photo-block {
+
+  /* ROW 2: 3 равных */
+  #gallery .gal-row-3 { grid-template-columns: repeat(3, 1fr); }
+  #gallery .gal-row-3 .photo-block {
     height: 320px !important;
     min-height: 320px !important;
     border-radius: 22px !important;
   }
-  #gallery .gallery-row-wide {
-    grid-template-columns: 1fr;
-  }
-  #gallery .gallery-row-wide .photo-block {
-    height: 440px !important;
-    min-height: 440px !important;
-    border-radius: 24px !important;
-  }
 
-  /* Мини-tilt для оживления */
-  #gallery .gallery-cell { transition: transform .35s cubic-bezier(.2,.7,.2,1); }
-  #gallery .gallery-cell:hover { transform: translateY(-4px); }
-
-  /* Планшет: hero уходит на full, stack ниже */
-  @media (max-width: 1000px) {
-    #gallery .gallery-row-hero { grid-template-columns: 1fr; }
-    #gallery .gallery-row-hero .gallery-cell.hero .photo-block { height: 380px !important; min-height: 380px !important; }
-    #gallery .gallery-stack { grid-template-rows: auto; grid-template-columns: 1fr 1fr; }
-    #gallery .gallery-stack .photo-block { height: 260px !important; min-height: 260px !important; }
-    #gallery .gallery-row-three .photo-block { height: 260px !important; min-height: 260px !important; }
-    #gallery .gallery-row-wide .photo-block { height: 320px !important; min-height: 320px !important; }
+  /* ROW 3: 2 равных */
+  #gallery .gal-row-2 { grid-template-columns: 1fr 1fr; }
+  #gallery .gal-row-2 .photo-block {
+    height: 360px !important;
+    min-height: 360px !important;
+    border-radius: 22px !important;
   }
 
-  /* Мобила: чередование вместо скучного столбца — 2-1-2 ритм */
+  #gallery .gal-cell {
+    transition: transform .35s cubic-bezier(.2,.7,.2,1);
+  }
+  #gallery .gal-cell:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Планшет: hero чуть ниже, 3 в строку остаётся, 2 в строку — норм */
+  @media (max-width: 960px) {
+    #gallery .gal-row-hero .photo-block { height: 360px !important; min-height: 360px !important; }
+    #gallery .gal-row-3 .photo-block { height: 240px !important; min-height: 240px !important; }
+    #gallery .gal-row-2 .photo-block { height: 280px !important; min-height: 280px !important; }
+  }
+
+  /* Мобила: ритмичное чередование 1 / 2 / 1 / 2 — НЕ просто столбик */
   @media (max-width: 640px) {
-    #gallery .gallery-row { gap: 12px; margin-bottom: 12px; }
-    #gallery .gallery-row-hero { grid-template-columns: 1fr; }
-    #gallery .gallery-row-hero .gallery-cell.hero .photo-block { height: 320px !important; min-height: 320px !important; }
-    #gallery .gallery-stack { grid-template-columns: 1fr 1fr; }
-    #gallery .gallery-stack .photo-block { height: 180px !important; min-height: 180px !important; }
-    #gallery .gallery-row-three { grid-template-columns: 1fr 1fr; }
-    #gallery .gallery-row-three .gallery-cell:nth-child(3) { grid-column: 1 / -1; }
-    #gallery .gallery-row-three .gallery-cell:nth-child(3) .photo-block { height: 260px !important; min-height: 260px !important; }
-    #gallery .gallery-row-three .photo-block { height: 180px !important; min-height: 180px !important; }
-    #gallery .gallery-row-wide .photo-block { height: 260px !important; min-height: 260px !important; }
+    #gallery .gal-row { gap: 12px; margin-bottom: 12px; }
+
+    /* Hero — на всю ширину */
+    #gallery .gal-row-hero .photo-block { height: 280px !important; min-height: 280px !important; }
+
+    /* 3 фото — превращаются в 2+1 ритм */
+    #gallery .gal-row-3 { grid-template-columns: 1fr 1fr; }
+    #gallery .gal-row-3 .gal-cell:nth-child(3) { grid-column: 1 / -1; }
+    #gallery .gal-row-3 .gal-cell:nth-child(3) .photo-block { height: 240px !important; min-height: 240px !important; }
+    #gallery .gal-row-3 .photo-block { height: 180px !important; min-height: 180px !important; }
+
+    /* 2 фото — остаются 50/50 */
+    #gallery .gal-row-2 .photo-block { height: 220px !important; min-height: 220px !important; }
   }
 
 </style>
@@ -1732,38 +1727,33 @@ a.nav-cta {
       <h2 class="section-h2">Реальные потолки <span class="accent-word">наших клиентов</span></h2>
     </div>
 
-    <!-- Row 1: hero (2/3) + 2 stacked (1/3) -->
-    <div class="gallery-row gallery-row-hero reveal">
-      <div class="gallery-cell hero">
+    <!-- ROW 1: одна wide-hero на всю ширину -->
+    <div class="gal-row gal-row-hero reveal">
+      <div class="gal-cell">
         <div class="photo-block large"><span class="photo-block-label">Фото · матовый в гостиной</span></div>
       </div>
-      <div class="gallery-stack">
-        <div class="gallery-cell">
-          <div class="photo-block"><span class="photo-block-label">Фото · матовый в спальне</span></div>
-        </div>
-        <div class="gallery-cell">
-          <div class="photo-block"><span class="photo-block-label">Фото · матовый в детской</span></div>
-        </div>
-      </div>
     </div>
 
-    <!-- Row 2: 3 равных -->
-    <div class="gallery-row gallery-row-three reveal">
-      <div class="gallery-cell">
+    <!-- ROW 2: 3 равных -->
+    <div class="gal-row gal-row-3 reveal">
+      <div class="gal-cell">
+        <div class="photo-block"><span class="photo-block-label">Фото · матовый в спальне</span></div>
+      </div>
+      <div class="gal-cell">
+        <div class="photo-block"><span class="photo-block-label">Фото · матовый в детской</span></div>
+      </div>
+      <div class="gal-cell">
         <div class="photo-block"><span class="photo-block-label">Фото · матовый в коридоре</span></div>
       </div>
-      <div class="gallery-cell">
-        <div class="photo-block"><span class="photo-block-label">Фото · матовый на кухне</span></div>
-      </div>
-      <div class="gallery-cell">
-        <div class="photo-block"><span class="photo-block-label">Фото · макро фактуры</span></div>
-      </div>
     </div>
 
-    <!-- Row 3: 1 wide на всю ширину -->
-    <div class="gallery-row gallery-row-wide reveal">
-      <div class="gallery-cell wide-full">
-        <div class="photo-block large"><span class="photo-block-label">Фото · мастер-спальня матовый</span></div>
+    <!-- ROW 3: 2 равных (50/50) -->
+    <div class="gal-row gal-row-2 reveal">
+      <div class="gal-cell">
+        <div class="photo-block"><span class="photo-block-label">Фото · матовый на кухне</span></div>
+      </div>
+      <div class="gal-cell">
+        <div class="photo-block"><span class="photo-block-label">Фото · макро фактуры</span></div>
       </div>
     </div>
   </div>
