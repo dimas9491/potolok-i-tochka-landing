@@ -2458,6 +2458,72 @@ a.nav-cta {
     .final-form .form-submit { font-size: 15px !important; padding: 16px 20px !important; }
   }
 
+
+  /* === USP REDESIGN: с иконками и большими карточками === */
+  .usp-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 22px !important;
+  }
+  .usp-card {
+    padding: 32px 26px !important;
+    background: var(--surface) !important;
+    border-radius: 22px !important;
+    border: 1px solid var(--hairline) !important;
+    transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  .usp-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 24px 50px -24px rgba(0,0,0,0.18) !important;
+    border-color: var(--accent) !important;
+  }
+  .usp-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-soft, #F7EEDB);
+    border-radius: 16px;
+    margin-bottom: 22px;
+    color: var(--accent);
+  }
+  .usp-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+  .usp-num {
+    display: none !important;  /* убираем старые номера */
+  }
+  .usp-card h4 {
+    margin: 0 0 10px !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.02em !important;
+    color: var(--ink) !important;
+  }
+  .usp-card p {
+    margin: 0 !important;
+    font-size: 14.5px !important;
+    line-height: 1.5 !important;
+    color: var(--ink-2) !important;
+  }
+  @media (max-width: 880px) {
+    .usp-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  }
+  @media (max-width: 520px) {
+    .usp-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
+    .usp-card { padding: 24px 22px !important; }
+    .usp-icon { width: 48px; height: 48px; margin-bottom: 16px; }
+    .usp-icon svg { width: 26px; height: 26px; }
+    .usp-card h4 { font-size: 18px !important; }
+  }
+
 </style>
 
 <!-- OpenGraph (для шеринга в Telegram, WhatsApp, VK, Facebook) -->
@@ -2722,6 +2788,155 @@ a.nav-cta {
   </div>
 </section>
 
+
+<!-- USP -->
+<section class="section" style="padding: 80px 0; background: var(--bg);">
+  <div class="wrap">
+    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 48px; max-width: 720px;">
+      <div class="eyebrow" style="margin: 0 auto;">Почему мы</div>
+      <h2 class="section-h2">6&nbsp;вещей, в&nbsp;которых <span class="accent-word">мы&nbsp;не&nbsp;экономим</span></h2>
+    </div>
+
+    <div class="usp-grid reveal">
+      <div class="usp-card">
+        <div class="usp-icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="2"/>
+            <path d="M24 14V24L31 28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h4>Расчёт за&nbsp;1&nbsp;час</h4>
+        <p>По&nbsp;фото комнаты&nbsp;— без выезда замерщика.</p>
+      </div>
+
+      <div class="usp-card">
+        <div class="usp-icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <rect x="10" y="8" width="28" height="34" rx="3" stroke="currentColor" stroke-width="2"/>
+            <path d="M16 18H32M16 25H32M16 32H24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h4>Фиксация в&nbsp;договоре</h4>
+        <p>Цена и&nbsp;состав работ&nbsp;— письменно до&nbsp;монтажа.</p>
+      </div>
+
+      <div class="usp-card">
+        <div class="usp-icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <path d="M16 22V18C16 13.5817 19.5817 10 24 10V10C28.4183 10 32 13.5817 32 18V22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <rect x="11" y="22" width="26" height="18" rx="3" stroke="currentColor" stroke-width="2"/>
+            <circle cx="24" cy="31" r="2.5" fill="currentColor"/>
+          </svg>
+        </div>
+        <h4>Без предоплаты</h4>
+        <p>Оплата только после монтажа и&nbsp;приёмки.</p>
+      </div>
+
+      <div class="usp-card">
+        <div class="usp-icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <rect x="6" y="14" width="36" height="22" rx="3" stroke="currentColor" stroke-width="2"/>
+            <path d="M6 20H42" stroke="currentColor" stroke-width="2"/>
+            <circle cx="13" cy="28" r="1.5" fill="currentColor"/>
+            <path d="M19 28H35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h4>Монтаж за&nbsp;1&nbsp;день</h4>
+        <p>Одна комната&nbsp;— несколько часов. Без грязи.</p>
+      </div>
+
+      <div class="usp-card">
+        <div class="usp-icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <path d="M24 6L29 10L36 9L37 16L42 20L38 26L40 33L33 35L29 41L22 39L15 41L11 35L4 33L6 26L2 20L7 16L8 9L15 10L20 6L24 6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M16 24L22 30L32 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h4>Гарантия 10&nbsp;лет</h4>
+        <p>На&nbsp;полотно и&nbsp;на&nbsp;монтаж&nbsp;— отдельно.</p>
+      </div>
+
+      <div class="usp-card">
+        <div class="usp-icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/>
+            <path d="M20 16C20 14 22 12 24 12C26 12 28 14 28 16C28 18 26 19 25 20L24 21M24 25V25.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M24 31V33" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h4>0&nbsp;₽ за&nbsp;замер</h4>
+        <p>Бесплатный выезд по&nbsp;Москве и&nbsp;области.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- INLINE PHOTO ROW 1 -->
+<section class="section" style="padding: 30px 0;">
+  <div class="wrap">
+    <div class="inline-photo-row reveal">
+      <div class="photo-block"><span class="photo-block-label">фото · новостройка до отделки</span></div>
+      <div class="photo-block"><span class="photo-block-label">фото · после монтажа потолка</span></div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- WITRINA -->
+<section class="section" style="padding: 80px 0;">
+  <div class="wrap">
+    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 40px; max-width: 720px;">
+      <div class="eyebrow" style="margin: 0 auto;">Витрина решений</div>
+      <h2 class="section-h2">Что мы предлагаем <span class="accent-word">под вашу комнату</span></h2>
+    </div>
+    <div class="witrina-grid reveal">
+      <div class="witrina-card witrina-card-k1">
+        <div class="witrina-photo">
+          <div class="photo-block large"><span class="photo-block-label">Фото · 1-комнатная</span></div>
+        </div>
+        <div class="witrina-info">
+          <div class="witrina-num">01</div>
+          <h3 class="witrina-title">1-комнатная</h3>
+          <p class="witrina-sub">Под ключ</p>
+        </div>
+      </div>
+      <div class="witrina-card witrina-card-k2">
+        <div class="witrina-photo">
+          <div class="photo-block large"><span class="photo-block-label">Фото · 2-комнатная</span></div>
+        </div>
+        <div class="witrina-info">
+          <div class="witrina-num">02</div>
+          <h3 class="witrina-title">2-комнатная</h3>
+          <p class="witrina-sub">С зонами</p>
+        </div>
+      </div>
+      <div class="witrina-card witrina-card-k3">
+        <div class="witrina-photo">
+          <div class="photo-block large"><span class="photo-block-label">Фото · 3-комнатная</span></div>
+        </div>
+        <div class="witrina-info">
+          <div class="witrina-num">03</div>
+          <h3 class="witrina-title">3-комнатная</h3>
+          <p class="witrina-sub">С карнизами</p>
+        </div>
+      </div>
+      <div class="witrina-card witrina-card-studio">
+        <div class="witrina-photo">
+          <div class="photo-block large"><span class="photo-block-label">Фото · Студия</span></div>
+        </div>
+        <div class="witrina-info">
+          <div class="witrina-num">04</div>
+          <h3 class="witrina-title">Студия</h3>
+          <p class="witrina-sub">Кухня-гостиная</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <div class="wave-divider to-surface">
   <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0,80 C320,20 720,90 1440,30 L1440,80 L0,80 Z"/>
@@ -2763,6 +2978,33 @@ a.nav-cta {
     </div>
   </div>
 </section>
+
+
+<!-- VIDEO -->
+<section class="section" style="padding: 80px 0;">
+  <div class="wrap">
+    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 36px; max-width: 720px;">
+      <div class="eyebrow" style="margin: 0 auto;">Как мы работаем</div>
+      <h2 class="section-h2">5&nbsp;минут о&nbsp;том, <span class="accent-word">как проходит монтаж</span></h2>
+    </div>
+    <div class="video-frame reveal">
+      <div class="video-placeholder">
+        <button class="video-play" aria-label="Смотреть видео">
+          <svg viewBox="0 0 80 80" width="80" height="80" fill="none">
+            <circle cx="40" cy="40" r="38" fill="rgba(26,20,16,0.85)" stroke="#C9F050" stroke-width="2"/>
+            <path d="M32 26 L56 40 L32 54 Z" fill="#C9F050"/>
+          </svg>
+        </button>
+        <div class="video-caption">
+          <strong>Видео · монтаж натяжного потолка под&nbsp;ключ</strong>
+          <p>Реальный объект в&nbsp;Москве. 4K, продолжительность 4:52, кадры замера → монтажа → приёмки.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 <div class="wave-divider to-bg flip">
   <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -2864,24 +3106,48 @@ a.nav-cta {
   </div>
 </section>
 
-<!-- PHOTO SHOWCASE — пример работ -->
-<section class="section" style="padding: 60px 0;">
+
+<!-- GALLERY -->
+<section class="section" id="gallery" style="background: var(--surface);">
   <div class="wrap">
-    <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px;" class="reveal">
-      <div class="photo-block large">
-        <span class="photo-block-label">Фото</span>
+    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 40px; max-width: 720px;">
+      <div class="eyebrow" style="margin: 0 auto;">Наши работы</div>
+      <h2 class="section-h2">Реальные потолки <span class="accent-word">наших клиентов</span></h2>
+    </div>
+
+    <!-- ROW 1: одна wide-hero на всю ширину -->
+    <div class="gal-row gal-row-hero reveal">
+      <div class="gal-cell">
+        <div class="photo-block large"><span class="photo-block-label">Фото · новостройка до отделки</span></div>
       </div>
-      <div style="display: grid; grid-template-rows: 1fr 1fr; gap: 16px;">
-        <div class="photo-block small">
-          <span class="photo-block-label">Фото</span>
-        </div>
-        <div class="photo-block small">
-          <span class="photo-block-label">Фото</span>
-        </div>
+    </div>
+
+    <!-- ROW 2: 3 равных -->
+    <div class="gal-row gal-row-3 reveal">
+      <div class="gal-cell">
+        <div class="photo-block"><span class="photo-block-label">Фото · после: матовый + карниз</span></div>
+      </div>
+      <div class="gal-cell">
+        <div class="photo-block"><span class="photo-block-label">Фото · трековый свет</span></div>
+      </div>
+      <div class="gal-cell">
+        <div class="photo-block"><span class="photo-block-label">Фото · кухня-гостиная</span></div>
+      </div>
+    </div>
+
+    <!-- ROW 3: 2 равных (50/50) -->
+    <div class="gal-row gal-row-2 reveal">
+      <div class="gal-cell">
+        <div class="photo-block"><span class="photo-block-label">Фото · спальня в новостройке</span></div>
+      </div>
+      <div class="gal-cell">
+        <div class="photo-block"><span class="photo-block-label">Фото · детская в новостройке</span></div>
       </div>
     </div>
   </div>
 </section>
+
+
 
 <div class="wave-divider to-surface">
   <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -2955,6 +3221,36 @@ a.nav-cta {
   </div>
 </section>
 
+
+<!-- BEFORE/AFTER -->
+<section class="section" style="padding: 70px 0;">
+  <div class="wrap">
+    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 36px; max-width: 720px;">
+      <div class="eyebrow" style="margin: 0 auto;">До · после</div>
+      <h2 class="section-h2">Как меняется комната <span class="accent-word">после монтажа</span></h2>
+      <p class="section-lead">Реальные кадры с&nbsp;объектов в&nbsp;Москве. Любой пример повторим под&nbsp;вашу комнату&nbsp;— пришлите фото.</p>
+    </div>
+    <div class="ba-grid reveal">
+      <div class="ba-pair">
+        <div class="ba-item ba-before">
+          <span class="ba-label">До</span>
+          <div class="photo-block large"><span class="photo-block-label">Фото · бетонный потолок новостройки</span></div>
+        </div>
+        <div class="ba-item ba-after">
+          <span class="ba-label ba-label-after">После</span>
+          <div class="photo-block large"><span class="photo-block-label">Фото · матовый потолок + скрытый карниз + треки</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="ba-cta reveal" style="text-align: center; margin-top: 32px;">
+      <a href="#quiz" class="btn-primary">
+        <span class="btn-primary-core"><span class="btn-primary-text">Узнать цену для&nbsp;своей комнаты</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
 <div class="arc-divider to-bg flip"></div>
 
 <!-- BLOCK 6 — What to decide -->
@@ -2986,6 +3282,36 @@ a.nav-cta {
     </div>
   </div>
 </section>
+
+
+<!-- MASONRY GALLERY -->
+<section class="section" style="padding: 80px 0; background: var(--surface);">
+  <div class="wrap">
+    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 40px; max-width: 720px;">
+      <div class="eyebrow" style="margin: 0 auto;">Ещё работы</div>
+      <h2 class="section-h2">Разные комнаты — <span class="accent-word">разные решения</span></h2>
+    </div>
+    <div class="masonry-grid reveal">
+      <div class="masonry-cell m-tall">
+        <div class="photo-block large"><span class="photo-block-label">Фото · новостройка до</span></div>
+      </div>
+      <div class="masonry-cell m-wide">
+        <div class="photo-block"><span class="photo-block-label">Фото · после: матовый+карниз</span></div>
+      </div>
+      <div class="masonry-cell m-square">
+        <div class="photo-block"><span class="photo-block-label">Фото · кухня-гостиная</span></div>
+      </div>
+      <div class="masonry-cell m-square">
+        <div class="photo-block"><span class="photo-block-label">Фото · спальня</span></div>
+      </div>
+      <div class="masonry-cell m-wide">
+        <div class="photo-block"><span class="photo-block-label">Фото · мастер</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 <div class="blob-divider to-surface">
   <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -3060,6 +3386,37 @@ a.nav-cta {
     </div>
   </div>
 </section>
+
+
+<!-- STATS -->
+<section class="section" style="padding: 60px 0; background: var(--ink); color: #F2EEE3;">
+  <div class="wrap">
+    <div class="section-photo-bridge reveal">
+      <div class="photo-block"><span class="photo-block-label">Фото · цифры компании и наши объекты</span></div>
+    </div>
+
+    <div class="stats-grid reveal">
+      <div class="stat-card">
+        <div class="stat-num">10<span>лет</span></div>
+        <div class="stat-label">на&nbsp;рынке Москвы</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">800<span>+</span></div>
+        <div class="stat-label">потолков смонтировали</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">4,9<span>★</span></div>
+        <div class="stat-label">средняя оценка клиентов</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">10<span>лет</span></div>
+        <div class="stat-label">гарантия по&nbsp;договору</div>
+      </div>
+    </div>
+    <p class="stats-micro reveal">Без накруток и&nbsp;ботов&nbsp;— реальные отзывы клиентов в&nbsp;Яндексе, на&nbsp;Авито и&nbsp;в&nbsp;Профи.ру.</p>
+  </div>
+</section>
+
 
 <div class="arc-divider to-bg flip"></div>
 
@@ -3154,6 +3511,19 @@ a.nav-cta {
   </div>
 </section>
 
+
+<!-- INLINE PHOTO ROW 2 -->
+<section class="section" style="padding: 30px 0;">
+  <div class="wrap">
+    <div class="inline-photo-row reveal">
+      <div class="photo-block"><span class="photo-block-label">фото · новостройка до отделки</span></div>
+      <div class="photo-block"><span class="photo-block-label">фото · после монтажа потолка</span></div>
+    </div>
+
+  </div>
+</section>
+
+
 <div class="zigzag-divider"></div>
 
 <!-- BLOCK 9 — Errors -->
@@ -3209,6 +3579,31 @@ a.nav-cta {
     </div>
   </div>
 </section>
+
+
+<!-- HORIZONTAL CAROUSEL -->
+<section class="section" style="padding: 80px 0;">
+  <div class="wrap">
+    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 40px; max-width: 720px;">
+      <div class="eyebrow" style="margin: 0 auto;">Свайп / прокрутка</div>
+      <h2 class="section-h2">Ещё больше примеров — <span class="accent-word">пролистайте</span></h2>
+    </div>
+  </div>
+  <div class="carousel-wrap reveal">
+    <div class="carousel-track">
+      <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · до отделки</span></div></div>
+      <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · после: матовый+карниз</span></div></div>
+      <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · трековый свет</span></div></div>
+      <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · кухня-гостиная</span></div></div>
+      <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · спальня новостройка</span></div></div>
+      <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · детская</span></div></div>
+      <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · мастер</span></div></div>
+      <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · панорама</span></div></div>
+
+    </div>
+  </div>
+</section>
+
 
 <div class="blob-divider to-bg flip">
   <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -3390,25 +3785,6 @@ a.nav-cta {
   </div>
 </section>
 
-<!-- PHOTO GALLERY — портфолио реальных работ -->
-<section class="section" style="background: var(--accent-soft); padding: 80px 0;">
-  <div class="wrap">
-    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 50px;">
-      <div class="eyebrow" style="margin: 0 auto;">Портфолио</div>
-      <h2 class="section-h2">Наши работы <span class="accent-word">в&nbsp;новостройках</span></h2>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;" class="reveal">
-      <div class="photo-block small float-soft" style="animation-delay: 0s;"><span class="photo-block-label">Фото</span></div>
-      <div class="photo-block small float-soft" style="grid-row: span 2; min-height: 460px; animation-delay: 0.4s;"><span class="photo-block-label">Фото</span></div>
-      <div class="photo-block small float-soft" style="animation-delay: 0.8s;"><span class="photo-block-label">Фото</span></div>
-      <div class="photo-block small float-soft" style="animation-delay: 1.2s;"><span class="photo-block-label">Фото</span></div>
-      <div class="photo-block small float-soft" style="animation-delay: 0.2s;"><span class="photo-block-label">Фото</span></div>
-      <div class="photo-block small float-soft" style="animation-delay: 1s;"><span class="photo-block-label">Фото</span></div>
-      <div class="photo-block small float-soft" style="animation-delay: 0.6s;"><span class="photo-block-label">Фото</span></div>
-    </div>
-  </div>
-</section>
-
 <div class="blob-divider to-bg flip">
   <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0,40 Q180,100 360,50 T720,40 T1080,55 T1440,30 L1440,100 L0,100 Z"/>
@@ -3416,312 +3792,9 @@ a.nav-cta {
 </div>
 
 
-<!-- PHOTO BEFORE/AFTER — реальные сравнения -->
-<section class="section" style="padding: 90px 0; background: var(--accent-soft);">
-  <div class="wrap">
-    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 40px; max-width: 720px;">
-      <div class="eyebrow" style="margin: 0 auto;">До и&nbsp;после</div>
-      <h2 class="section-h2">Реальные примеры <span class="accent-word">до и&nbsp;после</span></h2>
-    </div>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;" class="reveal reveal-bounce">
-      <div>
-        <div class="photo-block large"><span class="photo-block-label">Фото</span></div>
-        <p style="text-align: center; margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-2); font-weight: 700;">До замены</p>
-      </div>
-      <div>
-        <div class="photo-block large"><span class="photo-block-label">Фото</span></div>
-        <p style="text-align: center; margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 700;">После · от&nbsp;нас</p>
-      </div>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px;" class="reveal">
-      <div class="photo-block small float-soft" style="animation-delay: 0s;"><span class="photo-block-label">Фото</span></div>
-      <div class="photo-block small float-soft" style="animation-delay: 0.3s;"><span class="photo-block-label">Фото</span></div>
-      <div class="photo-block small float-soft" style="animation-delay: 0.6s;"><span class="photo-block-label">Фото</span></div>
-    </div>
-  </div>
-</section>
-
 <div class="blob-divider to-bg flip"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 Q180,100 360,50 T720,40 T1080,55 T1440,30 L1440,100 L0,100 Z"/></svg></div>
 
 <!-- BLOCK 12 — Final CTA + form -->
-<!-- USP -->
-<section class="section" style="padding: 60px 0; background: var(--bg);">
-  <div class="wrap">
-    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 36px; max-width: 720px;">
-      <div class="eyebrow" style="margin: 0 auto;">Почему мы</div>
-    <div class="section-photo-bridge reveal">
-      <div class="photo-block"><span class="photo-block-label">Фото · команда мастеров за работой</span></div>
-    </div>
-
-      <h2 class="section-h2">6&nbsp;вещей, в&nbsp;которых <span class="accent-word">мы&nbsp;не&nbsp;экономим</span></h2>
-    </div>
-    <div class="usp-grid reveal">
-      <div class="usp-card"><div class="usp-num">01</div><h4>Расчёт за&nbsp;1&nbsp;час</h4><p>По&nbsp;фото комнаты&nbsp;— без выезда замерщика.</p></div>
-      <div class="usp-card"><div class="usp-num">02</div><h4>Фиксация в&nbsp;договоре</h4><p>Цена и&nbsp;состав работ&nbsp;— письменно до&nbsp;монтажа.</p></div>
-      <div class="usp-card"><div class="usp-num">03</div><h4>Без предоплаты</h4><p>Оплата только после монтажа и&nbsp;приёмки.</p></div>
-      <div class="usp-card"><div class="usp-num">04</div><h4>Монтаж за&nbsp;1&nbsp;день</h4><p>Одна комната&nbsp;— несколько часов. Без грязи.</p></div>
-      <div class="usp-card"><div class="usp-num">05</div><h4>Гарантия 10&nbsp;лет</h4><p>На&nbsp;полотно и&nbsp;на&nbsp;монтаж&nbsp;— отдельно.</p></div>
-      <div class="usp-card"><div class="usp-num">06</div><h4>0&nbsp;₽ за&nbsp;замер</h4><p>Бесплатный выезд по&nbsp;Москве и&nbsp;области.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- INLINE PHOTO ROW 1 -->
-<section class="section" style="padding: 30px 0;">
-  <div class="wrap">
-    <div class="inline-photo-row reveal">
-      <div class="photo-block"><span class="photo-block-label">фото · новостройка до отделки</span></div>
-      <div class="photo-block"><span class="photo-block-label">фото · после монтажа потолка</span></div>
-    </div>
-
-  </div>
-</section>
-
-<!-- WITRINA -->
-<section class="section" style="padding: 80px 0;">
-  <div class="wrap">
-    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 40px; max-width: 720px;">
-      <div class="eyebrow" style="margin: 0 auto;">Витрина решений</div>
-      <h2 class="section-h2">Что мы предлагаем <span class="accent-word">под вашу комнату</span></h2>
-    </div>
-    <div class="witrina-grid reveal">
-      <div class="witrina-card witrina-card-k1">
-        <div class="witrina-photo">
-          <div class="photo-block large"><span class="photo-block-label">Фото · 1-комнатная</span></div>
-        </div>
-        <div class="witrina-info">
-          <div class="witrina-num">01</div>
-          <h3 class="witrina-title">1-комнатная</h3>
-          <p class="witrina-sub">Под ключ</p>
-        </div>
-      </div>
-      <div class="witrina-card witrina-card-k2">
-        <div class="witrina-photo">
-          <div class="photo-block large"><span class="photo-block-label">Фото · 2-комнатная</span></div>
-        </div>
-        <div class="witrina-info">
-          <div class="witrina-num">02</div>
-          <h3 class="witrina-title">2-комнатная</h3>
-          <p class="witrina-sub">С зонами</p>
-        </div>
-      </div>
-      <div class="witrina-card witrina-card-k3">
-        <div class="witrina-photo">
-          <div class="photo-block large"><span class="photo-block-label">Фото · 3-комнатная</span></div>
-        </div>
-        <div class="witrina-info">
-          <div class="witrina-num">03</div>
-          <h3 class="witrina-title">3-комнатная</h3>
-          <p class="witrina-sub">С карнизами</p>
-        </div>
-      </div>
-      <div class="witrina-card witrina-card-studio">
-        <div class="witrina-photo">
-          <div class="photo-block large"><span class="photo-block-label">Фото · Студия</span></div>
-        </div>
-        <div class="witrina-info">
-          <div class="witrina-num">04</div>
-          <h3 class="witrina-title">Студия</h3>
-          <p class="witrina-sub">Кухня-гостиная</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- VIDEO -->
-<section class="section" style="padding: 80px 0;">
-  <div class="wrap">
-    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 36px; max-width: 720px;">
-      <div class="eyebrow" style="margin: 0 auto;">Как мы работаем</div>
-      <h2 class="section-h2">5&nbsp;минут о&nbsp;том, <span class="accent-word">как проходит монтаж</span></h2>
-    </div>
-    <div class="video-frame reveal">
-      <div class="video-placeholder">
-        <button class="video-play" aria-label="Смотреть видео">
-          <svg viewBox="0 0 80 80" width="80" height="80" fill="none">
-            <circle cx="40" cy="40" r="38" fill="rgba(26,20,16,0.85)" stroke="#C9F050" stroke-width="2"/>
-            <path d="M32 26 L56 40 L32 54 Z" fill="#C9F050"/>
-          </svg>
-        </button>
-        <div class="video-caption">
-          <strong>Видео · монтаж натяжного потолка под&nbsp;ключ</strong>
-          <p>Реальный объект в&nbsp;Москве. 4K, продолжительность 4:52, кадры замера → монтажа → приёмки.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- GALLERY -->
-<section class="section" id="gallery" style="background: var(--surface);">
-  <div class="wrap">
-    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 40px; max-width: 720px;">
-      <div class="eyebrow" style="margin: 0 auto;">Наши работы</div>
-      <h2 class="section-h2">Реальные потолки <span class="accent-word">наших клиентов</span></h2>
-    </div>
-
-    <!-- ROW 1: одна wide-hero на всю ширину -->
-    <div class="gal-row gal-row-hero reveal">
-      <div class="gal-cell">
-        <div class="photo-block large"><span class="photo-block-label">Фото · новостройка до отделки</span></div>
-      </div>
-    </div>
-
-    <!-- ROW 2: 3 равных -->
-    <div class="gal-row gal-row-3 reveal">
-      <div class="gal-cell">
-        <div class="photo-block"><span class="photo-block-label">Фото · после: матовый + карниз</span></div>
-      </div>
-      <div class="gal-cell">
-        <div class="photo-block"><span class="photo-block-label">Фото · трековый свет</span></div>
-      </div>
-      <div class="gal-cell">
-        <div class="photo-block"><span class="photo-block-label">Фото · кухня-гостиная</span></div>
-      </div>
-    </div>
-
-    <!-- ROW 3: 2 равных (50/50) -->
-    <div class="gal-row gal-row-2 reveal">
-      <div class="gal-cell">
-        <div class="photo-block"><span class="photo-block-label">Фото · спальня в новостройке</span></div>
-      </div>
-      <div class="gal-cell">
-        <div class="photo-block"><span class="photo-block-label">Фото · детская в новостройке</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- BEFORE/AFTER -->
-<section class="section" style="padding: 70px 0;">
-  <div class="wrap">
-    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 36px; max-width: 720px;">
-      <div class="eyebrow" style="margin: 0 auto;">До · после</div>
-      <h2 class="section-h2">Как меняется комната <span class="accent-word">после монтажа</span></h2>
-      <p class="section-lead">Реальные кадры с&nbsp;объектов в&nbsp;Москве. Любой пример повторим под&nbsp;вашу комнату&nbsp;— пришлите фото.</p>
-    </div>
-    <div class="ba-grid reveal">
-      <div class="ba-pair">
-        <div class="ba-item ba-before">
-          <span class="ba-label">До</span>
-          <div class="photo-block large"><span class="photo-block-label">Фото · бетонный потолок новостройки</span></div>
-        </div>
-        <div class="ba-item ba-after">
-          <span class="ba-label ba-label-after">После</span>
-          <div class="photo-block large"><span class="photo-block-label">Фото · матовый потолок + скрытый карниз + треки</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="ba-cta reveal" style="text-align: center; margin-top: 32px;">
-      <a href="#quiz" class="btn-primary">
-        <span class="btn-primary-core"><span class="btn-primary-text">Узнать цену для&nbsp;своей комнаты</span></span>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<!-- MASONRY GALLERY -->
-<section class="section" style="padding: 80px 0; background: var(--surface);">
-  <div class="wrap">
-    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 40px; max-width: 720px;">
-      <div class="eyebrow" style="margin: 0 auto;">Ещё работы</div>
-      <h2 class="section-h2">Разные комнаты — <span class="accent-word">разные решения</span></h2>
-    </div>
-    <div class="masonry-grid reveal">
-      <div class="masonry-cell m-tall">
-        <div class="photo-block large"><span class="photo-block-label">Фото · новостройка до</span></div>
-      </div>
-      <div class="masonry-cell m-wide">
-        <div class="photo-block"><span class="photo-block-label">Фото · после: матовый+карниз</span></div>
-      </div>
-      <div class="masonry-cell m-square">
-        <div class="photo-block"><span class="photo-block-label">Фото · кухня-гостиная</span></div>
-      </div>
-      <div class="masonry-cell m-square">
-        <div class="photo-block"><span class="photo-block-label">Фото · спальня</span></div>
-      </div>
-      <div class="masonry-cell m-wide">
-        <div class="photo-block"><span class="photo-block-label">Фото · мастер</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- STATS -->
-<section class="section" style="padding: 60px 0; background: var(--ink); color: #F2EEE3;">
-  <div class="wrap">
-    <div class="section-photo-bridge reveal">
-      <div class="photo-block"><span class="photo-block-label">Фото · цифры компании и наши объекты</span></div>
-    </div>
-
-    <div class="stats-grid reveal">
-      <div class="stat-card">
-        <div class="stat-num">10<span>лет</span></div>
-        <div class="stat-label">на&nbsp;рынке Москвы</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">800<span>+</span></div>
-        <div class="stat-label">потолков смонтировали</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">4,9<span>★</span></div>
-        <div class="stat-label">средняя оценка клиентов</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">10<span>лет</span></div>
-        <div class="stat-label">гарантия по&nbsp;договору</div>
-      </div>
-    </div>
-    <p class="stats-micro reveal">Без накруток и&nbsp;ботов&nbsp;— реальные отзывы клиентов в&nbsp;Яндексе, на&nbsp;Авито и&nbsp;в&nbsp;Профи.ру.</p>
-  </div>
-</section>
-
-
-<!-- INLINE PHOTO ROW 2 -->
-<section class="section" style="padding: 30px 0;">
-  <div class="wrap">
-    <div class="inline-photo-row reveal">
-      <div class="photo-block"><span class="photo-block-label">фото · новостройка до отделки</span></div>
-      <div class="photo-block"><span class="photo-block-label">фото · после монтажа потолка</span></div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- HORIZONTAL CAROUSEL -->
-<section class="section" style="padding: 80px 0;">
-  <div class="wrap">
-    <div class="section-head reveal reveal-scale" style="text-align: center; margin: 0 auto 40px; max-width: 720px;">
-      <div class="eyebrow" style="margin: 0 auto;">Свайп / прокрутка</div>
-      <h2 class="section-h2">Ещё больше примеров — <span class="accent-word">пролистайте</span></h2>
-    </div>
-  </div>
-  <div class="carousel-wrap reveal">
-    <div class="carousel-track">
-      <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · до отделки</span></div></div>
-      <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · после: матовый+карниз</span></div></div>
-      <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · трековый свет</span></div></div>
-      <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · кухня-гостиная</span></div></div>
-      <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · спальня новостройка</span></div></div>
-      <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · детская</span></div></div>
-      <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · мастер</span></div></div>
-      <div class="carousel-cell"><div class="photo-block"><span class="photo-block-label">Фото · панорама</span></div></div>
-
-    </div>
-  </div>
-</section>
-
-
 <!-- MINI PHOTO STRIP -->
 <section class="section" style="padding: 60px 0; background: var(--bg);">
   <div class="wrap">
