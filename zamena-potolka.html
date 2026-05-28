@@ -1125,16 +1125,27 @@ img, svg, video { max-width: 100%; }
   .hero-text { max-width: 100% !important; }
   .hero-master-side {
     position: relative !important;
-    width: 100% !important;
-    max-width: 100vw !important;
-    height: 280px !important;
+    width: calc(100% - 28px) !important;
+    max-width: calc(100% - 28px) !important;
+    height: 320px !important;
     right: auto !important;
     top: auto !important;
     bottom: auto !important;
-    margin: 0 !important;
+    margin: 0 14px 24px !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
   }
-  .hero-master-img { -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 20%, #000 90%, transparent 100%) !important; mask-image: linear-gradient(180deg, transparent 0%, #000 20%, #000 90%, transparent 100%) !important; }
-  .hero-master-img img { -webkit-mask-image: none !important; mask-image: none !important; }
+  .hero-master-img {
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+  }
+  .hero-master-img img {
+    object-position: center 30% !important;
+    border-radius: 20px !important;
+  }
+
 
   /* HERO TYPO compact */
   .hero-h1 { font-size: clamp(28px, 7.5vw, 38px) !important; line-height: 1.1 !important; margin: 14px 0 14px !important; }
